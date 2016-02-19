@@ -1,5 +1,5 @@
 //
-//  MQLoadingOverlay.swift
+//  MDLoadingOverlay.swift
 //  Mold
 //
 //  Created by Matt Quiros on 4/19/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MQLoadingOverlay : UIView {
+public class MDLoadingOverlay : UIView {
     
     var translucentView: UIView
     var activityIndicator: UIActivityIndicatorView

@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let kLoadingOverlay = MQLoadingOverlay()
+private let kLoadingOverlay = MDLoadingOverlay()
 
 public extension UIViewController {
     

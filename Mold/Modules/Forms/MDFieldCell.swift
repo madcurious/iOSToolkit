@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MDFieldCell: MQTableViewCell {
+public class MDFieldCell: MDTableViewCell {
     
     public weak var field: MDField?
     public weak var delegate: AnyObject?

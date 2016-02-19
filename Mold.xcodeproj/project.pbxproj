@@ -51,10 +51,10 @@
 		26904E2E1C77598B0094DA08 /* MDDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEE1C77598B0094DA08 /* MDDispatcher.swift */; };
 		26904E2F1C77598B0094DA08 /* MDAspectFitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF01C77598B0094DA08 /* MDAspectFitLabel.swift */; };
 		26904E301C77598B0094DA08 /* MDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF11C77598B0094DA08 /* MDButton.swift */; };
-		26904E311C77598B0094DA08 /* MQImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF21C77598B0094DA08 /* MQImageButton.swift */; };
-		26904E321C77598B0094DA08 /* MQLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF31C77598B0094DA08 /* MQLabelButton.swift */; };
-		26904E331C77598B0094DA08 /* MQLoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF41C77598B0094DA08 /* MQLoadingOverlay.swift */; };
-		26904E341C77598B0094DA08 /* MQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF51C77598B0094DA08 /* MQTableViewCell.swift */; };
+		26904E311C77598B0094DA08 /* MDImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF21C77598B0094DA08 /* MDImageButton.swift */; };
+		26904E321C77598B0094DA08 /* MDLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF31C77598B0094DA08 /* MDLabelButton.swift */; };
+		26904E331C77598B0094DA08 /* MDLoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF41C77598B0094DA08 /* MDLoadingOverlay.swift */; };
+		26904E341C77598B0094DA08 /* MDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF51C77598B0094DA08 /* MDTableViewCell.swift */; };
 		26904E351C77598B0094DA08 /* MQNSNotificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF71C77598B0094DA08 /* MQNSNotificationObject.swift */; };
 		26904E371C77598B0094DA08 /* MQFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFB1C77598B0094DA08 /* MQFormViewController.swift */; };
 		26904E381C77598B0094DA08 /* MQPopupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFC1C77598B0094DA08 /* MQPopupPickerViewController.swift */; };
@@ -110,10 +110,10 @@
 		26904DEE1C77598B0094DA08 /* MDDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDDispatcher.swift; sourceTree = "<group>"; };
 		26904DF01C77598B0094DA08 /* MDAspectFitLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAspectFitLabel.swift; sourceTree = "<group>"; };
 		26904DF11C77598B0094DA08 /* MDButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDButton.swift; sourceTree = "<group>"; };
-		26904DF21C77598B0094DA08 /* MQImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQImageButton.swift; sourceTree = "<group>"; };
-		26904DF31C77598B0094DA08 /* MQLabelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLabelButton.swift; sourceTree = "<group>"; };
-		26904DF41C77598B0094DA08 /* MQLoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLoadingOverlay.swift; sourceTree = "<group>"; };
-		26904DF51C77598B0094DA08 /* MQTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTableViewCell.swift; sourceTree = "<group>"; };
+		26904DF21C77598B0094DA08 /* MDImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDImageButton.swift; sourceTree = "<group>"; };
+		26904DF31C77598B0094DA08 /* MDLabelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDLabelButton.swift; sourceTree = "<group>"; };
+		26904DF41C77598B0094DA08 /* MDLoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDLoadingOverlay.swift; sourceTree = "<group>"; };
+		26904DF51C77598B0094DA08 /* MDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDTableViewCell.swift; sourceTree = "<group>"; };
 		26904DF71C77598B0094DA08 /* MQNSNotificationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQNSNotificationObject.swift; sourceTree = "<group>"; };
 		26904DFB1C77598B0094DA08 /* MQFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFormViewController.swift; sourceTree = "<group>"; };
 		26904DFC1C77598B0094DA08 /* MQPopupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQPopupPickerViewController.swift; sourceTree = "<group>"; };
@@ -288,10 +288,10 @@
 			children = (
 				26904DF01C77598B0094DA08 /* MDAspectFitLabel.swift */,
 				26904DF11C77598B0094DA08 /* MDButton.swift */,
-				26904DF21C77598B0094DA08 /* MQImageButton.swift */,
-				26904DF31C77598B0094DA08 /* MQLabelButton.swift */,
-				26904DF41C77598B0094DA08 /* MQLoadingOverlay.swift */,
-				26904DF51C77598B0094DA08 /* MQTableViewCell.swift */,
+				26904DF21C77598B0094DA08 /* MDImageButton.swift */,
+				26904DF31C77598B0094DA08 /* MDLabelButton.swift */,
+				26904DF41C77598B0094DA08 /* MDLoadingOverlay.swift */,
+				26904DF51C77598B0094DA08 /* MDTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -402,10 +402,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				26904E221C77598B0094DA08 /* MDChainedOperation.swift in Sources */,
-				26904E331C77598B0094DA08 /* MQLoadingOverlay.swift in Sources */,
+				26904E331C77598B0094DA08 /* MDLoadingOverlay.swift in Sources */,
 				26904E0B1C77598B0094DA08 /* MDAlertDialog.swift in Sources */,
 				26904E001C77598B0094DA08 /* MKMapView.swift in Sources */,
-				26904E311C77598B0094DA08 /* MQImageButton.swift in Sources */,
+				26904E311C77598B0094DA08 /* MDImageButton.swift in Sources */,
 				26904E031C77598B0094DA08 /* NSLayoutConstraint.swift in Sources */,
 				26904E091C77598B0094DA08 /* UIViewController.swift in Sources */,
 				26904E291C77598B0094DA08 /* MDLoadingView.swift in Sources */,
@@ -436,7 +436,7 @@
 				26904E0A1C77598B0094DA08 /* Functions.swift in Sources */,
 				26904E181C77598B0094DA08 /* MDFieldTextFieldCell.swift in Sources */,
 				26904E2D1C77598B0094DA08 /* MDStatefulViewController.swift in Sources */,
-				26904E321C77598B0094DA08 /* MQLabelButton.swift in Sources */,
+				26904E321C77598B0094DA08 /* MDLabelButton.swift in Sources */,
 				26904E061C77598B0094DA08 /* String.swift in Sources */,
 				26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */,
 				26904E101C77598B0094DA08 /* MDErrorType.swift in Sources */,
@@ -447,7 +447,7 @@
 				26904E301C77598B0094DA08 /* MDButton.swift in Sources */,
 				26904DFE1C77598B0094DA08 /* Keys.swift in Sources */,
 				26904E351C77598B0094DA08 /* MQNSNotificationObject.swift in Sources */,
-				26904E341C77598B0094DA08 /* MQTableViewCell.swift in Sources */,
+				26904E341C77598B0094DA08 /* MDTableViewCell.swift in Sources */,
 				26904E1A1C77598B0094DA08 /* MDFieldTextView.swift in Sources */,
 				26904E2F1C77598B0094DA08 /* MDAspectFitLabel.swift in Sources */,
 				26904E051C77598B0094DA08 /* NSNotificationCenter.swift in Sources */,
