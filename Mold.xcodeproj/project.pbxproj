@@ -36,8 +36,6 @@
 		26904E181C77598B0094DA08 /* MDFieldTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD41C77598B0094DA08 /* MDFieldTextFieldCell.swift */; };
 		26904E191C77598B0094DA08 /* MDFieldTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD51C77598B0094DA08 /* MDFieldTextFieldDelegate.swift */; };
 		26904E1A1C77598B0094DA08 /* MDFieldTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD61C77598B0094DA08 /* MDFieldTextView.swift */; };
-		26904E1B1C77598B0094DA08 /* MQArchivableValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD81C77598B0094DA08 /* MQArchivableValueType.swift */; };
-		26904E1C1C77598B0094DA08 /* MQFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD91C77598B0094DA08 /* MQFileManager.swift */; };
 		26904E211C77598B0094DA08 /* MQBlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DDF1C77598B0094DA08 /* MQBlockOperation.swift */; };
 		26904E221C77598B0094DA08 /* MQChainedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE01C77598B0094DA08 /* MQChainedOperation.swift */; };
 		26904E231C77598B0094DA08 /* MQOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE11C77598B0094DA08 /* MQOperation.swift */; };
@@ -61,6 +59,8 @@
 		26904E371C77598B0094DA08 /* MQFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFB1C77598B0094DA08 /* MQFormViewController.swift */; };
 		26904E381C77598B0094DA08 /* MQPopupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFC1C77598B0094DA08 /* MQPopupPickerViewController.swift */; };
 		26904E391C77598B0094DA08 /* MQStartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFD1C77598B0094DA08 /* MQStartupViewController.swift */; };
+		26904E3D1C7763150094DA08 /* MDArchivableValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3B1C7763150094DA08 /* MDArchivableValueType.swift */; };
+		26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3C1C7763150094DA08 /* MDFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,8 +95,6 @@
 		26904DD41C77598B0094DA08 /* MDFieldTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldTextFieldCell.swift; sourceTree = "<group>"; };
 		26904DD51C77598B0094DA08 /* MDFieldTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldTextFieldDelegate.swift; sourceTree = "<group>"; };
 		26904DD61C77598B0094DA08 /* MDFieldTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldTextView.swift; sourceTree = "<group>"; };
-		26904DD81C77598B0094DA08 /* MQArchivableValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQArchivableValueType.swift; sourceTree = "<group>"; };
-		26904DD91C77598B0094DA08 /* MQFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFileManager.swift; sourceTree = "<group>"; };
 		26904DDF1C77598B0094DA08 /* MQBlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQBlockOperation.swift; sourceTree = "<group>"; };
 		26904DE01C77598B0094DA08 /* MQChainedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQChainedOperation.swift; sourceTree = "<group>"; };
 		26904DE11C77598B0094DA08 /* MQOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQOperation.swift; sourceTree = "<group>"; };
@@ -120,6 +118,8 @@
 		26904DFB1C77598B0094DA08 /* MQFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFormViewController.swift; sourceTree = "<group>"; };
 		26904DFC1C77598B0094DA08 /* MQPopupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQPopupPickerViewController.swift; sourceTree = "<group>"; };
 		26904DFD1C77598B0094DA08 /* MQStartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQStartupViewController.swift; sourceTree = "<group>"; };
+		26904E3B1C7763150094DA08 /* MDArchivableValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDArchivableValueType.swift; sourceTree = "<group>"; };
+		26904E3C1C7763150094DA08 /* MDFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +204,7 @@
 				26904DC41C77598B0094DA08 /* Dialogs */,
 				26904DC81C77598B0094DA08 /* Error Handling */,
 				26904DCC1C77598B0094DA08 /* Forms */,
-				26904DD71C77598B0094DA08 /* Local Store */,
+				26904E3A1C7763150094DA08 /* File Storage */,
 				26904DDA1C77598B0094DA08 /* Operations */,
 				26904DE31C77598B0094DA08 /* Stateful Screens */,
 				26904DED1C77598B0094DA08 /* Threads */,
@@ -247,15 +247,6 @@
 				26904DD61C77598B0094DA08 /* MDFieldTextView.swift */,
 			);
 			path = Forms;
-			sourceTree = "<group>";
-		};
-		26904DD71C77598B0094DA08 /* Local Store */ = {
-			isa = PBXGroup;
-			children = (
-				26904DD81C77598B0094DA08 /* MQArchivableValueType.swift */,
-				26904DD91C77598B0094DA08 /* MQFileManager.swift */,
-			);
-			path = "Local Store";
 			sourceTree = "<group>";
 		};
 		26904DDA1C77598B0094DA08 /* Operations */ = {
@@ -321,6 +312,15 @@
 				26904DFD1C77598B0094DA08 /* MQStartupViewController.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		26904E3A1C7763150094DA08 /* File Storage */ = {
+			isa = PBXGroup;
+			children = (
+				26904E3B1C7763150094DA08 /* MDArchivableValueType.swift */,
+				26904E3C1C7763150094DA08 /* MDFileManager.swift */,
+			);
+			path = "File Storage";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,16 +438,16 @@
 				26904E2D1C77598B0094DA08 /* MQStatefulViewController.swift in Sources */,
 				26904E321C77598B0094DA08 /* MQLabelButton.swift in Sources */,
 				26904E061C77598B0094DA08 /* String.swift in Sources */,
+				26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */,
 				26904E101C77598B0094DA08 /* MDErrorType.swift in Sources */,
 				26904E211C77598B0094DA08 /* MQBlockOperation.swift in Sources */,
-				26904E1C1C77598B0094DA08 /* MQFileManager.swift in Sources */,
 				26904DFF1C77598B0094DA08 /* Double.swift in Sources */,
+				26904E3D1C7763150094DA08 /* MDArchivableValueType.swift in Sources */,
 				26904E041C77598B0094DA08 /* NSNotification.swift in Sources */,
 				26904E301C77598B0094DA08 /* MQButton.swift in Sources */,
 				26904DFE1C77598B0094DA08 /* Keys.swift in Sources */,
 				26904E351C77598B0094DA08 /* MQNSNotificationObject.swift in Sources */,
 				26904E341C77598B0094DA08 /* MQTableViewCell.swift in Sources */,
-				26904E1B1C77598B0094DA08 /* MQArchivableValueType.swift in Sources */,
 				26904E1A1C77598B0094DA08 /* MDFieldTextView.swift in Sources */,
 				26904E2F1C77598B0094DA08 /* MQAspectFitLabel.swift in Sources */,
 				26904E051C77598B0094DA08 /* NSNotificationCenter.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  MQArchivableValueType.swift
+//  MDArchivableValueType.swift
 //  Mold
 //
 //  Created by Matt Quiros on 7/13/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol MQArchivableValueType {
+public protocol MDArchivableValueType {
     
     /**
     Called by `MQFileManager` to inflate an `MDDataModel` from a file. You shouldn't have to
@@ -32,7 +32,7 @@ public protocol MQArchivableValueType {
     
 }
 
-public extension MQArchivableValueType {
+public extension MDArchivableValueType {
     
     init(fromData data: NSData) {
         guard let dictionary = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String : AnyObject] else {

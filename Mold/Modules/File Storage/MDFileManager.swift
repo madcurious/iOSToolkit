@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum MQFileManagerError: MDErrorType {
+public enum MDFileManagerError: MDErrorType {
     
     case CantArchiveValue(Any)
     case CantBuildPathToFile(String, inFolder: NSSearchPathDirectory)
@@ -77,30 +77,30 @@ public class MQFileManager {
         return NSFileManager.defaultManager().fileExistsAtPath(fileURL.path!)
     }
     
-    public class func writeValue<T: MQArchivableValueType>(value: T, toFile fileName: String, inFolder folder: NSSearchPathDirectory = .DocumentDirectory) throws {
+    public class func writeValue<T: MDArchivableValueType>(value: T, toFile fileName: String, inFolder folder: NSSearchPathDirectory = .DocumentDirectory) throws {
         guard let fileURL = self.URLForFileName(fileName, inFolder: folder),
             let path = fileURL.path else {
-                throw MQFileManagerError.CantBuildPathToFile(fileName, inFolder: folder)
+                throw MDFileManagerError.CantBuildPathToFile(fileName, inFolder: folder)
         }
         
         let dictionary = value.toDictionary()
         if NSKeyedArchiver.archiveRootObject(dictionary, toFile: path) == false {
-            throw MQFileManagerError.CantArchiveValue(value)
+            throw MDFileManagerError.CantArchiveValue(value)
         }
     }
     
     public class func writeValue(value: AnyObject, toFile fileName: String, inFolder folder: NSSearchPathDirectory = .DocumentDirectory) throws {
         guard let fileURL = self.URLForFileName(fileName, inFolder: folder),
             let path = fileURL.path else {
-                throw MQFileManagerError.CantBuildPathToFile(fileName, inFolder: folder)
+                throw MDFileManagerError.CantBuildPathToFile(fileName, inFolder: folder)
         }
         
         if NSKeyedArchiver.archiveRootObject(value, toFile: path) == false {
-            throw MQFileManagerError.CantArchiveValue(value)
+            throw MDFileManagerError.CantArchiveValue(value)
         }
     }
     
-    public class func valueAtFile<T: MQArchivableValueType>(fileName: String, inFolder folder: NSSearchPathDirectory = .DocumentDirectory) -> T? {
+    public class func valueAtFile<T: MDArchivableValueType>(fileName: String, inFolder folder: NSSearchPathDirectory = .DocumentDirectory) -> T? {
         if let fileURL = self.URLForFileName(fileName, inFolder: folder),
             let path = fileURL.path,
             let dictionary = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? [String : AnyObject] {
@@ -133,7 +133,7 @@ public class MQFileManager {
 // FIXME: Swift 2.0
 /*public extension MQFileManager {
 
-    public class func writeValue<T: MQArchivableValueType>(value: T, toFile fileName: String, inFolder folder: NSSearchPathDirectory = .DocumentDirectory) throws {
+    public class func writeValue<T: MDArchivableValueType>(value: T, toFile fileName: String, inFolder folder: NSSearchPathDirectory = .DocumentDirectory) throws {
         guard let fileURL = self.URLForFileName(fileName, inFolder: folder),
             let path = fileURL.path else {
                 throw MDError("Cannot build a file URL to file name '\(fileName)' in '\(folder)'.")
@@ -156,7 +156,7 @@ public class MQFileManager {
         }
     }
     
-    public class func valueAtFile<T: MQArchivableValueType>(fileName: String, inFolder folder: NSSearchPathDirectory = .DocumentDirectory) -> T? {
+    public class func valueAtFile<T: MDArchivableValueType>(fileName: String, inFolder folder: NSSearchPathDirectory = .DocumentDirectory) -> T? {
         guard let fileURL = self.URLForFileName(fileName, inFolder: folder),
             let path = fileURL.path,
             let dictionary = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? [String : AnyObject] else {
