@@ -1,5 +1,5 @@
 //
-//  MQRetryView.swift
+//  MDLoadingView.swift
 //  Mold
 //
 //  Created by Matt Quiros on 4/19/15.
@@ -8,58 +8,54 @@
 
 import UIKit
 
-/**
-A default implementation of an `MQRetryView`.
-*/
-public class MQDefaultRetryView: MQRetryView {
-    
-    public var errorLabel: UILabel
-    public var retryButton: UIButton
+public class MDLoadingView: UIView {
+
+    public var spinnerView: UIActivityIndicatorView
+    public var loadingLabel: UILabel
     public var containerView: UIView
     
-    public override var error: NSError? {
+    public var text: String? {
         didSet {
-            if let error = self.error {
-                self.errorLabel.text = error.localizedDescription
+            if let text = self.text {
+                self.loadingLabel.text = text
             } else {
-                self.errorLabel.text = nil
+                self.loadingLabel.text = ""
             }
             self.setNeedsLayout()
         }
     }
     
     public init() {
-        self.errorLabel = UILabel()
-        self.retryButton = UIButton(type: .System)
+        self.spinnerView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+        
+        self.loadingLabel = UILabel()
+        self.loadingLabel.text = "Loading"
+        self.loadingLabel.numberOfLines = 0
+        self.loadingLabel.lineBreakMode = .ByWordWrapping
+        self.loadingLabel.textAlignment = .Center
+        
         self.containerView = UIView()
+        self.containerView.backgroundColor = UIColor.clearColor()
         
         super.init(frame: CGRectZero)
         
         self.backgroundColor = UIColor.whiteColor()
-        self.setupViews()
+        
+        self.containerView.addSubviews(self.spinnerView, self.loadingLabel)
+        self.addSubviews(self.containerView)
         self.addAutolayout()
+        
+        self.spinnerView.startAnimating()
     }
-    
+
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupViews() {
-        self.errorLabel.numberOfLines = 0
-        self.errorLabel.lineBreakMode = .ByWordWrapping
-        self.errorLabel.textAlignment = .Center
-        
-        self.retryButton.setTitle("Retry", forState: .Normal)
-        self.retryButton.addTarget(self, action: Selector("retryButtonTapped"), forControlEvents: .TouchUpInside)
-        
-        self.containerView.addSubviews(self.errorLabel, self.retryButton)
-        self.addSubview(containerView)
-    }
-    
     func addAutolayout() {
         UIView.disableAutoresizingMasksInViews(
-            self.errorLabel,
-            self.retryButton,
+            self.spinnerView,
+            self.loadingLabel,
             self.containerView)
         
         self.addAutolayoutInContainerView()
@@ -67,20 +63,19 @@ public class MQDefaultRetryView: MQRetryView {
     }
     
     func addAutolayoutInContainerView() {
-        let views = ["errorLabel" : self.errorLabel,
-            "retryButton" : self.retryButton]
-        let rules = ["H:|-0-[errorLabel]-0-|",
-            "V:|-0-[errorLabel]-0-[retryButton]-0-|"]
+        let views = ["loadingLabel" : self.loadingLabel,
+            "spinnerView" : self.spinnerView,
+            "containerView" : self.containerView]
         
-        self.containerView.addConstraints(
-            NSLayoutConstraint.constraintsWithVisualFormatArray(
-                rules,
-                metrics: nil,
-                views: views))
+        let rules = ["H:|-0-[loadingLabel]-0-|",
+            "V:|-0-[spinnerView]-0-[loadingLabel]-0-|"]
         
-        // Center the Retry button horizontally.
+        self.containerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormatArray(rules, metrics: nil, views: views))
+        
+        // Center the spinner view horizontally.
+        
         self.containerView.addConstraint(
-            NSLayoutConstraint(item: self.retryButton,
+            NSLayoutConstraint(item: self.spinnerView,
                 attribute: .CenterX,
                 relatedBy: .Equal,
                 toItem: self.containerView,
@@ -104,9 +99,7 @@ public class MQDefaultRetryView: MQRetryView {
                 toItem: self,
                 attribute: .CenterY,
                 multiplier: 1,
-                constant: 1),
-            
-            // Limit the container's width to 2/3 of the main view.
+                constant: 0),
             NSLayoutConstraint(item: self.containerView,
                 attribute: .Width,
                 relatedBy: .Equal,
@@ -116,11 +109,5 @@ public class MQDefaultRetryView: MQRetryView {
                 constant: 0)
             ])
     }
-    
-    func retryButtonTapped() {
-        if let delegate = self.delegate {
-            delegate.retryViewDidTapRetry(self)
-        }
-    }
-    
+
 }

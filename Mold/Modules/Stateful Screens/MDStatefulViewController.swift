@@ -15,11 +15,11 @@ public class MDStatefulViewController: UIViewController {
     }
     public var operationQueue = NSOperationQueue()
     
-    public var startingView: MQStartingView = MQDefaultStartingView()
-    public var loadingView: UIView = MQLoadingView()
-    public var retryView: MQRetryView = MQDefaultRetryView()
+    public var startingView: MQStartingView = MDDefaultStartingView()
+    public var loadingView: UIView = MDLoadingView()
+    public var retryView: MDRetryView = MDDefaultRetryView()
     public var primaryView = UIView()
-    public var noResultsView: MQNoResultsView = MQDefaultNoResultsView()
+    public var noResultsView: MDNoResultsView = MDDefaultNoResultsView()
     
     /**
      A flag used by `viewWillAppear:` to check if it will be the first time for
@@ -116,17 +116,17 @@ public class MDStatefulViewController: UIViewController {
     
 }
 
-extension MDStatefulViewController: MQRetryViewDelegate {
+extension MDStatefulViewController: MDRetryViewDelegate {
     
-    public func retryViewDidTapRetry(retryView: MQRetryView) {
+    public func retryViewDidTapRetry(retryView: MDRetryView) {
         self.runTask()
     }
     
 }
 
-extension MDStatefulViewController: MQNoResultsViewDelegate {
+extension MDStatefulViewController: MDNoResultsViewDelegate {
     
-    public func noResultsViewDidTapRetry(noResultsView: MQNoResultsView) {
+    public func noResultsViewDidTapRetry(noResultsView: MDNoResultsView) {
         self.runTask()
     }
     

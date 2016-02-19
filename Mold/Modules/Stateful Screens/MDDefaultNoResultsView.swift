@@ -1,5 +1,5 @@
 //
-//  MQDefaultNoResultsView.swift
+//  MDDefaultNoResultsView.swift
 //  Mold
 //
 //  Created by Matt Quiros on 5/1/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MQDefaultNoResultsView: MQNoResultsView {
+public class MDDefaultNoResultsView: MDNoResultsView {
     
     public var noResultsLabel: UILabel
     

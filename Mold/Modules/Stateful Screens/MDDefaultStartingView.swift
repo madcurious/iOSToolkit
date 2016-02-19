@@ -1,5 +1,5 @@
 //
-//  MQDefaultStartingView.swift
+//  MDDefaultStartingView.swift
 //  Mold
 //
 //  Created by Matt Quiros on 5/1/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MQDefaultStartingView: MQStartingView {
+public class MDDefaultStartingView: MQStartingView {
     
     public var startingTextLabel: UILabel
     
