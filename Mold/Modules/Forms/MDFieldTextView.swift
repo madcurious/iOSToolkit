@@ -1,5 +1,5 @@
 //
-//  MQFieldTextView.swift
+//  MDFieldTextView.swift
 //  Mold
 //
 //  Created by Matt Quiros on 7/16/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MQFieldTextView: UITextView {
+public class MDFieldTextView: UITextView {
     
     public weak var field: MDField? {
         didSet {
