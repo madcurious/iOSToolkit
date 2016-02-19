@@ -1,7 +1,5 @@
 ![Mold](mold-banner.png)
 
-# Mold
-
 Mold is a library of boilerplate code for iOS apps written in Swift.
 
 ## Requirements
@@ -44,3 +42,27 @@ $ git pull
 ```
 import Mold
 ```
+
+## Features
+
+### Centralised Error Handling
+
+### Stateful Operations
+
+### Stateful View Controllers
+
+### File Storage with Swift Value Types
+
+### Main Thread Dispatcher
+
+### Forms
+
+### Useful Extensions
+
+### ...And many more!
+
+See the wiki for the complete documentation.
+
+## License
+
+Mold is released under the MIT License. See LICENSE for details.
