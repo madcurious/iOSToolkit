@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum MQFileManagerError: MQErrorType {
+public enum MQFileManagerError: MDErrorType {
     
     case CantArchiveValue(Any)
     case CantBuildPathToFile(String, inFolder: NSSearchPathDirectory)

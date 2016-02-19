@@ -25,7 +25,6 @@
 		26904E0C1C77598B0094DA08 /* MDConfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC61C77598B0094DA08 /* MDConfirmDialog.swift */; };
 		26904E0D1C77598B0094DA08 /* MDErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC71C77598B0094DA08 /* MDErrorDialog.swift */; };
 		26904E0E1C77598B0094DA08 /* MDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC91C77598B0094DA08 /* MDError.swift */; };
-		26904E0F1C77598B0094DA08 /* MQErrorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCA1C77598B0094DA08 /* MQErrorBuilder.swift */; };
 		26904E101C77598B0094DA08 /* MQErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCB1C77598B0094DA08 /* MQErrorType.swift */; };
 		26904E111C77598B0094DA08 /* MQDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCD1C77598B0094DA08 /* MQDataModel.swift */; };
 		26904E121C77598B0094DA08 /* MQField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCE1C77598B0094DA08 /* MQField.swift */; };
@@ -85,7 +84,6 @@
 		26904DC61C77598B0094DA08 /* MDConfirmDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDConfirmDialog.swift; sourceTree = "<group>"; };
 		26904DC71C77598B0094DA08 /* MDErrorDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorDialog.swift; sourceTree = "<group>"; };
 		26904DC91C77598B0094DA08 /* MDError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDError.swift; sourceTree = "<group>"; };
-		26904DCA1C77598B0094DA08 /* MQErrorBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQErrorBuilder.swift; sourceTree = "<group>"; };
 		26904DCB1C77598B0094DA08 /* MQErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQErrorType.swift; sourceTree = "<group>"; };
 		26904DCD1C77598B0094DA08 /* MQDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQDataModel.swift; sourceTree = "<group>"; };
 		26904DCE1C77598B0094DA08 /* MQField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQField.swift; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				26904DC91C77598B0094DA08 /* MDError.swift */,
-				26904DCA1C77598B0094DA08 /* MQErrorBuilder.swift */,
 				26904DCB1C77598B0094DA08 /* MQErrorType.swift */,
 			);
 			path = "Error Handling";
@@ -453,7 +450,6 @@
 				26904E1B1C77598B0094DA08 /* MQArchivableValueType.swift in Sources */,
 				26904E1A1C77598B0094DA08 /* MQFieldTextView.swift in Sources */,
 				26904E2F1C77598B0094DA08 /* MQAspectFitLabel.swift in Sources */,
-				26904E0F1C77598B0094DA08 /* MQErrorBuilder.swift in Sources */,
 				26904E051C77598B0094DA08 /* NSNotificationCenter.swift in Sources */,
 				26904E2B1C77598B0094DA08 /* MQRetryView.swift in Sources */,
 				26904E021C77598B0094DA08 /* NSDate.swift in Sources */,

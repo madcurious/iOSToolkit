@@ -1,5 +1,5 @@
 //
-//  MQErrorType.swift
+//  MDErrorType.swift
 //  Mold
 //
 //  Created by Matt Quiros on 09/11/2015.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol MQErrorType: ErrorType {
+public protocol MDErrorType: ErrorType {
     
     func object() -> MDError
     

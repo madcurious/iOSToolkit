@@ -205,7 +205,7 @@ public class MQOperation: NSOperation {
     
     public func runFailBlock(error: ErrorType) {
         print("\(self.description) : \(__FUNCTION__): ErrorType")
-        if let error = error as? MQErrorType {
+        if let error = error as? MDErrorType {
             self.runFailBlock(error.object())
         } else {
             self.runFailBlock(error as NSError)
