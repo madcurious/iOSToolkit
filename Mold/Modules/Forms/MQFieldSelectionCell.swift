@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MQFieldSelectionCell: MQFieldCell {
+public class MQFieldSelectionCell: MDFieldCell {
     
     public override var field: MDField? {
         didSet {

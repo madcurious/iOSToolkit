@@ -1,5 +1,5 @@
 //
-//  MQFieldCell.swift
+//  MDFieldCell.swift
 //  Mold
 //
 //  Created by Matt Quiros on 4/18/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MQFieldCell: MQTableViewCell {
+public class MDFieldCell: MQTableViewCell {
     
     public weak var field: MDField?
     public weak var delegate: AnyObject?
