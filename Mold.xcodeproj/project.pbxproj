@@ -60,6 +60,7 @@
 		26904E381C77598B0094DA08 /* MDPopupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFC1C77598B0094DA08 /* MDPopupPickerViewController.swift */; };
 		26904E3D1C7763150094DA08 /* MDArchivableValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3B1C7763150094DA08 /* MDArchivableValueType.swift */; };
 		26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3C1C7763150094DA08 /* MDFileManager.swift */; };
+		26904E401C77747C0094DA08 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3F1C77747C0094DA08 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 		26904DFC1C77598B0094DA08 /* MDPopupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPopupPickerViewController.swift; sourceTree = "<group>"; };
 		26904E3B1C7763150094DA08 /* MDArchivableValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDArchivableValueType.swift; sourceTree = "<group>"; };
 		26904E3C1C7763150094DA08 /* MDFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFileManager.swift; sourceTree = "<group>"; };
+		26904E3F1C77747C0094DA08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		26904D261C7757540094DA08 = {
 			isa = PBXGroup;
 			children = (
+				26904E3F1C77747C0094DA08 /* README.md */,
 				26904D321C7757540094DA08 /* Mold */,
 				26904D311C7757540094DA08 /* Products */,
 			);
@@ -410,6 +413,7 @@
 				26904E121C77598B0094DA08 /* MDField.swift in Sources */,
 				26904E231C77598B0094DA08 /* MDOperation.swift in Sources */,
 				26904E0C1C77598B0094DA08 /* MDConfirmDialog.swift in Sources */,
+				26904E401C77747C0094DA08 /* README.md in Sources */,
 				26904E0E1C77598B0094DA08 /* MDError.swift in Sources */,
 				26904E271C77598B0094DA08 /* MDDefaultStartingView.swift in Sources */,
 				26904E2E1C77598B0094DA08 /* MDDispatcher.swift in Sources */,
