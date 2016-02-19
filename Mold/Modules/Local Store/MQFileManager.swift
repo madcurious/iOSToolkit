@@ -13,13 +13,13 @@ public enum MQFileManagerError: MQErrorType {
     case CantArchiveValue(Any)
     case CantBuildPathToFile(String, inFolder: NSSearchPathDirectory)
     
-    public func object() -> MQError {
+    public func object() -> MDError {
         switch self {
         case .CantArchiveValue(let value):
-            return MQError("Archiving the value \"\(value)\" failed.")
+            return MDError("Archiving the value \"\(value)\" failed.")
             
         case .CantBuildPathToFile(let file, inFolder: let folder):
-            return MQError("Can't build a path to file \(file) in \(folder)")
+            return MDError("Can't build a path to file \(file) in \(folder)")
         }
     }
     
@@ -136,23 +136,23 @@ public class MQFileManager {
     public class func writeValue<T: MQArchivableValueType>(value: T, toFile fileName: String, inFolder folder: NSSearchPathDirectory = .DocumentDirectory) throws {
         guard let fileURL = self.URLForFileName(fileName, inFolder: folder),
             let path = fileURL.path else {
-                throw MQError("Cannot build a file URL to file name '\(fileName)' in '\(folder)'.")
+                throw MDError("Cannot build a file URL to file name '\(fileName)' in '\(folder)'.")
         }
         
         let dictionary = value.archiveDictionary()
         if NSKeyedArchiver.archiveRootObject(dictionary, toFile: path) == false {
-            throw MQError("Archiving value \(value) failed.")
+            throw MDError("Archiving value \(value) failed.")
         }
     }
     
     public class func writeValue(value: AnyObject, toFile fileName: String, inFolder folder: NSSearchPathDirectory = .DocumentDirectory) throws {
         guard let fileURL = self.URLForFileName(fileName, inFolder: folder),
             let path = fileURL.path else {
-                throw MQError("Cannot build a file URL to file name '\(fileName)' in '\(folder)'.")
+                throw MDError("Cannot build a file URL to file name '\(fileName)' in '\(folder)'.")
         }
         
         if NSKeyedArchiver.archiveRootObject(value, toFile: path) == false {
-            throw MQError("Cannot write value \(value) to file.")
+            throw MDError("Cannot write value \(value) to file.")
         }
     }
     

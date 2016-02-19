@@ -10,6 +10,6 @@ import Foundation
 
 public protocol MQErrorType: ErrorType {
     
-    func object() -> MQError
+    func object() -> MDError
     
 }

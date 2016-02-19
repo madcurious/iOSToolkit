@@ -1,5 +1,5 @@
 //
-//  MQError.swift
+//  MDError.swift
 //  Mold
 //
 //  Created by Matt Quiros on 4/19/15.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-public let kMQGenericErrorCode: Int = -1
+public let kMDGenericErrorCode: Int = -1
 
-public class MQError: NSError {
+public class MDError: NSError {
     
     public var message: String
     
@@ -23,7 +23,7 @@ public class MQError: NSError {
         
         // Set the error's domain property.
         let domain = NSBundle.mainBundle().bundleIdentifier ?? ""
-        super.init(domain: domain, code: kMQGenericErrorCode, userInfo: nil)
+        super.init(domain: domain, code: kMDGenericErrorCode, userInfo: nil)
     }
     
     required public init?(coder aDecoder: NSCoder) {

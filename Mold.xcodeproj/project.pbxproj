@@ -24,7 +24,7 @@
 		26904E0B1C77598B0094DA08 /* MDAlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC51C77598B0094DA08 /* MDAlertDialog.swift */; };
 		26904E0C1C77598B0094DA08 /* MDConfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC61C77598B0094DA08 /* MDConfirmDialog.swift */; };
 		26904E0D1C77598B0094DA08 /* MDErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC71C77598B0094DA08 /* MDErrorDialog.swift */; };
-		26904E0E1C77598B0094DA08 /* MQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC91C77598B0094DA08 /* MQError.swift */; };
+		26904E0E1C77598B0094DA08 /* MDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC91C77598B0094DA08 /* MDError.swift */; };
 		26904E0F1C77598B0094DA08 /* MQErrorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCA1C77598B0094DA08 /* MQErrorBuilder.swift */; };
 		26904E101C77598B0094DA08 /* MQErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCB1C77598B0094DA08 /* MQErrorType.swift */; };
 		26904E111C77598B0094DA08 /* MQDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCD1C77598B0094DA08 /* MQDataModel.swift */; };
@@ -84,7 +84,7 @@
 		26904DC51C77598B0094DA08 /* MDAlertDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAlertDialog.swift; sourceTree = "<group>"; };
 		26904DC61C77598B0094DA08 /* MDConfirmDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDConfirmDialog.swift; sourceTree = "<group>"; };
 		26904DC71C77598B0094DA08 /* MDErrorDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorDialog.swift; sourceTree = "<group>"; };
-		26904DC91C77598B0094DA08 /* MQError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQError.swift; sourceTree = "<group>"; };
+		26904DC91C77598B0094DA08 /* MDError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDError.swift; sourceTree = "<group>"; };
 		26904DCA1C77598B0094DA08 /* MQErrorBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQErrorBuilder.swift; sourceTree = "<group>"; };
 		26904DCB1C77598B0094DA08 /* MQErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQErrorType.swift; sourceTree = "<group>"; };
 		26904DCD1C77598B0094DA08 /* MQDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQDataModel.swift; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 		26904DC81C77598B0094DA08 /* Error Handling */ = {
 			isa = PBXGroup;
 			children = (
-				26904DC91C77598B0094DA08 /* MQError.swift */,
+				26904DC91C77598B0094DA08 /* MDError.swift */,
 				26904DCA1C77598B0094DA08 /* MQErrorBuilder.swift */,
 				26904DCB1C77598B0094DA08 /* MQErrorType.swift */,
 			);
@@ -416,7 +416,7 @@
 				26904E121C77598B0094DA08 /* MQField.swift in Sources */,
 				26904E231C77598B0094DA08 /* MQOperation.swift in Sources */,
 				26904E0C1C77598B0094DA08 /* MDConfirmDialog.swift in Sources */,
-				26904E0E1C77598B0094DA08 /* MQError.swift in Sources */,
+				26904E0E1C77598B0094DA08 /* MDError.swift in Sources */,
 				26904E271C77598B0094DA08 /* MQDefaultStartingView.swift in Sources */,
 				26904E2E1C77598B0094DA08 /* MQDispatcher.swift in Sources */,
 				26904E081C77598B0094DA08 /* UIView.swift in Sources */,
