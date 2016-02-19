@@ -25,7 +25,7 @@ public enum MDFileManagerError: MDErrorType {
     
 }
 
-public class MQFileManager {
+public class MDFileManager {
     
     /**
     Returns the URL of a file in /Document.

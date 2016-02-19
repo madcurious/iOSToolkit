@@ -15,8 +15,15 @@ Next steps:
 
 * Open your Xcode project.
 * Expand the folder where you cloned Mold.
-* In the top-level `Mold` folder, keep only the `.xcodeproj` and remove references to the following files, **but DO NOT move them to the Trash:**
-* .gitignore
-* Mold (folder)
+* In the `Mold` group, keep only `Mold.xcodeproj` and remove references to the following files, **but DO NOT move them to the Trash:**
+    * .gitignore
+    * Mold/
+    * Mold/README.md
 * In the project target's *Build Phases > Target Dependencies*, click on the plus sign and add `Mold.framework`.
 * In the project target's *General* tab, scroll to `Embedded Binaries`, click on the plus sign, and add `Mold.framework`.
+
+## Usage
+
+```
+import Mold
+```

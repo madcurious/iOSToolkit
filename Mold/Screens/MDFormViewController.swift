@@ -1,5 +1,5 @@
 //
-//  MQFormViewController.swift
+//  MDFormViewController.swift
 //  Mold
 //
 //  Created by Matt Quiros on 01/02/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MQFormViewController: UIViewController {
+public class MDFormViewController: UIViewController {
     
     public var scrollView: UIScrollView {
         fatalError("Unimplemented \(__FUNCTION__): You must provide the scroll view for the form.")

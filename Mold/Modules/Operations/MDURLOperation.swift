@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MQURLOperation: MDOperation {
+public class MDURLOperation: MDOperation {
     
     public override func main() {
         self.runStartBlock()
