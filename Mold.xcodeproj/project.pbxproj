@@ -29,7 +29,7 @@
 		26904E111C77598B0094DA08 /* MDDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCD1C77598B0094DA08 /* MDDataModel.swift */; };
 		26904E121C77598B0094DA08 /* MDField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCE1C77598B0094DA08 /* MDField.swift */; };
 		26904E131C77598B0094DA08 /* MDFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCF1C77598B0094DA08 /* MDFieldCell.swift */; };
-		26904E141C77598B0094DA08 /* MQFieldCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD01C77598B0094DA08 /* MQFieldCollection.swift */; };
+		26904E141C77598B0094DA08 /* MDFieldCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD01C77598B0094DA08 /* MDFieldCollection.swift */; };
 		26904E151C77598B0094DA08 /* MQFieldPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD11C77598B0094DA08 /* MQFieldPickerView.swift */; };
 		26904E161C77598B0094DA08 /* MQFieldSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD21C77598B0094DA08 /* MQFieldSelectionCell.swift */; };
 		26904E171C77598B0094DA08 /* MQFieldTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD31C77598B0094DA08 /* MQFieldTextField.swift */; };
@@ -88,7 +88,7 @@
 		26904DCD1C77598B0094DA08 /* MDDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDDataModel.swift; sourceTree = "<group>"; };
 		26904DCE1C77598B0094DA08 /* MDField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDField.swift; sourceTree = "<group>"; };
 		26904DCF1C77598B0094DA08 /* MDFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldCell.swift; sourceTree = "<group>"; };
-		26904DD01C77598B0094DA08 /* MQFieldCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFieldCollection.swift; sourceTree = "<group>"; };
+		26904DD01C77598B0094DA08 /* MDFieldCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldCollection.swift; sourceTree = "<group>"; };
 		26904DD11C77598B0094DA08 /* MQFieldPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFieldPickerView.swift; sourceTree = "<group>"; };
 		26904DD21C77598B0094DA08 /* MQFieldSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFieldSelectionCell.swift; sourceTree = "<group>"; };
 		26904DD31C77598B0094DA08 /* MQFieldTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFieldTextField.swift; sourceTree = "<group>"; };
@@ -238,7 +238,7 @@
 				26904DCD1C77598B0094DA08 /* MDDataModel.swift */,
 				26904DCE1C77598B0094DA08 /* MDField.swift */,
 				26904DCF1C77598B0094DA08 /* MDFieldCell.swift */,
-				26904DD01C77598B0094DA08 /* MQFieldCollection.swift */,
+				26904DD01C77598B0094DA08 /* MDFieldCollection.swift */,
 				26904DD11C77598B0094DA08 /* MQFieldPickerView.swift */,
 				26904DD21C77598B0094DA08 /* MQFieldSelectionCell.swift */,
 				26904DD31C77598B0094DA08 /* MQFieldTextField.swift */,
@@ -428,7 +428,7 @@
 				26904E0D1C77598B0094DA08 /* MDErrorDialog.swift in Sources */,
 				26904E011C77598B0094DA08 /* NSCharacterSet.swift in Sources */,
 				26904E261C77598B0094DA08 /* MQDefaultRetryView.swift in Sources */,
-				26904E141C77598B0094DA08 /* MQFieldCollection.swift in Sources */,
+				26904E141C77598B0094DA08 /* MDFieldCollection.swift in Sources */,
 				26904E111C77598B0094DA08 /* MDDataModel.swift in Sources */,
 				26904E191C77598B0094DA08 /* MQFieldTextFieldDelegate.swift in Sources */,
 				26904E151C77598B0094DA08 /* MQFieldPickerView.swift in Sources */,

@@ -19,6 +19,6 @@ public protocol MDDataModel {
     /**
     Updates the data model based on the values of a given collection of form fields.
     */
-    mutating func updateWithFieldCollection(fields: MQFieldCollection<Self>)
+    mutating func updateWithFieldCollection(fields: MDFieldCollection<Self>)
     
 }

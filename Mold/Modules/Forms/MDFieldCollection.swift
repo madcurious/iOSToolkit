@@ -1,5 +1,5 @@
 //
-//  MQFieldCollection.swift
+//  MDFieldCollection.swift
 //  Mold
 //
 //  Created by Matt Quiros on 7/9/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MQFieldCollection<T: MDDataModel> {
+public class MDFieldCollection<T: MDDataModel> {
     
     public var fields: [MDField]
     public var count: Int {
