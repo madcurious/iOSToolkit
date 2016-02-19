@@ -21,47 +21,45 @@
 		26904E081C77598B0094DA08 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DBF1C77598B0094DA08 /* UIView.swift */; };
 		26904E091C77598B0094DA08 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC01C77598B0094DA08 /* UIViewController.swift */; };
 		26904E0A1C77598B0094DA08 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC21C77598B0094DA08 /* Functions.swift */; };
-		26904E0B1C77598B0094DA08 /* MQAlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC51C77598B0094DA08 /* MQAlertDialog.swift */; };
-		26904E0C1C77598B0094DA08 /* MQConfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC61C77598B0094DA08 /* MQConfirmDialog.swift */; };
-		26904E0D1C77598B0094DA08 /* MQErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC71C77598B0094DA08 /* MQErrorDialog.swift */; };
-		26904E0E1C77598B0094DA08 /* MQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC91C77598B0094DA08 /* MQError.swift */; };
-		26904E0F1C77598B0094DA08 /* MQErrorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCA1C77598B0094DA08 /* MQErrorBuilder.swift */; };
-		26904E101C77598B0094DA08 /* MQErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCB1C77598B0094DA08 /* MQErrorType.swift */; };
-		26904E111C77598B0094DA08 /* MQDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCD1C77598B0094DA08 /* MQDataModel.swift */; };
-		26904E121C77598B0094DA08 /* MQField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCE1C77598B0094DA08 /* MQField.swift */; };
-		26904E131C77598B0094DA08 /* MQFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCF1C77598B0094DA08 /* MQFieldCell.swift */; };
-		26904E141C77598B0094DA08 /* MQFieldCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD01C77598B0094DA08 /* MQFieldCollection.swift */; };
-		26904E151C77598B0094DA08 /* MQFieldPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD11C77598B0094DA08 /* MQFieldPickerView.swift */; };
-		26904E161C77598B0094DA08 /* MQFieldSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD21C77598B0094DA08 /* MQFieldSelectionCell.swift */; };
-		26904E171C77598B0094DA08 /* MQFieldTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD31C77598B0094DA08 /* MQFieldTextField.swift */; };
-		26904E181C77598B0094DA08 /* MQFieldTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD41C77598B0094DA08 /* MQFieldTextFieldCell.swift */; };
-		26904E191C77598B0094DA08 /* MQFieldTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD51C77598B0094DA08 /* MQFieldTextFieldDelegate.swift */; };
-		26904E1A1C77598B0094DA08 /* MQFieldTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD61C77598B0094DA08 /* MQFieldTextView.swift */; };
-		26904E1B1C77598B0094DA08 /* MQArchivableValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD81C77598B0094DA08 /* MQArchivableValueType.swift */; };
-		26904E1C1C77598B0094DA08 /* MQFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD91C77598B0094DA08 /* MQFileManager.swift */; };
-		26904E211C77598B0094DA08 /* MQBlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DDF1C77598B0094DA08 /* MQBlockOperation.swift */; };
-		26904E221C77598B0094DA08 /* MQChainedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE01C77598B0094DA08 /* MQChainedOperation.swift */; };
-		26904E231C77598B0094DA08 /* MQOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE11C77598B0094DA08 /* MQOperation.swift */; };
-		26904E241C77598B0094DA08 /* MQURLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE21C77598B0094DA08 /* MQURLOperation.swift */; };
-		26904E251C77598B0094DA08 /* MQDefaultNoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE41C77598B0094DA08 /* MQDefaultNoResultsView.swift */; };
-		26904E261C77598B0094DA08 /* MQDefaultRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE51C77598B0094DA08 /* MQDefaultRetryView.swift */; };
-		26904E271C77598B0094DA08 /* MQDefaultStartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE61C77598B0094DA08 /* MQDefaultStartingView.swift */; };
-		26904E291C77598B0094DA08 /* MQLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE81C77598B0094DA08 /* MQLoadingView.swift */; };
-		26904E2A1C77598B0094DA08 /* MQNoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE91C77598B0094DA08 /* MQNoResultsView.swift */; };
-		26904E2B1C77598B0094DA08 /* MQRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEA1C77598B0094DA08 /* MQRetryView.swift */; };
-		26904E2C1C77598B0094DA08 /* MQStartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEB1C77598B0094DA08 /* MQStartingView.swift */; };
-		26904E2D1C77598B0094DA08 /* MQStatefulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEC1C77598B0094DA08 /* MQStatefulViewController.swift */; };
-		26904E2E1C77598B0094DA08 /* MQDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEE1C77598B0094DA08 /* MQDispatcher.swift */; };
-		26904E2F1C77598B0094DA08 /* MQAspectFitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF01C77598B0094DA08 /* MQAspectFitLabel.swift */; };
-		26904E301C77598B0094DA08 /* MQButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF11C77598B0094DA08 /* MQButton.swift */; };
-		26904E311C77598B0094DA08 /* MQImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF21C77598B0094DA08 /* MQImageButton.swift */; };
-		26904E321C77598B0094DA08 /* MQLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF31C77598B0094DA08 /* MQLabelButton.swift */; };
-		26904E331C77598B0094DA08 /* MQLoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF41C77598B0094DA08 /* MQLoadingOverlay.swift */; };
-		26904E341C77598B0094DA08 /* MQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF51C77598B0094DA08 /* MQTableViewCell.swift */; };
-		26904E351C77598B0094DA08 /* MQNSNotificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF71C77598B0094DA08 /* MQNSNotificationObject.swift */; };
-		26904E371C77598B0094DA08 /* MQFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFB1C77598B0094DA08 /* MQFormViewController.swift */; };
-		26904E381C77598B0094DA08 /* MQPopupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFC1C77598B0094DA08 /* MQPopupPickerViewController.swift */; };
-		26904E391C77598B0094DA08 /* MQStartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFD1C77598B0094DA08 /* MQStartupViewController.swift */; };
+		26904E0B1C77598B0094DA08 /* MDAlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC51C77598B0094DA08 /* MDAlertDialog.swift */; };
+		26904E0C1C77598B0094DA08 /* MDConfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC61C77598B0094DA08 /* MDConfirmDialog.swift */; };
+		26904E0D1C77598B0094DA08 /* MDErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC71C77598B0094DA08 /* MDErrorDialog.swift */; };
+		26904E0E1C77598B0094DA08 /* MDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DC91C77598B0094DA08 /* MDError.swift */; };
+		26904E101C77598B0094DA08 /* MDErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCB1C77598B0094DA08 /* MDErrorType.swift */; };
+		26904E111C77598B0094DA08 /* MDDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCD1C77598B0094DA08 /* MDDataModel.swift */; };
+		26904E121C77598B0094DA08 /* MDField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCE1C77598B0094DA08 /* MDField.swift */; };
+		26904E131C77598B0094DA08 /* MDFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DCF1C77598B0094DA08 /* MDFieldCell.swift */; };
+		26904E141C77598B0094DA08 /* MDFieldCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD01C77598B0094DA08 /* MDFieldCollection.swift */; };
+		26904E151C77598B0094DA08 /* MDFieldPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD11C77598B0094DA08 /* MDFieldPickerView.swift */; };
+		26904E161C77598B0094DA08 /* MDFieldSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD21C77598B0094DA08 /* MDFieldSelectionCell.swift */; };
+		26904E171C77598B0094DA08 /* MDFieldTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD31C77598B0094DA08 /* MDFieldTextField.swift */; };
+		26904E181C77598B0094DA08 /* MDFieldTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD41C77598B0094DA08 /* MDFieldTextFieldCell.swift */; };
+		26904E191C77598B0094DA08 /* MDFieldTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD51C77598B0094DA08 /* MDFieldTextFieldDelegate.swift */; };
+		26904E1A1C77598B0094DA08 /* MDFieldTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD61C77598B0094DA08 /* MDFieldTextView.swift */; };
+		26904E211C77598B0094DA08 /* MDBlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DDF1C77598B0094DA08 /* MDBlockOperation.swift */; };
+		26904E221C77598B0094DA08 /* MDChainedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE01C77598B0094DA08 /* MDChainedOperation.swift */; };
+		26904E231C77598B0094DA08 /* MDOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE11C77598B0094DA08 /* MDOperation.swift */; };
+		26904E241C77598B0094DA08 /* MDURLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE21C77598B0094DA08 /* MDURLOperation.swift */; };
+		26904E251C77598B0094DA08 /* MDDefaultNoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE41C77598B0094DA08 /* MDDefaultNoResultsView.swift */; };
+		26904E261C77598B0094DA08 /* MDDefaultRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE51C77598B0094DA08 /* MDDefaultRetryView.swift */; };
+		26904E271C77598B0094DA08 /* MDDefaultStartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE61C77598B0094DA08 /* MDDefaultStartingView.swift */; };
+		26904E291C77598B0094DA08 /* MDLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE81C77598B0094DA08 /* MDLoadingView.swift */; };
+		26904E2A1C77598B0094DA08 /* MDNoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE91C77598B0094DA08 /* MDNoResultsView.swift */; };
+		26904E2B1C77598B0094DA08 /* MDRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEA1C77598B0094DA08 /* MDRetryView.swift */; };
+		26904E2C1C77598B0094DA08 /* MDStartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEB1C77598B0094DA08 /* MDStartingView.swift */; };
+		26904E2D1C77598B0094DA08 /* MDStatefulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEC1C77598B0094DA08 /* MDStatefulViewController.swift */; };
+		26904E2E1C77598B0094DA08 /* MDDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEE1C77598B0094DA08 /* MDDispatcher.swift */; };
+		26904E2F1C77598B0094DA08 /* MDAspectFitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF01C77598B0094DA08 /* MDAspectFitLabel.swift */; };
+		26904E301C77598B0094DA08 /* MDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF11C77598B0094DA08 /* MDButton.swift */; };
+		26904E311C77598B0094DA08 /* MDImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF21C77598B0094DA08 /* MDImageButton.swift */; };
+		26904E321C77598B0094DA08 /* MDLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF31C77598B0094DA08 /* MDLabelButton.swift */; };
+		26904E331C77598B0094DA08 /* MDLoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF41C77598B0094DA08 /* MDLoadingOverlay.swift */; };
+		26904E341C77598B0094DA08 /* MDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF51C77598B0094DA08 /* MDTableViewCell.swift */; };
+		26904E351C77598B0094DA08 /* MDNSNotificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF71C77598B0094DA08 /* MDNSNotificationObject.swift */; };
+		26904E371C77598B0094DA08 /* MDFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFB1C77598B0094DA08 /* MDFormViewController.swift */; };
+		26904E381C77598B0094DA08 /* MDPopupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFC1C77598B0094DA08 /* MDPopupPickerViewController.swift */; };
+		26904E3D1C7763150094DA08 /* MDArchivableValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3B1C7763150094DA08 /* MDArchivableValueType.swift */; };
+		26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3C1C7763150094DA08 /* MDFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,47 +79,45 @@
 		26904DBF1C77598B0094DA08 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		26904DC01C77598B0094DA08 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		26904DC21C77598B0094DA08 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
-		26904DC51C77598B0094DA08 /* MQAlertDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQAlertDialog.swift; sourceTree = "<group>"; };
-		26904DC61C77598B0094DA08 /* MQConfirmDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQConfirmDialog.swift; sourceTree = "<group>"; };
-		26904DC71C77598B0094DA08 /* MQErrorDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQErrorDialog.swift; sourceTree = "<group>"; };
-		26904DC91C77598B0094DA08 /* MQError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQError.swift; sourceTree = "<group>"; };
-		26904DCA1C77598B0094DA08 /* MQErrorBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQErrorBuilder.swift; sourceTree = "<group>"; };
-		26904DCB1C77598B0094DA08 /* MQErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQErrorType.swift; sourceTree = "<group>"; };
-		26904DCD1C77598B0094DA08 /* MQDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQDataModel.swift; sourceTree = "<group>"; };
-		26904DCE1C77598B0094DA08 /* MQField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQField.swift; sourceTree = "<group>"; };
-		26904DCF1C77598B0094DA08 /* MQFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFieldCell.swift; sourceTree = "<group>"; };
-		26904DD01C77598B0094DA08 /* MQFieldCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFieldCollection.swift; sourceTree = "<group>"; };
-		26904DD11C77598B0094DA08 /* MQFieldPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFieldPickerView.swift; sourceTree = "<group>"; };
-		26904DD21C77598B0094DA08 /* MQFieldSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFieldSelectionCell.swift; sourceTree = "<group>"; };
-		26904DD31C77598B0094DA08 /* MQFieldTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFieldTextField.swift; sourceTree = "<group>"; };
-		26904DD41C77598B0094DA08 /* MQFieldTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFieldTextFieldCell.swift; sourceTree = "<group>"; };
-		26904DD51C77598B0094DA08 /* MQFieldTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFieldTextFieldDelegate.swift; sourceTree = "<group>"; };
-		26904DD61C77598B0094DA08 /* MQFieldTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFieldTextView.swift; sourceTree = "<group>"; };
-		26904DD81C77598B0094DA08 /* MQArchivableValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQArchivableValueType.swift; sourceTree = "<group>"; };
-		26904DD91C77598B0094DA08 /* MQFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFileManager.swift; sourceTree = "<group>"; };
-		26904DDF1C77598B0094DA08 /* MQBlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQBlockOperation.swift; sourceTree = "<group>"; };
-		26904DE01C77598B0094DA08 /* MQChainedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQChainedOperation.swift; sourceTree = "<group>"; };
-		26904DE11C77598B0094DA08 /* MQOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQOperation.swift; sourceTree = "<group>"; };
-		26904DE21C77598B0094DA08 /* MQURLOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQURLOperation.swift; sourceTree = "<group>"; };
-		26904DE41C77598B0094DA08 /* MQDefaultNoResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQDefaultNoResultsView.swift; sourceTree = "<group>"; };
-		26904DE51C77598B0094DA08 /* MQDefaultRetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQDefaultRetryView.swift; sourceTree = "<group>"; };
-		26904DE61C77598B0094DA08 /* MQDefaultStartingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQDefaultStartingView.swift; sourceTree = "<group>"; };
-		26904DE81C77598B0094DA08 /* MQLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLoadingView.swift; sourceTree = "<group>"; };
-		26904DE91C77598B0094DA08 /* MQNoResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQNoResultsView.swift; sourceTree = "<group>"; };
-		26904DEA1C77598B0094DA08 /* MQRetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQRetryView.swift; sourceTree = "<group>"; };
-		26904DEB1C77598B0094DA08 /* MQStartingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQStartingView.swift; sourceTree = "<group>"; };
-		26904DEC1C77598B0094DA08 /* MQStatefulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQStatefulViewController.swift; sourceTree = "<group>"; };
-		26904DEE1C77598B0094DA08 /* MQDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQDispatcher.swift; sourceTree = "<group>"; };
-		26904DF01C77598B0094DA08 /* MQAspectFitLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQAspectFitLabel.swift; sourceTree = "<group>"; };
-		26904DF11C77598B0094DA08 /* MQButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQButton.swift; sourceTree = "<group>"; };
-		26904DF21C77598B0094DA08 /* MQImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQImageButton.swift; sourceTree = "<group>"; };
-		26904DF31C77598B0094DA08 /* MQLabelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLabelButton.swift; sourceTree = "<group>"; };
-		26904DF41C77598B0094DA08 /* MQLoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQLoadingOverlay.swift; sourceTree = "<group>"; };
-		26904DF51C77598B0094DA08 /* MQTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTableViewCell.swift; sourceTree = "<group>"; };
-		26904DF71C77598B0094DA08 /* MQNSNotificationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQNSNotificationObject.swift; sourceTree = "<group>"; };
-		26904DFB1C77598B0094DA08 /* MQFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFormViewController.swift; sourceTree = "<group>"; };
-		26904DFC1C77598B0094DA08 /* MQPopupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQPopupPickerViewController.swift; sourceTree = "<group>"; };
-		26904DFD1C77598B0094DA08 /* MQStartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQStartupViewController.swift; sourceTree = "<group>"; };
+		26904DC51C77598B0094DA08 /* MDAlertDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAlertDialog.swift; sourceTree = "<group>"; };
+		26904DC61C77598B0094DA08 /* MDConfirmDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDConfirmDialog.swift; sourceTree = "<group>"; };
+		26904DC71C77598B0094DA08 /* MDErrorDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorDialog.swift; sourceTree = "<group>"; };
+		26904DC91C77598B0094DA08 /* MDError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDError.swift; sourceTree = "<group>"; };
+		26904DCB1C77598B0094DA08 /* MDErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorType.swift; sourceTree = "<group>"; };
+		26904DCD1C77598B0094DA08 /* MDDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDDataModel.swift; sourceTree = "<group>"; };
+		26904DCE1C77598B0094DA08 /* MDField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDField.swift; sourceTree = "<group>"; };
+		26904DCF1C77598B0094DA08 /* MDFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldCell.swift; sourceTree = "<group>"; };
+		26904DD01C77598B0094DA08 /* MDFieldCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldCollection.swift; sourceTree = "<group>"; };
+		26904DD11C77598B0094DA08 /* MDFieldPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldPickerView.swift; sourceTree = "<group>"; };
+		26904DD21C77598B0094DA08 /* MDFieldSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldSelectionCell.swift; sourceTree = "<group>"; };
+		26904DD31C77598B0094DA08 /* MDFieldTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldTextField.swift; sourceTree = "<group>"; };
+		26904DD41C77598B0094DA08 /* MDFieldTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldTextFieldCell.swift; sourceTree = "<group>"; };
+		26904DD51C77598B0094DA08 /* MDFieldTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldTextFieldDelegate.swift; sourceTree = "<group>"; };
+		26904DD61C77598B0094DA08 /* MDFieldTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldTextView.swift; sourceTree = "<group>"; };
+		26904DDF1C77598B0094DA08 /* MDBlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBlockOperation.swift; sourceTree = "<group>"; };
+		26904DE01C77598B0094DA08 /* MDChainedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDChainedOperation.swift; sourceTree = "<group>"; };
+		26904DE11C77598B0094DA08 /* MDOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperation.swift; sourceTree = "<group>"; };
+		26904DE21C77598B0094DA08 /* MDURLOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDURLOperation.swift; sourceTree = "<group>"; };
+		26904DE41C77598B0094DA08 /* MDDefaultNoResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDDefaultNoResultsView.swift; sourceTree = "<group>"; };
+		26904DE51C77598B0094DA08 /* MDDefaultRetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDDefaultRetryView.swift; sourceTree = "<group>"; };
+		26904DE61C77598B0094DA08 /* MDDefaultStartingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDDefaultStartingView.swift; sourceTree = "<group>"; };
+		26904DE81C77598B0094DA08 /* MDLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDLoadingView.swift; sourceTree = "<group>"; };
+		26904DE91C77598B0094DA08 /* MDNoResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDNoResultsView.swift; sourceTree = "<group>"; };
+		26904DEA1C77598B0094DA08 /* MDRetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDRetryView.swift; sourceTree = "<group>"; };
+		26904DEB1C77598B0094DA08 /* MDStartingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDStartingView.swift; sourceTree = "<group>"; };
+		26904DEC1C77598B0094DA08 /* MDStatefulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDStatefulViewController.swift; sourceTree = "<group>"; };
+		26904DEE1C77598B0094DA08 /* MDDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDDispatcher.swift; sourceTree = "<group>"; };
+		26904DF01C77598B0094DA08 /* MDAspectFitLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAspectFitLabel.swift; sourceTree = "<group>"; };
+		26904DF11C77598B0094DA08 /* MDButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDButton.swift; sourceTree = "<group>"; };
+		26904DF21C77598B0094DA08 /* MDImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDImageButton.swift; sourceTree = "<group>"; };
+		26904DF31C77598B0094DA08 /* MDLabelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDLabelButton.swift; sourceTree = "<group>"; };
+		26904DF41C77598B0094DA08 /* MDLoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDLoadingOverlay.swift; sourceTree = "<group>"; };
+		26904DF51C77598B0094DA08 /* MDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDTableViewCell.swift; sourceTree = "<group>"; };
+		26904DF71C77598B0094DA08 /* MDNSNotificationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDNSNotificationObject.swift; sourceTree = "<group>"; };
+		26904DFB1C77598B0094DA08 /* MDFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFormViewController.swift; sourceTree = "<group>"; };
+		26904DFC1C77598B0094DA08 /* MDPopupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPopupPickerViewController.swift; sourceTree = "<group>"; };
+		26904E3B1C7763150094DA08 /* MDArchivableValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDArchivableValueType.swift; sourceTree = "<group>"; };
+		26904E3C1C7763150094DA08 /* MDFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,7 +202,7 @@
 				26904DC41C77598B0094DA08 /* Dialogs */,
 				26904DC81C77598B0094DA08 /* Error Handling */,
 				26904DCC1C77598B0094DA08 /* Forms */,
-				26904DD71C77598B0094DA08 /* Local Store */,
+				26904E3A1C7763150094DA08 /* File Storage */,
 				26904DDA1C77598B0094DA08 /* Operations */,
 				26904DE31C77598B0094DA08 /* Stateful Screens */,
 				26904DED1C77598B0094DA08 /* Threads */,
@@ -218,9 +214,9 @@
 		26904DC41C77598B0094DA08 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
-				26904DC51C77598B0094DA08 /* MQAlertDialog.swift */,
-				26904DC61C77598B0094DA08 /* MQConfirmDialog.swift */,
-				26904DC71C77598B0094DA08 /* MQErrorDialog.swift */,
+				26904DC51C77598B0094DA08 /* MDAlertDialog.swift */,
+				26904DC61C77598B0094DA08 /* MDConfirmDialog.swift */,
+				26904DC71C77598B0094DA08 /* MDErrorDialog.swift */,
 			);
 			path = Dialogs;
 			sourceTree = "<group>";
@@ -228,9 +224,8 @@
 		26904DC81C77598B0094DA08 /* Error Handling */ = {
 			isa = PBXGroup;
 			children = (
-				26904DC91C77598B0094DA08 /* MQError.swift */,
-				26904DCA1C77598B0094DA08 /* MQErrorBuilder.swift */,
-				26904DCB1C77598B0094DA08 /* MQErrorType.swift */,
+				26904DC91C77598B0094DA08 /* MDError.swift */,
+				26904DCB1C77598B0094DA08 /* MDErrorType.swift */,
 			);
 			path = "Error Handling";
 			sourceTree = "<group>";
@@ -238,36 +233,27 @@
 		26904DCC1C77598B0094DA08 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
-				26904DCD1C77598B0094DA08 /* MQDataModel.swift */,
-				26904DCE1C77598B0094DA08 /* MQField.swift */,
-				26904DCF1C77598B0094DA08 /* MQFieldCell.swift */,
-				26904DD01C77598B0094DA08 /* MQFieldCollection.swift */,
-				26904DD11C77598B0094DA08 /* MQFieldPickerView.swift */,
-				26904DD21C77598B0094DA08 /* MQFieldSelectionCell.swift */,
-				26904DD31C77598B0094DA08 /* MQFieldTextField.swift */,
-				26904DD41C77598B0094DA08 /* MQFieldTextFieldCell.swift */,
-				26904DD51C77598B0094DA08 /* MQFieldTextFieldDelegate.swift */,
-				26904DD61C77598B0094DA08 /* MQFieldTextView.swift */,
+				26904DCD1C77598B0094DA08 /* MDDataModel.swift */,
+				26904DCE1C77598B0094DA08 /* MDField.swift */,
+				26904DCF1C77598B0094DA08 /* MDFieldCell.swift */,
+				26904DD01C77598B0094DA08 /* MDFieldCollection.swift */,
+				26904DD11C77598B0094DA08 /* MDFieldPickerView.swift */,
+				26904DD21C77598B0094DA08 /* MDFieldSelectionCell.swift */,
+				26904DD31C77598B0094DA08 /* MDFieldTextField.swift */,
+				26904DD41C77598B0094DA08 /* MDFieldTextFieldCell.swift */,
+				26904DD51C77598B0094DA08 /* MDFieldTextFieldDelegate.swift */,
+				26904DD61C77598B0094DA08 /* MDFieldTextView.swift */,
 			);
 			path = Forms;
-			sourceTree = "<group>";
-		};
-		26904DD71C77598B0094DA08 /* Local Store */ = {
-			isa = PBXGroup;
-			children = (
-				26904DD81C77598B0094DA08 /* MQArchivableValueType.swift */,
-				26904DD91C77598B0094DA08 /* MQFileManager.swift */,
-			);
-			path = "Local Store";
 			sourceTree = "<group>";
 		};
 		26904DDA1C77598B0094DA08 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				26904DDF1C77598B0094DA08 /* MQBlockOperation.swift */,
-				26904DE01C77598B0094DA08 /* MQChainedOperation.swift */,
-				26904DE11C77598B0094DA08 /* MQOperation.swift */,
-				26904DE21C77598B0094DA08 /* MQURLOperation.swift */,
+				26904DDF1C77598B0094DA08 /* MDBlockOperation.swift */,
+				26904DE01C77598B0094DA08 /* MDChainedOperation.swift */,
+				26904DE11C77598B0094DA08 /* MDOperation.swift */,
+				26904DE21C77598B0094DA08 /* MDURLOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -275,14 +261,14 @@
 		26904DE31C77598B0094DA08 /* Stateful Screens */ = {
 			isa = PBXGroup;
 			children = (
-				26904DE41C77598B0094DA08 /* MQDefaultNoResultsView.swift */,
-				26904DE51C77598B0094DA08 /* MQDefaultRetryView.swift */,
-				26904DE61C77598B0094DA08 /* MQDefaultStartingView.swift */,
-				26904DE81C77598B0094DA08 /* MQLoadingView.swift */,
-				26904DE91C77598B0094DA08 /* MQNoResultsView.swift */,
-				26904DEA1C77598B0094DA08 /* MQRetryView.swift */,
-				26904DEB1C77598B0094DA08 /* MQStartingView.swift */,
-				26904DEC1C77598B0094DA08 /* MQStatefulViewController.swift */,
+				26904DE41C77598B0094DA08 /* MDDefaultNoResultsView.swift */,
+				26904DE51C77598B0094DA08 /* MDDefaultRetryView.swift */,
+				26904DE61C77598B0094DA08 /* MDDefaultStartingView.swift */,
+				26904DE81C77598B0094DA08 /* MDLoadingView.swift */,
+				26904DE91C77598B0094DA08 /* MDNoResultsView.swift */,
+				26904DEA1C77598B0094DA08 /* MDRetryView.swift */,
+				26904DEB1C77598B0094DA08 /* MDStartingView.swift */,
+				26904DEC1C77598B0094DA08 /* MDStatefulViewController.swift */,
 			);
 			path = "Stateful Screens";
 			sourceTree = "<group>";
@@ -290,7 +276,7 @@
 		26904DED1C77598B0094DA08 /* Threads */ = {
 			isa = PBXGroup;
 			children = (
-				26904DEE1C77598B0094DA08 /* MQDispatcher.swift */,
+				26904DEE1C77598B0094DA08 /* MDDispatcher.swift */,
 			);
 			path = Threads;
 			sourceTree = "<group>";
@@ -298,12 +284,12 @@
 		26904DEF1C77598B0094DA08 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				26904DF01C77598B0094DA08 /* MQAspectFitLabel.swift */,
-				26904DF11C77598B0094DA08 /* MQButton.swift */,
-				26904DF21C77598B0094DA08 /* MQImageButton.swift */,
-				26904DF31C77598B0094DA08 /* MQLabelButton.swift */,
-				26904DF41C77598B0094DA08 /* MQLoadingOverlay.swift */,
-				26904DF51C77598B0094DA08 /* MQTableViewCell.swift */,
+				26904DF01C77598B0094DA08 /* MDAspectFitLabel.swift */,
+				26904DF11C77598B0094DA08 /* MDButton.swift */,
+				26904DF21C77598B0094DA08 /* MDImageButton.swift */,
+				26904DF31C77598B0094DA08 /* MDLabelButton.swift */,
+				26904DF41C77598B0094DA08 /* MDLoadingOverlay.swift */,
+				26904DF51C77598B0094DA08 /* MDTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,7 +297,7 @@
 		26904DF61C77598B0094DA08 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				26904DF71C77598B0094DA08 /* MQNSNotificationObject.swift */,
+				26904DF71C77598B0094DA08 /* MDNSNotificationObject.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -319,11 +305,19 @@
 		26904DFA1C77598B0094DA08 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				26904DFB1C77598B0094DA08 /* MQFormViewController.swift */,
-				26904DFC1C77598B0094DA08 /* MQPopupPickerViewController.swift */,
-				26904DFD1C77598B0094DA08 /* MQStartupViewController.swift */,
+				26904DFB1C77598B0094DA08 /* MDFormViewController.swift */,
+				26904DFC1C77598B0094DA08 /* MDPopupPickerViewController.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		26904E3A1C7763150094DA08 /* File Storage */ = {
+			isa = PBXGroup;
+			children = (
+				26904E3B1C7763150094DA08 /* MDArchivableValueType.swift */,
+				26904E3C1C7763150094DA08 /* MDFileManager.swift */,
+			);
+			path = "File Storage";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,58 +398,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26904E221C77598B0094DA08 /* MQChainedOperation.swift in Sources */,
-				26904E331C77598B0094DA08 /* MQLoadingOverlay.swift in Sources */,
-				26904E0B1C77598B0094DA08 /* MQAlertDialog.swift in Sources */,
+				26904E221C77598B0094DA08 /* MDChainedOperation.swift in Sources */,
+				26904E331C77598B0094DA08 /* MDLoadingOverlay.swift in Sources */,
+				26904E0B1C77598B0094DA08 /* MDAlertDialog.swift in Sources */,
 				26904E001C77598B0094DA08 /* MKMapView.swift in Sources */,
-				26904E311C77598B0094DA08 /* MQImageButton.swift in Sources */,
+				26904E311C77598B0094DA08 /* MDImageButton.swift in Sources */,
 				26904E031C77598B0094DA08 /* NSLayoutConstraint.swift in Sources */,
 				26904E091C77598B0094DA08 /* UIViewController.swift in Sources */,
-				26904E291C77598B0094DA08 /* MQLoadingView.swift in Sources */,
-				26904E131C77598B0094DA08 /* MQFieldCell.swift in Sources */,
-				26904E121C77598B0094DA08 /* MQField.swift in Sources */,
-				26904E231C77598B0094DA08 /* MQOperation.swift in Sources */,
-				26904E0C1C77598B0094DA08 /* MQConfirmDialog.swift in Sources */,
-				26904E0E1C77598B0094DA08 /* MQError.swift in Sources */,
-				26904E271C77598B0094DA08 /* MQDefaultStartingView.swift in Sources */,
-				26904E2E1C77598B0094DA08 /* MQDispatcher.swift in Sources */,
+				26904E291C77598B0094DA08 /* MDLoadingView.swift in Sources */,
+				26904E131C77598B0094DA08 /* MDFieldCell.swift in Sources */,
+				26904E121C77598B0094DA08 /* MDField.swift in Sources */,
+				26904E231C77598B0094DA08 /* MDOperation.swift in Sources */,
+				26904E0C1C77598B0094DA08 /* MDConfirmDialog.swift in Sources */,
+				26904E0E1C77598B0094DA08 /* MDError.swift in Sources */,
+				26904E271C77598B0094DA08 /* MDDefaultStartingView.swift in Sources */,
+				26904E2E1C77598B0094DA08 /* MDDispatcher.swift in Sources */,
 				26904E081C77598B0094DA08 /* UIView.swift in Sources */,
-				26904E241C77598B0094DA08 /* MQURLOperation.swift in Sources */,
-				26904E2C1C77598B0094DA08 /* MQStartingView.swift in Sources */,
-				26904E381C77598B0094DA08 /* MQPopupPickerViewController.swift in Sources */,
-				26904E371C77598B0094DA08 /* MQFormViewController.swift in Sources */,
-				26904E391C77598B0094DA08 /* MQStartupViewController.swift in Sources */,
-				26904E251C77598B0094DA08 /* MQDefaultNoResultsView.swift in Sources */,
-				26904E161C77598B0094DA08 /* MQFieldSelectionCell.swift in Sources */,
-				26904E171C77598B0094DA08 /* MQFieldTextField.swift in Sources */,
-				26904E0D1C77598B0094DA08 /* MQErrorDialog.swift in Sources */,
+				26904E241C77598B0094DA08 /* MDURLOperation.swift in Sources */,
+				26904E2C1C77598B0094DA08 /* MDStartingView.swift in Sources */,
+				26904E381C77598B0094DA08 /* MDPopupPickerViewController.swift in Sources */,
+				26904E371C77598B0094DA08 /* MDFormViewController.swift in Sources */,
+				26904E251C77598B0094DA08 /* MDDefaultNoResultsView.swift in Sources */,
+				26904E161C77598B0094DA08 /* MDFieldSelectionCell.swift in Sources */,
+				26904E171C77598B0094DA08 /* MDFieldTextField.swift in Sources */,
+				26904E0D1C77598B0094DA08 /* MDErrorDialog.swift in Sources */,
 				26904E011C77598B0094DA08 /* NSCharacterSet.swift in Sources */,
-				26904E261C77598B0094DA08 /* MQDefaultRetryView.swift in Sources */,
-				26904E141C77598B0094DA08 /* MQFieldCollection.swift in Sources */,
-				26904E111C77598B0094DA08 /* MQDataModel.swift in Sources */,
-				26904E191C77598B0094DA08 /* MQFieldTextFieldDelegate.swift in Sources */,
-				26904E151C77598B0094DA08 /* MQFieldPickerView.swift in Sources */,
-				26904E2A1C77598B0094DA08 /* MQNoResultsView.swift in Sources */,
+				26904E261C77598B0094DA08 /* MDDefaultRetryView.swift in Sources */,
+				26904E141C77598B0094DA08 /* MDFieldCollection.swift in Sources */,
+				26904E111C77598B0094DA08 /* MDDataModel.swift in Sources */,
+				26904E191C77598B0094DA08 /* MDFieldTextFieldDelegate.swift in Sources */,
+				26904E151C77598B0094DA08 /* MDFieldPickerView.swift in Sources */,
+				26904E2A1C77598B0094DA08 /* MDNoResultsView.swift in Sources */,
 				26904E0A1C77598B0094DA08 /* Functions.swift in Sources */,
-				26904E181C77598B0094DA08 /* MQFieldTextFieldCell.swift in Sources */,
-				26904E2D1C77598B0094DA08 /* MQStatefulViewController.swift in Sources */,
-				26904E321C77598B0094DA08 /* MQLabelButton.swift in Sources */,
+				26904E181C77598B0094DA08 /* MDFieldTextFieldCell.swift in Sources */,
+				26904E2D1C77598B0094DA08 /* MDStatefulViewController.swift in Sources */,
+				26904E321C77598B0094DA08 /* MDLabelButton.swift in Sources */,
 				26904E061C77598B0094DA08 /* String.swift in Sources */,
-				26904E101C77598B0094DA08 /* MQErrorType.swift in Sources */,
-				26904E211C77598B0094DA08 /* MQBlockOperation.swift in Sources */,
-				26904E1C1C77598B0094DA08 /* MQFileManager.swift in Sources */,
+				26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */,
+				26904E101C77598B0094DA08 /* MDErrorType.swift in Sources */,
+				26904E211C77598B0094DA08 /* MDBlockOperation.swift in Sources */,
 				26904DFF1C77598B0094DA08 /* Double.swift in Sources */,
+				26904E3D1C7763150094DA08 /* MDArchivableValueType.swift in Sources */,
 				26904E041C77598B0094DA08 /* NSNotification.swift in Sources */,
-				26904E301C77598B0094DA08 /* MQButton.swift in Sources */,
+				26904E301C77598B0094DA08 /* MDButton.swift in Sources */,
 				26904DFE1C77598B0094DA08 /* Keys.swift in Sources */,
-				26904E351C77598B0094DA08 /* MQNSNotificationObject.swift in Sources */,
-				26904E341C77598B0094DA08 /* MQTableViewCell.swift in Sources */,
-				26904E1B1C77598B0094DA08 /* MQArchivableValueType.swift in Sources */,
-				26904E1A1C77598B0094DA08 /* MQFieldTextView.swift in Sources */,
-				26904E2F1C77598B0094DA08 /* MQAspectFitLabel.swift in Sources */,
-				26904E0F1C77598B0094DA08 /* MQErrorBuilder.swift in Sources */,
+				26904E351C77598B0094DA08 /* MDNSNotificationObject.swift in Sources */,
+				26904E341C77598B0094DA08 /* MDTableViewCell.swift in Sources */,
+				26904E1A1C77598B0094DA08 /* MDFieldTextView.swift in Sources */,
+				26904E2F1C77598B0094DA08 /* MDAspectFitLabel.swift in Sources */,
 				26904E051C77598B0094DA08 /* NSNotificationCenter.swift in Sources */,
-				26904E2B1C77598B0094DA08 /* MQRetryView.swift in Sources */,
+				26904E2B1C77598B0094DA08 /* MDRetryView.swift in Sources */,
 				26904E021C77598B0094DA08 /* NSDate.swift in Sources */,
 				26904E071C77598B0094DA08 /* UIColor.swift in Sources */,
 			);
