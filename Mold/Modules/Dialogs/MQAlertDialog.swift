@@ -1,6 +1,6 @@
 //
 //  MQAlertDialog.swift
-//  MQBoilerplateSwift
+//  Mold
 //
 //  Created by Matt Quiros on 8/3/15.
 //  Copyright © 2015 Matt Quiros. All rights reserved.

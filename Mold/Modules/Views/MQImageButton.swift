@@ -1,6 +1,6 @@
 //
 //  MQImageButton.swift
-//  MQBoilerplateSwift
+//  Mold
 //
 //  Created by Matt Quiros on 6/8/15.
 //  Copyright (c) 2015 Matt Quiros. All rights reserved.

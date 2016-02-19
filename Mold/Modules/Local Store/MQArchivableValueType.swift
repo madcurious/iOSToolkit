@@ -1,6 +1,6 @@
 //
 //  MQArchivableValueType.swift
-//  MQBoilerplateSwift
+//  Mold
 //
 //  Created by Matt Quiros on 7/13/15.
 //  Copyright © 2015 Matt Quiros. All rights reserved.

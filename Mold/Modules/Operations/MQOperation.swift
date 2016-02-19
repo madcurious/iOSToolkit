@@ -1,6 +1,6 @@
 //
 //  MQOperation.swift
-//  MQBoilerplateSwift
+//  Mold
 //
 //  Created by Matt Quiros on 01/02/2016.
 //  Copyright © 2016 Matt Quiros. All rights reserved.

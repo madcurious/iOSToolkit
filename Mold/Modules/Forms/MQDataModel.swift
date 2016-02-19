@@ -1,6 +1,6 @@
 //
 //  MQDataModel.swift
-//  MQBoilerplateSwift
+//  Mold
 //
 //  Created by Matt Quiros on 7/3/15.
 //  Copyright © 2015 Matt Quiros. All rights reserved.
