@@ -1,5 +1,5 @@
 //
-//  MQDispatcher.swift
+//  MDDispatcher.swift
 //  Mold
 //
 //  Created by Matt Quiros on 4/23/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MQDispatcher {
+public class MDDispatcher {
     
     /**
     Executes the specified block in the main thread and waits until it returns.

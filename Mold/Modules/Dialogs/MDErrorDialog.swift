@@ -17,7 +17,7 @@ public final class MDErrorDialog {
         }
         alertController.addAction(okButtonAction)
         
-        MQDispatcher.asyncRunInMainThread {
+        MDDispatcher.asyncRunInMainThread {
             presenter.presentViewController(alertController, animated: true, completion: nil)
         }
     }

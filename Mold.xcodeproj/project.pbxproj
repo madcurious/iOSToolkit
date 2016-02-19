@@ -48,7 +48,7 @@
 		26904E2B1C77598B0094DA08 /* MDRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEA1C77598B0094DA08 /* MDRetryView.swift */; };
 		26904E2C1C77598B0094DA08 /* MDStartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEB1C77598B0094DA08 /* MDStartingView.swift */; };
 		26904E2D1C77598B0094DA08 /* MDStatefulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEC1C77598B0094DA08 /* MDStatefulViewController.swift */; };
-		26904E2E1C77598B0094DA08 /* MQDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEE1C77598B0094DA08 /* MQDispatcher.swift */; };
+		26904E2E1C77598B0094DA08 /* MDDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEE1C77598B0094DA08 /* MDDispatcher.swift */; };
 		26904E2F1C77598B0094DA08 /* MQAspectFitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF01C77598B0094DA08 /* MQAspectFitLabel.swift */; };
 		26904E301C77598B0094DA08 /* MQButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF11C77598B0094DA08 /* MQButton.swift */; };
 		26904E311C77598B0094DA08 /* MQImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF21C77598B0094DA08 /* MQImageButton.swift */; };
@@ -107,7 +107,7 @@
 		26904DEA1C77598B0094DA08 /* MDRetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDRetryView.swift; sourceTree = "<group>"; };
 		26904DEB1C77598B0094DA08 /* MDStartingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDStartingView.swift; sourceTree = "<group>"; };
 		26904DEC1C77598B0094DA08 /* MDStatefulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDStatefulViewController.swift; sourceTree = "<group>"; };
-		26904DEE1C77598B0094DA08 /* MQDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQDispatcher.swift; sourceTree = "<group>"; };
+		26904DEE1C77598B0094DA08 /* MDDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDDispatcher.swift; sourceTree = "<group>"; };
 		26904DF01C77598B0094DA08 /* MQAspectFitLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQAspectFitLabel.swift; sourceTree = "<group>"; };
 		26904DF11C77598B0094DA08 /* MQButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQButton.swift; sourceTree = "<group>"; };
 		26904DF21C77598B0094DA08 /* MQImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQImageButton.swift; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 		26904DED1C77598B0094DA08 /* Threads */ = {
 			isa = PBXGroup;
 			children = (
-				26904DEE1C77598B0094DA08 /* MQDispatcher.swift */,
+				26904DEE1C77598B0094DA08 /* MDDispatcher.swift */,
 			);
 			path = Threads;
 			sourceTree = "<group>";
@@ -415,7 +415,7 @@
 				26904E0C1C77598B0094DA08 /* MDConfirmDialog.swift in Sources */,
 				26904E0E1C77598B0094DA08 /* MDError.swift in Sources */,
 				26904E271C77598B0094DA08 /* MDDefaultStartingView.swift in Sources */,
-				26904E2E1C77598B0094DA08 /* MQDispatcher.swift in Sources */,
+				26904E2E1C77598B0094DA08 /* MDDispatcher.swift in Sources */,
 				26904E081C77598B0094DA08 /* UIView.swift in Sources */,
 				26904E241C77598B0094DA08 /* MDURLOperation.swift in Sources */,
 				26904E2C1C77598B0094DA08 /* MDStartingView.swift in Sources */,

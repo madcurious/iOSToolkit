@@ -151,7 +151,7 @@ public class MDOperation: NSOperation {
         }
         
         if self.executeCallbacksInMainThread == true {
-            MQDispatcher.syncRunInMainThread(startBlock)
+            MDDispatcher.syncRunInMainThread(startBlock)
         } else {
             startBlock()
         }
@@ -165,7 +165,7 @@ public class MDOperation: NSOperation {
         }
         
         if self.executeCallbacksInMainThread == true {
-            MQDispatcher.syncRunInMainThread(returnBlock)
+            MDDispatcher.syncRunInMainThread(returnBlock)
         } else {
             returnBlock()
         }
@@ -179,7 +179,7 @@ public class MDOperation: NSOperation {
         }
         
         if self.executeCallbacksInMainThread == true {
-            MQDispatcher.syncRunInMainThread {
+            MDDispatcher.syncRunInMainThread {
                 successBlock(result)
             }
         } else {
@@ -195,7 +195,7 @@ public class MDOperation: NSOperation {
         }
         
         if self.executeCallbacksInMainThread == true {
-            MQDispatcher.syncRunInMainThread {
+            MDDispatcher.syncRunInMainThread {
                 failBlock(error)
             }
         } else {
@@ -220,7 +220,7 @@ public class MDOperation: NSOperation {
         }
         
         if self.executeCallbacksInMainThread == true {
-            MQDispatcher.syncRunInMainThread(finishBlock)
+            MDDispatcher.syncRunInMainThread(finishBlock)
         } else {
             finishBlock()
         }
