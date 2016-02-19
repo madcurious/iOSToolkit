@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MQLabelButton: MQButton {
+public class MQLabelButton: MDButton {
     
     public var label: UILabel = UILabel()
     

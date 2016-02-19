@@ -1,5 +1,5 @@
 //
-//  MQButton.swift
+//  MDButton.swift
 //  Mold
 //
 //  Created by Matt Quiros on 6/8/15.
@@ -13,7 +13,7 @@ A custom button implementation where you can just set the background color
 which is automatically darkened when pressed. If you want a label or an image
 in the button, you can use `MQLabelButton` or `MQImageButton` instead, respectively.
 */
-public class MQButton: UIControl {
+public class MDButton: UIControl {
     
     /**
     The view that is used to darken the entire button when pressed.
@@ -28,7 +28,7 @@ public class MQButton: UIControl {
     
     /**
     The custom view for the button. If you want to put a label or an image
-    in the button, subclass `MQButton` and make your label or image a filling
+    in the button, subclass `MDButton` and make your label or image a filling
     subview of `customView`.
     */
     public var customView: UIView = {

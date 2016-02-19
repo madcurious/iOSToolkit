@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MQImageButton: MQButton {
+public class MQImageButton: MDButton {
     
     public lazy var imageView = UIImageView()
     
