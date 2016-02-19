@@ -1,5 +1,5 @@
 //
-//  MQDataModel.swift
+//  MDDataModel.swift
 //  Mold
 //
 //  Created by Matt Quiros on 7/3/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol MQDataModel {
+public protocol MDDataModel {
     
     /**
     Returns an array of the model's current values as form field objects. Whenever this function is

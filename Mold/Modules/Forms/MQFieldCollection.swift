@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MQFieldCollection<T: MQDataModel> {
+public class MQFieldCollection<T: MDDataModel> {
     
     public var fields: [MQField]
     public var count: Int {
