@@ -1,5 +1,5 @@
 //
-//  MQChainedOperation.swift
+//  MDChainedOperation.swift
 //  Mold
 //
 //  Created by Matt Quiros on 04/02/2016.
@@ -13,7 +13,7 @@ import Foundation
  * The chain's `returnBlock` and `failBlock` overrides those of the operations in the chain.
  * The head operation's `successBlock` isn't overriden to automatically run the chain's `returnBlock`.
  */
-public class MQChainedOperation: MDOperation {
+public class MDChainedOperation: MDOperation {
     
     var queue = NSOperationQueue()
     var operations = [MDOperation]()
