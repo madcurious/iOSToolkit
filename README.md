@@ -1,4 +1,4 @@
-![Mold](Mold-icon.jpg)
+![Mold](mold-banner.png)
 
 # Mold
 
