@@ -9,7 +9,7 @@
 import UIKit
 
 /**
-A `UITextFieldDelegate` that changes the value of the `MQField` associated with an `MQFieldTextField`.
+A `UITextFieldDelegate` that changes the value of the `MDField` associated with an `MQFieldTextField`.
 */
 public class MQFieldTextFieldDelegate: NSObject, UITextFieldDelegate {
     

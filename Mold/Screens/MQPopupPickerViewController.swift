@@ -11,7 +11,7 @@ import UIKit
 public protocol MQPopupPickerViewControllerDelegate {
     
     func popupPicker(picker: MQPopupPickerViewController, titleForChoiceAtIndex index: Int) -> String
-    func popupPicker(picker: MQPopupPickerViewController, didPickValue value: AnyObject?, atIndex index: Int?, forField: MQField)
+    func popupPicker(picker: MQPopupPickerViewController, didPickValue value: AnyObject?, atIndex index: Int?, forField: MDField)
     
 }
 
@@ -21,7 +21,7 @@ public class MQPopupPickerViewController: UIViewController {
     
     var pickerView: UIPickerView
     
-    public var field: MQField
+    public var field: MDField
     var choices: [AnyObject]
     var showsBlank: Bool
     var selectedRow: Int
@@ -29,7 +29,7 @@ public class MQPopupPickerViewController: UIViewController {
     public var delegate: MQPopupPickerViewControllerDelegate?
     public var blankLabelText = "---"
     
-    public init(field: MQField, choices: [AnyObject], showsBlank: Bool, initialIndex: Int?, sourceView: UIView) {
+    public init(field: MDField, choices: [AnyObject], showsBlank: Bool, initialIndex: Int?, sourceView: UIView) {
         self.pickerView = UIPickerView()
         
         self.field = field

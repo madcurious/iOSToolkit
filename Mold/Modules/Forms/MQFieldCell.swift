@@ -10,7 +10,7 @@ import UIKit
 
 public class MQFieldCell: MQTableViewCell {
     
-    public weak var field: MQField?
+    public weak var field: MDField?
     public weak var delegate: AnyObject?
     
 }

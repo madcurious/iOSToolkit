@@ -1,5 +1,5 @@
 //
-//  MQField.swift
+//  MDField.swift
 //  Mold
 //
 //  Created by Matt Quiros on 4/18/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MQField {
+public class MDField {
     
     /**
     The name of this field.

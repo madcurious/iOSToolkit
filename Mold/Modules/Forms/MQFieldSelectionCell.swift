@@ -10,7 +10,7 @@ import UIKit
 
 public class MQFieldSelectionCell: MQFieldCell {
     
-    public override var field: MQField? {
+    public override var field: MDField? {
         didSet {
             defer {
                 self.setNeedsLayout()

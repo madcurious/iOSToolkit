@@ -12,9 +12,9 @@ public protocol MDDataModel {
     
     /**
     Returns an array of the model's current values as form field objects. Whenever this function is
-    called, a new array of `MQField` objects is created.
+    called, a new array of `MDField` objects is created.
     */
-    func editableFields() -> [MQField]
+    func editableFields() -> [MDField]
     
     /**
     Updates the data model based on the values of a given collection of form fields.

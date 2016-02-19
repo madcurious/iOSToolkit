@@ -10,7 +10,7 @@ import UIKit
 
 public class MQFieldTextView: UITextView {
     
-    public weak var field: MQField? {
+    public weak var field: MDField? {
         didSet {
             if let field = self.field,
                 let value = field.value as? String {

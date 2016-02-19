@@ -10,7 +10,7 @@ import Foundation
 
 public class MQFieldCollection<T: MDDataModel> {
     
-    public var fields: [MQField]
+    public var fields: [MDField]
     public var count: Int {
         return self.fields.count
     }
@@ -22,7 +22,7 @@ public class MQFieldCollection<T: MDDataModel> {
     /**
     Returns only the first field that matches the supplied field name, or `nil` if none.
     */
-    public subscript(fieldName: String) -> MQField? {
+    public subscript(fieldName: String) -> MDField? {
         let matches = self.fields.filter { $0.name == fieldName }
         if let firstMatch = matches.first {
             return firstMatch
@@ -33,7 +33,7 @@ public class MQFieldCollection<T: MDDataModel> {
     /**
     Returns the field at a given index.
     */
-    public subscript(index: Int) -> MQField {
+    public subscript(index: Int) -> MDField {
         if index > 0 && index < self.fields.count {
             return self.fields[index]
         }

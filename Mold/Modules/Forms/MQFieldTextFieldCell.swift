@@ -10,7 +10,7 @@ import UIKit
 
 /**
  A `UITableViewCell` with a label on the left and a `UITextField` on the right, for modifying
- the value of an `MQField`.
+ the value of an `MDField`.
  */
 public class MQFieldTextFieldCell: MQFieldCell {
     
@@ -18,7 +18,7 @@ public class MQFieldTextFieldCell: MQFieldCell {
     public var nameLabel: UILabel
     public var textField: MQFieldTextField
     
-    public override var field: MQField? {
+    public override var field: MDField? {
         didSet {
             defer {
                 self.setNeedsLayout()
