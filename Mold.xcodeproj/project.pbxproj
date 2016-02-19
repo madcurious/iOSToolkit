@@ -47,7 +47,7 @@
 		26904E2A1C77598B0094DA08 /* MQNoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE91C77598B0094DA08 /* MQNoResultsView.swift */; };
 		26904E2B1C77598B0094DA08 /* MQRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEA1C77598B0094DA08 /* MQRetryView.swift */; };
 		26904E2C1C77598B0094DA08 /* MQStartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEB1C77598B0094DA08 /* MQStartingView.swift */; };
-		26904E2D1C77598B0094DA08 /* MQStatefulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEC1C77598B0094DA08 /* MQStatefulViewController.swift */; };
+		26904E2D1C77598B0094DA08 /* MDStatefulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEC1C77598B0094DA08 /* MDStatefulViewController.swift */; };
 		26904E2E1C77598B0094DA08 /* MQDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEE1C77598B0094DA08 /* MQDispatcher.swift */; };
 		26904E2F1C77598B0094DA08 /* MQAspectFitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF01C77598B0094DA08 /* MQAspectFitLabel.swift */; };
 		26904E301C77598B0094DA08 /* MQButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF11C77598B0094DA08 /* MQButton.swift */; };
@@ -106,7 +106,7 @@
 		26904DE91C77598B0094DA08 /* MQNoResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQNoResultsView.swift; sourceTree = "<group>"; };
 		26904DEA1C77598B0094DA08 /* MQRetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQRetryView.swift; sourceTree = "<group>"; };
 		26904DEB1C77598B0094DA08 /* MQStartingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQStartingView.swift; sourceTree = "<group>"; };
-		26904DEC1C77598B0094DA08 /* MQStatefulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQStatefulViewController.swift; sourceTree = "<group>"; };
+		26904DEC1C77598B0094DA08 /* MDStatefulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDStatefulViewController.swift; sourceTree = "<group>"; };
 		26904DEE1C77598B0094DA08 /* MQDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQDispatcher.swift; sourceTree = "<group>"; };
 		26904DF01C77598B0094DA08 /* MQAspectFitLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQAspectFitLabel.swift; sourceTree = "<group>"; };
 		26904DF11C77598B0094DA08 /* MQButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQButton.swift; sourceTree = "<group>"; };
@@ -270,7 +270,7 @@
 				26904DE91C77598B0094DA08 /* MQNoResultsView.swift */,
 				26904DEA1C77598B0094DA08 /* MQRetryView.swift */,
 				26904DEB1C77598B0094DA08 /* MQStartingView.swift */,
-				26904DEC1C77598B0094DA08 /* MQStatefulViewController.swift */,
+				26904DEC1C77598B0094DA08 /* MDStatefulViewController.swift */,
 			);
 			path = "Stateful Screens";
 			sourceTree = "<group>";
@@ -435,7 +435,7 @@
 				26904E2A1C77598B0094DA08 /* MQNoResultsView.swift in Sources */,
 				26904E0A1C77598B0094DA08 /* Functions.swift in Sources */,
 				26904E181C77598B0094DA08 /* MDFieldTextFieldCell.swift in Sources */,
-				26904E2D1C77598B0094DA08 /* MQStatefulViewController.swift in Sources */,
+				26904E2D1C77598B0094DA08 /* MDStatefulViewController.swift in Sources */,
 				26904E321C77598B0094DA08 /* MQLabelButton.swift in Sources */,
 				26904E061C77598B0094DA08 /* String.swift in Sources */,
 				26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */,

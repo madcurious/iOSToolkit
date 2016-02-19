@@ -1,5 +1,5 @@
 //
-//  MQStatefulViewController.swift
+//  MDStatefulViewController.swift
 //  Mold
 //
 //  Created by Matt Quiros on 01/02/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MQStatefulViewController: UIViewController {
+public class MDStatefulViewController: UIViewController {
     
     public enum View {
         case Starting, Loading, Retry, Primary, NoResults
@@ -86,7 +86,7 @@ public class MQStatefulViewController: UIViewController {
         self.operationQueue.addOperation(task)
     }
     
-    public func showView(view: MQStatefulViewController.View) {
+    public func showView(view: MDStatefulViewController.View) {
         self.startingView.hidden = view != .Starting
         self.loadingView.hidden = view != .Loading
         self.primaryView.hidden = view != .Primary
@@ -116,7 +116,7 @@ public class MQStatefulViewController: UIViewController {
     
 }
 
-extension MQStatefulViewController: MQRetryViewDelegate {
+extension MDStatefulViewController: MQRetryViewDelegate {
     
     public func retryViewDidTapRetry(retryView: MQRetryView) {
         self.runTask()
@@ -124,7 +124,7 @@ extension MQStatefulViewController: MQRetryViewDelegate {
     
 }
 
-extension MQStatefulViewController: MQNoResultsViewDelegate {
+extension MDStatefulViewController: MQNoResultsViewDelegate {
     
     public func noResultsViewDidTapRetry(noResultsView: MQNoResultsView) {
         self.runTask()
