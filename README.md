@@ -1,5 +1,7 @@
 # Mold
 
+!(Mold-icon.jpg)
+
 Mold is a library of boilerplate code for iOS apps written in Swift.
 
 ## Requirements
