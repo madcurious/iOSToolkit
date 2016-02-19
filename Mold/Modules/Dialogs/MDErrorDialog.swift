@@ -1,5 +1,5 @@
 //
-//  MQErrorDialog.swift
+//  MDErrorDialog.swift
 //  Mold
 //
 //  Created by Matt Quiros on 4/25/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class MQErrorDialog {
+public final class MDErrorDialog {
     
     public class func showError(error: NSError, inPresenter presenter: UIViewController) {
         let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)

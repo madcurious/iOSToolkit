@@ -1,5 +1,5 @@
 //
-//  MQConfirmDialog.swift
+//  MDConfirmDialog.swift
 //  Mold
 //
 //  Created by Matt Quiros on 5/8/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MQConfirmDialog {
+public class MDConfirmDialog {
     
     public class func showInPresenter(presenter: UIViewController,
         title: String = "Confirm",

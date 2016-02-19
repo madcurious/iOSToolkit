@@ -1,5 +1,5 @@
 //
-//  MQAlertDialog.swift
+//  MDAlertDialog.swift
 //  Mold
 //
 //  Created by Matt Quiros on 8/3/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MQAlertDialog {
+public class MDAlertDialog {
     
     public class func showInPresenter(presenter: UIViewController,
         title: String? = nil,
