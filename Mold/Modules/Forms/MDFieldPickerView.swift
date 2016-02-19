@@ -1,5 +1,5 @@
 //
-//  MQFieldPickerView.swift
+//  MDFieldPickerView.swift
 //  Mold
 //
 //  Created by Matt Quiros on 4/19/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MQFieldPickerView : UIPickerView {
+public class MDFieldPickerView : UIPickerView {
     
     public weak var field: MDField?
     

@@ -1,5 +1,5 @@
 //
-//  MQFieldSelectionCell.swift
+//  MDFieldSelectionCell.swift
 //  Mold
 //
 //  Created by Matt Quiros on 20/01/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MQFieldSelectionCell: MDFieldCell {
+public class MDFieldSelectionCell: MDFieldCell {
     
     public override var field: MDField? {
         didSet {

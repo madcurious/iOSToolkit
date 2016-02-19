@@ -1,5 +1,5 @@
 //
-//  MQFieldTextFieldCell.swift
+//  MDFieldTextFieldCell.swift
 //  Mold
 //
 //  Created by Matt Quiros on 20/01/2016.
@@ -12,11 +12,11 @@ import UIKit
  A `UITableViewCell` with a label on the left and a `UITextField` on the right, for modifying
  the value of an `MDField`.
  */
-public class MQFieldTextFieldCell: MDFieldCell {
+public class MDFieldTextFieldCell: MDFieldCell {
     
     public var wrapperView: UIView
     public var nameLabel: UILabel
-    public var textField: MQFieldTextField
+    public var textField: MDFieldTextField
     
     public override var field: MDField? {
         didSet {
@@ -35,7 +35,7 @@ public class MQFieldTextFieldCell: MDFieldCell {
     
     public override var delegate: AnyObject? {
         didSet {
-            guard let delegate = self.delegate as? MQFieldTextFieldDelegate
+            guard let delegate = self.delegate as? MDFieldTextFieldDelegate
                 else {
                     return
             }
@@ -46,7 +46,7 @@ public class MQFieldTextFieldCell: MDFieldCell {
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         self.wrapperView = UIView()
         self.nameLabel = UILabel()
-        self.textField = MQFieldTextField()
+        self.textField = MDFieldTextField()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.setupSubviews()

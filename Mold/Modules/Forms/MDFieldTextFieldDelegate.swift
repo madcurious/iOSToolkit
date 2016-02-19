@@ -1,5 +1,5 @@
 //
-//  MQFieldTextFieldDelegate.swift
+//  MDFieldTextFieldDelegate.swift
 //  Mold
 //
 //  Created by Matt Quiros on 5/20/15.
@@ -9,9 +9,9 @@
 import UIKit
 
 /**
-A `UITextFieldDelegate` that changes the value of the `MDField` associated with an `MQFieldTextField`.
+A `UITextFieldDelegate` that changes the value of the `MDField` associated with an `MDFieldTextField`.
 */
-public class MQFieldTextFieldDelegate: NSObject, UITextFieldDelegate {
+public class MDFieldTextFieldDelegate: NSObject, UITextFieldDelegate {
     
     public var activeTextField: UITextField?
     
@@ -20,7 +20,7 @@ public class MQFieldTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        if let fieldTextField = textField as? MQFieldTextField {
+        if let fieldTextField = textField as? MDFieldTextField {
             if let field = fieldTextField.field {
                 if let invalidCharacterSet = field.invalidCharacterSet {
                     if string.hasCharactersFromSet(invalidCharacterSet) {

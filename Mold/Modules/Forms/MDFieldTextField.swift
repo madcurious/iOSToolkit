@@ -1,5 +1,5 @@
 //
-//  MQFieldTextField.swift
+//  MDFieldTextField.swift
 //  CheersOAPE
 //
 //  Created by Matt Quiros on 4/18/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MQFieldTextField : UITextField {
+public class MDFieldTextField : UITextField {
     
     public weak var field: MDField? {
         didSet {
