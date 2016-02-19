@@ -1,5 +1,5 @@
 //
-//  MQOperation.swift
+//  MDOperation.swift
 //  Mold
 //
 //  Created by Matt Quiros on 01/02/2016.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MQOperation: NSOperation {
+public class MDOperation: NSOperation {
     
     public var startBlock: (Void -> Void)?
     public var returnBlock: (Void -> Void)?

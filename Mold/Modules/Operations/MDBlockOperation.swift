@@ -1,5 +1,5 @@
 //
-//  MQBlockOperation.swift
+//  MDBlockOperation.swift
 //  Mold
 //
 //  Created by Matt Quiros on 01/02/2016.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MQBlockOperation: MQOperation {
+public class MDBlockOperation: MDOperation {
     
     var block: Void throws -> Any?
     

@@ -64,7 +64,7 @@ public class MQStatefulViewController: UIViewController {
         self.noResultsView.fillSuperview()
     }
     
-    public func buildOperation() -> MQOperation? {
+    public func buildOperation() -> MDOperation? {
         fatalError("Unimplemented function \(__FUNCTION__)")
     }
     

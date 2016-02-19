@@ -13,12 +13,12 @@ import Foundation
  * The chain's `returnBlock` and `failBlock` overrides those of the operations in the chain.
  * The head operation's `successBlock` isn't overriden to automatically run the chain's `returnBlock`.
  */
-public class MQChainedOperation: MQOperation {
+public class MQChainedOperation: MDOperation {
     
     var queue = NSOperationQueue()
-    var operations = [MQOperation]()
+    var operations = [MDOperation]()
     
-    public func append<T: MQOperation>(operation: T, validator: (Any? -> Bool)? = nil, configurator: ((T, Any?) -> Void)? = nil) {
+    public func append<T: MDOperation>(operation: T, validator: (Any? -> Bool)? = nil, configurator: ((T, Any?) -> Void)? = nil) {
         defer {
             self.operations.append(operation)
         }

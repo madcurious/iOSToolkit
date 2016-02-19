@@ -36,9 +36,9 @@
 		26904E181C77598B0094DA08 /* MDFieldTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD41C77598B0094DA08 /* MDFieldTextFieldCell.swift */; };
 		26904E191C77598B0094DA08 /* MDFieldTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD51C77598B0094DA08 /* MDFieldTextFieldDelegate.swift */; };
 		26904E1A1C77598B0094DA08 /* MDFieldTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DD61C77598B0094DA08 /* MDFieldTextView.swift */; };
-		26904E211C77598B0094DA08 /* MQBlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DDF1C77598B0094DA08 /* MQBlockOperation.swift */; };
+		26904E211C77598B0094DA08 /* MDBlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DDF1C77598B0094DA08 /* MDBlockOperation.swift */; };
 		26904E221C77598B0094DA08 /* MQChainedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE01C77598B0094DA08 /* MQChainedOperation.swift */; };
-		26904E231C77598B0094DA08 /* MQOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE11C77598B0094DA08 /* MQOperation.swift */; };
+		26904E231C77598B0094DA08 /* MDOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE11C77598B0094DA08 /* MDOperation.swift */; };
 		26904E241C77598B0094DA08 /* MQURLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE21C77598B0094DA08 /* MQURLOperation.swift */; };
 		26904E251C77598B0094DA08 /* MQDefaultNoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE41C77598B0094DA08 /* MQDefaultNoResultsView.swift */; };
 		26904E261C77598B0094DA08 /* MQDefaultRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE51C77598B0094DA08 /* MQDefaultRetryView.swift */; };
@@ -95,9 +95,9 @@
 		26904DD41C77598B0094DA08 /* MDFieldTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldTextFieldCell.swift; sourceTree = "<group>"; };
 		26904DD51C77598B0094DA08 /* MDFieldTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldTextFieldDelegate.swift; sourceTree = "<group>"; };
 		26904DD61C77598B0094DA08 /* MDFieldTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFieldTextView.swift; sourceTree = "<group>"; };
-		26904DDF1C77598B0094DA08 /* MQBlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQBlockOperation.swift; sourceTree = "<group>"; };
+		26904DDF1C77598B0094DA08 /* MDBlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBlockOperation.swift; sourceTree = "<group>"; };
 		26904DE01C77598B0094DA08 /* MQChainedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQChainedOperation.swift; sourceTree = "<group>"; };
-		26904DE11C77598B0094DA08 /* MQOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQOperation.swift; sourceTree = "<group>"; };
+		26904DE11C77598B0094DA08 /* MDOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperation.swift; sourceTree = "<group>"; };
 		26904DE21C77598B0094DA08 /* MQURLOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQURLOperation.swift; sourceTree = "<group>"; };
 		26904DE41C77598B0094DA08 /* MQDefaultNoResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQDefaultNoResultsView.swift; sourceTree = "<group>"; };
 		26904DE51C77598B0094DA08 /* MQDefaultRetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQDefaultRetryView.swift; sourceTree = "<group>"; };
@@ -252,9 +252,9 @@
 		26904DDA1C77598B0094DA08 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				26904DDF1C77598B0094DA08 /* MQBlockOperation.swift */,
+				26904DDF1C77598B0094DA08 /* MDBlockOperation.swift */,
 				26904DE01C77598B0094DA08 /* MQChainedOperation.swift */,
-				26904DE11C77598B0094DA08 /* MQOperation.swift */,
+				26904DE11C77598B0094DA08 /* MDOperation.swift */,
 				26904DE21C77598B0094DA08 /* MQURLOperation.swift */,
 			);
 			path = Operations;
@@ -411,7 +411,7 @@
 				26904E291C77598B0094DA08 /* MQLoadingView.swift in Sources */,
 				26904E131C77598B0094DA08 /* MDFieldCell.swift in Sources */,
 				26904E121C77598B0094DA08 /* MDField.swift in Sources */,
-				26904E231C77598B0094DA08 /* MQOperation.swift in Sources */,
+				26904E231C77598B0094DA08 /* MDOperation.swift in Sources */,
 				26904E0C1C77598B0094DA08 /* MDConfirmDialog.swift in Sources */,
 				26904E0E1C77598B0094DA08 /* MDError.swift in Sources */,
 				26904E271C77598B0094DA08 /* MQDefaultStartingView.swift in Sources */,
@@ -440,7 +440,7 @@
 				26904E061C77598B0094DA08 /* String.swift in Sources */,
 				26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */,
 				26904E101C77598B0094DA08 /* MDErrorType.swift in Sources */,
-				26904E211C77598B0094DA08 /* MQBlockOperation.swift in Sources */,
+				26904E211C77598B0094DA08 /* MDBlockOperation.swift in Sources */,
 				26904DFF1C77598B0094DA08 /* Double.swift in Sources */,
 				26904E3D1C7763150094DA08 /* MDArchivableValueType.swift in Sources */,
 				26904E041C77598B0094DA08 /* NSNotification.swift in Sources */,
