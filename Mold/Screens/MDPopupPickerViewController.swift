@@ -1,5 +1,5 @@
 //
-//  MQPopupPickerViewController.swift
+//  MDPopupPickerViewController.swift
 //  Mold
 //
 //  Created by Matt Quiros on 21/01/2016.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-public protocol MQPopupPickerViewControllerDelegate {
+public protocol MDPopupPickerViewControllerDelegate {
     
-    func popupPicker(picker: MQPopupPickerViewController, titleForChoiceAtIndex index: Int) -> String
-    func popupPicker(picker: MQPopupPickerViewController, didPickValue value: AnyObject?, atIndex index: Int?, forField: MDField)
+    func popupPicker(picker: MDPopupPickerViewController, titleForChoiceAtIndex index: Int) -> String
+    func popupPicker(picker: MDPopupPickerViewController, didPickValue value: AnyObject?, atIndex index: Int?, forField: MDField)
     
 }
 
 private let kPickerViewHeight = CGFloat(162)
 
-public class MQPopupPickerViewController: UIViewController {
+public class MDPopupPickerViewController: UIViewController {
     
     var pickerView: UIPickerView
     
@@ -26,7 +26,7 @@ public class MQPopupPickerViewController: UIViewController {
     var showsBlank: Bool
     var selectedRow: Int
     
-    public var delegate: MQPopupPickerViewControllerDelegate?
+    public var delegate: MDPopupPickerViewControllerDelegate?
     public var blankLabelText = "---"
     
     public init(field: MDField, choices: [AnyObject], showsBlank: Bool, initialIndex: Int?, sourceView: UIView) {
@@ -95,7 +95,7 @@ public class MQPopupPickerViewController: UIViewController {
     
 }
 
-extension MQPopupPickerViewController: UIPopoverPresentationControllerDelegate {
+extension MDPopupPickerViewController: UIPopoverPresentationControllerDelegate {
     
     public func adaptivePresentationStyleForPresentationController(controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return .None
@@ -103,7 +103,7 @@ extension MQPopupPickerViewController: UIPopoverPresentationControllerDelegate {
     
 }
 
-extension MQPopupPickerViewController: UIPickerViewDataSource {
+extension MDPopupPickerViewController: UIPickerViewDataSource {
     
     public func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -115,7 +115,7 @@ extension MQPopupPickerViewController: UIPickerViewDataSource {
     
 }
 
-extension MQPopupPickerViewController: UIPickerViewDelegate {
+extension MDPopupPickerViewController: UIPickerViewDelegate {
     
     public func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if self.showsBlank && row == 0 {
