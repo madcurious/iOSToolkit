@@ -11,7 +11,7 @@ import Foundation
 public protocol MDArchivableValueType {
     
     /**
-    Called by `MQFileManager` to inflate an `MDDataModel` from a file. You shouldn't have to
+    Called by `MDFileManager` to inflate an `MDDataModel` from a file. You shouldn't have to
     call this initializer directly or override its implementation. If the `data` argument can't
     be converted to a Swift dictionary, a fatal error is produced and you should check
     what's wrong with the file.

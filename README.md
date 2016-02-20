@@ -207,21 +207,20 @@ Mold makes it easy to write and retrieve objects that conform to `NSCoding` to a
 ```
 let kFileName = "sample.txt"
 
-// write
+// Write to file.
 do {
     try MDFileManager.writeValue("Text", toFile: kFileName)
 } catch {
     print("Can't write file.")
 }
 
-// retrieve
-// You need to specify the type to be retrieved.
+// Specify the type when retrieving so you can use it right away.
 if let text: String = MDFileManager.valueAtFile(kFileName) {
     print(text)
 }
 ```
 
-For custom Swift value types such as structs, simply make them comply to `MDArchivableValueType`.
+For custom Swift value types such as structs, simply adopt the `MDArchivableValueType` and map out the struct's properties to a dictionary in `toDictionary()`. You must also implement `init(fromDictionary:)` so that `MDFileManager` can map out the struct to its properties, and return the value to you as your custom Swift type.
 
 ### Main Thread Dispatcher
 
