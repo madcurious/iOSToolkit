@@ -113,7 +113,11 @@ class ValidateLoginOperation: MDOperation {
         return nil
     }
 }
+```
 
+To consume an operation, you instantiate it, pass arguments if any, and set its callbacks. By default, the callback blocks are guaranteed to execute *synchronously* in the main thread without deadlocking. This is because Mold is built for iOS apps and callbacks often involve modifying the UI based on the state.
+
+```
 let op = ValidateLoginOperation(email: "me@email.com", password: "1234")
     .onStart {[unowned self] in
         self.showLoading()
