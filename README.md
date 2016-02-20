@@ -84,6 +84,56 @@ try {
 
 ### Stateful Operations
 
+`MDOperation` is a subclass of `NSOperation` that has callbacks depending on the current state of execution:
+
+* `startBlock` - Invoked once the operation begins.
+* `returnBlock` - Invoked when the operation returns from processing.
+* `successBlock` - Invoked if the operation generates no errors, and possibly a result.
+* `failBlock` - Invoked if the operation generates an error.
+* `finishBlock` - Invoked when the operation finishes.
+
+You typically subclass `MDOperation` so that you can pass it some arguments which you use in `buildResult()` to either generate a result or throw an error. The error, ideally, should be an `MDErrorType`.
+
+```
+class ValidateLoginOperation: MDOperation {
+    var email: String
+    var password: String
+    
+    init(email: String, password: String) {
+        self.email = email
+        self.password = password
+    }
+    
+    override func buildResult(object: Any?) throws -> Any? {
+        guard self.email.characters.count > 0 &&
+            self.password.characters.count > 0
+            else {
+                throw InputError.InvalidEmailPassword // InputError is an MDErrorType
+        }
+        return nil
+    }
+}
+
+let op = ValidateLoginOperation(email: "me@email.com", password: "1234")
+    .onStart {[unowned self] in
+        self.showLoading()
+    }
+    .onReturn {[unowned self] in
+        self.hideLoading()
+    }
+    .onReturn {
+        print("Login credentials valid.")
+    }
+    .onFail {
+        print("Invalid username and password!")
+    }
+    .onFinish {[unowned self] in
+        self.dismissViewControllerAnimated(true, completion: nil)
+}
+```
+
+Because `MDOperation`s are stateful, you can create a base `MDOperation` which all your operations subclass, so that they all always execute the `failBlock` to display an error dialog. This makes it easy to centralise your error-handling logic.
+
 ### Stateful View Controllers
 
 ### File Storage with Swift Value Types
