@@ -178,7 +178,7 @@ class MessagesViewController: MDStatefulViewController {
     }
     
     override func buildOperation() -> MDOperation? {
-        let op = MDOperation()
+        let op = GetMessagesOperation(email: "me@email.com")
         .onSuccess {[unowned self] result in
             guard let messages = result as? [Message]
                 else {
