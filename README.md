@@ -121,7 +121,7 @@ let op = ValidateLoginOperation(email: "me@email.com", password: "1234")
     .onReturn {[unowned self] in
         self.hideLoading()
     }
-    .onReturn {
+    .onSuccess {
         print("Login credentials valid.")
     }
     .onFail {
