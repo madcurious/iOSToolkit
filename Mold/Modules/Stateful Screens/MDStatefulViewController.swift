@@ -15,11 +15,31 @@ public class MDStatefulViewController: UIViewController {
     }
     public var operationQueue = NSOperationQueue()
     
-    public var startingView: MQStartingView = MDDefaultStartingView()
-    public var loadingView: UIView = MDLoadingView()
-    public var retryView: MDRetryView = MDDefaultRetryView()
-    public var primaryView = UIView()
-    public var noResultsView: MDNoResultsView = MDDefaultNoResultsView()
+    var defaultStartingView = MDDefaultStartingView()
+    var defaultLoadingView = MDLoadingView()
+    var defaultRetryView = MDDefaultRetryView()
+    var defaultNoResultView = MDDefaultNoResultsView()
+    var defaultPrimaryView = UIView()
+    
+    public var startingView: MQStartingView {
+        return self.defaultStartingView
+    }
+    
+    public var loadingView: UIView {
+        return self.defaultLoadingView
+    }
+    
+    public var retryView: MDRetryView {
+        return self.defaultRetryView
+    }
+    
+    public var noResultsView: MDNoResultsView {
+        return self.defaultNoResultView
+    }
+    
+    public var primaryView: UIView {
+        return self.defaultPrimaryView
+    }
     
     /**
      A flag used by `viewWillAppear:` to check if it will be the first time for

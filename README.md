@@ -160,13 +160,45 @@ Many screens in an iOS app display different views depending on the state of the
 
 An `MDStatefulViewController` is a view controller that displays a view depending on the state of the task it is performing. The task is an `MDOperation`. The `MDStatefulViewController` has the following views:
 
-* `startingView` - Displayed by default. Used to prompt the user if the screen starts off with a blank slate. For example, in a screen that lists all messages, the `startingView` shows a label that says "You have no messages yet! Click on + to add a new one."
+* `startingView` - Used to prompt the user if the screen starts off with a blank slate. For example, in a screen that lists all messages, the `startingView` shows a label that says "You have no messages yet! Click on + to add a new one."
 * `loadingView` - Displayed when the operation starts.
 * `primaryView` - Should be displayed when the operation returns, succeeds, and returns a non-empty result.
 * `noResultsView` - Should be displayed when the operation returns, succeeds, and returns an empty result.
 * `retryView` - Displayed when the operation returns with an error. The error message is displayed together with a `retryButton` which, when tapped, fires the operation again.
 
-`MDStatefulViewController` automatically overrides the operation's `startBlock` and `failBlock` to display the `loadingView` and the `retryView`, respectively. However, it is up to you to override the `successBlock` to show either the `primaryView` or the `noResultsView`, because the `MDStatefulViewController` has no idea what data type you returned for the result.
+`MDStatefulViewController` displays the `startingView` by default and automatically overrides the operation's `startBlock` and `failBlock` to display the `loadingView` and the `retryView`, respectively. However, it is up to you to override the `successBlock` to show either the `primaryView` or the `noResultsView`, because the `MDStatefulViewController` has no idea what data type you returned for the result.
+
+
+```
+class MessagesViewController: MDStatefulViewController {
+    var messages: [Message]
+    var tableView = UITableView(frame: CGRectZero, style: .Plain)
+    override var primaryView: UIView {
+        return self.tableView
+    }
+    
+    override func buildOperation() -> MDOperation? {
+        let op = MDOperation()
+        .onSuccess {[unowned self] result in
+            guard let messages = result as? [String]
+                else {
+                    return
+            }
+            
+            // Update the data source and reload table view.
+            self.messages = messages
+            self.tableView.reloadData()
+            
+            // Decide which to show--no results or the table view.
+            if messages.isEmpty {
+                self.showView(.NoResults)
+            } else {
+                self.showView(.Primary)
+            }
+        }
+    }
+}
+```
 
 ### File Storage with Swift Value Types
 
