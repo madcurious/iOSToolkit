@@ -1,6 +1,6 @@
 ![Mold](mold-banner.png)
 
-Mold is a Swift framework of boilerplate code for iOS apps. Requirements are:
+Mold is a Swift framework of boilerplate code for iOS apps. Requirements:
 
 * Minimum target of iOS 8
 * Xcode 7
@@ -236,11 +236,87 @@ MDDispatcher.asyncRunInBackgroundThread {
 
 ### Forms
 
+When building a view controller for input, use an array of `MDField` objects to represent the fields in a form. You can then use the array as the data source if you're using a `UITableView` to present the form.
+
+```
+var fields = [
+    MDField(name: "name", label: "Name"),
+    MDField(name: "amount", label: "Amount", keyboardType: .DecimalPad),
+    MDField(name: "dateCreated", label: "Date")
+]
+```
+
+Even if you're not using a table view to present the fields, putting them in an array makes it easy to perform validation of the values.
+
+```
+for field in self.fields {
+    guard let value = field.value as? String
+        where value.characters.count > 0
+        else {
+            throw InputError.IncompleteFieldsError
+    }
+}
+```
+
 ### Useful Extensions
+
+Mold has a lot of useful extensions on `Foundation` and `UIKit` classes it's almost a wonder why Apple didn't write it themselves. For example:
+
+#### UIColor
+
+```
+let color = UIColor(hex: 0x693cf9) // color from a hex code
+let randomHex = UIColor.randomHex()
+let randomColor = UIColor.randomColor()
+```
+
+#### NSLayoutConstraint
+
+```
+let rules = ["H:|-0-[blueView(kBlueViewWidth)]-0-[redView]-0-|",
+    "V:|-0-[blueView]-0-|",
+    "V:|-0-[redView]-0-|"]
+let views = ["blueView" : self.blueView,
+    "redView" : self.redView]
+let metrics = ["kBlueViewMetrics" : 60]
+
+self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormatArray(rules,
+    metrics: metrics, views: views))
+```
+
+#### UIViewController
+
+```
+func viewDidLoad() {
+    super.viewDidLoad()
+    let containedViewController = ContainedViewController()
+
+    // Adds the containedViewController as a child view controller,
+    // but somewhere farther down the view hierarchy.
+    self.embedChildViewController(containedVideController, toView: self.view.container)
+}
+```
+
+#### UIView
+
+```
+let view = UIView()
+
+// Add as many subviews as you wish,
+// then add Autolayout rules to them so that they fill the entire parent.
+view.addSubviewsAndFill(self.blueView, self.redView, self.yellowView)
+
+// Easily instantiate a view from a nib and get it as its custom `UIView` type.
+// To make this work, the class name and the `XIB` file name should be the same.
+let customView = CustomDisplayView.instantiateFromNib() as CustomDisplayView
+
+// Get a reference to the nib file of a view.
+self.tableView.registerNib(CustomCell.nib(), forCellReuseIdentifier: "Cell")
+```
 
 ### ...And many more!
 
-See the wiki for the complete documentation.
+See the wiki (upcoming) for the complete documentation, or just read the code. :)
 
 ## License
 

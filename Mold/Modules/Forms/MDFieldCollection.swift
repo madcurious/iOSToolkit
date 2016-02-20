@@ -8,6 +8,7 @@
 
 import Foundation
 
+// WARNING: Candidate for deletion
 public class MDFieldCollection<T: MDDataModel> {
     
     public var fields: [MDField]
