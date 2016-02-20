@@ -171,7 +171,7 @@ An `MDStatefulViewController` is a view controller that displays a view dependin
 
 ```
 class MessagesViewController: MDStatefulViewController {
-    var messages: [Message]
+    var messages: [Message] // Message is a custom type.
     var tableView = UITableView(frame: CGRectZero, style: .Plain)
     override var primaryView: UIView {
         return self.tableView
@@ -180,7 +180,7 @@ class MessagesViewController: MDStatefulViewController {
     override func buildOperation() -> MDOperation? {
         let op = MDOperation()
         .onSuccess {[unowned self] result in
-            guard let messages = result as? [String]
+            guard let messages = result as? [Message]
                 else {
                     return
             }
