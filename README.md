@@ -138,6 +138,24 @@ let op = ValidateLoginOperation(email: "me@email.com", password: "1234")
 
 Because `MDOperation`s are stateful, you can create a base `MDOperation` which all your operations subclass, so that they all always execute the `failBlock` to display an error dialog. This makes it easy to centralise your error-handling logic.
 
+```
+class BaseOperation: MDOperation {
+    override init() {
+        super.init()
+        self.failBlock = { error in
+            var message: String
+            if let customError = error as? MDErrorType {
+                message = customError.object().message
+            } else {
+                message = error.description
+            }
+            
+            // TODO: Display an error UIAlertController in the top view controller.
+        }
+    }
+}
+```
+
 ### Stateful View Controllers
 
 ### File Storage with Swift Value Types
