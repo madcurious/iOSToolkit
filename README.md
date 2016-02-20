@@ -202,6 +202,27 @@ class MessagesViewController: MDStatefulViewController {
 
 ### File Storage with Swift Value Types
 
+Mold makes it easy to write and retrieve objects that conform to `NSCoding` to and from the disk through `MDFileManager`.
+
+```
+let kFileName = "sample.txt"
+
+// write
+do {
+    try MDFileManager.writeValue("Text", toFile: kFileName)
+} catch {
+    print("Can't write file.")
+}
+
+// retrieve
+// You need to specify the type to be retrieved.
+if let text: String = MDFileManager.valueAtFile(kFileName) {
+    print(text)
+}
+```
+
+For custom Swift value types such as structs, simply make them comply to `MDArchivableValueType`.
+
 ### Main Thread Dispatcher
 
 ### Forms
