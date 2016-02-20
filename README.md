@@ -136,18 +136,16 @@ let op = ValidateLoginOperation(email: "me@email.com", password: "1234")
 }
 ```
 
-Because `MDOperation`s are stateful, you can create a base `MDOperation` which all your operations subclass, so that they all always execute the `failBlock` to display an error dialog. This makes it easy to centralise your error-handling logic.
+Because Mold operations are stateful, you can create a base `MDOperation` which all your operations subclass, so that they all always execute the `failBlock` to display an error dialog. This makes it easy to centralise your error-handling logic.
 
 ```
 class BaseOperation: MDOperation {
     override init() {
         super.init()
         self.failBlock = { error in
-            var message: String
+            var message = error.description
             if let customError = error as? MDErrorType {
                 message = customError.object().message
-            } else {
-                message = error.description
             }
             
             // TODO: Display an error UIAlertController in the top view controller.
@@ -157,6 +155,18 @@ class BaseOperation: MDOperation {
 ```
 
 ### Stateful View Controllers
+
+Many screens in an iOS app display different views depending on the state of the data it represents. For example, a view controller shows a loading screen while making an API request, a `UITableView` if it succeeds, a "No results" label if it succeeds but no results were found, and a "retry" view with a retry button if the API request fails.
+
+An `MDStatefulViewController` is a view controller that displays a view depending on the state of the task it is performing. The task is an `MDOperation`. The `MDStatefulViewController` has the following views:
+
+* `startingView` - Displayed by default. Used to prompt the user if the screen starts off with a blank slate. For example, in a screen that lists all messages, the `startingView` shows a label that says "You have no messages yet! Click on + to add a new one."
+* `loadingView` - Displayed when the operation starts.
+* `primaryView` - Should be displayed when the operation returns, succeeds, and returns a non-empty result.
+* `noResultsView` - Should be displayed when the operation returns, succeeds, and returns an empty result.
+* `retryView` - Displayed when the operation returns with an error. The error message is displayed together with a `retryButton` which, when tapped, fires the operation again.
+
+`MDStatefulViewController` automatically overrides the operation's `startBlock` and `failBlock` to display the `loadingView` and the `retryView`, respectively. However, it is up to you to override the `successBlock` to show either the `primaryView` or the `noResultsView`, because the `MDStatefulViewController` has no idea what data type you returned for the result.
 
 ### File Storage with Swift Value Types
 
