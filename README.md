@@ -1,8 +1,6 @@
 ![Mold](mold-banner.png)
 
-Mold is a Swift framework for iOS boilerplate code.
-
-## Requirements
+Mold is a Swift framework of boilerplate code for iOS apps. Requirements are:
 
 * Minimum target of iOS 8
 * Xcode 7
@@ -223,6 +221,18 @@ if let text: String = MDFileManager.valueAtFile(kFileName) {
 For custom Swift value types such as structs, simply adopt the `MDArchivableValueType` and map out the struct's properties to a dictionary in `toDictionary()`. You must also implement `init(fromDictionary:)` so that `MDFileManager` can map out the struct to its properties, and return the value to you as your custom Swift type.
 
 ### Main Thread Dispatcher
+
+You can use `MDDispatcher` to easily dispatch either to the main thread or to the background, synchronously or asynhcronously. `MDOperation` uses `MDDispatcher` to execute the callback blocks synchronously in the main thread.
+
+```
+MDDispatcher.syncRunInMainThread {
+    self.dismissViewControllerAnimated(true, completion: nil)
+}
+
+MDDispatcher.asyncRunInBackgroundThread {
+    // Do some processing here...
+}
+```
 
 ### Forms
 
