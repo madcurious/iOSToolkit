@@ -32,6 +32,16 @@ public extension UIViewController {
         childViewController.didMoveToParentViewController(self)
     }
     
+    public func embedChildViewController(childViewController: UIViewController, toView superview: UIView, withFormatStrings formatStrings: [String], metrics: [String : CGFloat]?, views: [String : UIView]) {
+        self.addChildViewController(childViewController)
+        
+        superview.addSubview(childViewController.view)
+        let constraints = NSLayoutConstraint.constraintsWithVisualFormatArray(formatStrings, metrics: metrics, views: views)
+        childViewController.view.addConstraints(constraints)
+        
+        childViewController.didMoveToParentViewController(self)
+    }
+    
     public func showLoadingOverlay(show: Bool) {
         if let appDelegate = UIApplication.sharedApplication().delegate,
             let someWindow = appDelegate.window,
@@ -46,6 +56,19 @@ public extension UIViewController {
     
     public func dismissKeyboard() {
         self.view.endEditing(true)
+    }
+    
+    public func addCancelAndDoneBarButtonItems() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(handleTapOnCancelBarButtonItem(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(handleTapOnDoneBarButtonItem(_:)))
+    }
+    
+    public func handleTapOnCancelBarButtonItem(sender: AnyObject) {
+        
+    }
+    
+    public func handleTapOnDoneBarButtonItem(sender: AnyObject) {
+        
     }
     
 }
