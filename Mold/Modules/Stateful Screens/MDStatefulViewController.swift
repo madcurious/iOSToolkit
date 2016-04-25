@@ -85,25 +85,25 @@ public class MDStatefulViewController: UIViewController {
     }
     
     public func buildOperation() -> MDOperation? {
-        fatalError("Unimplemented function \(__FUNCTION__)")
+        fatalError("Unimplemented function \(#function)")
     }
     
-    public func runTask() {
-        guard let task = self.buildOperation()
+    public func runOperation() {
+        guard let op = self.buildOperation()
             else {
                 return
         }
         
-        task.startBlock = {[unowned self] in
-            self.showView(.Starting)
+        op.startBlock = {[unowned self] in
+            self.showView(.Loading)
         }
         
-        task.failBlock = {[unowned self] error in
+        op.failBlock = {[unowned self] error in
             self.retryView.error = error
             self.showView(.Retry)
         }
         
-        self.operationQueue.addOperation(task)
+        self.operationQueue.addOperation(op)
     }
     
     public func showView(view: MDStatefulViewController.View) {
@@ -129,7 +129,7 @@ public class MDStatefulViewController: UIViewController {
         // We start the task if the view is appearing for the first time
         // so the you can override viewDidLoad normally.
         if self.firstLoad {
-            self.runTask()
+            self.runOperation()
             self.firstLoad = false
         }
     }
@@ -139,7 +139,7 @@ public class MDStatefulViewController: UIViewController {
 extension MDStatefulViewController: MDRetryViewDelegate {
     
     public func retryViewDidTapRetry(retryView: MDRetryView) {
-        self.runTask()
+        self.runOperation()
     }
     
 }
@@ -147,7 +147,7 @@ extension MDStatefulViewController: MDRetryViewDelegate {
 extension MDStatefulViewController: MDNoResultsViewDelegate {
     
     public func noResultsViewDidTapRetry(noResultsView: MDNoResultsView) {
-        self.runTask()
+        self.runOperation()
     }
     
 }

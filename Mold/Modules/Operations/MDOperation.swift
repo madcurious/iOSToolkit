@@ -16,7 +16,14 @@ public class MDOperation: NSOperation {
     public var failBlock: (NSError -> Void)?
     public var finishBlock: (Void -> Void)?
     
-    public var executeCallbacksInMainThread = true
+    public var shouldRunCallbacksInMainThread = true
+    
+    /**
+     Determines whether the operation, after determining success or fail, should execute the `returnBlock` 
+     before the `successBlock` or `failBlock` runs its logic. If you manually set this to `false` because
+     you want to do something else in the success of fail block, you will have to run the `returnBlock` yourself in your code.
+     */
+    public var shouldRunReturnBlockBeforeSuccessOrFail = true
     
     // MARK: Internal state variables
     
@@ -75,7 +82,6 @@ public class MDOperation: NSOperation {
     // MARK: Functions
     
     public override func start() {
-        print("\(self.description) : \(__FUNCTION__)")
         if self.cancelled {
             self.willChangeValueForKey("isFinished")
             self._finished = true
@@ -84,13 +90,12 @@ public class MDOperation: NSOperation {
         }
         
         self.willChangeValueForKey("isExecuting")
-        NSThread.detachNewThreadSelector(Selector("main"), toTarget: self, withObject: nil)
+        NSThread.detachNewThreadSelector(#selector(main), toTarget: self, withObject: nil)
         self._executing = true
         self.didChangeValueForKey("isExecuting")
     }
     
     public override func main() {
-        print("\(self.description) : \(__FUNCTION__)")
         defer {
             self.closeOperation()
         }
@@ -103,25 +108,11 @@ public class MDOperation: NSOperation {
         
         do {
             let result = try self.buildResult(nil)
-            
             if self.cancelled {
                 return
             }
-            
-            self.runReturnBlock()
-            
-            if self.cancelled {
-                return
-            }
-            
             self.runSuccessBlock(result)
         } catch {
-            self.runReturnBlock()
-            
-            if self.cancelled {
-                return
-            }
-            
             self.runFailBlock(error)
         }
     }
@@ -139,18 +130,15 @@ public class MDOperation: NSOperation {
         
         self.didChangeValueForKey("isExecuting")
         self.didChangeValueForKey("isFinished")
-        
-        print("\(self.description) : \(__FUNCTION__)")
     }
     
     public func runStartBlock() {
-        print("\(self.description) : \(__FUNCTION__)")
         guard let startBlock = self.startBlock
             else {
                 return
         }
         
-        if self.executeCallbacksInMainThread == true {
+        if self.shouldRunCallbacksInMainThread == true {
             MDDispatcher.syncRunInMainThread(startBlock)
         } else {
             startBlock()
@@ -158,13 +146,12 @@ public class MDOperation: NSOperation {
     }
     
     public func runReturnBlock() {
-        print("\(self.description) : \(__FUNCTION__)")
         guard let returnBlock = self.returnBlock
             else {
                 return
         }
         
-        if self.executeCallbacksInMainThread == true {
+        if self.shouldRunCallbacksInMainThread == true {
             MDDispatcher.syncRunInMainThread(returnBlock)
         } else {
             returnBlock()
@@ -172,13 +159,16 @@ public class MDOperation: NSOperation {
     }
     
     public func runSuccessBlock(result: Any?) {
-        print("\(self.description) : \(__FUNCTION__)")
+        if self.shouldRunReturnBlockBeforeSuccessOrFail {
+            self.runReturnBlock()
+        }
+        
         guard let successBlock = self.successBlock
             else {
                 return
         }
         
-        if self.executeCallbacksInMainThread == true {
+        if self.shouldRunCallbacksInMainThread == true {
             MDDispatcher.syncRunInMainThread {
                 successBlock(result)
             }
@@ -188,13 +178,16 @@ public class MDOperation: NSOperation {
     }
     
     public func runFailBlock(error: NSError) {
-        print("\(self.description) : \(__FUNCTION__): NSError")
+        if self.shouldRunReturnBlockBeforeSuccessOrFail {
+            self.runReturnBlock()
+        }
+        
         guard let failBlock = self.failBlock
             else {
                 return
         }
         
-        if self.executeCallbacksInMainThread == true {
+        if self.shouldRunCallbacksInMainThread == true {
             MDDispatcher.syncRunInMainThread {
                 failBlock(error)
             }
@@ -204,7 +197,6 @@ public class MDOperation: NSOperation {
     }
     
     public func runFailBlock(error: ErrorType) {
-        print("\(self.description) : \(__FUNCTION__): ErrorType")
         if let error = error as? MDErrorType {
             self.runFailBlock(error.object())
         } else {
@@ -213,13 +205,12 @@ public class MDOperation: NSOperation {
     }
     
     public func runFinishBlock() {
-        print("\(self.description) : \(__FUNCTION__)")
         guard let finishBlock = self.finishBlock
             else {
                 return
         }
         
-        if self.executeCallbacksInMainThread == true {
+        if self.shouldRunCallbacksInMainThread == true {
             MDDispatcher.syncRunInMainThread(finishBlock)
         } else {
             finishBlock()
