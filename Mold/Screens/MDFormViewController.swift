@@ -11,7 +11,7 @@ import UIKit
 public class MDFormViewController: UIViewController {
     
     public var scrollView: UIScrollView {
-        fatalError("Unimplemented \(__FUNCTION__): You must provide the scroll view for the form.")
+        fatalError("Unimplemented \(#function): You must provide the scroll view for the form.")
     }
     
     public override func viewDidLoad() {

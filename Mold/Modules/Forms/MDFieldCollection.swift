@@ -46,7 +46,7 @@ public class MDFieldCollection<T: MDDataModel> {
     as the HTTP body of a URL request. You must override this method to define the JSON object.
     */
     public func toJSON() -> [String : AnyObject] {
-        fatalError("Unimplemented: \(__FUNCTION__)")
+        fatalError("Unimplemented: \(#function)")
     }
     
 }

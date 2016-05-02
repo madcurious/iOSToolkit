@@ -58,17 +58,17 @@ public extension UIViewController {
         self.view.endEditing(true)
     }
     
-    public func addCancelAndDoneBarButtonItems() {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(handleTapOnCancelBarButtonItem(_:)))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(handleTapOnDoneBarButtonItem(_:)))
+    public func addCancelAndDoneBarButtonItems(cancelButtonTitle: String? = "Cancel", doneButtonTitle: String? = "Done") {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: cancelButtonTitle, style: .Plain, target: self, action: #selector(handleTapOnCancelBarButtonItem(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: doneButtonTitle, style: .Plain, target: self, action: #selector(handleTapOnDoneBarButtonItem(_:)))
     }
     
     public func handleTapOnCancelBarButtonItem(sender: AnyObject) {
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     public func handleTapOnDoneBarButtonItem(sender: AnyObject) {
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }

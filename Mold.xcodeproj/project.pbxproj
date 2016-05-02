@@ -60,7 +60,6 @@
 		26904E381C77598B0094DA08 /* MDPopupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFC1C77598B0094DA08 /* MDPopupPickerViewController.swift */; };
 		26904E3D1C7763150094DA08 /* MDArchivableValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3B1C7763150094DA08 /* MDArchivableValueType.swift */; };
 		26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3C1C7763150094DA08 /* MDFileManager.swift */; };
-		26904E401C77747C0094DA08 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3F1C77747C0094DA08 /* README.md */; };
 		26904ED51C7785B00094DA08 /* mold-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED41C7785B00094DA08 /* mold-banner.png */; };
 		26904ED71C778A120094DA08 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED61C778A120094DA08 /* LICENSE */; };
 /* End PBXBuildFile section */
@@ -421,7 +420,6 @@
 				26904E121C77598B0094DA08 /* MDField.swift in Sources */,
 				26904E231C77598B0094DA08 /* MDOperation.swift in Sources */,
 				26904E0C1C77598B0094DA08 /* MDConfirmDialog.swift in Sources */,
-				26904E401C77747C0094DA08 /* README.md in Sources */,
 				26904E0E1C77598B0094DA08 /* MDError.swift in Sources */,
 				26904E271C77598B0094DA08 /* MDDefaultStartingView.swift in Sources */,
 				26904E2E1C77598B0094DA08 /* MDDispatcher.swift in Sources */,

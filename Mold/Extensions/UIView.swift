@@ -74,9 +74,9 @@ public extension UIView {
             if let view = objects.last as? T {
                 return view
             }
-            fatalError("\(__FUNCTION__): Cannot cast view object to \(T.classForCoder())")
+            fatalError("\(#function): Cannot cast view object to \(T.classForCoder())")
         }
-        fatalError("\(__FUNCTION__): No nib named \'\(self.className())\'")
+        fatalError("\(#function): No nib named \'\(self.className())\'")
     }
     
     public class func nib() -> UINib {
@@ -96,7 +96,7 @@ public extension UIView {
         if let className = description.componentsSeparatedByString(".").last {
             return className
         }
-        fatalError("\(__FUNCTION__): This method no longer works for getting the Swift class name.")
+        fatalError("\(#function): This method no longer works for getting the Swift class name.")
     }
     
 }
