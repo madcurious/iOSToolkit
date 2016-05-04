@@ -69,6 +69,21 @@ public extension UIView {
         }
     }
     
+    public class func clearBackgroundColors(views: [UIView]) {
+        for view in views {
+            view.backgroundColor = UIColor.clearColor()
+        }
+    }
+    
+    public class func nib() -> UINib {
+        return UINib(nibName: self.className(), bundle: NSBundle.mainBundle())
+    }
+    
+}
+
+// MARK: - Private functions
+extension UIView {
+    
     class func instantiateFromNibInBundle<T: UIView>(bundle: NSBundle) -> T {
         if let objects = bundle.loadNibNamed(self.className(), owner: self, options: nil) {
             if let view = objects.last as? T {
@@ -79,18 +94,14 @@ public extension UIView {
         fatalError("\(#function): No nib named \'\(self.className())\'")
     }
     
-    public class func nib() -> UINib {
-        return UINib(nibName: self.className(), bundle: NSBundle.mainBundle())
-    }
-    
     class func nibInBundle(bundle: NSBundle) -> UINib {
         return UINib(nibName: self.className(), bundle: bundle)
     }
     
     /**
-    Returns the name of this class based on a (poor?) assumption that it is the last
-    token in the fully qualified class name assigned by Swift.
-    */
+     Returns the name of this class based on a (poor?) assumption that it is the last
+     token in the fully qualified class name assigned by Swift.
+     */
     class func className() -> String {
         let description = self.classForCoder().description()
         if let className = description.componentsSeparatedByString(".").last {
