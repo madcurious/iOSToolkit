@@ -55,30 +55,21 @@ public class MDPagedCollectionView: UIView {
         self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: self.layoutManager)
         self.scrollView = UIScrollView()
         super.init(frame: frame)
-//        self.addSubviewsAndFill(self.collectionView, self.scrollView)
+        
         self.addSubviewsAndFill(self.scrollView, self.collectionView)
-        
-        
-        // Debug
-        self.scrollView.backgroundColor = UIColor.yellowColor()
-        self.collectionView.backgroundColor = UIColor.purpleColor()
-        self.collectionView.alpha = 0.5
-        self.scrollView.alpha = 0.5
+        UIView.clearBackgroundColors(self.collectionView, self.scrollView)
         
         // Setup.
+        self.scrollView.delegate = self
+        self.scrollView.pagingEnabled = true
+        self.scrollView.showsHorizontalScrollIndicator = false
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        self.scrollView.delegate = self
         
-        self.scrollView.pagingEnabled = true
-        
-        // DOESNT WORK
-//        // From http://khanlou.com/2013/04/paging-a-overflowing-collection-view/
+        // From http://khanlou.com/2013/04/paging-a-overflowing-collection-view/
+        // We have to transfer pan gesture recognition from the collection view to the hidden scroll view.
         self.collectionView.panGestureRecognizer.enabled = false
         self.collectionView.addGestureRecognizer(self.scrollView.panGestureRecognizer)
-        
-//        self.collectionView.scrollEnabled = false
-        
     }
     
     public func registerCellClass(cellClass: AnyClass, withReuseIdentifier identifier: String) {
