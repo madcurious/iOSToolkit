@@ -26,6 +26,9 @@ public extension UIView {
         }
     }
     
+    /**
+     Add subviews and fill the superview. Subviews are placed on top of the preding subviews.
+     */
     public func addSubviewsAndFill(views: UIView ...) {
         for view in views {
             self.addSubviewAndFill(view)

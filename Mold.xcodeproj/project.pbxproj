@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		268D23E81D001093006B8D0B /* MDPagedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268D23E71D001093006B8D0B /* MDPagedCollectionView.swift */; };
 		26904D341C7757540094DA08 /* Mold.h in Headers */ = {isa = PBXBuildFile; fileRef = 26904D331C7757540094DA08 /* Mold.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26904DFE1C77598B0094DA08 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DB41C77598B0094DA08 /* Keys.swift */; };
 		26904DFF1C77598B0094DA08 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DB61C77598B0094DA08 /* Double.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		268D23E71D001093006B8D0B /* MDPagedCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPagedCollectionView.swift; sourceTree = "<group>"; };
 		26904D301C7757540094DA08 /* Mold.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mold.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26904D331C7757540094DA08 /* Mold.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mold.h; sourceTree = "<group>"; };
 		26904D351C7757540094DA08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				26904DF31C77598B0094DA08 /* MDLabelButton.swift */,
 				26904DF41C77598B0094DA08 /* MDLoadingOverlay.swift */,
 				26904DF51C77598B0094DA08 /* MDTableViewCell.swift */,
+				268D23E71D001093006B8D0B /* MDPagedCollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				26904E211C77598B0094DA08 /* MDBlockOperation.swift in Sources */,
 				26904DFF1C77598B0094DA08 /* Double.swift in Sources */,
 				26904E3D1C7763150094DA08 /* MDArchivableValueType.swift in Sources */,
+				268D23E81D001093006B8D0B /* MDPagedCollectionView.swift in Sources */,
 				26904E041C77598B0094DA08 /* NSNotification.swift in Sources */,
 				26904E301C77598B0094DA08 /* MDButton.swift in Sources */,
 				26904DFE1C77598B0094DA08 /* Keys.swift in Sources */,
