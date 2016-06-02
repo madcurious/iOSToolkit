@@ -22,4 +22,31 @@ public extension NSDate {
             thisDate.year == otherDate.year
     }
     
+    /**
+     Returns the same date with the time set to 12 midnight, the very first moment of the date.
+     */
+    public func firstMoment() -> NSDate {
+        let calendar = NSCalendar.currentCalendar()
+        
+        let dateComponents = calendar.components([.Year, .Month, .Day, .Hour, .Minute, .Second], fromDate: self)
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        dateComponents.second = 0
+        
+        let firstMoment = calendar.dateFromComponents(dateComponents)!
+        return firstMoment
+    }
+    
+    public func lastMoment() -> NSDate {
+        let calendar = NSCalendar.currentCalendar()
+        
+        let dateComponents = calendar.components([.Year, .Month, .Day, .Hour, .Minute, .Second], fromDate: self)
+        dateComponents.hour = 23
+        dateComponents.minute = 59
+        dateComponents.second = 59
+        
+        let firstMoment = calendar.dateFromComponents(dateComponents)!
+        return firstMoment
+    }
+    
 }
