@@ -103,6 +103,11 @@ public class MDPagedCollectionView: UIView {
     public func dequeueReusableCellWithReuseIdentifier(identifier: String, forIndex index: Int) -> UICollectionViewCell {
         return self.collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: NSIndexPath(forItem: index, inSection: 0))
     }
+    
+    public override func layoutSubviews() {
+        self.layoutManager.invalidateLayout()
+        super.layoutSubviews()
+    }
 }
 
 extension MDPagedCollectionView: UICollectionViewDataSource {
