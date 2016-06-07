@@ -63,6 +63,7 @@
 		26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3C1C7763150094DA08 /* MDFileManager.swift */; };
 		26904ED51C7785B00094DA08 /* mold-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED41C7785B00094DA08 /* mold-banner.png */; };
 		26904ED71C778A120094DA08 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED61C778A120094DA08 /* LICENSE */; };
+		26E34A5F1D065E81002CE4E8 /* SequenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E34A5E1D065E81002CE4E8 /* SequenceType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,7 @@
 		26904E3F1C77747C0094DA08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		26904ED41C7785B00094DA08 /* mold-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mold-banner.png"; sourceTree = "<group>"; };
 		26904ED61C778A120094DA08 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		26E34A5E1D065E81002CE4E8 /* SequenceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				26904DBE1C77598B0094DA08 /* UIColor.swift */,
 				26904DBF1C77598B0094DA08 /* UIView.swift */,
 				26904DC01C77598B0094DA08 /* UIViewController.swift */,
+				26E34A5E1D065E81002CE4E8 /* SequenceType.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				26904E061C77598B0094DA08 /* String.swift in Sources */,
 				26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */,
 				26904E101C77598B0094DA08 /* MDErrorType.swift in Sources */,
+				26E34A5F1D065E81002CE4E8 /* SequenceType.swift in Sources */,
 				26904E211C77598B0094DA08 /* MDBlockOperation.swift in Sources */,
 				26904DFF1C77598B0094DA08 /* Double.swift in Sources */,
 				26904E3D1C7763150094DA08 /* MDArchivableValueType.swift in Sources */,
