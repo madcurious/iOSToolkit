@@ -22,9 +22,8 @@ public extension SequenceType {
             }
             
             // If the key already exists in the dictionary, append the element to the list.
-            if let _ = dict.indexForKey(group),
-                var list = dict[group] {
-                list.append(element)
+            if let _ = dict.indexForKey(group) {
+                dict[group]?.append(element)
             }
             
                 // Otherwise create a new key-value pair.
