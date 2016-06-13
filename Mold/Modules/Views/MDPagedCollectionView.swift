@@ -18,11 +18,15 @@ public protocol MDPagedCollectionViewDataSource {
 }
 
 // MARK: - MDPagedCollectionViewDelegate
-public protocol MDPagedCollectionViewDelegate {
+@objc public protocol MDPagedCollectionViewDelegate {
     
+    // MARK: Layout
     func collectionView(collectionView: MDPagedCollectionView, sizeForItemAtIndex index: Int) -> CGSize
     func insetsForCollectionView(collectionView: MDPagedCollectionView) -> UIEdgeInsets
     func minimumInterItemSpacingForCollectionView(collectionView: MDPagedCollectionView) -> CGFloat
+    
+    // MARK: Events
+    optional func collectionView(collectionView: MDPagedCollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndex index: Int)
     
 }
 
@@ -93,8 +97,14 @@ public class MDPagedCollectionView: UIView {
     }
     
     public func scrollToLastItem() {
-        let lastItem = self.collectionView.numberOfItemsInSection(0) - 1
-        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: lastItem, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: false)
+        let numberOfItems = self.collectionView.numberOfItemsInSection(0)
+        guard numberOfItems > 0
+            else {
+                return
+        }
+        
+        let lastIndex = numberOfItems - 1
+        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: lastIndex, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: false)
         self.collectionView.collectionViewLayout.invalidateLayout()
         
         self.scrollView.contentOffset = CGPoint(x: self.scrollView.contentSize.width - self.scrollView.bounds.size.width, y: self.scrollView.contentOffset.y)
@@ -128,7 +138,13 @@ extension MDPagedCollectionView: UICollectionViewDataSource {
     
 }
 
-extension MDPagedCollectionView: UICollectionViewDelegate {}
+extension MDPagedCollectionView: UICollectionViewDelegate {
+    
+    public func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        self.delegate?.collectionView?(self, willDisplayCell: cell, forItemAtIndex: indexPath.item)
+    }
+    
+}
 
 extension MDPagedCollectionView: UICollectionViewDelegateFlowLayout {
     

@@ -13,7 +13,9 @@ public class MDStatefulViewController: UIViewController {
     public enum View {
         case Starting, Loading, Retry, Primary, NoResults
     }
+    
     public var operationQueue = NSOperationQueue()
+    public var currentView = View.Loading
     
     var defaultStartingView = MDDefaultStartingView()
     var defaultLoadingView = MDLoadingView()
@@ -94,7 +96,9 @@ public class MDStatefulViewController: UIViewController {
                 return
         }
         
+        let originalStartBlock = op.startBlock
         op.startBlock = {[unowned self] in
+            originalStartBlock?()
             self.showView(.Loading)
         }
         
@@ -107,6 +111,8 @@ public class MDStatefulViewController: UIViewController {
     }
     
     public func showView(view: MDStatefulViewController.View) {
+        self.currentView = view
+        
         self.startingView.hidden = view != .Starting
         self.loadingView.hidden = view != .Loading
         self.primaryView.hidden = view != .Primary
