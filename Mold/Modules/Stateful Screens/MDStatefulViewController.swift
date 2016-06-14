@@ -90,6 +90,9 @@ public class MDStatefulViewController: UIViewController {
         fatalError("Unimplemented function \(#function)")
     }
     
+    /**
+     Creates a new instance of the operation, overrides its callback blocks to show state views, and runs it.
+     */
     public func runOperation() {
         guard let op = self.buildOperation()
             else {
