@@ -26,7 +26,7 @@ public protocol MDPagedCollectionViewDataSource {
     func minimumInterItemSpacingForCollectionView(collectionView: MDPagedCollectionView) -> CGFloat
     
     // MARK: Events
-    optional func collectionView(collectionView: MDPagedCollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndex index: Int)
+    optional func collectionView(collectionView: MDPagedCollectionView, didScrollToPage page: CGFloat)
     
 }
 
@@ -67,6 +67,8 @@ public class MDPagedCollectionView: UIView {
         self.scrollView.delegate = self
         self.scrollView.pagingEnabled = true
         self.scrollView.showsHorizontalScrollIndicator = false
+        
+        self.collectionView.showsHorizontalScrollIndicator = false
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
@@ -85,18 +87,25 @@ public class MDPagedCollectionView: UIView {
     }
     
     public func reloadData() {
-        self.collectionView.reloadData()
-        
-        if let dataSource = self.dataSource {
-            let width = self.scrollView.bounds.size.width * CGFloat(dataSource.numberOfItemsInCollectionView(self))
-            self.scrollView.contentSize = CGSizeMake(width, self.scrollView.bounds.size.height)
+        guard let dataSource = self.dataSource
+            else {
+                return
         }
         
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+        self.collectionView.reloadData()
+        
+        // Remember the contentOffset.
+        let offset = self.scrollView.contentSize.width - self.scrollView.contentOffset.x
+        
+        // Update the scroll view's content size--this is required to enable pagination.
+        let width = self.scrollView.bounds.size.width * CGFloat(dataSource.numberOfItemsInCollectionView(self))
+        self.scrollView.contentSize = CGSizeMake(width, self.scrollView.bounds.size.height)
+        
+        // Apply the old contentOffset.
+        self.scrollView.contentOffset = CGPointMake(self.scrollView.contentSize.width - offset, 0)
     }
     
-    public func scrollToLastItem() {
+    public func scrollToLastItem(animated animated: Bool) {
         let numberOfItems = self.collectionView.numberOfItemsInSection(0)
         guard numberOfItems > 0
             else {
@@ -104,10 +113,7 @@ public class MDPagedCollectionView: UIView {
         }
         
         let lastIndex = numberOfItems - 1
-        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: lastIndex, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: false)
-        self.collectionView.collectionViewLayout.invalidateLayout()
-        
-        self.scrollView.contentOffset = CGPoint(x: self.scrollView.contentSize.width - self.scrollView.bounds.size.width, y: self.scrollView.contentOffset.y)
+        self.scrollToItemAtIndex(lastIndex, animated: animated)
     }
     
     public func dequeueReusableCellWithReuseIdentifier(identifier: String, forIndex index: Int) -> UICollectionViewCell {
@@ -118,6 +124,14 @@ public class MDPagedCollectionView: UIView {
         self.layoutManager.invalidateLayout()
         super.layoutSubviews()
     }
+    
+    func scrollToItemAtIndex(index: Int, animated: Bool) {
+        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: index, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: animated)
+        self.collectionView.collectionViewLayout.invalidateLayout()
+        
+        self.scrollView.contentOffset = CGPoint(x: self.scrollView.bounds.size.width * CGFloat(index), y: self.scrollView.contentOffset.y)
+    }
+    
 }
 
 extension MDPagedCollectionView: UICollectionViewDataSource {
@@ -138,13 +152,7 @@ extension MDPagedCollectionView: UICollectionViewDataSource {
     
 }
 
-extension MDPagedCollectionView: UICollectionViewDelegate {
-    
-    public func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-        self.delegate?.collectionView?(self, willDisplayCell: cell, forItemAtIndex: indexPath.item)
-    }
-    
-}
+extension MDPagedCollectionView: UICollectionViewDelegate {}
 
 extension MDPagedCollectionView: UICollectionViewDelegateFlowLayout {
     
@@ -182,7 +190,6 @@ extension MDPagedCollectionView: UIScrollViewDelegate {
     
     // Translate the offset of the scrollView to the collectionView.
     public func scrollViewDidScroll(scrollView: UIScrollView) {
-        
         guard let delegate = self.delegate
             where scrollView == self.scrollView // Do not recognize scrolls from the collection view.
             else {
@@ -200,6 +207,8 @@ extension MDPagedCollectionView: UIScrollViewDelegate {
         let pageWidth = delegate.collectionView(self, sizeForItemAtIndex: 0).width + delegate.minimumInterItemSpacingForCollectionView(self)
         let cvX = page * pageWidth
         self.collectionView.contentOffset = CGPointMake(cvX, 0)
+        
+        delegate.collectionView?(self, didScrollToPage: page)
     }
     
 }
