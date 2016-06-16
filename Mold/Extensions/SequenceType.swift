@@ -13,22 +13,22 @@ public extension SequenceType {
     /**
      Returns a dictionary where the key is the group, and the value is an array of member elements.
      */
-    @warn_unused_result public func group<T: Equatable>(@noescape getGroup: Generator.Element -> T?) -> [T : [Generator.Element]] {
+    @warn_unused_result public func groupBy<T: Equatable>(@noescape groupKey: Generator.Element -> T?) -> [T : [Generator.Element]] {
         var dict: [T : [Generator.Element]] = [:]
         for element in self {
-            guard let group = getGroup(element)
+            guard let key = groupKey(element)
                 else {
                     continue
             }
             
             // If the key already exists in the dictionary, append the element to the list.
-            if let _ = dict.indexForKey(group) {
-                dict[group]?.append(element)
+            if let _ = dict.indexForKey(key) {
+                dict[key]?.append(element)
             }
             
                 // Otherwise create a new key-value pair.
             else {
-                dict[group] = [element]
+                dict[key] = [element]
             }
         }
         return dict
