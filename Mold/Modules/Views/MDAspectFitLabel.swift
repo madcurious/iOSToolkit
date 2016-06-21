@@ -8,8 +8,6 @@
 
 import Foundation
 
-private let CGSizeMax = CGSizeMake(CGFloat.max, CGFloat.max)
-
 /**
 A subclass of `UILabel` that automatically adjusts the text's font size
 so that the text fits exactly within the bounds of the label.
