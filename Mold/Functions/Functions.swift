@@ -12,7 +12,7 @@ import UIKit
  Returns a string if the argument is a non-nil, non-empty string. Otherwise,
  returns `nil`.
  */
-public func nonEmptyString(arg: Any?) -> String? {
+public func md_nonEmptyString(arg: Any?) -> String? {
     if let string = arg as? String {
         if string.trim().isEmpty == false {
             return string
@@ -21,14 +21,14 @@ public func nonEmptyString(arg: Any?) -> String? {
     return nil
 }
 
-public func rootViewController() -> UIViewController {
+public func md_rootViewController() -> UIViewController {
     guard let root = UIApplication.sharedApplication().delegate?.window??.rootViewController else {
         fatalError("No root view controller.")
     }
     return root
 }
 
-public func prettyPrintJSONObject(object: AnyObject) {
+public func md_prettyPrintJSONObject(object: AnyObject) {
     var JSONData: NSData
     if let data = object as? NSData {
         JSONData = data
