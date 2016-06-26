@@ -50,7 +50,7 @@ public class MDDefaultRetryView: MDRetryView {
         self.errorLabel.textAlignment = .Center
         
         self.retryButton.setTitle("Retry", forState: .Normal)
-        self.retryButton.addTarget(self, action: Selector("retryButtonTapped"), forControlEvents: .TouchUpInside)
+        self.retryButton.addTarget(self, action: #selector(MDDefaultRetryView.retryButtonTapped), forControlEvents: .TouchUpInside)
         
         self.containerView.addSubviews(self.errorLabel, self.retryButton)
         self.addSubview(containerView)

@@ -54,9 +54,10 @@ public extension UIViewController {
         }
     }
     
-    public func dismissKeyboard() {
-        self.view.endEditing(true)
-    }
+}
+
+// MARK: - Modals
+public extension UIViewController {
     
     public func addCancelAndDoneBarButtonItems(cancelButtonTitle: String? = "Cancel", doneButtonTitle: String? = "Done") {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: cancelButtonTitle, style: .Plain, target: self, action: #selector(handleTapOnCancelBarButtonItem(_:)))
@@ -69,6 +70,53 @@ public extension UIViewController {
     
     public func handleTapOnDoneBarButtonItem(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+}
+
+// MARK: - Forms
+public extension UIViewController {
+    
+    public var formScrollView: UIScrollView {
+        fatalError("Unimplemented \(#function): You must provide the scroll view for the form.")
+    }
+    
+    /**
+     Adds common form behaviors to the view controller, such as tapping on external views to hide the keyboard,
+     and to adjust scroll view insets when the keyboard shows or hides.
+     
+     **IMPORTANT:** You must implement `deinit` and deregister the VC from the default `NSNotificationCenter` if you
+     use this function.
+     */
+    public func applyCommonFormBehaviors() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapRecognizer.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapRecognizer)
+        
+        let center = NSNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    public func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
+            else {
+                return
+        }
+        
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        self.formScrollView.contentInset = insets
+        self.formScrollView.scrollIndicatorInsets = insets
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        let insets = UIEdgeInsetsZero
+        self.formScrollView.contentInset = insets
+        self.formScrollView.scrollIndicatorInsets = insets
     }
     
 }

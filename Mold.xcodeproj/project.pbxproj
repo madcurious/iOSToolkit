@@ -58,7 +58,6 @@
 		26904E331C77598B0094DA08 /* MDLoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF41C77598B0094DA08 /* MDLoadingOverlay.swift */; };
 		26904E341C77598B0094DA08 /* MDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF51C77598B0094DA08 /* MDTableViewCell.swift */; };
 		26904E351C77598B0094DA08 /* MDNSNotificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF71C77598B0094DA08 /* MDNSNotificationObject.swift */; };
-		26904E371C77598B0094DA08 /* MDFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFB1C77598B0094DA08 /* MDFormViewController.swift */; };
 		26904E381C77598B0094DA08 /* MDPopupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DFC1C77598B0094DA08 /* MDPopupPickerViewController.swift */; };
 		26904E3D1C7763150094DA08 /* MDArchivableValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3B1C7763150094DA08 /* MDArchivableValueType.swift */; };
 		26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904E3C1C7763150094DA08 /* MDFileManager.swift */; };
@@ -124,7 +123,6 @@
 		26904DF41C77598B0094DA08 /* MDLoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDLoadingOverlay.swift; sourceTree = "<group>"; };
 		26904DF51C77598B0094DA08 /* MDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDTableViewCell.swift; sourceTree = "<group>"; };
 		26904DF71C77598B0094DA08 /* MDNSNotificationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDNSNotificationObject.swift; sourceTree = "<group>"; };
-		26904DFB1C77598B0094DA08 /* MDFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFormViewController.swift; sourceTree = "<group>"; };
 		26904DFC1C77598B0094DA08 /* MDPopupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPopupPickerViewController.swift; sourceTree = "<group>"; };
 		26904E3B1C7763150094DA08 /* MDArchivableValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDArchivableValueType.swift; sourceTree = "<group>"; };
 		26904E3C1C7763150094DA08 /* MDFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFileManager.swift; sourceTree = "<group>"; };
@@ -331,7 +329,6 @@
 		26904DFA1C77598B0094DA08 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				26904DFB1C77598B0094DA08 /* MDFormViewController.swift */,
 				26904DFC1C77598B0094DA08 /* MDPopupPickerViewController.swift */,
 			);
 			path = Screens;
@@ -448,7 +445,6 @@
 				26170E011D199A1F0003BC71 /* UIImage.swift in Sources */,
 				26CD0E8B1D1415F100CF92F4 /* MDScreen.swift in Sources */,
 				26A253C61D1983C5003CDF5E /* Constants.swift in Sources */,
-				26904E371C77598B0094DA08 /* MDFormViewController.swift in Sources */,
 				26904E251C77598B0094DA08 /* MDDefaultNoResultsView.swift in Sources */,
 				26904E161C77598B0094DA08 /* MDFieldSelectionCell.swift in Sources */,
 				26904E171C77598B0094DA08 /* MDFieldTextField.swift in Sources */,
