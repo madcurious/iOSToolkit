@@ -10,6 +10,24 @@ import Foundation
 
 public class MDURLOperation: MDOperation {
     
+    public enum Method: String {
+        case OPTIONS = "OPTIONS"
+        case GET = "GET"
+        case HEAD = "HEAD"
+        case POST = "POST"
+        case PUT = "PUT"
+        case PATCH = "PATCH"
+        case DELETE = "DELETE"
+        case TRACE = "TRACE"
+        case CONNECT = "CONNECT"
+    }
+    
+    public enum ResponseEncoding {
+        case JSON
+    }
+    
+    public var responseEncoding = ResponseEncoding.JSON
+    
     public override func main() {
         self.runStartBlock()
         
@@ -35,7 +53,7 @@ public class MDURLOperation: MDOperation {
     public func runURLRequest() throws {
     }
     
-    public func returnFromURLRequest(error: NSError?, _ object: Any?) {
+    public func returnFromURLRequest(data data: NSData?, response: NSURLResponse?, error: NSError?) {
         defer {
             self.closeOperation()
         }
@@ -50,7 +68,14 @@ public class MDURLOperation: MDOperation {
         }
         
         do {
-            let result = try self.buildResult(object)
+            var rawResult: Any?
+            // Attempt to encode the data into JSON, the default format.
+            if let data = data
+                where self.responseEncoding == .JSON {
+                rawResult = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+            }
+            
+            let result = try self.buildResult(rawResult)
             self.runSuccessBlock(result)
             return
         } catch {
