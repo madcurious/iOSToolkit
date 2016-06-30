@@ -96,12 +96,6 @@ public extension UIViewController {
         let center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         center.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
-        
-        // If the view controller is in a tab bar controller, extend the layout to the bottom
-        // to let the formScrollView to resize properly when keyboard appears.
-        if let _ = self.tabBarController {
-            self.edgesForExtendedLayout = .Bottom
-        }
     }
     
     public func dismissKeyboard() {
@@ -114,7 +108,14 @@ public extension UIViewController {
                 return
         }
         
-        let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        var bottomInset = keyboardSize.height
+        
+        // If the view controller is in a tab bar controller, take into account the tab bar height.
+        if let tabBar = self.tabBarController?.tabBar {
+            bottomInset += tabBar.bounds.size.height
+        }
+        
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
         self.formScrollView.contentInset = insets
         self.formScrollView.scrollIndicatorInsets = insets
     }
