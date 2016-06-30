@@ -112,7 +112,7 @@ public extension UIViewController {
         
         // If the view controller is in a tab bar controller, take into account the tab bar height.
         if let tabBar = self.tabBarController?.tabBar {
-            bottomInset += tabBar.bounds.size.height
+            bottomInset -= tabBar.bounds.size.height
         }
         
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
