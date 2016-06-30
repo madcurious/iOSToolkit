@@ -14,10 +14,8 @@ public class MDDefaultStartingView: MQStartingView {
     
     public override var text: String? {
         didSet {
-            if let text = self.text {
-                self.startingTextLabel.text = text
-                self.setNeedsLayout()
-            }
+            self.startingTextLabel.text = text
+            self.setNeedsLayout()
         }
     }
     
