@@ -24,14 +24,16 @@ public extension UIImage {
     }
     
     public class func imageFromView(view: UIView) -> UIImage? {
-        if let context = UIGraphicsGetCurrentContext() {
-            UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0)
-            view.layer.renderInContext(context)
-            let image = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            return image
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0)
+        guard let context = UIGraphicsGetCurrentContext()
+            else {
+                return nil
         }
-        return nil
+        
+        view.layer.renderInContext(context)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
     
 }
