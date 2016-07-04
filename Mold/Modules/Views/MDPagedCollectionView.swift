@@ -39,8 +39,8 @@ public protocol MDPagedCollectionViewDataSource {
  */
 public class MDPagedCollectionView: UIView {
     
-    let collectionView: UICollectionView
-    let scrollView: UIScrollView
+    public let collectionView: UICollectionView
+    public let scrollView: UIScrollView
     let layoutManager: UICollectionViewFlowLayout
     
     public var dataSource: MDPagedCollectionViewDataSource?
@@ -107,7 +107,7 @@ public class MDPagedCollectionView: UIView {
         self.scrollView.contentOffset = CGPointMake(self.scrollView.contentSize.width - offset, 0)
     }
     
-    public func scrollToLastItem(animated animated: Bool) {
+    public func scrollToLastItem(animated animated: Bool, completion: (Void -> Void)?) {
         let numberOfItems = self.collectionView.numberOfItemsInSection(0)
         guard numberOfItems > 0
             else {
@@ -115,7 +115,7 @@ public class MDPagedCollectionView: UIView {
         }
         
         let lastIndex = numberOfItems - 1
-        self.scrollToItemAtIndex(lastIndex, animated: animated)
+        self.scrollToItemAtIndex(lastIndex, animated: animated, completion: completion)
     }
     
     public func dequeueReusableCellWithReuseIdentifier(identifier: String, forIndex index: Int) -> UICollectionViewCell {
@@ -127,11 +127,21 @@ public class MDPagedCollectionView: UIView {
         super.layoutSubviews()
     }
     
-    func scrollToItemAtIndex(index: Int, animated: Bool) {
-        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: index, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: animated)
-        self.collectionView.collectionViewLayout.invalidateLayout()
+    func scrollToItemAtIndex(index: Int, animated: Bool, completion: (Void -> Void)?) {
+        // Scrolling to an index only means setting the contentOffset of the scrollView,
+        // because doing so invokes scrollViewDidScroll, which already offsets the collection view correctly.
         
-        self.scrollView.contentOffset = CGPoint(x: self.scrollView.bounds.size.width * CGFloat(index), y: self.scrollView.contentOffset.y)
+        let x = self.scrollView.bounds.size.width * CGFloat(index)
+        if animated {
+            UIView.animateWithDuration(0.25, animations: {[unowned self] in
+                self.scrollView.contentOffset = CGPoint(x: x, y: self.scrollView.contentOffset.y)
+                }, completion: { (_) in
+                    completion?()
+            })
+        } else {
+            self.scrollView.contentOffset = CGPoint(x: x, y: self.scrollView.contentOffset.y)
+            completion?()
+        }
     }
     
 }
