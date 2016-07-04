@@ -47,3 +47,20 @@ public func md_prettyPrintJSONObject(object: AnyObject) {
         print("Can't print object as JSON: \(object)")
     }
 }
+
+
+private let kDateFormatter: NSDateFormatter = {
+    let df = NSDateFormatter()
+    df.dateStyle = .FullStyle
+    df.timeStyle = .FullStyle
+    df.timeZone = NSTimeZone.localTimeZone()
+    return df
+}()
+
+public func md_stringForDate(date: NSDate?) -> String {
+    guard let date = date
+        else {
+            return "nil"
+    }
+    return kDateFormatter.stringFromDate(date)
+}

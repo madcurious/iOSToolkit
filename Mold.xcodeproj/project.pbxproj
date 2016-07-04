@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		260308311D2A2C750094B4D2 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260308301D2A2C750094B4D2 /* UIButton.swift */; };
+		260308351D2A76190094B4D2 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260308341D2A76190094B4D2 /* UIAlertController.swift */; };
 		26170E011D199A1F0003BC71 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26170E001D199A1F0003BC71 /* UIImage.swift */; };
 		268D23E81D001093006B8D0B /* MDPagedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268D23E71D001093006B8D0B /* MDPagedCollectionView.swift */; };
 		26904D341C7757540094DA08 /* Mold.h in Headers */ = {isa = PBXBuildFile; fileRef = 26904D331C7757540094DA08 /* Mold.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		260308301D2A2C750094B4D2 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		260308341D2A76190094B4D2 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		26170E001D199A1F0003BC71 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		268D23E71D001093006B8D0B /* MDPagedCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPagedCollectionView.swift; sourceTree = "<group>"; };
 		26904D301C7757540094DA08 /* Mold.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mold.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +212,7 @@
 				26C9620B1D08211C007EBA41 /* +.swift */,
 				26170E001D199A1F0003BC71 /* UIImage.swift */,
 				260308301D2A2C750094B4D2 /* UIButton.swift */,
+				260308341D2A76190094B4D2 /* UIAlertController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				26904E181C77598B0094DA08 /* MDFieldTextFieldCell.swift in Sources */,
 				26904E2D1C77598B0094DA08 /* MDStatefulViewController.swift in Sources */,
 				26904E321C77598B0094DA08 /* MDLabelButton.swift in Sources */,
+				260308351D2A76190094B4D2 /* UIAlertController.swift in Sources */,
 				26904E061C77598B0094DA08 /* String.swift in Sources */,
 				26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */,
 				26904E101C77598B0094DA08 /* MDErrorType.swift in Sources */,
