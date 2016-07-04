@@ -26,7 +26,9 @@ public protocol MDPagedCollectionViewDataSource {
     func minimumInterItemSpacingForCollectionView(collectionView: MDPagedCollectionView) -> CGFloat
     
     // MARK: Events
-    optional func collectionView(collectionView: MDPagedCollectionView, didScrollToPage page: CGFloat)
+//    optional func collectionView(collectionView: MDPagedCollectionView, didScrollToPage page: CGFloat)
+    optional func collectionViewDidScroll(collectionView: MDPagedCollectionView, page: CGFloat)
+    optional func collectionViewDidEndDecelerating(collectionView: MDPagedCollectionView, page: CGFloat)
     
 }
 
@@ -208,7 +210,17 @@ extension MDPagedCollectionView: UIScrollViewDelegate {
         let cvX = page * pageWidth
         self.collectionView.contentOffset = CGPointMake(cvX, 0)
         
-        delegate.collectionView?(self, didScrollToPage: page)
+        delegate.collectionViewDidScroll?(self, page: page)
+    }
+    
+    public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        guard let delegate = self.delegate
+            where scrollView  == self.scrollView
+            else {
+                return
+        }
+        let page = self.scrollView.contentOffset.x / self.scrollView.bounds.size.width
+        delegate.collectionViewDidEndDecelerating?(self, page: page)
     }
     
 }
