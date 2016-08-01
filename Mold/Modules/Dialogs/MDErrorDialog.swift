@@ -10,8 +10,15 @@ import UIKit
 
 public final class MDErrorDialog {
     
-    public class func showError(error: NSError, inPresenter presenter: UIViewController, dialogTitle: String? = nil, cancelButtonTitle: String = "OK") {
-        let alertController = UIAlertController(title: dialogTitle, message: error.localizedDescription, preferredStyle: .Alert)
+    public class func showError(error: ErrorType, inPresenter presenter: UIViewController, dialogTitle: String? = nil, cancelButtonTitle: String = "OK") {
+        let message: String = {
+            if let error = error as? MDErrorType {
+                return error.object().message
+            }
+            return (error as NSError).localizedDescription
+        }()
+        
+        let alertController = UIAlertController(title: dialogTitle, message: message, preferredStyle: .Alert)
         let cancelButtonAction = UIAlertAction(title: cancelButtonTitle, style: .Default) {_ in
             alertController.dismissViewControllerAnimated(true, completion: nil)
         }

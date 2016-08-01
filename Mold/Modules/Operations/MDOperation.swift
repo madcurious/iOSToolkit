@@ -13,7 +13,8 @@ public class MDOperation: NSOperation {
     public var startBlock: (Void -> Void)?
     public var returnBlock: (Void -> Void)?
     public var successBlock: (Any? -> Void)?
-    public var failBlock: (NSError -> Void)?
+//    public var failBlock: (NSError -> Void)?
+    public var failBlock: (ErrorType -> Void)?
     public var finishBlock: (Void -> Void)?
     
     public var shouldRunCallbacksInMainThread = true
@@ -65,7 +66,12 @@ public class MDOperation: NSOperation {
         return self
     }
     
-    public func onFail(failBlock: NSError -> Void) -> Self {
+//    public func onFail(failBlock: NSError -> Void) -> Self {
+//        self.failBlock = failBlock
+//        return self
+//    }
+    
+    public func onFail(failBlock: ErrorType -> Void) -> Self {
         self.failBlock = failBlock
         return self
     }
@@ -177,7 +183,34 @@ public class MDOperation: NSOperation {
         }
     }
     
-    public func runFailBlock(error: NSError) {
+//    public func runFailBlock(error: NSError) {
+//        if self.shouldRunReturnBlockBeforeSuccessOrFail {
+//            self.runReturnBlock()
+//        }
+//        
+//        guard let failBlock = self.failBlock
+//            else {
+//                return
+//        }
+//        
+//        if self.shouldRunCallbacksInMainThread == true {
+//            MDDispatcher.syncRunInMainThread {
+//                failBlock(error)
+//            }
+//        } else {
+//            failBlock(error)
+//        }
+//    }
+//    
+//    public func runFailBlock(error: ErrorType) {
+//        if let error = error as? MDErrorType {
+//            self.runFailBlock(error.object())
+//        } else {
+//            self.runFailBlock(error as NSError)
+//        }
+//    }
+    
+    public func runFailBlock(error: ErrorType) {
         if self.shouldRunReturnBlockBeforeSuccessOrFail {
             self.runReturnBlock()
         }
@@ -188,19 +221,11 @@ public class MDOperation: NSOperation {
         }
         
         if self.shouldRunCallbacksInMainThread == true {
-            MDDispatcher.syncRunInMainThread {
+            MDDispatcher.syncRunInMainThread({ 
                 failBlock(error)
-            }
+            })
         } else {
             failBlock(error)
-        }
-    }
-    
-    public func runFailBlock(error: ErrorType) {
-        if let error = error as? MDErrorType {
-            self.runFailBlock(error.object())
-        } else {
-            self.runFailBlock(error as NSError)
         }
     }
     

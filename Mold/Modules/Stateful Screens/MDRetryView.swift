@@ -16,7 +16,7 @@ public protocol MDRetryViewDelegate {
 
 public class MDRetryView: UIView {
     
-    public var error: NSError?
+    public var error: ErrorType?
     public var delegate: MDRetryViewDelegate?
     
 }
