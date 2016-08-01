@@ -21,6 +21,8 @@ public class MDDefaultRetryView: MDRetryView {
         didSet {
             if let error = self.error as? MDErrorType {
                 self.errorLabel.text = error.object().message
+            } else if let error = self.error as? NSError {
+                self.errorLabel.text = error.localizedDescription
             }
             self.setNeedsLayout()
         }
