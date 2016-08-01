@@ -105,12 +105,20 @@ public class MDStatefulViewController: UIViewController {
             self.showView(.Loading)
         }
         
-        op.failBlock = {[unowned self] error in
+        op.failBlock = self.buildFailBlock()
+        
+        self.operationQueue.addOperation(op)
+    }
+    
+    /**
+     Override point for customising the `failBlock` that automatically gets executed
+     when the stateful view controller's operation fails.
+     */
+    public func buildFailBlock() -> (ErrorType -> Void) {
+        return {[unowned self] error in
             self.retryView.error = error
             self.showView(.Retry)
         }
-        
-        self.operationQueue.addOperation(op)
     }
     
     public func showView(view: MDStatefulViewController.View) {

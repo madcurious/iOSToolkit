@@ -17,12 +17,12 @@ public class MDDefaultRetryView: MDRetryView {
     public var retryButton: UIButton
     public var containerView: UIView
     
-    public override var error: NSError? {
+    public override var error: ErrorType? {
         didSet {
-            if let error = self.error {
+            if let error = self.error as? MDErrorType {
+                self.errorLabel.text = error.object().message
+            } else if let error = self.error as? NSError {
                 self.errorLabel.text = error.localizedDescription
-            } else {
-                self.errorLabel.text = nil
             }
             self.setNeedsLayout()
         }
