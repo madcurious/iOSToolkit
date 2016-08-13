@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		260308351D2A76190094B4D2 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260308341D2A76190094B4D2 /* UIAlertController.swift */; };
 		26170E011D199A1F0003BC71 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26170E001D199A1F0003BC71 /* UIImage.swift */; };
+		261AF6401D5F792B00E03A48 /* MDResponsiveLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261AF63F1D5F792B00E03A48 /* MDResponsiveLabel.swift */; };
+		261AF6421D5F9FE100E03A48 /* MDResponsiveTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261AF6411D5F9FE100E03A48 /* MDResponsiveTextField.swift */; };
+		261AF6481D5FA49C00E03A48 /* MDViewportBasedFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261AF6471D5FA49C00E03A48 /* MDViewportBasedFontSize.swift */; };
 		266408B61D4A588200609580 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266408B51D4A588200609580 /* NSAttributedString.swift */; };
 		266408BC1D4A615100609580 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266408BB1D4A615100609580 /* UIButton.swift */; };
 		266408BF1D4A62DC00609580 /* MDImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266408BD1D4A62DC00609580 /* MDImageButton.swift */; };
@@ -75,6 +78,9 @@
 /* Begin PBXFileReference section */
 		260308341D2A76190094B4D2 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		26170E001D199A1F0003BC71 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		261AF63F1D5F792B00E03A48 /* MDResponsiveLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDResponsiveLabel.swift; sourceTree = "<group>"; };
+		261AF6411D5F9FE100E03A48 /* MDResponsiveTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDResponsiveTextField.swift; sourceTree = "<group>"; };
+		261AF6471D5FA49C00E03A48 /* MDViewportBasedFontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDViewportBasedFontSize.swift; sourceTree = "<group>"; };
 		266408B51D4A588200609580 /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		266408BB1D4A615100609580 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		266408BD1D4A62DC00609580 /* MDImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDImageButton.swift; sourceTree = "<group>"; };
@@ -323,6 +329,9 @@
 				26904DF41C77598B0094DA08 /* MDLoadingOverlay.swift */,
 				26904DF51C77598B0094DA08 /* MDTableViewCell.swift */,
 				268D23E71D001093006B8D0B /* MDPagedCollectionView.swift */,
+				261AF63F1D5F792B00E03A48 /* MDResponsiveLabel.swift */,
+				261AF6411D5F9FE100E03A48 /* MDResponsiveTextField.swift */,
+				261AF6471D5FA49C00E03A48 /* MDViewportBasedFontSize.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -442,12 +451,14 @@
 				26904E131C77598B0094DA08 /* MDFieldCell.swift in Sources */,
 				26904E121C77598B0094DA08 /* MDField.swift in Sources */,
 				26904E231C77598B0094DA08 /* MDOperation.swift in Sources */,
+				261AF6481D5FA49C00E03A48 /* MDViewportBasedFontSize.swift in Sources */,
 				26904E0C1C77598B0094DA08 /* MDConfirmDialog.swift in Sources */,
 				26904E0E1C77598B0094DA08 /* MDError.swift in Sources */,
 				26904E271C77598B0094DA08 /* MDDefaultStartingView.swift in Sources */,
 				26904E2E1C77598B0094DA08 /* MDDispatcher.swift in Sources */,
 				26904E081C77598B0094DA08 /* UIView.swift in Sources */,
 				26904E241C77598B0094DA08 /* MDURLOperation.swift in Sources */,
+				261AF6421D5F9FE100E03A48 /* MDResponsiveTextField.swift in Sources */,
 				26904E2C1C77598B0094DA08 /* MDStartingView.swift in Sources */,
 				26904E381C77598B0094DA08 /* MDPopupPickerViewController.swift in Sources */,
 				26170E011D199A1F0003BC71 /* UIImage.swift in Sources */,
@@ -481,6 +492,7 @@
 				26904E041C77598B0094DA08 /* NSNotification.swift in Sources */,
 				26904E301C77598B0094DA08 /* MDButton.swift in Sources */,
 				26904DFE1C77598B0094DA08 /* Keys.swift in Sources */,
+				261AF6401D5F792B00E03A48 /* MDResponsiveLabel.swift in Sources */,
 				26904E351C77598B0094DA08 /* MDNSNotificationObject.swift in Sources */,
 				26904E341C77598B0094DA08 /* MDTableViewCell.swift in Sources */,
 				26904E1A1C77598B0094DA08 /* MDFieldTextView.swift in Sources */,
