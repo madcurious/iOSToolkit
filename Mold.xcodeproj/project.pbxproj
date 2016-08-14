@@ -70,7 +70,7 @@
 		26904ED51C7785B00094DA08 /* mold-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED41C7785B00094DA08 /* mold-banner.png */; };
 		26904ED71C778A120094DA08 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED61C778A120094DA08 /* LICENSE */; };
 		26A253C61D1983C5003CDF5E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A253C51D1983C5003CDF5E /* Constants.swift */; };
-		26C9620C1D08211C007EBA41 /* +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C9620B1D08211C007EBA41 /* +.swift */; };
+		26AC96801D60455600988F19 /* ArithmeticOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AC967F1D60455600988F19 /* ArithmeticOperators.swift */; };
 		26CD0E8B1D1415F100CF92F4 /* MDScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CD0E8A1D1415F100CF92F4 /* MDScreen.swift */; };
 		26E34A5F1D065E81002CE4E8 /* SequenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E34A5E1D065E81002CE4E8 /* SequenceType.swift */; };
 /* End PBXBuildFile section */
@@ -142,7 +142,7 @@
 		26904ED41C7785B00094DA08 /* mold-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mold-banner.png"; sourceTree = "<group>"; };
 		26904ED61C778A120094DA08 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		26A253C51D1983C5003CDF5E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		26C9620B1D08211C007EBA41 /* +.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "+.swift"; sourceTree = "<group>"; };
+		26AC967F1D60455600988F19 /* ArithmeticOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArithmeticOperators.swift; sourceTree = "<group>"; };
 		26CD0E8A1D1415F100CF92F4 /* MDScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDScreen.swift; sourceTree = "<group>"; };
 		26E34A5E1D065E81002CE4E8 /* SequenceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,11 +217,11 @@
 				26904DBF1C77598B0094DA08 /* UIView.swift */,
 				26904DC01C77598B0094DA08 /* UIViewController.swift */,
 				26E34A5E1D065E81002CE4E8 /* SequenceType.swift */,
-				26C9620B1D08211C007EBA41 /* +.swift */,
 				26170E001D199A1F0003BC71 /* UIImage.swift */,
 				260308341D2A76190094B4D2 /* UIAlertController.swift */,
 				266408B51D4A588200609580 /* NSAttributedString.swift */,
 				266408BB1D4A615100609580 /* UIButton.swift */,
+				26AC967F1D60455600988F19 /* ArithmeticOperators.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -462,6 +462,7 @@
 				26904E2C1C77598B0094DA08 /* MDStartingView.swift in Sources */,
 				26904E381C77598B0094DA08 /* MDPopupPickerViewController.swift in Sources */,
 				26170E011D199A1F0003BC71 /* UIImage.swift in Sources */,
+				26AC96801D60455600988F19 /* ArithmeticOperators.swift in Sources */,
 				26CD0E8B1D1415F100CF92F4 /* MDScreen.swift in Sources */,
 				26A253C61D1983C5003CDF5E /* Constants.swift in Sources */,
 				26904E251C77598B0094DA08 /* MDDefaultNoResultsView.swift in Sources */,
@@ -496,7 +497,6 @@
 				26904E351C77598B0094DA08 /* MDNSNotificationObject.swift in Sources */,
 				26904E341C77598B0094DA08 /* MDTableViewCell.swift in Sources */,
 				26904E1A1C77598B0094DA08 /* MDFieldTextView.swift in Sources */,
-				26C9620C1D08211C007EBA41 /* +.swift in Sources */,
 				266408BF1D4A62DC00609580 /* MDImageButton.swift in Sources */,
 				26904E2F1C77598B0094DA08 /* MDAspectFitLabel.swift in Sources */,
 				26904E051C77598B0094DA08 /* NSNotificationCenter.swift in Sources */,
