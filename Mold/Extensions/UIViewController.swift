@@ -20,7 +20,7 @@ public extension UIViewController {
         self.embedChildViewController(childViewController, toView: self.view, fillSuperview: fillSuperview)
     }
     
-    public func embedChildViewController(childViewController: UIViewController, toView superview: UIView, fillSuperview: Bool) {
+    public func embedChildViewController(childViewController: UIViewController, toView superview: UIView, fillSuperview: Bool = true) {
         self.addChildViewController(childViewController)
         
         if fillSuperview {

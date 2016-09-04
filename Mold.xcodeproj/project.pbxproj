@@ -14,8 +14,6 @@
 		261AF6481D5FA49C00E03A48 /* MDViewportBasedFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261AF6471D5FA49C00E03A48 /* MDViewportBasedFontSize.swift */; };
 		266408B61D4A588200609580 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266408B51D4A588200609580 /* NSAttributedString.swift */; };
 		266408BC1D4A615100609580 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266408BB1D4A615100609580 /* UIButton.swift */; };
-		266408BF1D4A62DC00609580 /* MDImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266408BD1D4A62DC00609580 /* MDImageButton.swift */; };
-		266408C01D4A62DC00609580 /* MDLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266408BE1D4A62DC00609580 /* MDLabelButton.swift */; };
 		268D23E81D001093006B8D0B /* MDPagedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268D23E71D001093006B8D0B /* MDPagedCollectionView.swift */; };
 		26904D341C7757540094DA08 /* Mold.h in Headers */ = {isa = PBXBuildFile; fileRef = 26904D331C7757540094DA08 /* Mold.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26904DFE1C77598B0094DA08 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DB41C77598B0094DA08 /* Keys.swift */; };
@@ -83,8 +81,6 @@
 		261AF6471D5FA49C00E03A48 /* MDViewportBasedFontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDViewportBasedFontSize.swift; sourceTree = "<group>"; };
 		266408B51D4A588200609580 /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		266408BB1D4A615100609580 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		266408BD1D4A62DC00609580 /* MDImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDImageButton.swift; sourceTree = "<group>"; };
-		266408BE1D4A62DC00609580 /* MDLabelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDLabelButton.swift; sourceTree = "<group>"; };
 		268D23E71D001093006B8D0B /* MDPagedCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPagedCollectionView.swift; sourceTree = "<group>"; };
 		26904D301C7757540094DA08 /* Mold.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mold.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26904D331C7757540094DA08 /* Mold.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mold.h; sourceTree = "<group>"; };
@@ -324,8 +320,6 @@
 			children = (
 				26904DF01C77598B0094DA08 /* MDAspectFitLabel.swift */,
 				26904DF11C77598B0094DA08 /* MDButton.swift */,
-				266408BD1D4A62DC00609580 /* MDImageButton.swift */,
-				266408BE1D4A62DC00609580 /* MDLabelButton.swift */,
 				26904DF41C77598B0094DA08 /* MDLoadingOverlay.swift */,
 				26904DF51C77598B0094DA08 /* MDTableViewCell.swift */,
 				268D23E71D001093006B8D0B /* MDPagedCollectionView.swift */,
@@ -497,13 +491,11 @@
 				26904E351C77598B0094DA08 /* MDNSNotificationObject.swift in Sources */,
 				26904E341C77598B0094DA08 /* MDTableViewCell.swift in Sources */,
 				26904E1A1C77598B0094DA08 /* MDFieldTextView.swift in Sources */,
-				266408BF1D4A62DC00609580 /* MDImageButton.swift in Sources */,
 				26904E2F1C77598B0094DA08 /* MDAspectFitLabel.swift in Sources */,
 				26904E051C77598B0094DA08 /* NSNotificationCenter.swift in Sources */,
 				26904E2B1C77598B0094DA08 /* MDRetryView.swift in Sources */,
 				26904E021C77598B0094DA08 /* NSDate.swift in Sources */,
 				26904E071C77598B0094DA08 /* UIColor.swift in Sources */,
-				266408C01D4A62DC00609580 /* MDLabelButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -62,7 +62,7 @@ public extension UIView {
         }
     }
     
-    public class func instantiateFromNib<T: UIView>() -> T {
+    public class func instantiateFromNib() -> Self {
         return self.instantiateFromNibInBundle(NSBundle.mainBundle())
     }
     
