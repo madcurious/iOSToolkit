@@ -156,7 +156,7 @@ class BaseOperation: MDOperation {
 
 Many screens in an iOS app display different views depending on the state of the data it represents. For example, a view controller shows a loading screen while making an API request, a `UITableView` if it succeeds, a "No results" label if it succeeds but no results were found, and a "retry" view with a retry button if the API request fails.
 
-An `MDStatefulViewController` is a view controller that displays a view depending on the state of the task it is performing. The task is an `MDOperation`. The `MDStatefulViewController` has the following views:
+An `MDOperationViewController` is a view controller that displays a view depending on the state of the task it is performing. The task is an `MDOperation`. The `MDOperationViewController` has the following views:
 
 * `startingView` - Used to prompt the user if the screen starts off with a blank slate. For example, in a screen that lists all messages, the `startingView` shows a label that says "You have no messages yet! Click on + to add a new one."
 * `loadingView` - Displayed when the operation starts.
@@ -164,11 +164,11 @@ An `MDStatefulViewController` is a view controller that displays a view dependin
 * `noResultsView` - Should be displayed when the operation returns, succeeds, and returns an empty result.
 * `retryView` - Displayed when the operation returns with an error. The error message is displayed together with a `retryButton` which, when tapped, fires the operation again.
 
-`MDStatefulViewController` displays the `startingView` by default and automatically overrides the operation's `startBlock` and `failBlock` to display the `loadingView` and the `retryView`, respectively. However, it is up to you to override the `successBlock` to show either the `primaryView` or the `noResultsView`, because the `MDStatefulViewController` has no idea what data type you returned for the result.
+`MDOperationViewController` displays the `startingView` by default and automatically overrides the operation's `startBlock` and `failBlock` to display the `loadingView` and the `retryView`, respectively. However, it is up to you to override the `successBlock` to show either the `primaryView` or the `noResultsView`, because the `MDOperationViewController` has no idea what data type you returned for the result.
 
 
 ```
-class MessagesViewController: MDStatefulViewController {
+class MessagesViewController: MDOperationViewController {
     var messages: [Message] // Message is a custom type.
     var tableView = UITableView(frame: CGRectZero, style: .Plain)
     override var primaryView: UIView {

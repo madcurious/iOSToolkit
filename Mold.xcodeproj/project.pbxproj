@@ -55,7 +55,7 @@
 		26904E2A1C77598B0094DA08 /* MDNoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DE91C77598B0094DA08 /* MDNoResultsView.swift */; };
 		26904E2B1C77598B0094DA08 /* MDRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEA1C77598B0094DA08 /* MDRetryView.swift */; };
 		26904E2C1C77598B0094DA08 /* MDStartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEB1C77598B0094DA08 /* MDStartingView.swift */; };
-		26904E2D1C77598B0094DA08 /* MDStatefulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEC1C77598B0094DA08 /* MDStatefulViewController.swift */; };
+		26904E2D1C77598B0094DA08 /* MDOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEC1C77598B0094DA08 /* MDOperationViewController.swift */; };
 		26904E2E1C77598B0094DA08 /* MDDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DEE1C77598B0094DA08 /* MDDispatcher.swift */; };
 		26904E2F1C77598B0094DA08 /* MDAspectFitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF01C77598B0094DA08 /* MDAspectFitLabel.swift */; };
 		26904E301C77598B0094DA08 /* MDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26904DF11C77598B0094DA08 /* MDButton.swift */; };
@@ -124,7 +124,7 @@
 		26904DE91C77598B0094DA08 /* MDNoResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDNoResultsView.swift; sourceTree = "<group>"; };
 		26904DEA1C77598B0094DA08 /* MDRetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDRetryView.swift; sourceTree = "<group>"; };
 		26904DEB1C77598B0094DA08 /* MDStartingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDStartingView.swift; sourceTree = "<group>"; };
-		26904DEC1C77598B0094DA08 /* MDStatefulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDStatefulViewController.swift; sourceTree = "<group>"; };
+		26904DEC1C77598B0094DA08 /* MDOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationViewController.swift; sourceTree = "<group>"; };
 		26904DEE1C77598B0094DA08 /* MDDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDDispatcher.swift; sourceTree = "<group>"; };
 		26904DF01C77598B0094DA08 /* MDAspectFitLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAspectFitLabel.swift; sourceTree = "<group>"; };
 		26904DF11C77598B0094DA08 /* MDButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDButton.swift; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 				26904DE91C77598B0094DA08 /* MDNoResultsView.swift */,
 				26904DEA1C77598B0094DA08 /* MDRetryView.swift */,
 				26904DEB1C77598B0094DA08 /* MDStartingView.swift */,
-				26904DEC1C77598B0094DA08 /* MDStatefulViewController.swift */,
+				26904DEC1C77598B0094DA08 /* MDOperationViewController.swift */,
 			);
 			path = "Stateful Screens";
 			sourceTree = "<group>";
@@ -474,7 +474,7 @@
 				26904E0A1C77598B0094DA08 /* Functions.swift in Sources */,
 				266408BC1D4A615100609580 /* UIButton.swift in Sources */,
 				26904E181C77598B0094DA08 /* MDFieldTextFieldCell.swift in Sources */,
-				26904E2D1C77598B0094DA08 /* MDStatefulViewController.swift in Sources */,
+				26904E2D1C77598B0094DA08 /* MDOperationViewController.swift in Sources */,
 				260308351D2A76190094B4D2 /* UIAlertController.swift in Sources */,
 				26904E061C77598B0094DA08 /* String.swift in Sources */,
 				26904E3E1C7763150094DA08 /* MDFileManager.swift in Sources */,

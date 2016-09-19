@@ -1,5 +1,5 @@
 //
-//  MDStatefulViewController.swift
+//  MDOperationViewController.swift
 //  Mold
 //
 //  Created by Matt Quiros on 01/02/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MDStatefulViewController: UIViewController {
+public class MDOperationViewController: UIViewController {
     
     public enum View {
         case Starting, Loading, Retry, Primary, NoResults
@@ -17,30 +17,24 @@ public class MDStatefulViewController: UIViewController {
     public var operationQueue = NSOperationQueue()
     public var currentView = View.Loading
     
-    var defaultStartingView = MDDefaultStartingView()
-    var defaultLoadingView = MDLoadingView()
-    var defaultRetryView = MDDefaultRetryView()
-    var defaultNoResultView = MDDefaultNoResultsView()
-    var defaultPrimaryView = UIView()
-    
     public var startingView: MQStartingView {
-        return self.defaultStartingView
+        return MDDefaultStartingView()
     }
     
     public var loadingView: UIView {
-        return self.defaultLoadingView
+        return MDLoadingView()
     }
     
     public var retryView: MDRetryView {
-        return self.defaultRetryView
+        return MDRetryView()
     }
     
     public var noResultsView: MDNoResultsView {
-        return self.defaultNoResultView
+        return MDDefaultNoResultsView()
     }
     
     public var primaryView: UIView {
-        return self.defaultPrimaryView
+        return UIView()
     }
     
     /**
@@ -121,7 +115,7 @@ public class MDStatefulViewController: UIViewController {
         }
     }
     
-    public func showView(view: MDStatefulViewController.View) {
+    public func showView(view: MDOperationViewController.View) {
         self.currentView = view
         
         self.startingView.hidden = view != .Starting
@@ -153,7 +147,7 @@ public class MDStatefulViewController: UIViewController {
     
 }
 
-extension MDStatefulViewController: MDRetryViewDelegate {
+extension MDOperationViewController: MDRetryViewDelegate {
     
     public func retryViewDidTapRetry(retryView: MDRetryView) {
         self.runOperation()
@@ -161,7 +155,7 @@ extension MDStatefulViewController: MDRetryViewDelegate {
     
 }
 
-extension MDStatefulViewController: MDNoResultsViewDelegate {
+extension MDOperationViewController: MDNoResultsViewDelegate {
     
     public func noResultsViewDidTapRetry(noResultsView: MDNoResultsView) {
         self.runOperation()
