@@ -10,7 +10,7 @@ import Foundation
 
 public let kMDGenericErrorCode: Int = -1
 
-open class MDError: NSError {
+open class MDError: NSError, MDErrorType {
     
     open var message: String
     
@@ -28,6 +28,10 @@ open class MDError: NSError {
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func object() -> MDError {
+        return self
     }
     
 }
