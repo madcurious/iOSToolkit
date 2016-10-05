@@ -29,8 +29,7 @@
 		26020E7C1DA4BC0200C45902 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E4C1DA4BC0200C45902 /* UIViewController.swift */; };
 		26020E7D1DA4BC0200C45902 /* MDArchivableValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E4E1DA4BC0200C45902 /* MDArchivableValueType.swift */; };
 		26020E7E1DA4BC0200C45902 /* MDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E4F1DA4BC0200C45902 /* MDFileManager.swift */; };
-		26020E7F1DA4BC0200C45902 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26020E501DA4BC0200C45902 /* Info.plist */; };
-		26020E801DA4BC0200C45902 /* Mold.h in Headers */ = {isa = PBXBuildFile; fileRef = 26020E511DA4BC0200C45902 /* Mold.h */; };
+		26020E801DA4BC0200C45902 /* Mold.h in Headers */ = {isa = PBXBuildFile; fileRef = 26020E511DA4BC0200C45902 /* Mold.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26020E811DA4BC0200C45902 /* MDBlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E531DA4BC0200C45902 /* MDBlockOperation.swift */; };
 		26020E821DA4BC0200C45902 /* MDChainedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E541DA4BC0200C45902 /* MDChainedOperation.swift */; };
 		26020E831DA4BC0200C45902 /* MDOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E551DA4BC0200C45902 /* MDOperation.swift */; };
@@ -319,7 +318,6 @@
 			files = (
 				26904ED71C778A120094DA08 /* LICENSE in Resources */,
 				26904ED51C7785B00094DA08 /* mold-banner.png in Resources */,
-				26020E7F1DA4BC0200C45902 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,7 +32,7 @@ open class MDDispatcher {
     }
     
     open class func asyncRunInBackgroundThread(_ block: @escaping () -> Void) {
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
+        DispatchQueue.global().async {
             block()
         }
     }
