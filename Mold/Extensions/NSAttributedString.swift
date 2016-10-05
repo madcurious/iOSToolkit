@@ -20,7 +20,7 @@ extension NSAttributedString {
     public convenience init(attributedStrings: NSAttributedString ...) {
         let finalString = NSMutableAttributedString()
         for string in attributedStrings {
-            finalString.appendAttributedString(string)
+            finalString.append(string)
         }
         self.init(attributedString: finalString)
     }

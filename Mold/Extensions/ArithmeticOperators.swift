@@ -9,33 +9,33 @@
 import Foundation
 
 public func +(lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
-    return lhs.decimalNumberByAdding(rhs)
+    return lhs.adding(rhs)
 }
 
 public func -(lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
-    return lhs.decimalNumberBySubtracting(rhs)
+    return lhs.subtracting(rhs)
 }
 
 public func *(lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
-    return lhs.decimalNumberByMultiplyingBy(rhs)
+    return lhs.multiplying(by: rhs)
 }
 
 public func /(lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
-    return lhs.decimalNumberByDividingBy(rhs)
+    return lhs.dividing(by: rhs)
 }
 
-public func +=(inout lhs: NSDecimalNumber, rhs: NSDecimalNumber) {
+public func +=(lhs: inout NSDecimalNumber, rhs: NSDecimalNumber) {
     lhs = lhs + rhs
 }
 
-public func -=(inout lhs: NSDecimalNumber, rhs: NSDecimalNumber) {
+public func -=(lhs: inout NSDecimalNumber, rhs: NSDecimalNumber) {
     lhs = lhs - rhs
 }
 
-public func *=(inout lhs: NSDecimalNumber, rhs: NSDecimalNumber) {
+public func *=(lhs: inout NSDecimalNumber, rhs: NSDecimalNumber) {
     lhs = lhs * rhs
 }
 
-public func /=(inout lhs: NSDecimalNumber, rhs: NSDecimalNumber) {
+public func /=(lhs: inout NSDecimalNumber, rhs: NSDecimalNumber) {
     lhs = lhs / rhs
 }

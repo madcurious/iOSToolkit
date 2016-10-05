@@ -10,7 +10,7 @@ import Foundation
 
 public extension UIView {
     
-    public class func disableAutoresizingMasksInViews(views: UIView...) {
+    public class func disableAutoresizingMasksInViews(_ views: UIView...) {
         for view in views {
             view.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -20,7 +20,7 @@ public extension UIView {
     Adds multiple subviews in order. Later arguments are placed on top of the views
     preceding them.
     */
-    public func addSubviews(views: UIView ...) {
+    public func addSubviews(_ views: UIView ...) {
         for view in views {
             self.addSubview(view)
         }
@@ -29,13 +29,13 @@ public extension UIView {
     /**
      Add subviews and fill the superview. Subviews are placed on top of the preding subviews.
      */
-    public func addSubviewsAndFill(views: UIView ...) {
+    public func addSubviewsAndFill(_ views: UIView ...) {
         for view in views {
             self.addSubviewAndFill(view)
         }
     }
     
-    public func addSubviewAndFill(view: UIView) {
+    public func addSubviewAndFill(_ view: UIView) {
         self.addSubview(view)
         
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -63,23 +63,23 @@ public extension UIView {
     }
     
     public class func instantiateFromNib() -> Self {
-        return self.instantiateFromNibInBundle(NSBundle.mainBundle())
+        return self.instantiateFromNibInBundle(Bundle.main)
     }
     
-    public class func clearBackgroundColors(views: UIView...) {
+    public class func clearBackgroundColors(_ views: UIView...) {
         for view in views {
-            view.backgroundColor = UIColor.clearColor()
+            view.backgroundColor = UIColor.clear
         }
     }
     
-    public class func clearBackgroundColors(views: [UIView]) {
+    public class func clearBackgroundColors(_ views: [UIView]) {
         for view in views {
-            view.backgroundColor = UIColor.clearColor()
+            view.backgroundColor = UIColor.clear
         }
     }
     
     public class func nib() -> UINib {
-        return UINib(nibName: self.className(), bundle: NSBundle.mainBundle())
+        return UINib(nibName: self.className(), bundle: Bundle.main)
     }
     
 }
@@ -87,7 +87,7 @@ public extension UIView {
 // MARK: - Private functions
 extension UIView {
     
-    class func instantiateFromNibInBundle<T: UIView>(bundle: NSBundle) -> T {
+    class func instantiateFromNibInBundle<T: UIView>(_ bundle: Bundle) -> T {
         if let objects = bundle.loadNibNamed(self.className(), owner: self, options: nil) {
             if let view = objects.last as? T {
                 return view
@@ -97,7 +97,7 @@ extension UIView {
         fatalError("\(#function): No nib named \'\(self.className())\'")
     }
     
-    class func nibInBundle(bundle: NSBundle) -> UINib {
+    class func nibInBundle(_ bundle: Bundle) -> UINib {
         return UINib(nibName: self.className(), bundle: bundle)
     }
     
@@ -107,7 +107,7 @@ extension UIView {
      */
     class func className() -> String {
         let description = self.classForCoder().description()
-        if let className = description.componentsSeparatedByString(".").last {
+        if let className = description.components(separatedBy: ".").last {
             return className
         }
         fatalError("\(#function): This method no longer works for getting the Swift class name.")

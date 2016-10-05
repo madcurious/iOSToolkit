@@ -12,15 +12,15 @@ private let kLoadingOverlay = MDLoadingOverlay()
 
 public extension UIViewController {
     
-    public func embedChildViewController(childViewController: UIViewController) {
+    public func embedChildViewController(_ childViewController: UIViewController) {
         self.embedChildViewController(childViewController, fillSuperview: true)
     }
     
-    public func embedChildViewController(childViewController: UIViewController, fillSuperview: Bool) {
+    public func embedChildViewController(_ childViewController: UIViewController, fillSuperview: Bool) {
         self.embedChildViewController(childViewController, toView: self.view, fillSuperview: fillSuperview)
     }
     
-    public func embedChildViewController(childViewController: UIViewController, toView superview: UIView, fillSuperview: Bool = true) {
+    public func embedChildViewController(_ childViewController: UIViewController, toView superview: UIView, fillSuperview: Bool = true) {
         self.addChildViewController(childViewController)
         
         if fillSuperview {
@@ -29,21 +29,21 @@ public extension UIViewController {
             superview.addSubview(childViewController.view)
         }
         
-        childViewController.didMoveToParentViewController(self)
+        childViewController.didMove(toParentViewController: self)
     }
     
-    public func embedChildViewController(childViewController: UIViewController, toView superview: UIView, withFormatStrings formatStrings: [String], metrics: [String : CGFloat]?, views: [String : UIView]) {
+    public func embedChildViewController(_ childViewController: UIViewController, toView superview: UIView, withFormatStrings formatStrings: [String], metrics: [String : AnyObject]?, views: [String : UIView]) {
         self.addChildViewController(childViewController)
         
         superview.addSubview(childViewController.view)
         let constraints = NSLayoutConstraint.constraintsWithVisualFormatArray(formatStrings, metrics: metrics, views: views)
         childViewController.view.addConstraints(constraints)
         
-        childViewController.didMoveToParentViewController(self)
+        childViewController.didMove(toParentViewController: self)
     }
     
-    public func showLoadingOverlay(show: Bool) {
-        if let appDelegate = UIApplication.sharedApplication().delegate,
+    public func showLoadingOverlay(_ show: Bool) {
+        if let appDelegate = UIApplication.shared.delegate,
             let someWindow = appDelegate.window,
             let window = someWindow {
                 if show {
@@ -57,19 +57,19 @@ public extension UIViewController {
 }
 
 // MARK: - Modals
-public extension UIViewController {
+extension UIViewController {
     
-    public func addCancelAndDoneBarButtonItems(cancelButtonTitle: String? = "Cancel", doneButtonTitle: String? = "Done") {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: cancelButtonTitle, style: .Plain, target: self, action: #selector(handleTapOnCancelBarButtonItem(_:)))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: doneButtonTitle, style: .Plain, target: self, action: #selector(handleTapOnDoneBarButtonItem(_:)))
+    public func addCancelAndDoneBarButtonItems(_ cancelButtonTitle: String? = "Cancel", doneButtonTitle: String? = "Done") {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: cancelButtonTitle, style: .plain, target: self, action: #selector(handleTapOnCancelBarButtonItem(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: doneButtonTitle, style: .plain, target: self, action: #selector(handleTapOnDoneBarButtonItem(_:)))
     }
     
-    public func handleTapOnCancelBarButtonItem(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    open func handleTapOnCancelBarButtonItem(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    public func handleTapOnDoneBarButtonItem(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    open func handleTapOnDoneBarButtonItem(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
@@ -93,17 +93,17 @@ public extension UIViewController {
         tapRecognizer.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapRecognizer)
         
-        let center = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        center.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        center.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     public func dismissKeyboard() {
         self.view.endEditing(true)
     }
     
-    func keyboardWillShow(notification: NSNotification) {
-        guard let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
+    func keyboardWillShow(_ notification: Notification) {
+        guard let keyboardSize = ((notification as NSNotification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
             else {
                 return
         }
@@ -120,8 +120,8 @@ public extension UIViewController {
         self.formScrollView.scrollIndicatorInsets = insets
     }
     
-    func keyboardWillHide(notification: NSNotification) {
-        let insets = UIEdgeInsetsZero
+    func keyboardWillHide(_ notification: Notification) {
+        let insets = UIEdgeInsets.zero
         self.formScrollView.contentInset = insets
         self.formScrollView.scrollIndicatorInsets = insets
     }

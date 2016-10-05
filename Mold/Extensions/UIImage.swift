@@ -10,34 +10,34 @@ import UIKit
 
 public extension UIImage {
     
-    public class func imageFromColor(color: UIColor) -> UIImage {
-        let rect = CGRectMake(0, 0, 1, 1)
+    public class func imageFromColor(_ color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
         
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return image!
     }
     
-    public class func imageFromView(view: UIView) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0)
+    public class func imageFromView(_ view: UIView) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
         guard let context = UIGraphicsGetCurrentContext()
             else {
                 return nil
         }
         
-        view.layer.renderInContext(context)
+        view.layer.render(in: context)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
     }
     
-    public class func templateNamed(name: String) -> UIImage? {
-        return UIImage(named: name)?.imageWithRenderingMode(.AlwaysTemplate)
+    public class func templateNamed(_ name: String) -> UIImage? {
+        return UIImage(named: name)?.withRenderingMode(.alwaysTemplate)
     }
     
 }

@@ -11,8 +11,8 @@ import UIKit
 public extension UIAlertController {
     
     func addCancelAction() {
-        let action = UIAlertAction(title: "Cancel", style: .Cancel, handler: {[unowned self] _ in
-            self.dismissViewControllerAnimated(true, completion: nil)
+        let action = UIAlertAction(title: "Cancel", style: .cancel, handler: {[unowned self] _ in
+            self.dismiss(animated: true, completion: nil)
         })
         self.addAction(action)
     }
