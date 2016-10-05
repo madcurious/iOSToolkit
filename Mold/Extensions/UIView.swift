@@ -88,17 +88,9 @@ public extension UIView {
 extension UIView {
     
     class func instantiateFromNibInBundle<T: UIView>(_ bundle: Bundle) -> T {
-        if let objects = bundle.loadNibNamed(self.className(), owner: self, options: nil) {
-            if let view = objects.last as? T {
-                return view
-            }
-            fatalError("\(#function): Cannot cast view object to \(T.classForCoder())")
-        }
-        fatalError("\(#function): No nib named \'\(self.className())\'")
-    }
-    
-    class func nibInBundle(_ bundle: Bundle) -> UINib {
-        return UINib(nibName: self.className(), bundle: bundle)
+        let objects = bundle.loadNibNamed(self.className(), owner: self, options: nil)!
+        let view = objects.last as! T
+        return view
     }
     
     /**

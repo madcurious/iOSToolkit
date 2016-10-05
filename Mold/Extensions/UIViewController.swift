@@ -60,7 +60,15 @@ public extension UIViewController {
 extension UIViewController {
     
     public func addCancelAndDoneBarButtonItems(_ cancelButtonTitle: String? = "Cancel", doneButtonTitle: String? = "Done") {
+        self.addCancelBarButtonItem(cancelButtonTitle)
+        self.addDoneBarButtonItem(doneButtonTitle)
+    }
+    
+    public func addCancelBarButtonItem(_ cancelButtonTitle: String? = "Cancel") {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: cancelButtonTitle, style: .plain, target: self, action: #selector(handleTapOnCancelBarButtonItem(_:)))
+    }
+    
+    public func addDoneBarButtonItem(_ doneButtonTitle: String? = "Done") {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: doneButtonTitle, style: .plain, target: self, action: #selector(handleTapOnDoneBarButtonItem(_:)))
     }
     
@@ -75,24 +83,19 @@ extension UIViewController {
 }
 
 // MARK: - Forms
-public extension UIViewController {
+extension UIViewController {
     
-    public var formScrollView: UIScrollView {
+    open var formScrollView: UIScrollView {
         fatalError("Unimplemented \(#function): You must provide the scroll view for the form.")
     }
     
-    /**
-     Adds common form behaviors to the view controller, such as tapping on external views to hide the keyboard,
-     and to adjust scroll view insets when the keyboard shows or hides.
-     
-     **IMPORTANT:** You must implement `deinit` and deregister the VC from the default `NSNotificationCenter` if you
-     use this function.
-     */
-    public func applyCommonFormBehaviors() {
+    public func addTapGestureRecognizerToDismissKeyboard() {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapRecognizer.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapRecognizer)
-        
+    }
+    
+    public func addKeyboardObserversToMoveScrollView() {
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
