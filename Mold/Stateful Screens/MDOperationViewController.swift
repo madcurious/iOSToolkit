@@ -15,6 +15,7 @@ open class MDOperationViewController: UIViewController {
     }
     
     open var operationQueue = OperationQueue()
+    open var currentView = MDOperationViewController.View.starting
     
     // Default views are lazy-initialized so that they aren't initialized
     // if a child class overrides the actual properties.
@@ -126,6 +127,8 @@ open class MDOperationViewController: UIViewController {
     }
     
     open func showView(_ view: MDOperationViewController.View) {
+        self.currentView = view
+        
         self.startingView.isHidden = view != .starting
         self.loadingView.isHidden = view != .loading
         self.primaryView.isHidden = view != .primary
