@@ -8,18 +8,18 @@
 
 import Foundation
 
-public enum MDFileManagerError: MDErrorType {
+public enum MDFileManagerError: Error {
     
     case cantArchiveValue(Any)
     case cantBuildPathToFile(String, inFolder: FileManager.SearchPathDirectory)
     
-    public func object() -> MDError {
+    public var localizedDescription: String {
         switch self {
         case .cantArchiveValue(let value):
-            return MDError("Archiving the value \"\(value)\" failed.")
+            return "Archiving the value \"\(value)\" failed."
             
         case .cantBuildPathToFile(let file, inFolder: let folder):
-            return MDError("Can't build a path to file \(file) in \(folder)")
+            return "Can't build a path to file \(file) in \(folder)"
         }
     }
     

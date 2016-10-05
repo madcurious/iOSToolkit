@@ -10,8 +10,6 @@
 		26020E691DA4BC0200C45902 /* MDAlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E371DA4BC0200C45902 /* MDAlertDialog.swift */; };
 		26020E6A1DA4BC0200C45902 /* MDConfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E381DA4BC0200C45902 /* MDConfirmDialog.swift */; };
 		26020E6B1DA4BC0200C45902 /* MDErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E391DA4BC0200C45902 /* MDErrorDialog.swift */; };
-		26020E6C1DA4BC0200C45902 /* MDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E3B1DA4BC0200C45902 /* MDError.swift */; };
-		26020E6D1DA4BC0200C45902 /* MDErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E3C1DA4BC0200C45902 /* MDErrorType.swift */; };
 		26020E6E1DA4BC0200C45902 /* ArithmeticOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E3E1DA4BC0200C45902 /* ArithmeticOperators.swift */; };
 		26020E6F1DA4BC0200C45902 /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E3F1DA4BC0200C45902 /* CharacterSet.swift */; };
 		26020E701DA4BC0200C45902 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E401DA4BC0200C45902 /* Date.swift */; };
@@ -57,8 +55,6 @@
 		26020E371DA4BC0200C45902 /* MDAlertDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAlertDialog.swift; sourceTree = "<group>"; };
 		26020E381DA4BC0200C45902 /* MDConfirmDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDConfirmDialog.swift; sourceTree = "<group>"; };
 		26020E391DA4BC0200C45902 /* MDErrorDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorDialog.swift; sourceTree = "<group>"; };
-		26020E3B1DA4BC0200C45902 /* MDError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDError.swift; sourceTree = "<group>"; };
-		26020E3C1DA4BC0200C45902 /* MDErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorType.swift; sourceTree = "<group>"; };
 		26020E3E1DA4BC0200C45902 /* ArithmeticOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArithmeticOperators.swift; sourceTree = "<group>"; };
 		26020E3F1DA4BC0200C45902 /* CharacterSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
 		26020E401DA4BC0200C45902 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -118,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				26020E361DA4BC0200C45902 /* Dialogs */,
-				26020E3A1DA4BC0200C45902 /* Error Handling */,
 				26020E3D1DA4BC0200C45902 /* Extensions */,
 				26020E4D1DA4BC0200C45902 /* File Storage */,
 				26020E501DA4BC0200C45902 /* Info.plist */,
@@ -139,15 +134,6 @@
 				26020E391DA4BC0200C45902 /* MDErrorDialog.swift */,
 			);
 			path = Dialogs;
-			sourceTree = "<group>";
-		};
-		26020E3A1DA4BC0200C45902 /* Error Handling */ = {
-			isa = PBXGroup;
-			children = (
-				26020E3B1DA4BC0200C45902 /* MDError.swift */,
-				26020E3C1DA4BC0200C45902 /* MDErrorType.swift */,
-			);
-			path = "Error Handling";
 			sourceTree = "<group>";
 		};
 		26020E3D1DA4BC0200C45902 /* Extensions */ = {
@@ -359,7 +345,6 @@
 				26020E8D1DA4BC0200C45902 /* MDButton.swift in Sources */,
 				26020E921DA4BC0300C45902 /* MDTableViewCell.swift in Sources */,
 				26020E7C1DA4BC0200C45902 /* UIViewController.swift in Sources */,
-				26020E6D1DA4BC0200C45902 /* MDErrorType.swift in Sources */,
 				26020E831DA4BC0200C45902 /* MDOperation.swift in Sources */,
 				26020E8B1DA4BC0200C45902 /* MDScreen.swift in Sources */,
 				26020E8F1DA4BC0200C45902 /* MDPagedCollectionView.swift in Sources */,
@@ -367,7 +352,6 @@
 				26020E711DA4BC0200C45902 /* Double.swift in Sources */,
 				26020E7A1DA4BC0200C45902 /* UIImage.swift in Sources */,
 				26020E911DA4BC0300C45902 /* MDResponsiveTextField.swift in Sources */,
-				26020E6C1DA4BC0200C45902 /* MDError.swift in Sources */,
 				26020E721DA4BC0200C45902 /* MKMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
