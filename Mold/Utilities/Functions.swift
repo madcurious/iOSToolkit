@@ -64,3 +64,13 @@ public func md_stringForDate(_ date: Date?) -> String {
     }
     return kDateFormatter.string(from: date)
 }
+
+/**
+ Returns the name of `object`'s class based on a (poor?) assumption that it is the last
+ token in the fully qualified class name assigned by Swift.
+ */
+public func md_getClassName(_ object: AnyObject) -> String {
+    let description = object.classForCoder.description()
+    let className = description.components(separatedBy: ".").last!
+    return className
+}

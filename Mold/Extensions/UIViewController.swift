@@ -54,6 +54,11 @@ public extension UIViewController {
         }
     }
     
+    public func setCustomTransitioningDelegate(_ transitioningDelegate: UIViewControllerTransitioningDelegate) {
+        self.transitioningDelegate = transitioningDelegate
+        self.modalPresentationStyle = .custom
+    }
+    
 }
 
 // MARK: - Modals
@@ -95,7 +100,7 @@ extension UIViewController {
         self.view.addGestureRecognizer(tapRecognizer)
     }
     
-    public func addKeyboardObserversToMoveScrollView() {
+    public func addFormScrollViewKeyboardObservers() {
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -106,12 +111,12 @@ extension UIViewController {
     }
     
     func keyboardWillShow(_ notification: Notification) {
-        guard let keyboardSize = ((notification as NSNotification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        guard let keyboardFrame = ((notification as NSNotification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
             else {
                 return
         }
         
-        var bottomInset = keyboardSize.height
+        var bottomInset = keyboardFrame.height
         
         // If the view controller is in a tab bar controller, take into account the tab bar height.
         if let tabBar = self.tabBarController?.tabBar {

@@ -10,16 +10,18 @@ import UIKit
 
 public enum MDScreen {
     
-    case iPhone4S, iPhone5, iPhone6, iPhone6Plus
+    case iPhone4, iPhone5, iPhone6, iPhone6p
     
     /**
      Returns the device type given the current screen size.
      */
     public static func currentScreen() -> MDScreen {
-        let size = UIScreen.main.bounds.size
+        let nativeSize = UIScreen.main.nativeBounds.size
+        let nativeScale = UIScreen.main.nativeScale
+        let size = CGSize(width: nativeSize.width / nativeScale, height: nativeSize.height / nativeScale)
         switch (size.width, size.height) {
         case (320, 480):
-            return .iPhone4S
+            return .iPhone4
             
         case (320, 568):
             return .iPhone5
@@ -28,7 +30,7 @@ public enum MDScreen {
             return .iPhone6
             
         case (414, 736):
-            return .iPhone6Plus
+            return .iPhone6p
             
         default:
             fatalError()

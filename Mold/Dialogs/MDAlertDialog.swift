@@ -20,7 +20,8 @@ open class MDAlertDialog {
             
             let cancelAction = UIAlertAction(title: cancelButtonTitle,
                 style: .cancel) { _ in
-                    presenter.dismiss(animated: true, completion: nil)
+//                    presenter.dismiss(animated: true, completion: nil)
+                    alertController.dismiss(animated: true, completion: nil)
             }
             alertController.addAction(cancelAction)
             

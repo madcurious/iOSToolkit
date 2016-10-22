@@ -8,12 +8,12 @@
 
 import Foundation
 
-public enum MDFileManagerError: Error {
+public enum MDFileManagerError: LocalizedError {
     
     case cantArchiveValue(Any)
     case cantBuildPathToFile(String, inFolder: FileManager.SearchPathDirectory)
     
-    public var localizedDescription: String {
+    public var errorDescription: String? {
         switch self {
         case .cantArchiveValue(let value):
             return "Archiving the value \"\(value)\" failed."
