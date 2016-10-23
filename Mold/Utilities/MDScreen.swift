@@ -8,9 +8,9 @@
 
 import UIKit
 
-public enum MDScreen {
+public enum MDScreen: Int {
     
-    case iPhone4, iPhone5, iPhone6, iPhone6p
+    case iPhone4 = 1, iPhone5, iPhone6, iPhone6p
     
     /**
      Returns the device type given the current screen size.
@@ -40,13 +40,18 @@ public enum MDScreen {
     /**
      Returns whether the current screen is any of the supplied devices.
      */
-    public static func currentScreenIs(_ possibleScreens: MDScreen ...) -> Bool {
+    public static func sizeIs(_ possibleScreens: MDScreen ...) -> Bool {
         for screen in possibleScreens {
             if MDScreen.currentScreen() == screen {
                 return true
             }
         }
         return false
+    }
+    
+    public static func sizeIsAtLeast(_ screen: MDScreen) -> Bool {
+        let currentScreen = MDScreen.currentScreen()
+        return currentScreen.rawValue <= screen.rawValue
     }
     
 }
