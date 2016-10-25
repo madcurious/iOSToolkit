@@ -88,7 +88,7 @@ open class MDOperationViewController: UIViewController {
         self.noResultsView.fillSuperview()
     }
     
-    open func buildOperation() -> MDOperation? {
+    open func makeOperation() -> MDOperation? {
         fatalError("Unimplemented function \(#function)")
     }
     
@@ -96,7 +96,7 @@ open class MDOperationViewController: UIViewController {
      Creates a new instance of the operation, overrides its callback blocks to show state views, and runs it.
      */
     open func runOperation() {
-        guard let op = self.buildOperation()
+        guard let op = self.makeOperation()
             else {
                 return
         }
@@ -107,7 +107,7 @@ open class MDOperationViewController: UIViewController {
             self.showView(.loading)
         }
         
-        op.failBlock = self.buildFailBlock()
+        op.failBlock = self.makeFailBlock()
         
         self.operationQueue.addOperation(op)
     }
@@ -116,7 +116,7 @@ open class MDOperationViewController: UIViewController {
      Override point for customising the `failBlock` that automatically gets executed
      when the stateful view controller's operation fails.
      */
-    open func buildFailBlock() -> ((Error) -> Void) {
+    open func makeFailBlock() -> ((Error) -> Void) {
         return {[unowned self] error in
             if let retryView = self.retryView as? MDRetryView {
                 retryView.error = error
