@@ -10,7 +10,7 @@
 		26020E691DA4BC0200C45902 /* MDAlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E371DA4BC0200C45902 /* MDAlertDialog.swift */; };
 		26020E6A1DA4BC0200C45902 /* MDConfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E381DA4BC0200C45902 /* MDConfirmDialog.swift */; };
 		26020E6B1DA4BC0200C45902 /* MDErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E391DA4BC0200C45902 /* MDErrorDialog.swift */; };
-		26020E6E1DA4BC0200C45902 /* ArithmeticOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E3E1DA4BC0200C45902 /* ArithmeticOperators.swift */; };
+		26020E6E1DA4BC0200C45902 /* NSDecimalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E3E1DA4BC0200C45902 /* NSDecimalNumber.swift */; };
 		26020E6F1DA4BC0200C45902 /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E3F1DA4BC0200C45902 /* CharacterSet.swift */; };
 		26020E701DA4BC0200C45902 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E401DA4BC0200C45902 /* Date.swift */; };
 		26020E711DA4BC0200C45902 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E411DA4BC0200C45902 /* Double.swift */; };
@@ -56,7 +56,7 @@
 		26020E371DA4BC0200C45902 /* MDAlertDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAlertDialog.swift; sourceTree = "<group>"; };
 		26020E381DA4BC0200C45902 /* MDConfirmDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDConfirmDialog.swift; sourceTree = "<group>"; };
 		26020E391DA4BC0200C45902 /* MDErrorDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorDialog.swift; sourceTree = "<group>"; };
-		26020E3E1DA4BC0200C45902 /* ArithmeticOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArithmeticOperators.swift; sourceTree = "<group>"; };
+		26020E3E1DA4BC0200C45902 /* NSDecimalNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDecimalNumber.swift; sourceTree = "<group>"; };
 		26020E3F1DA4BC0200C45902 /* CharacterSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
 		26020E401DA4BC0200C45902 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		26020E411DA4BC0200C45902 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		26020E3D1DA4BC0200C45902 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				26020E3E1DA4BC0200C45902 /* ArithmeticOperators.swift */,
+				26020E3E1DA4BC0200C45902 /* NSDecimalNumber.swift */,
 				26020E3F1DA4BC0200C45902 /* CharacterSet.swift */,
 				26020E401DA4BC0200C45902 /* Date.swift */,
 				26020E411DA4BC0200C45902 /* Double.swift */,
@@ -339,7 +339,7 @@
 				26020E761DA4BC0200C45902 /* String.swift in Sources */,
 				26020E701DA4BC0200C45902 /* Date.swift in Sources */,
 				26020E841DA4BC0200C45902 /* MDURLOperation.swift in Sources */,
-				26020E6E1DA4BC0200C45902 /* ArithmeticOperators.swift in Sources */,
+				26020E6E1DA4BC0200C45902 /* NSDecimalNumber.swift in Sources */,
 				26020E7D1DA4BC0200C45902 /* MDArchivableValueType.swift in Sources */,
 				26020E751DA4BC0200C45902 /* Sequence.swift in Sources */,
 				26020E6F1DA4BC0200C45902 /* CharacterSet.swift in Sources */,

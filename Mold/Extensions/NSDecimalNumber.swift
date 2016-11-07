@@ -1,5 +1,5 @@
 //
-//  ArithmeticOperators.swift
+//  NSDecimalNumber.swift
 //  Mold
 //
 //  Created by Matt Quiros on 14/08/2016.
@@ -38,4 +38,8 @@ public func *=(lhs: inout NSDecimalNumber, rhs: NSDecimalNumber) {
 
 public func /=(lhs: inout NSDecimalNumber, rhs: NSDecimalNumber) {
     lhs = lhs / rhs
+}
+
+public func >(lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> Bool {
+    return lhs.compare(rhs) == .orderedDescending
 }

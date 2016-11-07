@@ -56,14 +56,6 @@ open class MDOperationViewController: UIViewController {
      */
     var firstLoad = true
     
-    public init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     open override func loadView() {
         let view = UIView()
         self.view = view
