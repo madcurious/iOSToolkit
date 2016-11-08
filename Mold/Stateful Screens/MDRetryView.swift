@@ -8,9 +8,14 @@
 
 import UIKit
 
-open class MDRetryView: UIView, MDOperationRerunnerView {
+public protocol MDRetryViewDelegate {
     
-    open var error: Error?
-    open var delegate: MDOperationRerunnerViewDelegate?
+    func retryViewDidFireRetryAction(_ retryView: MDRetryView)
+    
+}
+
+public protocol MDRetryView: class {
+    
+    var delegate: MDRetryViewDelegate? { get set }
     
 }

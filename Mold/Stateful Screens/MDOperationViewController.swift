@@ -8,42 +8,36 @@
 
 import UIKit
 
+public func ==(lhs: MDOperationViewController.State, rhs: MDOperationViewController.State) -> Bool {
+    switch (lhs, rhs) {
+        case (.initial, .initial),
+             (.loading, .loading),
+             (.displaying, .displaying),
+             (.failed(_), .failed (_)),
+             (.empty, .empty):
+        return true
+        
+    default:
+        return false
+    }
+}
+
+public func != (lhs: MDOperationViewController.State, rhs: MDFullOperationViewController.State) -> Bool {
+    return !(lhs == rhs)
+}
+
 open class MDOperationViewController: UIViewController {
     
-    public enum View {
-        case starting, loading, retry, primary, noResults
+    public enum State {
+        case initial
+        case loading
+        case displaying
+        case failed(Error)
+        case empty
     }
     
     open var operationQueue = OperationQueue()
-    open var currentView = MDOperationViewController.View.starting
-    
-    // Default views are lazy-initialized so that they aren't initialized
-    // if a child class overrides the actual properties.
-    lazy var defaultStartingView = UIView()
-    lazy var defaultLoadingView = UIView()
-    lazy var defaultRetryView = UIView()
-    lazy var defaultNoResultView = UIView()
-    lazy var defaultPrimaryView = UIView()
-    
-    open var startingView: UIView {
-        return self.defaultStartingView
-    }
-    
-    open var loadingView: UIView {
-        return self.defaultLoadingView
-    }
-    
-    open var retryView: UIView {
-        return self.defaultRetryView
-    }
-    
-    open var noResultsView: UIView {
-        return self.defaultNoResultView
-    }
-    
-    open var primaryView: UIView {
-        return self.defaultPrimaryView
-    }
+    open var currentState = State.initial
     
     /**
      A flag used by `viewWillAppear:` to check if it will be the first time for
@@ -56,30 +50,6 @@ open class MDOperationViewController: UIViewController {
      */
     var firstLoad = true
     
-    open override func loadView() {
-        let view = UIView()
-        self.view = view
-        
-        view.addSubviews(self.startingView,
-                         self.loadingView,
-                         self.primaryView,
-                         self.retryView,
-                         self.noResultsView
-        )
-    }
-    
-    /**
-     Override point for setting custom Autolayout constraints for the different
-     states' views.
-     */
-    open func setupViewConstraints() {
-        self.startingView.fillSuperview()
-        self.loadingView.fillSuperview()
-        self.primaryView.fillSuperview()
-        self.retryView.fillSuperview()
-        self.noResultsView.fillSuperview()
-    }
-    
     open func makeOperation() -> MDOperation? {
         fatalError("Unimplemented function \(#function)")
     }
@@ -88,6 +58,8 @@ open class MDOperationViewController: UIViewController {
      Creates a new instance of the operation, overrides its callback blocks to show state views, and runs it.
      */
     open func runOperation() {
+        self.operationQueue.cancelAllOperations()
+        
         guard let op = self.makeOperation()
             else {
                 return
@@ -96,51 +68,22 @@ open class MDOperationViewController: UIViewController {
         let originalStartBlock = op.startBlock
         op.startBlock = {[unowned self] in
             originalStartBlock?()
-            self.showView(.loading)
+            self.updateView(forState: .loading)
         }
         
-        op.failBlock = self.makeFailBlock()
+        op.failBlock = {[unowned self] error in
+            self.updateView(forState: .failed(error))
+        }
         
         self.operationQueue.addOperation(op)
     }
     
     /**
-     Override point for customising the `failBlock` that automatically gets executed
-     when the stateful view controller's operation fails.
+     Override point for updating the view controller's view for the specified state.
+     You MUST always call super.
      */
-    open func makeFailBlock() -> ((Error) -> Void) {
-        return {[unowned self] error in
-            if let retryView = self.retryView as? MDRetryView {
-                retryView.error = error
-            }
-            
-            self.showView(.retry)
-        }
-    }
-    
-    open func showView(_ view: MDOperationViewController.View) {
-        self.currentView = view
-        
-        self.startingView.isHidden = view != .starting
-        self.loadingView.isHidden = view != .loading
-        self.primaryView.isHidden = view != .primary
-        self.retryView.isHidden = view != .retry
-        self.noResultsView.isHidden = view != .noResults
-    }
-    
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.setupViewConstraints()
-        self.showView(.starting)
-        
-        if var rerunningRetryView = self.retryView as? MDOperationRerunnerView {
-            rerunningRetryView.delegate = self
-        }
-        
-        if var rerunningNoResultsView = self.noResultsView as? MDOperationRerunnerView {
-            rerunningNoResultsView.delegate = self
-        }
+    open func updateView(forState state: MDOperationViewController.State) {
+        self.currentState = state
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -152,14 +95,6 @@ open class MDOperationViewController: UIViewController {
             self.runOperation()
             self.firstLoad = false
         }
-    }
-    
-}
-
-extension MDOperationViewController: MDOperationRerunnerViewDelegate {
-    
-    open func rerunnerViewDidFireRerunAction() {
-        self.runOperation()
     }
     
 }

@@ -32,7 +32,6 @@
 		26020E821DA4BC0200C45902 /* MDChainedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E541DA4BC0200C45902 /* MDChainedOperation.swift */; };
 		26020E831DA4BC0200C45902 /* MDOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E551DA4BC0200C45902 /* MDOperation.swift */; };
 		26020E841DA4BC0200C45902 /* MDURLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E561DA4BC0200C45902 /* MDURLOperation.swift */; };
-		26020E851DA4BC0200C45902 /* MDOperationRerunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E581DA4BC0200C45902 /* MDOperationRerunner.swift */; };
 		26020E861DA4BC0200C45902 /* MDOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E591DA4BC0200C45902 /* MDOperationViewController.swift */; };
 		26020E871DA4BC0200C45902 /* MDRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E5A1DA4BC0200C45902 /* MDRetryView.swift */; };
 		26020E881DA4BC0200C45902 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E5C1DA4BC0200C45902 /* Constants.swift */; };
@@ -50,6 +49,8 @@
 		262731851DB2447800119F76 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262731841DB2447800119F76 /* NSManagedObjectContext.swift */; };
 		26904ED51C7785B00094DA08 /* mold-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED41C7785B00094DA08 /* mold-banner.png */; };
 		26904ED71C778A120094DA08 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED61C778A120094DA08 /* LICENSE */; };
+		26A1454C1DD21CBF00718494 /* MDFullOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1454B1DD21CBF00718494 /* MDFullOperationViewController.swift */; };
+		26A1454F1DD22ADA00718494 /* MDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1454E1DD22ADA00718494 /* MDErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +80,6 @@
 		26020E541DA4BC0200C45902 /* MDChainedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDChainedOperation.swift; sourceTree = "<group>"; };
 		26020E551DA4BC0200C45902 /* MDOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperation.swift; sourceTree = "<group>"; };
 		26020E561DA4BC0200C45902 /* MDURLOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDURLOperation.swift; sourceTree = "<group>"; };
-		26020E581DA4BC0200C45902 /* MDOperationRerunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationRerunner.swift; sourceTree = "<group>"; };
 		26020E591DA4BC0200C45902 /* MDOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationViewController.swift; sourceTree = "<group>"; };
 		26020E5A1DA4BC0200C45902 /* MDRetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDRetryView.swift; sourceTree = "<group>"; };
 		26020E5C1DA4BC0200C45902 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -99,6 +99,8 @@
 		26904E3F1C77747C0094DA08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		26904ED41C7785B00094DA08 /* mold-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mold-banner.png"; sourceTree = "<group>"; };
 		26904ED61C778A120094DA08 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		26A1454B1DD21CBF00718494 /* MDFullOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFullOperationViewController.swift; sourceTree = "<group>"; };
+		26A1454E1DD22ADA00718494 /* MDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,9 +186,10 @@
 		26020E571DA4BC0200C45902 /* Stateful Screens */ = {
 			isa = PBXGroup;
 			children = (
-				26020E581DA4BC0200C45902 /* MDOperationRerunner.swift */,
 				26020E591DA4BC0200C45902 /* MDOperationViewController.swift */,
 				26020E5A1DA4BC0200C45902 /* MDRetryView.swift */,
+				26A1454B1DD21CBF00718494 /* MDFullOperationViewController.swift */,
+				26A1454E1DD22ADA00718494 /* MDErrorView.swift */,
 			);
 			path = "Stateful Screens";
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				26020E6B1DA4BC0200C45902 /* MDErrorDialog.swift in Sources */,
 				26020E8A1DA4BC0200C45902 /* MDDispatcher.swift in Sources */,
 				262731851DB2447800119F76 /* NSManagedObjectContext.swift in Sources */,
+				26A1454F1DD22ADA00718494 /* MDErrorView.swift in Sources */,
 				26020E881DA4BC0200C45902 /* Constants.swift in Sources */,
 				26020E781DA4BC0200C45902 /* UIButton.swift in Sources */,
 				26020E7E1DA4BC0200C45902 /* MDFileManager.swift in Sources */,
@@ -334,7 +338,7 @@
 				26020E771DA4BC0200C45902 /* UIAlertController.swift in Sources */,
 				26020E871DA4BC0200C45902 /* MDRetryView.swift in Sources */,
 				26020E791DA4BC0200C45902 /* UIColor.swift in Sources */,
-				26020E851DA4BC0200C45902 /* MDOperationRerunner.swift in Sources */,
+				26A1454C1DD21CBF00718494 /* MDFullOperationViewController.swift in Sources */,
 				26020E811DA4BC0200C45902 /* MDBlockOperation.swift in Sources */,
 				26020E761DA4BC0200C45902 /* String.swift in Sources */,
 				26020E701DA4BC0200C45902 /* Date.swift in Sources */,
