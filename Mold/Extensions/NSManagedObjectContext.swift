@@ -13,13 +13,16 @@ public extension NSManagedObjectContext {
     public func saveRecursively(_ completionBlock: ((Error?) -> ())?) {
         func saveAction() {
             do {
-                try self.customSave()
-                completionBlock?(nil)
+                try self.saveIfUpdated()
+                if let parentContext = self.parent {
+                    parentContext.saveRecursively(completionBlock)
+                } else {
+                    completionBlock?(nil)
+                }
             } catch {
                 completionBlock?(error)
             }
         }
-        
         
         switch self.concurrencyType {
         case .confinementConcurrencyType:
@@ -30,7 +33,7 @@ public extension NSManagedObjectContext {
         }
     }
     
-    private func customSave() throws {
+    private func saveIfUpdated() throws {
         guard self.hasChanges
             else {
                 return
