@@ -9,8 +9,23 @@
 import Foundation
 
 private struct Link {
+    
     var condition: ((Any?) -> Bool)
-    var configurator: ((Any?) -> MDOperation)?
+    var configurator: ((Any?) -> MDOperation)
+    
+    init(condition: ((Any?) -> Bool)? = nil, configurator: @escaping ((Any?) -> MDOperation)) {
+        if let condition = condition {
+            self.condition = condition
+        } else {
+            self.condition = { _ in return true }
+        }
+        self.configurator = configurator
+    }
+    
+    init(operation: MDOperation) {
+        self.init(configurator: { _ in return operation })
+    }
+    
 }
 
 /**
@@ -29,11 +44,12 @@ private struct Link {
  Operations are chained on the fly, i.e., when the chain itself is executed and every operation in the link
  executes its own `successBlock`.
  
+ This class is not meant to be subclassed.
  */
-public class MDChainedOperation: MDOperation {
+final public class MDChainedOperation: MDOperation {
     
     private var queue = OperationQueue()
-    private var links = [Link]()
+    private var links: [Link]
     private var currentIndex = 0
     
     /**
@@ -43,7 +59,9 @@ public class MDChainedOperation: MDOperation {
      */
     public var isInitializedFromOperation = false
     
-    public override init() {
+    public init(head: MDOperation) {
+        self.links = [Link(operation: head)]
+        
         super.init()
         
         // We need to decide on the fly whether the returnBlock will be executed already
@@ -52,8 +70,9 @@ public class MDChainedOperation: MDOperation {
     }
     
     @discardableResult
-    public func chain(if condition: @escaping ((Any?) -> Bool) = {_ in return true}, configurator: ((Any?) -> MDOperation)? = nil) -> MDChainedOperation {
-        self.links.append(Link(condition: condition, configurator: configurator))
+    public override func chain(if condition: ((Any?) -> Bool)?, configurator: @escaping ((Any?) -> MDOperation)) -> MDChainedOperation {
+        let newLink = Link(condition: condition, configurator: configurator)
+        self.links.append(newLink)
         return self
     }
     
@@ -91,8 +110,9 @@ public class MDChainedOperation: MDOperation {
         operation.successBlock = {[unowned self] result in
             let nextIndex = operationIndex + 1
             if nextIndex < self.links.count,
-                self.links[nextIndex].condition(result) == true,
-                let nextOperation = self.links[nextIndex].configurator?(result) {
+                self.links[nextIndex].condition(result) == true {
+                
+                let nextOperation = self.links[nextIndex].configurator(result)
                 
                 originalSuccessBlock?(result)
                 self.configureOperation(nextOperation, operationIndex: nextIndex)
@@ -117,7 +137,7 @@ public class MDChainedOperation: MDOperation {
             return
         }
         
-        guard let firstOperation = self.links.first?.configurator?(nil)
+        guard let firstOperation = self.links.first?.configurator(nil)
             else {
                 return
         }

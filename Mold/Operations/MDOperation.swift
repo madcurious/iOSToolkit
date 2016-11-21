@@ -80,11 +80,18 @@ open class MDOperation: Operation {
         return self
     }
     
-    public func chain(if condition: ((Any?) -> Bool)? = {_ in return true}) -> MDChainedOperation {
-        let chain = MDChainedOperation()
-        chain.isInitializedFromOperation = true
-        chain.chain(configurator: { _ in return self })
-        return chain
+    public func chain(if condition: ((Any?) -> Bool)? = nil, configurator: @escaping ((Any?) -> MDOperation)) -> MDChainedOperation {
+//        let chain = MDChainedOperation()
+//        chain.isInitializedFromOperation = true
+//        chain.chain(configurator: { _ in return self })
+//        return chain
+        if let chainedOperation = self as? MDChainedOperation {
+            chainedOperation.chain(if: condition, configurator: configurator)
+            return chainedOperation
+        } else {
+            let chainedOperation = MDChainedOperation(head: self)
+            return chainedOperation
+        }
     }
     
     /**
