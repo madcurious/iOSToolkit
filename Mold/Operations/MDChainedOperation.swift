@@ -43,7 +43,7 @@ public class MDChainedOperation: MDOperation {
      */
     public var isInitializedFromOperation = false
     
-    override init() {
+    public override init() {
         super.init()
         
         // We need to decide on the fly whether the returnBlock will be executed already
@@ -51,7 +51,8 @@ public class MDChainedOperation: MDOperation {
         self.shouldRunReturnBlockBeforeSuccessOrFail = false
     }
     
-    public func chain(if condition: @escaping ((Any?) -> Bool) = {_ in return true}, configure configurator: ((Any?) -> MDOperation)? = nil) -> MDChainedOperation {
+    @discardableResult
+    public func chain(if condition: @escaping ((Any?) -> Bool) = {_ in return true}, configurator: ((Any?) -> MDOperation)? = nil) -> MDChainedOperation {
         self.links.append(Link(condition: condition, configurator: configurator))
         return self
     }

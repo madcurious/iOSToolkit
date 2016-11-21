@@ -80,6 +80,13 @@ open class MDOperation: Operation {
         return self
     }
     
+    public func chain(if condition: ((Any?) -> Bool)? = {_ in return true}) -> MDChainedOperation {
+        let chain = MDChainedOperation()
+        chain.isInitializedFromOperation = true
+        chain.chain(configurator: { _ in return self })
+        return chain
+    }
+    
     /**
      Convenience function for setting a `failBlock` that just shows an error dialog
      in a presenting view controller.
