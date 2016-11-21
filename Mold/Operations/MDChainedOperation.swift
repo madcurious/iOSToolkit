@@ -14,14 +14,20 @@ private struct Link {
 }
 
 /**
- A chain of `MDOperation`s. The entire chain shares all callback blocks except for the `successBlock`,
- which is provided by the individual operations in the chain.
+ Creates a chain of `MDOperation`s. Each link in the chain may be conditionally executed depending
+ on the results of the previous operation.
+ 
+ All operations in the chain share the chain's callback blocks except for the `successBlock`,
+ which is provided by the individual operations in the chain. The chain itself is not meant to have a
+ `successBlock` of its own. Instead, the last operation in the chain defines the success for the entire chain.
  
  There are two ways to create a chain:
     1. Call an initializer of this class and set the shared callback blocks yourself.
     2. Create an `MDOperation` which serves as the chain's head, then call that operation's `chain()` function.
        The chain takes the head's callback blocks (except for the `successBlock`) to be shared by the entire chain.
  
+ Operations are chained on the fly, i.e., when the chain itself is executed and every operation in the link
+ executes its own `successBlock`.
  
  */
 public class MDChainedOperation: MDOperation {
