@@ -8,16 +8,123 @@
 
 import Foundation
 
+private struct Link {
+    var condition: ((Any?) -> Bool)
+    var configurator: ((Any?) -> MDOperation)?
+}
+
 /**
- Notes:
- * The chain's `returnBlock` and `failBlock` overrides those of the operations in the chain.
- * The head operation's `successBlock` isn't overriden to automatically run the chain's `returnBlock`.
+ A chain of `MDOperation`s. The entire chain shares all callback blocks except for the `successBlock`,
+ which is provided by the individual operations in the chain.
+ 
+ There are two ways to create a chain:
+    1. Call an initializer of this class and set the shared callback blocks yourself.
+    2. Create an `MDOperation` which serves as the chain's head, then call that operation's `chain()` function.
+       The chain takes the head's callback blocks (except for the `successBlock`) to be shared by the entire chain.
+ 
+ 
  */
-open class MDChainedOperation: MDOperation {
+public class MDChainedOperation: MDOperation {
     
-    var queue = OperationQueue()
+    private var queue = OperationQueue()
+    private var links = [Link]()
+    private var currentIndex = 0
+    
+    /**
+     Determines whether the `MDChainedOperation` was instantiated through a call to its own init,
+     or through calling the `chain()` function from an `MDOperation`. If it is the latter, then the chain
+     takes the very first operation's callback blocks (except for the `successBlock`) for the whole chian.
+     */
+    public var isInitializedFromOperation = false
+    
+    override init() {
+        super.init()
+        
+        // We need to decide on the fly whether the returnBlock will be executed already
+        // or another operation is to be appended into the chain.
+        self.shouldRunReturnBlockBeforeSuccessOrFail = false
+    }
+    
+    public func chain(if condition: @escaping ((Any?) -> Bool) = {_ in return true}, configure configurator: ((Any?) -> MDOperation)? = nil) -> MDChainedOperation {
+        self.links.append(Link(condition: condition, configurator: configurator))
+        return self
+    }
+    
+    private func configureOperation(_ operation: MDOperation, operationIndex: Int) {
+        // Don't let the operation execute its own returnBlock.
+        // It actually won't be able to do so because we set its returnBlock to nil,
+        // but it's better to be absolutely sure it won't happen.
+        operation.shouldRunReturnBlockBeforeSuccessOrFail = false
+        
+        // If the chain was initialized from a head `MDOperation`, copy the head's callback blocks
+        // (except the successBlock) for the use of the entire chain.
+        if self.isInitializedFromOperation && operationIndex == 0 {
+            self.startBlock = operation.startBlock
+            operation.startBlock = nil
+            
+            self.returnBlock = operation.returnBlock
+            operation.returnBlock = nil
+            
+            self.failBlock = operation.failBlock
+            operation.failBlock = nil
+            
+            self.finishBlock = operation.finishBlock
+            operation.finishBlock = nil
+        }
+        
+        // If the operation fails, it should execute the chain's failBlock.
+        operation.failBlock = {[unowned self] error in
+            self.runReturnBlock()
+            self.runFailBlock(error)
+        }
+        
+        // If the operation succeeds, it should append the next operation,
+        // or terminate the whole chain if there are no more succeeding links.
+        let originalSuccessBlock = operation.successBlock
+        operation.successBlock = {[unowned self] result in
+            let nextIndex = operationIndex + 1
+            if nextIndex < self.links.count,
+                self.links[nextIndex].condition(result) == true,
+                let nextOperation = self.links[nextIndex].configurator?(result) {
+                
+                originalSuccessBlock?(result)
+                self.configureOperation(nextOperation, operationIndex: nextIndex)
+                self.queue.addOperation(nextOperation)
+            }
+            
+            else {
+                self.runReturnBlock()
+                originalSuccessBlock?(result)
+            }
+        }
+    }
+    
+    public override func main() {
+        defer {
+            self.closeOperation()
+        }
+        
+        self.runStartBlock()
+        
+        if self.isCancelled {
+            return
+        }
+        
+        guard let firstOperation = self.links.first?.configurator?(nil)
+            else {
+                return
+        }
+        
+        self.configureOperation(firstOperation, operationIndex: 0)
+        
+        self.queue.addOperation(firstOperation)
+        self.queue.waitUntilAllOperationsAreFinished()
+    }
+    
+    /*
+     
     var operations = [MDOperation]()
-    
+     
     open func append<T: MDOperation>(_ operation: T, validator: ((Any?) -> Bool)? = nil, configurator: ((T, Any?) -> Void)? = nil) {
         defer {
             self.operations.append(operation)
@@ -81,5 +188,7 @@ open class MDChainedOperation: MDOperation {
         self.queue.addOperation(head)
         self.queue.waitUntilAllOperationsAreFinished()
     }
+     
+ */
     
 }
