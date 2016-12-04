@@ -26,8 +26,12 @@ open class MDDispatcher {
     }
     
     open class func asyncRunInMainThread(_ block: @escaping () -> Void) {
-        DispatchQueue.main.async {
+        if Thread.isMainThread {
             block()
+        } else {
+            DispatchQueue.main.async {
+                block()
+            }
         }
     }
     
