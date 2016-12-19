@@ -47,6 +47,7 @@
 		26020E921DA4BC0300C45902 /* MDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E671DA4BC0200C45902 /* MDTableViewCell.swift */; };
 		26020E931DA4BC0300C45902 /* MDViewportBasedFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E681DA4BC0200C45902 /* MDViewportBasedFontSize.swift */; };
 		262731851DB2447800119F76 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262731841DB2447800119F76 /* NSManagedObjectContext.swift */; };
+		262F31A41E0777D900D6E4CF /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262F31A31E0777D900D6E4CF /* Calendar.swift */; };
 		2672FBF51DD3310000C8D34C /* NSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */; };
 		26904ED51C7785B00094DA08 /* mold-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED41C7785B00094DA08 /* mold-banner.png */; };
 		26904ED71C778A120094DA08 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED61C778A120094DA08 /* LICENSE */; };
@@ -96,6 +97,7 @@
 		26020E671DA4BC0200C45902 /* MDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDTableViewCell.swift; sourceTree = "<group>"; };
 		26020E681DA4BC0200C45902 /* MDViewportBasedFontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDViewportBasedFontSize.swift; sourceTree = "<group>"; };
 		262731841DB2447800119F76 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
+		262F31A31E0777D900D6E4CF /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPersistentContainer.swift; sourceTree = "<group>"; };
 		26904D301C7757540094DA08 /* Mold.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mold.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26904E3F1C77747C0094DA08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				26020E4C1DA4BC0200C45902 /* UIViewController.swift */,
 				262731841DB2447800119F76 /* NSManagedObjectContext.swift */,
 				2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */,
+				262F31A31E0777D900D6E4CF /* Calendar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				26020E861DA4BC0200C45902 /* MDOperationViewController.swift in Sources */,
 				26020E6B1DA4BC0200C45902 /* MDErrorDialog.swift in Sources */,
 				26020E8A1DA4BC0200C45902 /* MDDispatcher.swift in Sources */,
+				262F31A41E0777D900D6E4CF /* Calendar.swift in Sources */,
 				262731851DB2447800119F76 /* NSManagedObjectContext.swift in Sources */,
 				26A1454F1DD22ADA00718494 /* MDErrorView.swift in Sources */,
 				26020E881DA4BC0200C45902 /* Constants.swift in Sources */,

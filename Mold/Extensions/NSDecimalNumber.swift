@@ -43,3 +43,7 @@ public func /=(lhs: inout NSDecimalNumber, rhs: NSDecimalNumber) {
 public func >(lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> Bool {
     return lhs.compare(rhs) == .orderedDescending
 }
+
+public func <(lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> Bool {
+    return lhs.compare(rhs) == .orderedAscending
+}
