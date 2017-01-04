@@ -30,6 +30,19 @@ public extension Date {
         return lastMoment
     }
     
+    public func startOfMonth() -> Date {
+        var components = kCalendar.dateComponents([.year, .month, .day], from: self)
+        components.day = 1
+        let startOfMonth = kCalendar.date(from: components)!
+        return startOfMonth
+    }
+    
+    public func endOfMonth() -> Date {
+        let numberOfDaysInMonth = kCalendar.range(of: .day, in: .month, for: self)!.upperBound - 1
+        let endOfMonth = kCalendar.date(bySetting: .day, value: numberOfDaysInMonth, of: self)!.endOfDay()
+        return endOfMonth
+    }
+    
     public func isSameDayAsDate(_ date: Date) -> Bool {
         if kCalendar.compare(self, to: date, toGranularity: .day) == .orderedSame {
             return true
