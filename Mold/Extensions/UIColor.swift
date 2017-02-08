@@ -38,4 +38,8 @@ public extension UIColor {
         return 0x000000
     }
     
+    public class func hex(_ hex: Int) -> UIColor {
+        return UIColor(hex: hex)
+    }
+    
 }

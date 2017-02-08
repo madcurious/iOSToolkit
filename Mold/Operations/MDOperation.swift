@@ -85,11 +85,13 @@ open class MDOperation: Operation {
 //        chain.isInitializedFromOperation = true
 //        chain.chain(configurator: { _ in return self })
 //        return chain
-        if let chainedOperation = self as? MDChainedOperation {
-            chainedOperation.chain(if: condition, configurator: configurator)
-            return chainedOperation
+        if let thisOperation = self as? MDChainedOperation {
+            thisOperation.chain(if: condition, configurator: configurator)
+            return thisOperation
         } else {
             let chainedOperation = MDChainedOperation(head: self)
+            chainedOperation.isInitializedFromOperation = true
+            chainedOperation.chain(if: condition, configurator: configurator)
             return chainedOperation
         }
     }

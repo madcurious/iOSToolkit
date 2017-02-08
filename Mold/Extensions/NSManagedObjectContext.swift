@@ -10,36 +10,40 @@ import CoreData
 
 public extension NSManagedObjectContext {
     
-    public func saveRecursively(_ completionBlock: ((Error?) -> ())?) {
-        func saveAction() {
-            do {
-                try self.saveIfUpdated()
-                if let parentContext = self.parent {
-                    parentContext.saveRecursively(completionBlock)
-                } else {
-                    completionBlock?(nil)
-                }
-            } catch {
-                completionBlock?(error)
-            }
-        }
-        
-        switch self.concurrencyType {
-        case .confinementConcurrencyType:
-            saveAction()
-            
-        default:
-            self.perform(saveAction)
-        }
-    }
+//    public func saveRecursively(_ completionBlock: ((Error?) -> ())?) {
+//        func saveAction() {
+//            do {
+//                try self.saveIfUpdated()
+//                if let parentContext = self.parent {
+//                    parentContext.saveRecursively(completionBlock)
+//                } else {
+//                    completionBlock?(nil)
+//                }
+//            } catch {
+//                completionBlock?(error)
+//            }
+//        }
+//        
+//        switch self.concurrencyType {
+//        case .confinementConcurrencyType:
+//            saveAction()
+//            
+//        default:
+//            self.perform(saveAction)
+//        }
+//    }
     
-    private func saveIfUpdated() throws {
+    public func saveToStore() throws {
         guard self.hasChanges
             else {
                 return
         }
         
         try self.save()
+        
+        if let parent = self.parent {
+            try parent.saveToStore()
+        }
     }
     
 }
