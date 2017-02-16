@@ -46,6 +46,10 @@
 		26020E911DA4BC0300C45902 /* MDResponsiveTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E661DA4BC0200C45902 /* MDResponsiveTextField.swift */; };
 		26020E921DA4BC0300C45902 /* MDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E671DA4BC0200C45902 /* MDTableViewCell.swift */; };
 		26020E931DA4BC0300C45902 /* MDViewportBasedFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E681DA4BC0200C45902 /* MDViewportBasedFontSize.swift */; };
+		260DFDBB1E55885900E3B92E /* MDImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260DFDBA1E55885900E3B92E /* MDImageButton.swift */; };
+		260DFDC51E5592C500E3B92E /* MDLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260DFDC41E5592C500E3B92E /* MDLabelButton.swift */; };
+		260DFDC71E55960600E3B92E /* MDTextFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260DFDC61E55960600E3B92E /* MDTextFieldButton.swift */; };
+		260DFDC91E55996100E3B92E /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260DFDC81E55996100E3B92E /* NSString.swift */; };
 		262731851DB2447800119F76 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262731841DB2447800119F76 /* NSManagedObjectContext.swift */; };
 		262F31A41E0777D900D6E4CF /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262F31A31E0777D900D6E4CF /* Calendar.swift */; };
 		2672FBF51DD3310000C8D34C /* NSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */; };
@@ -96,6 +100,10 @@
 		26020E661DA4BC0200C45902 /* MDResponsiveTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDResponsiveTextField.swift; sourceTree = "<group>"; };
 		26020E671DA4BC0200C45902 /* MDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDTableViewCell.swift; sourceTree = "<group>"; };
 		26020E681DA4BC0200C45902 /* MDViewportBasedFontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDViewportBasedFontSize.swift; sourceTree = "<group>"; };
+		260DFDBA1E55885900E3B92E /* MDImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDImageButton.swift; sourceTree = "<group>"; };
+		260DFDC41E5592C500E3B92E /* MDLabelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDLabelButton.swift; sourceTree = "<group>"; };
+		260DFDC61E55960600E3B92E /* MDTextFieldButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDTextFieldButton.swift; sourceTree = "<group>"; };
+		260DFDC81E55996100E3B92E /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
 		262731841DB2447800119F76 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
 		262F31A31E0777D900D6E4CF /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPersistentContainer.swift; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 				262731841DB2447800119F76 /* NSManagedObjectContext.swift */,
 				2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */,
 				262F31A31E0777D900D6E4CF /* Calendar.swift */,
+				260DFDC81E55996100E3B92E /* NSString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -222,6 +231,9 @@
 				26020E661DA4BC0200C45902 /* MDResponsiveTextField.swift */,
 				26020E671DA4BC0200C45902 /* MDTableViewCell.swift */,
 				26020E681DA4BC0200C45902 /* MDViewportBasedFontSize.swift */,
+				260DFDBA1E55885900E3B92E /* MDImageButton.swift */,
+				260DFDC41E5592C500E3B92E /* MDLabelButton.swift */,
+				260DFDC61E55960600E3B92E /* MDTextFieldButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,7 +339,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				26020E931DA4BC0300C45902 /* MDViewportBasedFontSize.swift in Sources */,
+				260DFDC91E55996100E3B92E /* NSString.swift in Sources */,
 				26020E691DA4BC0200C45902 /* MDAlertDialog.swift in Sources */,
+				260DFDC71E55960600E3B92E /* MDTextFieldButton.swift in Sources */,
 				26020E821DA4BC0200C45902 /* MDChainedOperation.swift in Sources */,
 				26020E8E1DA4BC0200C45902 /* MDLoadingOverlay.swift in Sources */,
 				26020E901DA4BC0300C45902 /* MDResponsiveLabel.swift in Sources */,
@@ -348,12 +362,14 @@
 				26A1454C1DD21CBF00718494 /* MDFullOperationViewController.swift in Sources */,
 				26020E811DA4BC0200C45902 /* MDBlockOperation.swift in Sources */,
 				26020E761DA4BC0200C45902 /* String.swift in Sources */,
+				260DFDBB1E55885900E3B92E /* MDImageButton.swift in Sources */,
 				26020E701DA4BC0200C45902 /* Date.swift in Sources */,
 				26020E841DA4BC0200C45902 /* MDURLOperation.swift in Sources */,
 				26020E6E1DA4BC0200C45902 /* NSDecimalNumber.swift in Sources */,
 				26020E7D1DA4BC0200C45902 /* MDArchivableValueType.swift in Sources */,
 				2672FBF51DD3310000C8D34C /* NSPersistentContainer.swift in Sources */,
 				26020E751DA4BC0200C45902 /* Sequence.swift in Sources */,
+				260DFDC51E5592C500E3B92E /* MDLabelButton.swift in Sources */,
 				26020E6F1DA4BC0200C45902 /* CharacterSet.swift in Sources */,
 				26020E741DA4BC0200C45902 /* NSLayoutConstraint.swift in Sources */,
 				26020E7B1DA4BC0200C45902 /* UIView.swift in Sources */,
