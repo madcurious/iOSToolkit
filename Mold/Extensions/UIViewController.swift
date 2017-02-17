@@ -90,9 +90,9 @@ extension UIViewController {
 // MARK: - Forms
 extension UIViewController {
     
-    open var formScrollView: UIScrollView {
-        fatalError("Unimplemented \(#function): You must provide the scroll view for the form.")
-    }
+//    open var formScrollView: UIScrollView {
+//        fatalError("Unimplemented \(#function): You must provide the scroll view for the form.")
+//    }
     
     public func addTapGestureRecognizerToDismissKeyboard() {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -100,38 +100,44 @@ extension UIViewController {
         self.view.addGestureRecognizer(tapRecognizer)
     }
     
-    public func addFormScrollViewKeyboardObservers() {
-        let center = NotificationCenter.default
-        center.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        center.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-    }
+//    public func addFormScrollViewKeyboardObservers() {
+//        let center = NotificationCenter.default
+//        center.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        center.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//    }
     
     public func dismissKeyboard() {
         self.view.endEditing(true)
     }
     
-    func keyboardWillShow(_ notification: Notification) {
-        guard let keyboardFrame = ((notification as NSNotification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
-            else {
-                return
-        }
-        
-        var bottomInset = keyboardFrame.height
-        
-        // If the view controller is in a tab bar controller, take into account the tab bar height.
-        if let tabBar = self.tabBarController?.tabBar {
-            bottomInset -= tabBar.bounds.size.height
-        }
-        
-        let insets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
-        self.formScrollView.contentInset = insets
-        self.formScrollView.scrollIndicatorInsets = insets
-    }
-    
-    func keyboardWillHide(_ notification: Notification) {
-        let insets = UIEdgeInsets.zero
-        self.formScrollView.contentInset = insets
-        self.formScrollView.scrollIndicatorInsets = insets
-    }
+//    func keyboardWillShow(_ notification: Notification) {
+//        guard let keyboardFrame = ((notification as NSNotification).userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+//            else {
+//                return
+//        }
+//        
+//        var bottomInset = keyboardFrame.height
+//        
+//        // If the view controller is in a tab bar controller, take into account the tab bar height.
+//        if let tabBar = self.tabBarController?.tabBar {
+//            bottomInset -= tabBar.bounds.size.height
+//        }
+//        
+//        let insets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+//        self.formScrollView.contentInset = insets
+//        self.formScrollView.scrollIndicatorInsets = insets
+//        
+//        self.performAdditionalKeyboardWillShowTasks(notification: notification, bottomInset: bottomInset)
+//    }
+//    
+//    open func performAdditionalKeyboardWillShowTasks(notification: Notification, bottomInset: CGFloat) {
+//        
+//    }
+//    
+//    func keyboardWillHide(_ notification: Notification) {
+//        let insets = UIEdgeInsets.zero
+//        self.formScrollView.contentInset = insets
+//        self.formScrollView.scrollIndicatorInsets = insets
+//    }
     
 }
