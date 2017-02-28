@@ -10,13 +10,17 @@ import Foundation
 
 open class MDOperation: Operation {
     
-    open var startBlock: ((Void) -> Void)?
-    open var returnBlock: ((Void) -> Void)?
-    open var successBlock: ((Any?) -> Void)?
-    open var failBlock: ((Error) -> Void)?
-    open var finishBlock: ((Void) -> Void)?
+//    public var startBlock: (runsInMainThread: Bool, block: () -> ())?
+//    public var returnBlock: (runsInMainThread: Bool, block: () -> ())?
+//    public var successBlock: (runsInMainThread: Bool, block: (Any?) -> ())?
+//    public var failureBlock: (runsInMainThread: Bool, block: (Error) -> ())?
     
-    open var shouldRunCallbacksInMainThread = true
+    public var startBlock: MDOperationCallbackBlock?
+    public var returnBlock: MDOperationCallbackBlock?
+    public var successBlock: MDOperationSuccessBlock?
+    public var failureBlock: MDOperationFailureBlock?
+    
+    public var delegate: MDOperationDelegate?
     
     /**
      Determines whether the operation, after determining success or fail, should execute the `returnBlock`
@@ -50,48 +54,39 @@ open class MDOperation: Operation {
     
     // MARK: Builders
     
-    @discardableResult
-    open func onStart(_ startBlock: @escaping (Void) -> Void) -> Self {
-        self.startBlock = startBlock
-        return self
-    }
+//    @discardableResult
+//    public func setStartBlock(runsInMainThread: Bool = true, block: @escaping () -> ()) -> Self {
+//        self.startBlock = (runsInMainThread: runsInMainThread, block: block)
+//        return self
+//    }
+//    
+//    @discardableResult
+//    public func setReturnBlock(runsInMainThread: Bool = true, block: @escaping () -> ()) -> Self {
+//        self.returnBlock = (runsInMainThread: runsInMainThread, block: block)
+//        return self
+//    }
+//    
+//    @discardableResult
+//    public func setSuccessBlock(runsInMainThread: Bool = true, block: @escaping (Any?) -> ()) -> Self {
+//        self.successBlock = (runsInMainThread: runsInMainThread, block: block)
+//        return self
+//    }
+//    
+//    
+//    @discardableResult
+//    public func setFailureBlock(runsInMainThread: Bool = true, block: @escaping (Error) -> ()) -> Self {
+//        self.failureBlock = (runsInMainThread: runsInMainThread, block: block)
+//        return self
+//    }
     
-    @discardableResult
-    open func onReturn(_ returnBlock: @escaping (Void) -> Void) -> Self {
-        self.returnBlock = returnBlock
-        return self
-    }
-    
-    @discardableResult
-    open func onSuccess(_ successBlock: @escaping (Any?) -> Void) -> Self {
-        self.successBlock = successBlock
-        return self
-    }
-    
-    @discardableResult
-    open func onFail(_ failBlock: @escaping (Error) -> Void) -> Self {
-        self.failBlock = failBlock
-        return self
-    }
-    
-    @discardableResult
-    open func onFinish(_ finishBlock: @escaping (Void) -> Void) -> Self {
-        self.finishBlock = finishBlock
-        return self
-    }
-    
-    public func chain(if condition: ((Any?) -> Bool)? = nil, configurator: @escaping ((Any?) -> MDOperation)) -> MDChainedOperation {
-//        let chain = MDChainedOperation()
-//        chain.isInitializedFromOperation = true
-//        chain.chain(configurator: { _ in return self })
-//        return chain
+    public func chain(if condition: ((Any?) -> Bool)? = nil, operationBuilder: @escaping ((Any?) -> MDOperation)) -> MDChainedOperation {
         if let thisOperation = self as? MDChainedOperation {
-            thisOperation.chain(if: condition, configurator: configurator)
+            thisOperation.chain(if: condition, operationBuilder: operationBuilder)
             return thisOperation
         } else {
             let chainedOperation = MDChainedOperation(head: self)
             chainedOperation.isInitializedFromOperation = true
-            chainedOperation.chain(if: condition, configurator: configurator)
+            chainedOperation.chain(if: condition, operationBuilder: operationBuilder)
             return chainedOperation
         }
     }
@@ -101,10 +96,15 @@ open class MDOperation: Operation {
      in a presenting view controller.
      */
     @discardableResult
-    open func setFailBlockToShowErrorInPresenter(_ viewController: UIViewController) -> Self {
-        self.failBlock = {[unowned viewController] error in
-            MDErrorDialog.showError(error, inPresenter: viewController)
-        }
+    open func setFailureBlockToShowErrorInPresenter(_ viewController: UIViewController) -> Self {
+//        self.setFailureBlock(runsInMainThread: true,
+//                             block: {[unowned viewController] error in
+//                                MDErrorDialog.showError(error, inPresenter: viewController)
+//        })
+        self.failureBlock = MDOperationFailureBlock(runsInMainThread: true,
+                                                    block: {[unowned viewController] (error) in
+                                                        MDErrorDialog.showError(error, inPresenter: viewController)
+        })
         return self
     }
     
@@ -146,13 +146,13 @@ open class MDOperation: Operation {
             }
             self.runSuccessBlock(result)
         } catch {
-            self.runFailBlock(error)
+            self.runFailureBlock(error)
         }
     }
     
     open func closeOperation() {
         if self.isCancelled == false {
-            self.runFinishBlock()
+//            self.runFinishBlock()
         }
         
         self.willChangeValue(forKey: "isExecuting")
@@ -171,10 +171,10 @@ open class MDOperation: Operation {
                 return
         }
         
-        if self.shouldRunCallbacksInMainThread == true {
-            MDDispatcher.syncRunInMainThread(startBlock)
+        if startBlock.runsInMainThread {
+            MDDispatcher.syncRunInMainThread(startBlock.block)
         } else {
-            startBlock()
+            startBlock.block()
         }
     }
     
@@ -184,10 +184,10 @@ open class MDOperation: Operation {
                 return
         }
         
-        if self.shouldRunCallbacksInMainThread == true {
-            MDDispatcher.syncRunInMainThread(returnBlock)
+        if returnBlock.runsInMainThread {
+            MDDispatcher.syncRunInMainThread(returnBlock.block)
         } else {
-            returnBlock()
+            returnBlock.block()
         }
     }
     
@@ -201,45 +201,57 @@ open class MDOperation: Operation {
                 return
         }
         
-        if self.shouldRunCallbacksInMainThread == true {
-            MDDispatcher.syncRunInMainThread {
-                successBlock(result)
+        if successBlock.runsInMainThread {
+            MDDispatcher.syncRunInMainThread {[unowned self] in
+                successBlock.block(result)
+                if let delegate = self.delegate {
+                    delegate.operation(self, didRunSuccessBlockWithResult: result)
+                }
             }
         } else {
-            successBlock(result)
+            successBlock.block(result)
+            if let delegate = self.delegate {
+                delegate.operation(self, didRunSuccessBlockWithResult: result)
+            }
         }
     }
     
-    open func runFailBlock(_ error: Error) {
+    open func runFailureBlock(_ error: Error) {
         if self.shouldRunReturnBlockBeforeSuccessOrFail {
             self.runReturnBlock()
         }
         
-        guard let failBlock = self.failBlock
+        guard let failureBlock = self.failureBlock
             else {
                 return
         }
         
-        if self.shouldRunCallbacksInMainThread == true {
-            MDDispatcher.syncRunInMainThread({
-                failBlock(error)
+        if failureBlock.runsInMainThread {
+            MDDispatcher.syncRunInMainThread({[unowned self] in
+                failureBlock.block(error)
+                if let delegate = self.delegate {
+                    delegate.operation(self, didRunFailureBlockWithError: error)
+                }
             })
         } else {
-            failBlock(error)
+            failureBlock.block(error)
+            if let delegate = self.delegate {
+                delegate.operation(self, didRunFailureBlockWithError: error)
+            }
         }
     }
     
-    open func runFinishBlock() {
-        guard let finishBlock = self.finishBlock
-            else {
-                return
-        }
-        
-        if self.shouldRunCallbacksInMainThread == true {
-            MDDispatcher.syncRunInMainThread(finishBlock)
-        } else {
-            finishBlock()
-        }
-    }
+//    open func runFinishBlock() {
+//        guard let finishBlock = self.finishBlock
+//            else {
+//                return
+//        }
+//        
+//        if finishBlock.runsInMainThread {
+//            MDDispatcher.syncRunInMainThread(finishBlock.block)
+//        } else {
+//            finishBlock.block()
+//        }
+//    }
     
 }

@@ -64,16 +64,17 @@ open class MDOperationViewController: UIViewController {
             else {
                 return
         }
+        op.delegate = self
         
-        let originalStartBlock = op.startBlock
-        op.startBlock = {[unowned self] in
-            originalStartBlock?()
-            self.updateView(forState: .loading)
-        }
+//        let originalStartBlock = op.startBlock
+//        op.startBlock = {[unowned self] in
+//            originalStartBlock?()
+//            self.updateView(forState: .loading)
+//        }
         
-        op.failBlock = {[unowned self] error in
-            self.updateView(forState: .failed(error))
-        }
+//        op.failBlock = {[unowned self] error in
+//            self.updateView(forState: .failed(error))
+//        }
         
         self.operationQueue.addOperation(op)
     }
@@ -94,6 +95,22 @@ open class MDOperationViewController: UIViewController {
         if self.firstLoad {
             self.runOperation()
             self.firstLoad = false
+        }
+    }
+    
+}
+
+extension MDOperationViewController: MDOperationDelegate {
+    
+    public func operationWillRunStartBlock(_ operation: MDOperation) {
+        MDDispatcher.asyncRunInMainThread {[unowned self] in
+            self.updateView(forState: .loading)
+        }
+    }
+    
+    public func operation(_ operation: MDOperation, didRunFailureBlockWithError error: Error) {
+        MDDispatcher.asyncRunInMainThread {[unowned self] in
+            self.updateView(forState: .failed(error))
         }
     }
     

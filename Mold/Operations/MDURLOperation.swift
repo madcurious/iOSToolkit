@@ -102,7 +102,7 @@ open class MDURLOperation: MDOperation {
                     request.httpBody = payloadData
                 }
             } catch {
-                self.runFailBlock(error)
+                self.runFailureBlock(error)
                 self.closeOperation()
                 return
             }
@@ -147,7 +147,7 @@ open class MDURLOperation: MDOperation {
         }
         
         if let error = error {
-            self.runFailBlock(error)
+            self.runFailureBlock(error)
             return
         }
         
@@ -183,7 +183,7 @@ open class MDURLOperation: MDOperation {
                 return
             }
             
-            self.runFailBlock(error)
+            self.runFailureBlock(error)
         }
     }
     

@@ -36,7 +36,7 @@ open class MDBlockOperation: MDOperation {
             
             self.runSuccessBlock(result)
         } catch {
-            self.runFailBlock(error)
+            self.runFailureBlock(error)
         }
     }
     
