@@ -57,9 +57,6 @@
 		26904ED71C778A120094DA08 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED61C778A120094DA08 /* LICENSE */; };
 		26A1454C1DD21CBF00718494 /* MDFullOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1454B1DD21CBF00718494 /* MDFullOperationViewController.swift */; };
 		26A1454F1DD22ADA00718494 /* MDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1454E1DD22ADA00718494 /* MDErrorView.swift */; };
-		26E9E4981E6538630089277D /* MDOperationCallbackBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E9E4971E6538630089277D /* MDOperationCallbackBlock.swift */; };
-		26E9E49A1E6538950089277D /* MDOperationSuccessBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E9E4991E6538950089277D /* MDOperationSuccessBlock.swift */; };
-		26E9E49C1E6538B30089277D /* MDOperationFailureBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E9E49B1E6538B30089277D /* MDOperationFailureBlock.swift */; };
 		26F1A97A1E5DD0D300752F1A /* MDOperationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1A9791E5DD0D300752F1A /* MDOperationDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -117,9 +114,6 @@
 		26904ED61C778A120094DA08 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		26A1454B1DD21CBF00718494 /* MDFullOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFullOperationViewController.swift; sourceTree = "<group>"; };
 		26A1454E1DD22ADA00718494 /* MDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorView.swift; sourceTree = "<group>"; };
-		26E9E4971E6538630089277D /* MDOperationCallbackBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationCallbackBlock.swift; sourceTree = "<group>"; };
-		26E9E4991E6538950089277D /* MDOperationSuccessBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationSuccessBlock.swift; sourceTree = "<group>"; };
-		26E9E49B1E6538B30089277D /* MDOperationFailureBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationFailureBlock.swift; sourceTree = "<group>"; };
 		26F1A9791E5DD0D300752F1A /* MDOperationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,9 +197,6 @@
 				26020E551DA4BC0200C45902 /* MDOperation.swift */,
 				26020E561DA4BC0200C45902 /* MDURLOperation.swift */,
 				26F1A9791E5DD0D300752F1A /* MDOperationDelegate.swift */,
-				26E9E4971E6538630089277D /* MDOperationCallbackBlock.swift */,
-				26E9E4991E6538950089277D /* MDOperationSuccessBlock.swift */,
-				26E9E49B1E6538B30089277D /* MDOperationFailureBlock.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -357,7 +348,6 @@
 				260DFDC71E55960600E3B92E /* MDTextFieldButton.swift in Sources */,
 				26020E821DA4BC0200C45902 /* MDChainedOperation.swift in Sources */,
 				26020E8E1DA4BC0200C45902 /* MDLoadingOverlay.swift in Sources */,
-				26E9E4981E6538630089277D /* MDOperationCallbackBlock.swift in Sources */,
 				26020E901DA4BC0300C45902 /* MDResponsiveLabel.swift in Sources */,
 				26020E6A1DA4BC0200C45902 /* MDConfirmDialog.swift in Sources */,
 				26020E861DA4BC0200C45902 /* MDOperationViewController.swift in Sources */,
@@ -367,7 +357,6 @@
 				262731851DB2447800119F76 /* NSManagedObjectContext.swift in Sources */,
 				26A1454F1DD22ADA00718494 /* MDErrorView.swift in Sources */,
 				26020E881DA4BC0200C45902 /* Constants.swift in Sources */,
-				26E9E49C1E6538B30089277D /* MDOperationFailureBlock.swift in Sources */,
 				26020E781DA4BC0200C45902 /* UIButton.swift in Sources */,
 				26020E7E1DA4BC0200C45902 /* MDFileManager.swift in Sources */,
 				26020E731DA4BC0200C45902 /* NSAttributedString.swift in Sources */,
@@ -377,7 +366,6 @@
 				26A1454C1DD21CBF00718494 /* MDFullOperationViewController.swift in Sources */,
 				26020E811DA4BC0200C45902 /* MDBlockOperation.swift in Sources */,
 				26020E761DA4BC0200C45902 /* String.swift in Sources */,
-				26E9E49A1E6538950089277D /* MDOperationSuccessBlock.swift in Sources */,
 				260DFDBB1E55885900E3B92E /* MDImageButton.swift in Sources */,
 				26020E701DA4BC0200C45902 /* Date.swift in Sources */,
 				26020E841DA4BC0200C45902 /* MDURLOperation.swift in Sources */,

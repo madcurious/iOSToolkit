@@ -10,7 +10,7 @@ import UIKit
 
 public final class MDErrorDialog {
     
-    public class func showError(_ error: Error, inPresenter presenter: UIViewController, dialogTitle: String? = nil, cancelButtonTitle: String = "OK") {
+    public class func showError(_ error: Error, from presentingViewController: UIViewController, dialogTitle: String? = nil, cancelButtonTitle: String = "OK") {
         let message = error.localizedDescription
         
         let alertController = UIAlertController(title: dialogTitle, message: message, preferredStyle: .alert)
@@ -20,7 +20,7 @@ public final class MDErrorDialog {
         alertController.addAction(cancelButtonAction)
         
         MDDispatcher.asyncRunInMainThread {
-            presenter.present(alertController, animated: true, completion: nil)
+            presentingViewController.present(alertController, animated: true, completion: nil)
         }
     }
     
