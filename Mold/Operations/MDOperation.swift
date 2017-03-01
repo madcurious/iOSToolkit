@@ -10,124 +10,26 @@ import Foundation
 
 open class MDOperation: Operation {
     
-    public var startBlock: (() -> ())?
-    public var returnBlock: (() -> ())?
-    public var successBlock: ((Any?) -> ())?
-    public var failureBlock: ((Error) -> ())?
+    public var startBlock: MDOperationCallbackBlock?
+    public var returnBlock: MDOperationCallbackBlock?
+    public var successBlock: MDOperationSuccessBlock?
+    public var failureBlock: MDOperationFailureBlock?
     
-    public var delegate: MDOperationDelegate?
-    
-    public var presentsErrorDialogOnFailure = false
-    
-    /**
-     Determines whether the operation, after determining success or fail, should execute the `returnBlock`
-     before the `successBlock` or `failBlock` runs its logic. If you manually set this to `false` because
-     you want to do something else in the success or fail block, you will have to run the `returnBlock` yourself in your code.
-     */
-    open var shouldRunReturnBlockBeforeSuccessOrFail = true
-    
-    // MARK: Internal state variables
-    
-    fileprivate var _executing = false
-    fileprivate var _finished = false
-    
-    // MARK: NSOperation required overrides
-    
-    open override var isConcurrent: Bool {
-        return true
-    }
-    
-    open override var isAsynchronous: Bool {
-        return true
-    }
-    
-    open override var isExecuting: Bool {
-        return self._executing
-    }
-    
-    open override var isFinished: Bool {
-        return self._finished
-    }
-    
-    // MARK: Builders
-    
-    @discardableResult
-    public func setStartBlock(to startBlock: @escaping () -> ()) -> Self {
-        self.startBlock = startBlock
-        return self
-    }
-    
-    @discardableResult
-    public func setReturnBlock(to returnBlock: @escaping () -> ()) -> Self {
-        self.returnBlock = returnBlock
-        return self
-    }
-    
-    @discardableResult
-    public func setSuccessBlock(to successBlock: @escaping (Any?) -> ()) -> Self {
-        self.successBlock = successBlock
-        return self
-    }
-    
-    
-    @discardableResult
-    public func setFailureBlock(to failureBlock: @escaping (Error) -> ()) -> Self {
-        self.failureBlock = failureBlock
-        return self
-    }
-    
-    public func chain(if condition: ((Any?) -> Bool)? = nil, operationBuilder: @escaping ((Any?) -> MDOperation)) -> MDChainedOperation {
-        if let thisOperation = self as? MDChainedOperation {
-            thisOperation.chain(if: condition, operationBuilder: operationBuilder)
-            return thisOperation
-        } else {
-            let chainedOperation = MDChainedOperation(head: self)
-            chainedOperation.isInitializedFromOperation = true
-            chainedOperation.chain(if: condition, operationBuilder: operationBuilder)
-            return chainedOperation
-        }
-    }
-    
-    public func chain(operation: MDOperation) -> MDChainedOperation {
-        return self.chain(operationBuilder: { _ in return operation })
-    }
+    public var result: Any?
+    public var error: Error?
     
     /**
-     Convenience function for setting a `failBlock` that just shows an error dialog
-     in a presenting view controller.
+     Determines whether the operation should execute once it enters `main()`. The default value is `true`.
+     
+     You can override this variable as a computed property, for example, to determine whether
+     an operation should execute depending on the result or error produced by the operations
+     it is dependent on.
      */
-    @discardableResult
-    open func setFailureBlockToPresentErrorDialog(from presentingViewController: UIViewController) -> Self {
-        self.presentsErrorDialogOnFailure = true
-        self.failureBlock = {[unowned presentingViewController] (error) in
-            MDErrorDialog.showError(error, from: presentingViewController)
-        }
-        return self
-    }
-    
-    open func makeResult(fromSource source: Any?) throws -> Any? {
-        return nil
-    }
-    
-    // MARK: Functions
-    
-    open override func start() {
-        if self.isCancelled {
-            self.willChangeValue(forKey: "isFinished")
-            self._finished = true
-            self.didChangeValue(forKey: "isFinished")
-            return
-        }
-        
-        self.willChangeValue(forKey: "isExecuting")
-        Thread.detachNewThreadSelector(#selector(main), toTarget: self, with: nil)
-        self._executing = true
-        self.didChangeValue(forKey: "isExecuting")
-    }
+    open var shouldExecute = true
     
     open override func main() {
-        defer {
-            self.closeOperation()
+        if self.shouldExecute == false {
+            return
         }
         
         self.runStartBlock()
@@ -137,123 +39,105 @@ open class MDOperation: Operation {
         }
         
         do {
-            let result = try self.makeResult(fromSource: nil)
+            self.result = try self.makeResult(from: nil)
+            
             if self.isCancelled {
                 return
             }
-            self.runSuccessBlock(result)
+            
+            self.runSuccessBlock()
         } catch {
-            self.runFailureBlock(error)
+            self.error = error
+            
+            if self.isCancelled {
+                return
+            }
+            
+            self.runFailureBlock()
         }
     }
     
-    open func closeOperation() {
-        if self.isCancelled == false {
-//            self.runFinishBlock()
-        }
-        
-        self.willChangeValue(forKey: "isExecuting")
-        self.willChangeValue(forKey: "isFinished")
-        
-        self._executing = false
-        self._finished = true
-        
-        self.didChangeValue(forKey: "isExecuting")
-        self.didChangeValue(forKey: "isFinished")
+    open func makeResult(from source: Any?) throws -> Any? {
+        return nil
     }
     
-    open func runStartBlock() {
+    /// Overrides the `failureBlock` to show an error dialog in a presenting view controller when an error occurs.
+    @discardableResult
+    open func presentErrorDialogOnFailure(from presentingViewController: UIViewController) -> Self {
+        self.failureBlock = MDOperationFailureBlock(block: {[unowned presentingViewController] (error) in
+            MDErrorDialog.showError(error, from: presentingViewController)
+        })
+        return self
+    }
+
+    
+    public func runStartBlock() {
         guard let startBlock = self.startBlock
             else {
                 return
         }
         
-        if self.delegate == nil ||
-            self.delegate?.operationShouldRunStartBlockInMainThread(self) == true {
-            MDDispatcher.asyncRunInMainThread(startBlock)
+        if startBlock.runsInMainThread {
+            MDDispatcher.asyncRunInMainThread {
+                startBlock.block()
+            }
         } else {
-            startBlock()
+            startBlock.block()
         }
     }
     
-    open func runReturnBlock() {
-        guard let returnBlock = self.returnBlock
+    public func runReturnBlock() {
+        guard let returnBlock = self.returnBlock,
+            
+            // To run the return block, all of its dependencies must have finished already.
+            self.dependencies.filter({ $0.isFinished }).count == self.dependencies.count
             else {
                 return
         }
         
-        if self.delegate == nil ||
-            self.delegate?.operationShouldRunReturnBlockInMainThread(self) == true {
-            MDDispatcher.asyncRunInMainThread(returnBlock)
+        if returnBlock.runsInMainThread {
+            MDDispatcher.asyncRunInMainThread {
+                returnBlock.block()
+            }
         } else {
-            returnBlock()
+            returnBlock.block()
         }
     }
     
-    open func runSuccessBlock(_ result: Any?) {
-        if self.shouldRunReturnBlockBeforeSuccessOrFail {
-            self.runReturnBlock()
-        }
+    public func runSuccessBlock() {
+        self.runReturnBlock()
         
         guard let successBlock = self.successBlock
             else {
                 return
         }
         
-        if self.delegate == nil ||
-            self.delegate?.operationShouldRunSuccessBlockInMainThread(self) == true {
+        if successBlock.runsInMainThread {
             MDDispatcher.asyncRunInMainThread {[unowned self] in
-                successBlock(result)
-                if let delegate = self.delegate {
-                    delegate.operation(self, didRunSuccessBlockWithResult: result)
-                }
+                successBlock.block(self.result)
             }
         } else {
-            successBlock(result)
-            if let delegate = self.delegate {
-                delegate.operation(self, didRunSuccessBlockWithResult: result)
-            }
+            successBlock.block(self.result)
         }
     }
     
-    open func runFailureBlock(_ error: Error) {
-        if self.shouldRunReturnBlockBeforeSuccessOrFail {
-            self.runReturnBlock()
-        }
+    public func runFailureBlock() {
+        self.runReturnBlock()
         
         guard let failureBlock = self.failureBlock
             else {
                 return
         }
         
-        if self.presentsErrorDialogOnFailure == true ||
-            self.delegate == nil ||
-            self.delegate?.operationShouldRunFailureBlockInMainThread(self, withError: error) == true {
-            MDDispatcher.asyncRunInMainThread({[unowned self] in
-                failureBlock(error)
-                if let delegate = self.delegate {
-                    delegate.operation(self, didRunFailureBlockWithError: error)
-                }
-            })
-        } else {
-            failureBlock(error)
-            if let delegate = self.delegate {
-                delegate.operation(self, didRunFailureBlockWithError: error)
+        assert(self.error != nil, "Attempted to execute 'self.failureBlock' but 'self.error' is not assigned.")
+        
+        if failureBlock.runsInMainThread {
+            MDDispatcher.asyncRunInMainThread {[unowned self] in
+                failureBlock.block(self.error!)
             }
+        } else {
+            failureBlock.block(self.error!)
         }
     }
-    
-//    open func runFinishBlock() {
-//        guard let finishBlock = self.finishBlock
-//            else {
-//                return
-//        }
-//        
-//        if finishBlock.runsInMainThread {
-//            MDDispatcher.syncRunInMainThread(finishBlock.block)
-//        } else {
-//            finishBlock.block()
-//        }
-//    }
     
 }

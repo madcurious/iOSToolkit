@@ -28,8 +28,6 @@
 		26020E7D1DA4BC0200C45902 /* MDArchivableValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E4E1DA4BC0200C45902 /* MDArchivableValueType.swift */; };
 		26020E7E1DA4BC0200C45902 /* MDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E4F1DA4BC0200C45902 /* MDFileManager.swift */; };
 		26020E801DA4BC0200C45902 /* Mold.h in Headers */ = {isa = PBXBuildFile; fileRef = 26020E511DA4BC0200C45902 /* Mold.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		26020E811DA4BC0200C45902 /* MDBlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E531DA4BC0200C45902 /* MDBlockOperation.swift */; };
-		26020E821DA4BC0200C45902 /* MDChainedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E541DA4BC0200C45902 /* MDChainedOperation.swift */; };
 		26020E831DA4BC0200C45902 /* MDOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E551DA4BC0200C45902 /* MDOperation.swift */; };
 		26020E841DA4BC0200C45902 /* MDURLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E561DA4BC0200C45902 /* MDURLOperation.swift */; };
 		26020E861DA4BC0200C45902 /* MDOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E591DA4BC0200C45902 /* MDOperationViewController.swift */; };
@@ -57,7 +55,10 @@
 		26904ED71C778A120094DA08 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED61C778A120094DA08 /* LICENSE */; };
 		26A1454C1DD21CBF00718494 /* MDFullOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1454B1DD21CBF00718494 /* MDFullOperationViewController.swift */; };
 		26A1454F1DD22ADA00718494 /* MDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1454E1DD22ADA00718494 /* MDErrorView.swift */; };
-		26F1A97A1E5DD0D300752F1A /* MDOperationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1A9791E5DD0D300752F1A /* MDOperationDelegate.swift */; };
+		26F57AE91E66679A0034FF4B /* MDAsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F57AE81E66679A0034FF4B /* MDAsynchronousOperation.swift */; };
+		26F57AEB1E669AC00034FF4B /* MDOperationCallbackBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F57AEA1E669AC00034FF4B /* MDOperationCallbackBlock.swift */; };
+		26F57AED1E669B010034FF4B /* MDOperationSuccessBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F57AEC1E669B010034FF4B /* MDOperationSuccessBlock.swift */; };
+		26F57AEF1E669DE30034FF4B /* MDOperationFailureBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F57AEE1E669DE30034FF4B /* MDOperationFailureBlock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,8 +84,6 @@
 		26020E4F1DA4BC0200C45902 /* MDFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFileManager.swift; sourceTree = "<group>"; };
 		26020E501DA4BC0200C45902 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26020E511DA4BC0200C45902 /* Mold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mold.h; sourceTree = "<group>"; };
-		26020E531DA4BC0200C45902 /* MDBlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBlockOperation.swift; sourceTree = "<group>"; };
-		26020E541DA4BC0200C45902 /* MDChainedOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDChainedOperation.swift; sourceTree = "<group>"; };
 		26020E551DA4BC0200C45902 /* MDOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperation.swift; sourceTree = "<group>"; };
 		26020E561DA4BC0200C45902 /* MDURLOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDURLOperation.swift; sourceTree = "<group>"; };
 		26020E591DA4BC0200C45902 /* MDOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +113,10 @@
 		26904ED61C778A120094DA08 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		26A1454B1DD21CBF00718494 /* MDFullOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFullOperationViewController.swift; sourceTree = "<group>"; };
 		26A1454E1DD22ADA00718494 /* MDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorView.swift; sourceTree = "<group>"; };
-		26F1A9791E5DD0D300752F1A /* MDOperationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationDelegate.swift; sourceTree = "<group>"; };
+		26F57AE81E66679A0034FF4B /* MDAsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAsynchronousOperation.swift; sourceTree = "<group>"; };
+		26F57AEA1E669AC00034FF4B /* MDOperationCallbackBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationCallbackBlock.swift; sourceTree = "<group>"; };
+		26F57AEC1E669B010034FF4B /* MDOperationSuccessBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationSuccessBlock.swift; sourceTree = "<group>"; };
+		26F57AEE1E669DE30034FF4B /* MDOperationFailureBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationFailureBlock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,11 +194,12 @@
 		26020E521DA4BC0200C45902 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				26020E531DA4BC0200C45902 /* MDBlockOperation.swift */,
-				26020E541DA4BC0200C45902 /* MDChainedOperation.swift */,
 				26020E551DA4BC0200C45902 /* MDOperation.swift */,
 				26020E561DA4BC0200C45902 /* MDURLOperation.swift */,
-				26F1A9791E5DD0D300752F1A /* MDOperationDelegate.swift */,
+				26F57AE81E66679A0034FF4B /* MDAsynchronousOperation.swift */,
+				26F57AEA1E669AC00034FF4B /* MDOperationCallbackBlock.swift */,
+				26F57AEC1E669B010034FF4B /* MDOperationSuccessBlock.swift */,
+				26F57AEE1E669DE30034FF4B /* MDOperationFailureBlock.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -298,7 +301,7 @@
 		26904D271C7757540094DA08 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Matt Quiros";
 				TargetAttributes = {
 					26904D2F1C7757540094DA08 = {
@@ -344,9 +347,7 @@
 				26020E931DA4BC0300C45902 /* MDViewportBasedFontSize.swift in Sources */,
 				260DFDC91E55996100E3B92E /* NSString.swift in Sources */,
 				26020E691DA4BC0200C45902 /* MDAlertDialog.swift in Sources */,
-				26F1A97A1E5DD0D300752F1A /* MDOperationDelegate.swift in Sources */,
 				260DFDC71E55960600E3B92E /* MDTextFieldButton.swift in Sources */,
-				26020E821DA4BC0200C45902 /* MDChainedOperation.swift in Sources */,
 				26020E8E1DA4BC0200C45902 /* MDLoadingOverlay.swift in Sources */,
 				26020E901DA4BC0300C45902 /* MDResponsiveLabel.swift in Sources */,
 				26020E6A1DA4BC0200C45902 /* MDConfirmDialog.swift in Sources */,
@@ -356,15 +357,18 @@
 				262F31A41E0777D900D6E4CF /* Calendar.swift in Sources */,
 				262731851DB2447800119F76 /* NSManagedObjectContext.swift in Sources */,
 				26A1454F1DD22ADA00718494 /* MDErrorView.swift in Sources */,
+				26F57AED1E669B010034FF4B /* MDOperationSuccessBlock.swift in Sources */,
 				26020E881DA4BC0200C45902 /* Constants.swift in Sources */,
 				26020E781DA4BC0200C45902 /* UIButton.swift in Sources */,
 				26020E7E1DA4BC0200C45902 /* MDFileManager.swift in Sources */,
+				26F57AEB1E669AC00034FF4B /* MDOperationCallbackBlock.swift in Sources */,
 				26020E731DA4BC0200C45902 /* NSAttributedString.swift in Sources */,
 				26020E771DA4BC0200C45902 /* UIAlertController.swift in Sources */,
 				26020E871DA4BC0200C45902 /* MDRetryView.swift in Sources */,
 				26020E791DA4BC0200C45902 /* UIColor.swift in Sources */,
 				26A1454C1DD21CBF00718494 /* MDFullOperationViewController.swift in Sources */,
-				26020E811DA4BC0200C45902 /* MDBlockOperation.swift in Sources */,
+				26F57AE91E66679A0034FF4B /* MDAsynchronousOperation.swift in Sources */,
+				26F57AEF1E669DE30034FF4B /* MDOperationFailureBlock.swift in Sources */,
 				26020E761DA4BC0200C45902 /* String.swift in Sources */,
 				260DFDBB1E55885900E3B92E /* MDImageButton.swift in Sources */,
 				26020E701DA4BC0200C45902 /* Date.swift in Sources */,
@@ -408,8 +412,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -456,8 +462,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -477,6 +485,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -487,6 +496,7 @@
 		26904D391C7757540094DA08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -505,6 +515,7 @@
 		26904D3A1C7757540094DA08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

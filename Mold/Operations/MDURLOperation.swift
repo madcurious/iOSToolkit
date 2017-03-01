@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class MDURLOperation: MDOperation {
+open class MDURLOperation: MDAsynchronousOperation {
     
     public enum Method: String {
         case options = "OPTIONS"
@@ -34,7 +34,7 @@ open class MDURLOperation: MDOperation {
         case data, download, upload
     }
     
-    open var method: MDURLOperation.Method
+    open var method: Method
     open var url: URL
     
     open class var baseURL: URL {
@@ -79,14 +79,14 @@ open class MDURLOperation: MDOperation {
         self.runStartBlock()
         
         if self.isCancelled {
-            self.closeOperation()
+            self.finish()
             return
         }
         
         // Build the URL request.
         guard var request = self.makeRequest()
             else {
-                self.closeOperation()
+                self.finish()
                 return
         }
         
@@ -102,15 +102,16 @@ open class MDURLOperation: MDOperation {
                     request.httpBody = payloadData
                 }
             } catch {
-                self.runFailureBlock(error)
-                self.closeOperation()
+                self.error = error
+                self.runFailureBlock()
+                self.finish()
                 return
             }
         }
         
         guard let session = self.makeSession()
             else {
-                self.closeOperation()
+                self.finish()
                 return
         }
         
@@ -139,7 +140,7 @@ open class MDURLOperation: MDOperation {
      */
     open func returnFromURLRequest(_ request: URLRequest, response: URLResponse?, data: Data?, error: Error?) {
         defer {
-            self.closeOperation()
+            self.finish()
         }
         
         if self.isCancelled {
@@ -147,7 +148,8 @@ open class MDURLOperation: MDOperation {
         }
         
         if let error = error {
-            self.runFailureBlock(error)
+            self.error = error
+            self.runFailureBlock()
             return
         }
         
@@ -162,15 +164,17 @@ open class MDURLOperation: MDOperation {
                 return
             }
             
-            let result = try self.makeResult(fromSource: rawResult)
+            self.result = try self.makeResult(from: rawResult)
             
             if self.isCancelled {
                 return
             }
             
-            self.runSuccessBlock(result)
+            self.runSuccessBlock()
             return
         } catch {
+            self.error = error
+            
             // DEBUG
             #if DEBUG
                 if let data = data {
@@ -183,7 +187,7 @@ open class MDURLOperation: MDOperation {
                 return
             }
             
-            self.runFailureBlock(error)
+            self.runFailureBlock()
         }
     }
     

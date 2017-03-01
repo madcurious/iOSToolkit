@@ -22,9 +22,9 @@ public func ==(lhs: MDOperationViewController.State, rhs: MDOperationViewControl
     }
 }
 
-public func != (lhs: MDOperationViewController.State, rhs: MDFullOperationViewController.State) -> Bool {
-    return !(lhs == rhs)
-}
+//public func != (lhs: MDOperationViewController.State, rhs: MDFullOperationViewController.State) -> Bool {
+//    return !(lhs == rhs)
+//}
 
 open class MDOperationViewController: UIViewController {
     
@@ -37,7 +37,7 @@ open class MDOperationViewController: UIViewController {
     }
     
     open var operationQueue = OperationQueue()
-    open var currentState = State.initial
+    open var currentState = MDOperationViewController.State.initial
     
     /**
      A flag used by `viewWillAppear:` to check if it will be the first time for
@@ -50,33 +50,34 @@ open class MDOperationViewController: UIViewController {
      */
     var firstLoad = true
     
-    open func makeOperation() -> MDOperation? {
+    open func makeOperations() -> [MDOperation]? {
         fatalError("Unimplemented function \(#function)")
     }
     
     /**
      Creates a new instance of the operation, overrides its callback blocks to show state views, and runs it.
      */
-    open func runOperation() {
+    open func runOperations() {
         self.operationQueue.cancelAllOperations()
         
-        guard let op = self.makeOperation()
+        guard let operations = self.makeOperations()
             else {
                 return
         }
-        op.delegate = self
         
-//        let originalStartBlock = op.startBlock
-//        op.startBlock = {[unowned self] in
-//            originalStartBlock?()
-//            self.updateView(forState: .loading)
-//        }
-        
-//        op.failBlock = {[unowned self] error in
-//            self.updateView(forState: .failed(error))
-//        }
-        
-        self.operationQueue.addOperation(op)
+        for i in 0 ..< operations.count {
+            if i == 0 {
+                operations[i].startBlock = MDOperationCallbackBlock(block: {[unowned self] in
+                    self.updateView(forState: .loading)
+                })
+            }
+            
+            operations[i].failureBlock = MDOperationFailureBlock(block: {[unowned self] error in
+                self.updateView(forState: .failed(error))
+            })
+            
+            self.operationQueue.addOperation(operations[i])
+        }
     }
     
     /**
@@ -93,24 +94,8 @@ open class MDOperationViewController: UIViewController {
         // We start the task if the view is appearing for the first time
         // so the you can override viewDidLoad normally.
         if self.firstLoad {
-            self.runOperation()
+            self.runOperations()
             self.firstLoad = false
-        }
-    }
-    
-}
-
-extension MDOperationViewController: MDOperationDelegate {
-    
-    public func operationWillRunStartBlock(_ operation: MDOperation) {
-        MDDispatcher.asyncRunInMainThread {[unowned self] in
-            self.updateView(forState: .loading)
-        }
-    }
-    
-    public func operation(_ operation: MDOperation, didRunFailureBlockWithError error: Error) {
-        MDDispatcher.asyncRunInMainThread {[unowned self] in
-            self.updateView(forState: .failed(error))
         }
     }
     
