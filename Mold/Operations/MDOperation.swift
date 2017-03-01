@@ -25,7 +25,9 @@ open class MDOperation: Operation {
      an operation should execute depending on the result or error produced by the operations
      it is dependent on.
      */
-    open var shouldExecute = true
+    open var shouldExecute: Bool {
+        return true
+    }
     
     open override func main() {
         if self.shouldExecute == false {
