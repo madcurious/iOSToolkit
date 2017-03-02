@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ An `NSOperation` subclass that has callback blocks which may be invoked at different
+ points of the operation's execution. An `MDOperation` is defined to be synchronous. For
+ an asynchronous version, see `MDAsynchronousOperation`.
+ */
 open class MDOperation: Operation {
     
     public var startBlock: MDOperationCallbackBlock?
@@ -19,11 +24,10 @@ open class MDOperation: Operation {
     public var error: Error?
     
     /**
-     Determines whether the operation should execute once it enters `main()`. The default value is `true`.
-     
-     You can override this variable as a computed property, for example, to determine whether
-     an operation should execute depending on the result or error produced by the operations
-     it is dependent on.
+     Determines whether the operation should execute once it enters `main()`. This property is meant
+     to be overridden so that you may decide whether to proceed with the operation based on a condition.
+     The default value is `true`. Note that if you return `false`, none of the callback blocks will be
+     executed.
      */
     open var shouldExecute: Bool {
         return true
@@ -63,6 +67,8 @@ open class MDOperation: Operation {
         return nil
     }
     
+    // MARK: Builders
+    
     /// Overrides the `failureBlock` to show an error dialog in a presenting view controller when an error occurs.
     @discardableResult
     open func presentErrorDialogOnFailure(from presentingViewController: UIViewController) -> Self {
@@ -71,7 +77,8 @@ open class MDOperation: Operation {
         })
         return self
     }
-
+    
+    // MARK: Block runners
     
     public func runStartBlock() {
         guard let startBlock = self.startBlock
