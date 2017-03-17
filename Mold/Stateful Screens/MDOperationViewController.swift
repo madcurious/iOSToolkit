@@ -26,18 +26,9 @@ public func ==(lhs: MDOperationViewController.State, rhs: MDOperationViewControl
 //    return !(lhs == rhs)
 //}
 
-open class MDOperationViewController: UIViewController {
-    
-    public enum State {
-        case initial
-        case loading
-        case displaying
-        case failed(Error)
-        case empty
-    }
+open class MDOperationViewController: MDStatefulViewController {
     
     open var operationQueue = OperationQueue()
-    open var currentState = MDOperationViewController.State.initial
     
     /**
      A flag used by `viewWillAppear:` to check if it will be the first time for
@@ -78,14 +69,6 @@ open class MDOperationViewController: UIViewController {
             
             self.operationQueue.addOperation(operations[i])
         }
-    }
-    
-    /**
-     Override point for updating the view controller's view for the specified state.
-     You MUST always call super.
-     */
-    open func updateView(forState state: MDOperationViewController.State) {
-        self.currentState = state
     }
     
     open override func viewWillAppear(_ animated: Bool) {
