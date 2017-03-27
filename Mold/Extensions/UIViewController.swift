@@ -61,31 +61,31 @@ public extension UIViewController {
     
 }
 
-// MARK: - Modals
-extension UIViewController {
-    
-    public func addCancelAndDoneBarButtonItems(_ cancelButtonTitle: String? = "Cancel", doneButtonTitle: String? = "Done") {
-        self.addCancelBarButtonItem(cancelButtonTitle)
-        self.addDoneBarButtonItem(doneButtonTitle)
-    }
-    
-    public func addCancelBarButtonItem(_ cancelButtonTitle: String? = "Cancel") {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: cancelButtonTitle, style: .plain, target: self, action: #selector(handleTapOnCancelBarButtonItem(_:)))
-    }
-    
-    public func addDoneBarButtonItem(_ doneButtonTitle: String? = "Done") {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: doneButtonTitle, style: .plain, target: self, action: #selector(handleTapOnDoneBarButtonItem(_:)))
-    }
-    
-    open func handleTapOnCancelBarButtonItem(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    open func handleTapOnDoneBarButtonItem(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-}
+//// MARK: - Modals
+//extension UIViewController {
+//    
+//    public func addCancelAndDoneBarButtonItems(_ cancelButtonTitle: String? = "Cancel", doneButtonTitle: String? = "Done") {
+//        self.addCancelBarButtonItem(cancelButtonTitle)
+//        self.addDoneBarButtonItem(doneButtonTitle)
+//    }
+//    
+//    public func addCancelBarButtonItem(_ cancelButtonTitle: String? = "Cancel") {
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: cancelButtonTitle, style: .plain, target: self, action: #selector(handleTapOnCancelBarButtonItem(_:)))
+//    }
+//    
+//    public func addDoneBarButtonItem(_ doneButtonTitle: String? = "Done") {
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: doneButtonTitle, style: .plain, target: self, action: #selector(handleTapOnDoneBarButtonItem(_:)))
+//    }
+//    
+//    open func handleTapOnCancelBarButtonItem(_ sender: AnyObject) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//    
+//    open func handleTapOnDoneBarButtonItem(_ sender: AnyObject) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//    
+//}
 
 // MARK: - Forms
 extension UIViewController {

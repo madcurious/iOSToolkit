@@ -20,8 +20,8 @@ open class MDOperation: Operation {
     public var successBlock: MDOperationSuccessBlock?
     public var failureBlock: MDOperationFailureBlock?
     
-    public var result: Any?
-    public var error: Error?
+//    public var result: Any?
+//    public var error: Error?
     
     /**
      Determines whether the operation should execute once it enters `main()`. This property is meant
@@ -45,21 +45,19 @@ open class MDOperation: Operation {
         }
         
         do {
-            self.result = try self.makeResult(from: nil)
+            let result = try self.makeResult(from: nil)
             
             if self.isCancelled {
                 return
             }
             
-            self.runSuccessBlock()
+            self.runSuccessBlock(result: result)
         } catch {
-            self.error = error
-            
             if self.isCancelled {
                 return
             }
             
-            self.runFailureBlock()
+            self.runFailureBlock(error: error)
         }
     }
     
@@ -113,7 +111,7 @@ open class MDOperation: Operation {
         }
     }
     
-    public func runSuccessBlock() {
+    public func runSuccessBlock(result: Any?) {
         self.runReturnBlock()
         
         guard let successBlock = self.successBlock
@@ -122,15 +120,15 @@ open class MDOperation: Operation {
         }
         
         if successBlock.runsInMainThread {
-            MDDispatcher.asyncRunInMainThread {[unowned self] in
-                successBlock.block(self.result)
+            MDDispatcher.asyncRunInMainThread {
+                successBlock.block(result)
             }
         } else {
-            successBlock.block(self.result)
+            successBlock.block(result)
         }
     }
     
-    public func runFailureBlock() {
+    public func runFailureBlock(error: Error) {
         self.runReturnBlock()
         
         guard let failureBlock = self.failureBlock
@@ -138,14 +136,12 @@ open class MDOperation: Operation {
                 return
         }
         
-        assert(self.error != nil, "Attempted to execute 'self.failureBlock' but 'self.error' is not assigned.")
-        
         if failureBlock.runsInMainThread {
-            MDDispatcher.asyncRunInMainThread {[unowned self] in
-                failureBlock.block(self.error!)
+            MDDispatcher.asyncRunInMainThread {
+                failureBlock.block(error)
             }
         } else {
-            failureBlock.block(self.error!)
+            failureBlock.block(error)
         }
     }
     

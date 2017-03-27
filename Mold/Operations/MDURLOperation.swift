@@ -102,8 +102,7 @@ open class MDURLOperation: MDAsynchronousOperation {
                     request.httpBody = payloadData
                 }
             } catch {
-                self.error = error
-                self.runFailureBlock()
+                self.runFailureBlock(error: error)
                 self.finish()
                 return
             }
@@ -148,8 +147,7 @@ open class MDURLOperation: MDAsynchronousOperation {
         }
         
         if let error = error {
-            self.error = error
-            self.runFailureBlock()
+            self.runFailureBlock(error: error)
             return
         }
         
@@ -164,17 +162,15 @@ open class MDURLOperation: MDAsynchronousOperation {
                 return
             }
             
-            self.result = try self.makeResult(from: rawResult)
+            let result = try self.makeResult(from: rawResult)
             
             if self.isCancelled {
                 return
             }
             
-            self.runSuccessBlock()
+            self.runSuccessBlock(result: result)
             return
         } catch {
-            self.error = error
-            
             // DEBUG
             #if DEBUG
                 if let data = data {
@@ -187,7 +183,7 @@ open class MDURLOperation: MDAsynchronousOperation {
                 return
             }
             
-            self.runFailureBlock()
+            self.runFailureBlock(error: error)
         }
     }
     
