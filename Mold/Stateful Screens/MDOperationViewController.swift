@@ -8,25 +8,7 @@
 
 import UIKit
 
-public func ==(lhs: MDOperationViewController.State, rhs: MDOperationViewController.State) -> Bool {
-    switch (lhs, rhs) {
-        case (.initial, .initial),
-             (.loading, .loading),
-             (.displaying, .displaying),
-             (.failed(_), .failed (_)),
-             (.empty, .empty):
-        return true
-        
-    default:
-        return false
-    }
-}
-
-//public func != (lhs: MDOperationViewController.State, rhs: MDFullOperationViewController.State) -> Bool {
-//    return !(lhs == rhs)
-//}
-
-open class MDOperationViewController: MDStatefulViewController {
+open class MDOperationViewController: MDLoadableViewController {
     
     open var operationQueue = OperationQueue()
     

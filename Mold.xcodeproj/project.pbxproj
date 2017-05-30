@@ -50,8 +50,9 @@
 		260DFDC91E55996100E3B92E /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260DFDC81E55996100E3B92E /* NSString.swift */; };
 		262731851DB2447800119F76 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262731841DB2447800119F76 /* NSManagedObjectContext.swift */; };
 		262F31A41E0777D900D6E4CF /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262F31A31E0777D900D6E4CF /* Calendar.swift */; };
+		2657331B1EDC7A7700AD1AB9 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2657331A1EDC7A7700AD1AB9 /* CGSize.swift */; };
 		2672FBF51DD3310000C8D34C /* NSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */; };
-		267C2B7E1E7BE2EF008EA3E0 /* MDStatefulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267C2B7D1E7BE2EF008EA3E0 /* MDStatefulViewController.swift */; };
+		267C2B7E1E7BE2EF008EA3E0 /* MDLoadableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267C2B7D1E7BE2EF008EA3E0 /* MDLoadableViewController.swift */; };
 		26904ED51C7785B00094DA08 /* mold-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED41C7785B00094DA08 /* mold-banner.png */; };
 		26904ED71C778A120094DA08 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED61C778A120094DA08 /* LICENSE */; };
 		26A1454C1DD21CBF00718494 /* MDFullOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1454B1DD21CBF00718494 /* MDFullOperationViewController.swift */; };
@@ -107,8 +108,9 @@
 		260DFDC81E55996100E3B92E /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
 		262731841DB2447800119F76 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
 		262F31A31E0777D900D6E4CF /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		2657331A1EDC7A7700AD1AB9 /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
 		2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPersistentContainer.swift; sourceTree = "<group>"; };
-		267C2B7D1E7BE2EF008EA3E0 /* MDStatefulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDStatefulViewController.swift; sourceTree = "<group>"; };
+		267C2B7D1E7BE2EF008EA3E0 /* MDLoadableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDLoadableViewController.swift; sourceTree = "<group>"; };
 		26904D301C7757540094DA08 /* Mold.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mold.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26904E3F1C77747C0094DA08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		26904ED41C7785B00094DA08 /* mold-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mold-banner.png"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */,
 				262F31A31E0777D900D6E4CF /* Calendar.swift */,
 				260DFDC81E55996100E3B92E /* NSString.swift */,
+				2657331A1EDC7A7700AD1AB9 /* CGSize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,7 +216,7 @@
 				26020E5A1DA4BC0200C45902 /* MDRetryView.swift */,
 				26A1454B1DD21CBF00718494 /* MDFullOperationViewController.swift */,
 				26A1454E1DD22ADA00718494 /* MDErrorView.swift */,
-				267C2B7D1E7BE2EF008EA3E0 /* MDStatefulViewController.swift */,
+				267C2B7D1E7BE2EF008EA3E0 /* MDLoadableViewController.swift */,
 			);
 			path = "Stateful Screens";
 			sourceTree = "<group>";
@@ -366,7 +369,7 @@
 				26020E7E1DA4BC0200C45902 /* MDFileManager.swift in Sources */,
 				26F57AEB1E669AC00034FF4B /* MDOperationCallbackBlock.swift in Sources */,
 				26020E731DA4BC0200C45902 /* NSAttributedString.swift in Sources */,
-				267C2B7E1E7BE2EF008EA3E0 /* MDStatefulViewController.swift in Sources */,
+				267C2B7E1E7BE2EF008EA3E0 /* MDLoadableViewController.swift in Sources */,
 				26020E771DA4BC0200C45902 /* UIAlertController.swift in Sources */,
 				26020E871DA4BC0200C45902 /* MDRetryView.swift in Sources */,
 				26020E791DA4BC0200C45902 /* UIColor.swift in Sources */,
@@ -381,6 +384,7 @@
 				26020E7D1DA4BC0200C45902 /* MDArchivableValueType.swift in Sources */,
 				2672FBF51DD3310000C8D34C /* NSPersistentContainer.swift in Sources */,
 				26020E751DA4BC0200C45902 /* Sequence.swift in Sources */,
+				2657331B1EDC7A7700AD1AB9 /* CGSize.swift in Sources */,
 				260DFDC51E5592C500E3B92E /* MDLabelButton.swift in Sources */,
 				26020E6F1DA4BC0200C45902 /* CharacterSet.swift in Sources */,
 				26020E741DA4BC0200C45902 /* NSLayoutConstraint.swift in Sources */,
