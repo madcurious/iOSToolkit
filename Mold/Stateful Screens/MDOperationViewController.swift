@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class MDOperationViewController: MDLoadableViewController {
+open class MDOperationViewController<T>: MDLoadableViewController {
     
     open var operationQueue = OperationQueue()
     
@@ -23,7 +23,7 @@ open class MDOperationViewController: MDLoadableViewController {
      */
     var firstLoad = true
     
-    open func makeOperations() -> [MDOperation]? {
+    open func makeOperations() -> [MDOperation<T>]? {
         fatalError("Unimplemented function \(#function)")
     }
     
@@ -40,14 +40,14 @@ open class MDOperationViewController: MDLoadableViewController {
         
         for i in 0 ..< operations.count {
             if i == 0 {
-                operations[i].startBlock = MDOperationCallbackBlock(block: {[unowned self] in
+                operations[i].startBlock = {[unowned self] in
                     self.updateView(forState: .loading)
-                })
+                }
             }
             
-            operations[i].failureBlock = MDOperationFailureBlock(block: {[unowned self] error in
+            operations[i].failureBlock = {[unowned self] error in
                 self.updateView(forState: .failed(error))
-            })
+            }
             
             self.operationQueue.addOperation(operations[i])
         }

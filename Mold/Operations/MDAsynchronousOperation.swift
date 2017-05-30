@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class MDAsynchronousOperation: MDOperation {
+open class MDAsynchronousOperation<T>: MDOperation<T> {
     
     open override func main() {
         fatalError("Unimplemented \(#function)")

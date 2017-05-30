@@ -13,15 +13,24 @@ import Foundation
  points of the operation's execution. An `MDOperation` is defined to be synchronous. For
  an asynchronous version, see `MDAsynchronousOperation`.
  */
-open class MDOperation: Operation {
+open class MDOperation<T>: Operation {
     
-    public var startBlock: MDOperationCallbackBlock?
-    public var returnBlock: MDOperationCallbackBlock?
-    public var successBlock: MDOperationSuccessBlock?
-    public var failureBlock: MDOperationFailureBlock?
+//    public var startBlock: MDOperationCallbackBlock?
+//    public var returnBlock: MDOperationCallbackBlock?
+//    public var successBlock: MDOperationSuccessBlock?
+//    public var failureBlock: MDOperationFailureBlock?
     
-//    public var result: Any?
-//    public var error: Error?
+    public var runStartBlockInMainThread = true
+    public var startBlock: (() -> ())?
+    
+    public var runReturnBlockInMainThread = true
+    public var returnBlock: (() -> ())?
+    
+    public var runSuccessBlockInMainThread = true
+    public var successBlock: ((T) -> ())?
+    
+    public var runFailureBlockInMainThread = true
+    public var failureBlock: ((Error) -> ())?
     
     /**
      Determines whether the operation should execute once it enters `main()`. This property is meant
@@ -61,8 +70,8 @@ open class MDOperation: Operation {
         }
     }
     
-    open func makeResult(from source: Any?) throws -> Any? {
-        return nil
+    open func makeResult(from source: Any?) throws -> T {
+        fatalError("Unimplemented: \(#function)")
     }
     
     // MARK: Builders
@@ -70,9 +79,9 @@ open class MDOperation: Operation {
     /// Overrides the `failureBlock` to show an error dialog in a presenting view controller when an error occurs.
     @discardableResult
     open func presentErrorDialogOnFailure(from presentingViewController: UIViewController) -> Self {
-        self.failureBlock = MDOperationFailureBlock(block: {[unowned presentingViewController] (error) in
+        self.failureBlock = {[unowned presentingViewController] (error) in
             MDErrorDialog.showError(error, from: presentingViewController)
-        })
+        }
         return self
     }
     
@@ -84,12 +93,12 @@ open class MDOperation: Operation {
                 return
         }
         
-        if startBlock.runsInMainThread {
+        if self.runStartBlockInMainThread == true {
             MDDispatcher.asyncRunInMainThread {
-                startBlock.block()
+                startBlock()
             }
         } else {
-            startBlock.block()
+            startBlock()
         }
     }
     
@@ -102,16 +111,16 @@ open class MDOperation: Operation {
                 return
         }
         
-        if returnBlock.runsInMainThread {
+        if self.runReturnBlockInMainThread == true {
             MDDispatcher.asyncRunInMainThread {
-                returnBlock.block()
+                returnBlock()
             }
         } else {
-            returnBlock.block()
+            returnBlock()
         }
     }
     
-    public func runSuccessBlock(result: Any?) {
+    public func runSuccessBlock(result: T) {
         self.runReturnBlock()
         
         guard let successBlock = self.successBlock
@@ -119,12 +128,12 @@ open class MDOperation: Operation {
                 return
         }
         
-        if successBlock.runsInMainThread {
+        if self.runSuccessBlockInMainThread == true {
             MDDispatcher.asyncRunInMainThread {
-                successBlock.block(result)
+                successBlock(result)
             }
         } else {
-            successBlock.block(result)
+            successBlock(result)
         }
     }
     
@@ -136,12 +145,12 @@ open class MDOperation: Operation {
                 return
         }
         
-        if failureBlock.runsInMainThread {
+        if self.runFailureBlockInMainThread == true {
             MDDispatcher.asyncRunInMainThread {
-                failureBlock.block(error)
+                failureBlock(error)
             }
         } else {
-            failureBlock.block(error)
+            failureBlock(error)
         }
     }
     
