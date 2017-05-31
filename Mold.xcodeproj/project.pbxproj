@@ -56,9 +56,6 @@
 		26904ED71C778A120094DA08 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED61C778A120094DA08 /* LICENSE */; };
 		26A1454F1DD22ADA00718494 /* MDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1454E1DD22ADA00718494 /* MDErrorView.swift */; };
 		26F57AE91E66679A0034FF4B /* MDAsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F57AE81E66679A0034FF4B /* MDAsynchronousOperation.swift */; };
-		26F57AEB1E669AC00034FF4B /* MDOperationCallbackBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F57AEA1E669AC00034FF4B /* MDOperationCallbackBlock.swift */; };
-		26F57AED1E669B010034FF4B /* MDOperationSuccessBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F57AEC1E669B010034FF4B /* MDOperationSuccessBlock.swift */; };
-		26F57AEF1E669DE30034FF4B /* MDOperationFailureBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F57AEE1E669DE30034FF4B /* MDOperationFailureBlock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,9 +111,6 @@
 		26904ED61C778A120094DA08 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		26A1454E1DD22ADA00718494 /* MDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorView.swift; sourceTree = "<group>"; };
 		26F57AE81E66679A0034FF4B /* MDAsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAsynchronousOperation.swift; sourceTree = "<group>"; };
-		26F57AEA1E669AC00034FF4B /* MDOperationCallbackBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationCallbackBlock.swift; sourceTree = "<group>"; };
-		26F57AEC1E669B010034FF4B /* MDOperationSuccessBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationSuccessBlock.swift; sourceTree = "<group>"; };
-		26F57AEE1E669DE30034FF4B /* MDOperationFailureBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperationFailureBlock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,9 +192,6 @@
 				26020E551DA4BC0200C45902 /* MDOperation.swift */,
 				26020E561DA4BC0200C45902 /* MDURLOperation.swift */,
 				26F57AE81E66679A0034FF4B /* MDAsynchronousOperation.swift */,
-				26F57AEA1E669AC00034FF4B /* MDOperationCallbackBlock.swift */,
-				26F57AEC1E669B010034FF4B /* MDOperationSuccessBlock.swift */,
-				26F57AEE1E669DE30034FF4B /* MDOperationFailureBlock.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -357,17 +348,14 @@
 				262F31A41E0777D900D6E4CF /* Calendar.swift in Sources */,
 				262731851DB2447800119F76 /* NSManagedObjectContext.swift in Sources */,
 				26A1454F1DD22ADA00718494 /* MDErrorView.swift in Sources */,
-				26F57AED1E669B010034FF4B /* MDOperationSuccessBlock.swift in Sources */,
 				26020E881DA4BC0200C45902 /* Constants.swift in Sources */,
 				26020E781DA4BC0200C45902 /* UIButton.swift in Sources */,
 				26020E7E1DA4BC0200C45902 /* MDFileManager.swift in Sources */,
-				26F57AEB1E669AC00034FF4B /* MDOperationCallbackBlock.swift in Sources */,
 				26020E731DA4BC0200C45902 /* NSAttributedString.swift in Sources */,
 				267C2B7E1E7BE2EF008EA3E0 /* MDLoadableViewController.swift in Sources */,
 				26020E771DA4BC0200C45902 /* UIAlertController.swift in Sources */,
 				26020E791DA4BC0200C45902 /* UIColor.swift in Sources */,
 				26F57AE91E66679A0034FF4B /* MDAsynchronousOperation.swift in Sources */,
-				26F57AEF1E669DE30034FF4B /* MDOperationFailureBlock.swift in Sources */,
 				26020E761DA4BC0200C45902 /* String.swift in Sources */,
 				260DFDBB1E55885900E3B92E /* MDImageButton.swift in Sources */,
 				26020E701DA4BC0200C45902 /* Date.swift in Sources */,

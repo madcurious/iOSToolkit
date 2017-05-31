@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class MDURLOperation<T>: MDAsynchronousOperation<T> {
+open class MDURLOperation<ResultType>: MDAsynchronousOperation<ResultType> {
     
     public enum Method: String {
         case options = "OPTIONS"

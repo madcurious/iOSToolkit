@@ -13,12 +13,7 @@ import Foundation
  points of the operation's execution. An `MDOperation` is defined to be synchronous. For
  an asynchronous version, see `MDAsynchronousOperation`.
  */
-open class MDOperation<T>: Operation {
-    
-//    public var startBlock: MDOperationCallbackBlock?
-//    public var returnBlock: MDOperationCallbackBlock?
-//    public var successBlock: MDOperationSuccessBlock?
-//    public var failureBlock: MDOperationFailureBlock?
+open class MDOperation<ResultType>: Operation {
     
     public var runStartBlockInMainThread = true
     public var startBlock: (() -> ())?
@@ -27,7 +22,7 @@ open class MDOperation<T>: Operation {
     public var returnBlock: (() -> ())?
     
     public var runSuccessBlockInMainThread = true
-    public var successBlock: ((T) -> ())?
+    public var successBlock: ((ResultType) -> ())?
     
     public var runFailureBlockInMainThread = true
     public var failureBlock: ((Error) -> ())?
@@ -70,7 +65,7 @@ open class MDOperation<T>: Operation {
         }
     }
     
-    open func makeResult(from source: Any?) throws -> T {
+    open func makeResult(from source: Any?) throws -> ResultType {
         fatalError("Unimplemented: \(#function)")
     }
     
@@ -120,7 +115,7 @@ open class MDOperation<T>: Operation {
         }
     }
     
-    public func runSuccessBlock(result: T) {
+    public func runSuccessBlock(result: ResultType) {
         self.runReturnBlock()
         
         guard let successBlock = self.successBlock
