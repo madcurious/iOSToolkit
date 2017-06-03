@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class MDOperationViewController<T>: MDLoadableViewController {
+open class MDOperationViewController<ResultType>: MDLoadableViewController {
     
     open var operationQueue = OperationQueue()
     
@@ -23,7 +23,7 @@ open class MDOperationViewController<T>: MDLoadableViewController {
      */
     var firstLoad = true
     
-    open func makeOperations() -> [MDOperation<T>]? {
+    open func makeOperations() -> [MDOperation<ResultType>]? {
         fatalError("Unimplemented function \(#function)")
     }
     
