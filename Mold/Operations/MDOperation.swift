@@ -60,11 +60,13 @@ open class MDOperation<ResultType>: Operation {
         return true
     }
     
-    open override func start() {
-        print("starting: \(self)")
-    }
+//    open override func start() {
+//        print("starting: \(self)")
+//    }
     
     open override func main() {
+        print("synchronous starting: \(self)")
+        
         if self.shouldExecute() == false {
             return
         }
