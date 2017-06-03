@@ -15,11 +15,6 @@ import Foundation
  */
 open class MDOperation<T>: Operation {
     
-//    public var startBlock: MDOperationCallbackBlock?
-//    public var returnBlock: MDOperationCallbackBlock?
-//    public var successBlock: MDOperationSuccessBlock?
-//    public var failureBlock: MDOperationFailureBlock?
-    
     public var runStartBlockInMainThread = true
     public var startBlock: (() -> ())?
     
@@ -27,23 +22,50 @@ open class MDOperation<T>: Operation {
     public var returnBlock: (() -> ())?
     
     public var runSuccessBlockInMainThread = true
+    
+    /**
+     Contains the tasks that must be executed when this operation succeeds.
+     
+     If you want to start another operation when this operation succeeds, **DO NOT** create and start
+     the next operation from within this operation's `successBlock`. Instead, instantiate the next operation
+     externally and make it dependent on this operation. If the next operation is an `MDOperation`, then
+     it will check for any dependencies where `finishedSuccessfully` is `false` and it will 
+     automatically not proceed with execution.
+     */
     public var successBlock: ((T) -> ())?
     
     public var runFailureBlockInMainThread = true
     public var failureBlock: ((Error) -> ())?
     
+    /// Determines whether the operation finished by executing the `successBlock`.
+    /// If an error occurs at any point in the operation and `runFailureBlock` is called, this property
+    /// is automatically set to `false`.
+    open var finishedSuccessfully = true
+    
     /**
-     Determines whether the operation should execute once it enters `main()`. This property is meant
+     Determines whether the operation should execute once it enters `main()`. This function is meant
      to be overridden so that you may decide whether to proceed with the operation based on a condition.
-     The default value is `true`. Note that if you return `false`, none of the callback blocks will be
+     The default behavior returns `true`. Note that if you return `false`, none of the callback blocks will be
      executed.
+     
+     **IMPORTANT** You must always call super as the default return statement.
      */
-    open var shouldExecute: Bool {
+    open func shouldExecute() -> Bool {
+        // If the operation has any dependencies that did not succeed,
+        // then it should not execute.
+        if self.dependencies.contains(where: { $0 is MDOperation &&
+            ($0 as! MDOperation).finishedSuccessfully == false }) {
+            return false
+        }
         return true
     }
     
+    open override func start() {
+        print("starting: \(self)")
+    }
+    
     open override func main() {
-        if self.shouldExecute == false {
+        if self.shouldExecute() == false {
             return
         }
         
@@ -129,7 +151,7 @@ open class MDOperation<T>: Operation {
         }
         
         if self.runSuccessBlockInMainThread == true {
-            MDDispatcher.asyncRunInMainThread {
+            MDDispatcher.syncRunInMainThread {
                 successBlock(result)
             }
         } else {
@@ -138,6 +160,7 @@ open class MDOperation<T>: Operation {
     }
     
     public func runFailureBlock(error: Error) {
+        self.finishedSuccessfully = false
         self.runReturnBlock()
         
         guard let failureBlock = self.failureBlock
