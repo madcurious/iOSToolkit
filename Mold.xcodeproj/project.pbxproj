@@ -55,6 +55,7 @@
 		26904ED51C7785B00094DA08 /* mold-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED41C7785B00094DA08 /* mold-banner.png */; };
 		26904ED71C778A120094DA08 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED61C778A120094DA08 /* LICENSE */; };
 		26A1454F1DD22ADA00718494 /* MDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1454E1DD22ADA00718494 /* MDErrorView.swift */; };
+		26CC3DF31EE678930095374A /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC3DF21EE678930095374A /* UIScreen.swift */; };
 		26F57AE91E66679A0034FF4B /* MDAsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F57AE81E66679A0034FF4B /* MDAsynchronousOperation.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		26904ED41C7785B00094DA08 /* mold-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mold-banner.png"; sourceTree = "<group>"; };
 		26904ED61C778A120094DA08 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		26A1454E1DD22ADA00718494 /* MDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorView.swift; sourceTree = "<group>"; };
+		26CC3DF21EE678930095374A /* UIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
 		26F57AE81E66679A0034FF4B /* MDAsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAsynchronousOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +175,7 @@
 				262F31A31E0777D900D6E4CF /* Calendar.swift */,
 				260DFDC81E55996100E3B92E /* NSString.swift */,
 				2657331A1EDC7A7700AD1AB9 /* CGSize.swift */,
+				26CC3DF21EE678930095374A /* UIScreen.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				26020E861DA4BC0200C45902 /* MDOperationViewController.swift in Sources */,
 				26020E6B1DA4BC0200C45902 /* MDErrorDialog.swift in Sources */,
 				26020E8A1DA4BC0200C45902 /* MDDispatcher.swift in Sources */,
+				26CC3DF31EE678930095374A /* UIScreen.swift in Sources */,
 				262F31A41E0777D900D6E4CF /* Calendar.swift in Sources */,
 				262731851DB2447800119F76 /* NSManagedObjectContext.swift in Sources */,
 				26A1454F1DD22ADA00718494 /* MDErrorView.swift in Sources */,
