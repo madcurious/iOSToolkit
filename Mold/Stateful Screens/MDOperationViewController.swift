@@ -41,12 +41,12 @@ open class MDOperationViewController<ResultType>: MDLoadableViewController {
         for i in 0 ..< operations.count {
             if i == 0 {
                 operations[i].startBlock = {[unowned self] in
-                    self.updateView(forState: .loading)
+                    self.showView(for: .loading)
                 }
             }
             
             operations[i].failureBlock = {[unowned self] error in
-                self.updateView(forState: .failed(error))
+                self.showView(for: .error(error))
             }
             
             self.operationQueue.addOperation(operations[i])

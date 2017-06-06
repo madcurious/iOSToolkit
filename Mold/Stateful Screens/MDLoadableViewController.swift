@@ -12,8 +12,8 @@ public func ==(lhs: MDLoadableViewController.State, rhs: MDLoadableViewControlle
     switch (lhs, rhs) {
     case (.initial, .initial),
          (.loading, .loading),
-         (.showing, .showing),
-         (.failed(_), .failed(_)),
+         (.data, .data),
+         (.error(_), .error(_)),
          (.empty, .empty):
         return true
         
@@ -31,8 +31,8 @@ open class MDLoadableViewController: UIViewController {
     public enum State {
         case initial
         case loading
-        case showing
-        case failed(Error)
+        case data
+        case error(Error)
         case empty
     }
     
@@ -42,7 +42,7 @@ open class MDLoadableViewController: UIViewController {
      Override point for updating the view controller's view for the specified state.
      You MUST always call super.
      */
-    open func updateView(forState state: MDLoadableViewController.State) {
+    open func showView(for state: MDLoadableViewController.State) {
         self.currentState = state
     }
     
