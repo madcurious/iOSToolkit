@@ -48,7 +48,9 @@ open class MDAsynchronousOperation<ResultType>: MDOperation<ResultType> {
     }
     
     open override func start() {
-        guard self.isCancelled == false && self.shouldExecute()
+        guard self.isCancelled == false &&
+            self.hasFailedDependencies == false &&
+            self.shouldExecute()
             else {
                 self.willChangeValue(forKey: #keyPath(Operation.isFinished))
                 self._finished = true

@@ -42,32 +42,26 @@ open class MDOperation<ResultType>: Operation {
     /// is automatically set to `false`.
     open var finishedSuccessfully = true
     
+    /// Determines whether this operation has any dependencies which is an
+    /// `MDOperation` and whose `finishedSuccessfully` is `false`. Returns `true` if all
+    /// dependencies finished sucessfully, or if none of the dependencies are `MDOperation`s.
+    var hasFailedDependencies: Bool {
+        return self.dependencies.contains(where: { $0 is MDOperation &&
+            ($0 as! MDOperation).finishedSuccessfully == false })
+    }
+    
     /**
      Determines whether the operation should execute once it enters `main()`. This function is meant
      to be overridden so that you may decide whether to proceed with the operation based on a condition.
-     The default behavior returns `true`. Note that if you return `false`, none of the callback blocks will be
+     The default behavior returns `true`. If you return `false`, none of the callback blocks will be
      executed.
-     
-     **IMPORTANT** You must always call super as the default return statement.
      */
     open func shouldExecute() -> Bool {
-        // If the operation has any dependencies that did not succeed,
-        // then it should not execute.
-        if self.dependencies.contains(where: { $0 is MDOperation &&
-            ($0 as! MDOperation).finishedSuccessfully == false }) {
-            return false
-        }
         return true
     }
     
-//    open override func start() {
-//        print("starting: \(self)")
-//    }
-    
     open override func main() {
-        print("synchronous starting: \(self)")
-        
-        if self.shouldExecute() == false {
+        if self.hasFailedDependencies || self.shouldExecute() == false {
             return
         }
         
