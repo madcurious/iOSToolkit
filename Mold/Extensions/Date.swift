@@ -30,7 +30,7 @@ public extension Date {
     public func startOfWeek(firstWeekday: Int) -> Date {
         var calendar = Calendar.current
         let components = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)
-        calendar.firstWeekday = 1
+        calendar.firstWeekday = firstWeekday
         calendar.minimumDaysInFirstWeek = 7
         return calendar.date(from: components)!
     }
