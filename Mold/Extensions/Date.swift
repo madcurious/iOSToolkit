@@ -8,43 +8,58 @@
 
 import Foundation
 
-fileprivate let kCalendar = Calendar.current
-
 public extension Date {
     
-    /**
-     Returns the same date with the time set to 12 midnight, the very first moment of the date.
-     */
-    
+    /// Returns the date at 00:00:00
     public func startOfDay() -> Date {
-        return kCalendar.startOfDay(for: self)
+        return Calendar.current.startOfDay(for: self)
     }
     
+    /// Returns the date at 23:59:59
     public func endOfDay() -> Date {
-        var dateComponents = kCalendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
+        let calendar = Calendar.current
+        var dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
         dateComponents.hour = 23
         dateComponents.minute = 59
         dateComponents.second = 59
         
-        let lastMoment = kCalendar.date(from: dateComponents)!
+        let lastMoment = calendar.date(from: dateComponents)!
         return lastMoment
     }
     
+    public func startOfWeek(firstWeekday: Int) -> Date {
+        var calendar = Calendar.current
+        let components = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)
+        calendar.firstWeekday = 1
+        calendar.minimumDaysInFirstWeek = 7
+        return calendar.date(from: components)!
+    }
+    
+    public func endOfWeek(firstWeekday: Int) -> Date {
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([.weekOfYear], from: self)
+        components.weekOfYear = 1
+        components.day = -1
+        return calendar.date(byAdding: components, to: self.startOfWeek(firstWeekday: firstWeekday))!
+    }
+    
     public func startOfMonth() -> Date {
-        var components = kCalendar.dateComponents([.year, .month, .day], from: self)
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([.year, .month, .day], from: self)
         components.day = 1
-        let startOfMonth = kCalendar.date(from: components)!
+        let startOfMonth = calendar.date(from: components)!
         return startOfMonth
     }
     
     public func endOfMonth() -> Date {
-        let numberOfDaysInMonth = kCalendar.range(of: .day, in: .month, for: self)!.upperBound - 1
-        let endOfMonth = kCalendar.date(bySetting: .day, value: numberOfDaysInMonth, of: self)!.endOfDay()
+        let calendar = Calendar.current
+        let numberOfDaysInMonth = calendar.range(of: .day, in: .month, for: self)!.upperBound - 1
+        let endOfMonth = calendar.date(bySetting: .day, value: numberOfDaysInMonth, of: self)!.endOfDay()
         return endOfMonth
     }
     
     public func isSameDayAsDate(_ date: Date) -> Bool {
-        if kCalendar.compare(self, to: date, toGranularity: .day) == .orderedSame {
+        if Calendar.current.compare(self, to: date, toGranularity: .day) == .orderedSame {
             return true
         }
         return false
@@ -61,14 +76,14 @@ public extension Date {
     }
     
     public func isSameMonthAsDate(_ date: Date) -> Bool {
-        if kCalendar.compare(self, to: date, toGranularity: .month) == .orderedSame {
+        if Calendar.current.compare(self, to: date, toGranularity: .month) == .orderedSame {
             return true
         }
         return false
     }
     
     public func isSameYearAsDate(_ date: Date) -> Bool {
-        if kCalendar.compare(self, to: date, toGranularity: .year) == .orderedSame {
+        if Calendar.current.compare(self, to: date, toGranularity: .year) == .orderedSame {
             return true
         }
         return false
