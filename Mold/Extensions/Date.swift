@@ -40,7 +40,7 @@ public extension Date {
         var components = calendar.dateComponents([.weekOfYear], from: self)
         components.weekOfYear = 1
         components.day = -1
-        return calendar.date(byAdding: components, to: self.startOfWeek(firstWeekday: firstWeekday))!
+        return calendar.date(byAdding: components, to: self.startOfWeek(firstWeekday: firstWeekday))!.endOfDay()
     }
     
     public func startOfMonth() -> Date {
