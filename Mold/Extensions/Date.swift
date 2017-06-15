@@ -28,11 +28,17 @@ public extension Date {
     }
     
     public func startOfWeek(firstWeekday: Int) -> Date {
-        var calendar = Calendar.current
-        let components = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)
+//        var calendar = Calendar.current
+//        let components = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)
+//        calendar.firstWeekday = firstWeekday
+//        calendar.minimumDaysInFirstWeek = 7
+//        return calendar.date(from: components)!
+        let calendar = Calendar.current as NSCalendar
         calendar.firstWeekday = firstWeekday
         calendar.minimumDaysInFirstWeek = 7
-        return calendar.date(from: components)!
+        var startOfWeek: NSDate?
+        calendar.range(of: .weekOfYear, start: &startOfWeek, interval: nil, for: self)
+        return startOfWeek! as Date
     }
     
     public func endOfWeek(firstWeekday: Int) -> Date {
