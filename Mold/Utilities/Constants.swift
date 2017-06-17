@@ -8,8 +8,6 @@
 
 import Foundation
 
-public let CGSizeMax = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
-
 public let MDDateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.locale = Locale.current
