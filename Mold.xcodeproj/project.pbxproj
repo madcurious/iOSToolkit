@@ -56,6 +56,7 @@
 		26904ED71C778A120094DA08 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED61C778A120094DA08 /* LICENSE */; };
 		26A1454F1DD22ADA00718494 /* MDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1454E1DD22ADA00718494 /* MDErrorView.swift */; };
 		26CC3DF31EE678930095374A /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC3DF21EE678930095374A /* UIScreen.swift */; };
+		26DF09981EF6206500D26D14 /* MDLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DF09971EF6206500D26D14 /* MDLoadableView.swift */; };
 		26F57AE91E66679A0034FF4B /* MDAsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F57AE81E66679A0034FF4B /* MDAsynchronousOperation.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		26904ED61C778A120094DA08 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		26A1454E1DD22ADA00718494 /* MDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDErrorView.swift; sourceTree = "<group>"; };
 		26CC3DF21EE678930095374A /* UIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		26DF09971EF6206500D26D14 /* MDLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDLoadableView.swift; sourceTree = "<group>"; };
 		26F57AE81E66679A0034FF4B /* MDAsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAsynchronousOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,6 +236,7 @@
 				260DFDBA1E55885900E3B92E /* MDImageButton.swift */,
 				260DFDC41E5592C500E3B92E /* MDLabelButton.swift */,
 				260DFDC61E55960600E3B92E /* MDTextFieldButton.swift */,
+				26DF09971EF6206500D26D14 /* MDLoadableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				26020E7A1DA4BC0200C45902 /* UIImage.swift in Sources */,
 				26020E911DA4BC0300C45902 /* MDResponsiveTextField.swift in Sources */,
 				26020E721DA4BC0200C45902 /* MKMapView.swift in Sources */,
+				26DF09981EF6206500D26D14 /* MDLoadableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
