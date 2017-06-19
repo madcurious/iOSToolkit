@@ -22,8 +22,6 @@ open class MDAsynchronousOperation<ResultType>: MDOperation<ResultType> {
         self.willChangeValue(forKey: #keyPath(Operation.isFinished))
         self._finished = true
         self.didChangeValue(forKey: #keyPath(Operation.isFinished))
-        
-        print("finished: \(self)")
     }
     
     // MARK: NSOperation required overrides
@@ -57,8 +55,6 @@ open class MDAsynchronousOperation<ResultType>: MDOperation<ResultType> {
                 self.didChangeValue(forKey: #keyPath(Operation.isFinished))
                 return
         }
-        
-        print("starting: \(self)")
         
         self.willChangeValue(forKey: #keyPath(Operation.isExecuting))
         Thread.detachNewThreadSelector(#selector(main), toTarget: self, with: nil)

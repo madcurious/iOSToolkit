@@ -15,6 +15,9 @@ import Foundation
  */
 open class MDOperation<ResultType>: Operation {
     
+    public var result: ResultType?
+    public var error: Error?
+    
     public var runStartBlockInMainThread = true
     public var startBlock: (() -> ())?
     
@@ -43,7 +46,7 @@ open class MDOperation<ResultType>: Operation {
     open var finishedSuccessfully = true
     
     /// Determines whether this operation has any dependencies which is an
-    /// `MDOperation` and whose `finishedSuccessfully` is `false`. Returns `true` if all
+    /// `MDOperation` and whose `finishedSuccessfully` is `false`. Returns `false` if all
     /// dependencies finished sucessfully, or if none of the dependencies are `MDOperation`s.
     var hasFailedDependencies: Bool {
         return self.dependencies.contains(where: { $0 is MDOperation &&
@@ -73,17 +76,16 @@ open class MDOperation<ResultType>: Operation {
         
         do {
             let result = try self.makeResult(from: nil)
-            
+            self.result = result
             if self.isCancelled {
                 return
             }
-            
             self.runSuccessBlock(result: result)
         } catch {
+            self.error = error
             if self.isCancelled {
                 return
             }
-            
             self.runFailureBlock(error: error)
         }
     }

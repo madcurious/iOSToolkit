@@ -163,6 +163,7 @@ open class MDURLOperation<ResultType>: MDAsynchronousOperation<ResultType> {
             }
             
             let result = try self.makeResult(from: rawResult)
+            self.result = result
             
             if self.isCancelled {
                 return
@@ -178,6 +179,8 @@ open class MDURLOperation<ResultType>: MDAsynchronousOperation<ResultType> {
                     print(dataString)
                 }
             #endif
+            
+            self.error = error
             
             if self.isCancelled {
                 return
