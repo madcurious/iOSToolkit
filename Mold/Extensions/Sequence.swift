@@ -13,7 +13,7 @@ public extension Sequence {
     /**
      Returns a dictionary where the key is the group, and the value is an array of member elements.
      */
-    public func grouped<T: Equatable>(by groupProvider: (Iterator.Element) -> T?) -> [T : [Iterator.Element]] {
+    public func grouped<T>(by groupProvider: (Iterator.Element) -> T?) -> [T : [Iterator.Element]] {
         var dict: [T : [Iterator.Element]] = [:]
         for element in self {
             guard let key = groupProvider(element)

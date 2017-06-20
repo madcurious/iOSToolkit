@@ -31,22 +31,18 @@ public extension UIView {
      */
     public func addSubviewsAndFill(_ views: UIView ...) {
         for view in views {
-            self.addSubviewAndFill(view)
+            self.addSubview(view)
+            
+            view.translatesAutoresizingMaskIntoConstraints = false
+            
+            let views = ["view" : view]
+            let rules = ["H:|-0-[view]-0-|",
+                         "V:|-0-[view]-0-|"]
+            self.addConstraints(
+                NSLayoutConstraint.constraintsWithVisualFormatArray(rules,
+                                                                    metrics: nil,
+                                                                    views: views))
         }
-    }
-    
-    public func addSubviewAndFill(_ view: UIView) {
-        self.addSubview(view)
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        let views = ["view" : view]
-        let rules = ["H:|-0-[view]-0-|",
-            "V:|-0-[view]-0-|"]
-        self.addConstraints(
-            NSLayoutConstraint.constraintsWithVisualFormatArray(rules,
-                metrics: nil,
-                views: views))
     }
     
     public func fillSuperview() {

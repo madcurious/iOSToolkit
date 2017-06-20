@@ -32,12 +32,12 @@ public class MDImageButton: MDButton {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubviewAndFill(self.imageView)
+        self.addSubviewsAndFill(self.imageView)
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.addSubviewAndFill(self.imageView)
+        self.addSubviewsAndFill(self.imageView)
     }
     
     public convenience init(frame: CGRect, image: UIImage) {

@@ -20,7 +20,7 @@ public class MDTextFieldButton: MDButton {
         set {
             self.textField.font = newValue
            
-            self.placeholderAttributes[NSFontAttributeName] = newValue
+            self.placeholderAttributes[NSAttributedStringKey.font] = newValue
             self.updateAttributedPlaceholder()
         }
     }
@@ -36,7 +36,7 @@ public class MDTextFieldButton: MDButton {
     public var placeholderTextColor: UIColor? {
         didSet {
             let placeholderTextColor = self.placeholderTextColor ?? UIColor.hex(0xeeeeee)
-            self.placeholderAttributes[NSForegroundColorAttributeName] = placeholderTextColor
+            self.placeholderAttributes[NSAttributedStringKey.foregroundColor] = placeholderTextColor
             self.updateAttributedPlaceholder()
         }
     }
@@ -75,8 +75,8 @@ public class MDTextFieldButton: MDButton {
     let textField = UITextField(frame: CGRect.zero)
     var attributedPlaceholder = NSMutableAttributedString()
     var placeholderAttributes = [
-        NSFontAttributeName : UIFont.systemFont(ofSize: 17),
-        NSForegroundColorAttributeName : UIColor.hex(0xeeeeee)
+        NSAttributedStringKey.font : UIFont.systemFont(ofSize: 17),
+        NSAttributedStringKey.foregroundColor : UIColor.hex(0xeeeeee)
     ]
     
     var top: NSLayoutConstraint!

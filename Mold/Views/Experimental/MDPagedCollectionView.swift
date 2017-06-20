@@ -107,7 +107,7 @@ open class MDPagedCollectionView: UIView {
         self.scrollView.contentOffset = CGPoint(x: self.scrollView.contentSize.width - offset, y: 0)
     }
     
-    open func scrollToLastItem(animated: Bool, completion: ((Void) -> Void)?) {
+    open func scrollToLastItem(animated: Bool, completion: (() -> Void)?) {
         let numberOfItems = self.collectionView.numberOfItems(inSection: 0)
         guard numberOfItems > 0
             else {
@@ -127,7 +127,7 @@ open class MDPagedCollectionView: UIView {
         super.layoutSubviews()
     }
     
-    func scrollToItemAtIndex(_ index: Int, animated: Bool, completion: ((Void) -> Void)?) {
+    func scrollToItemAtIndex(_ index: Int, animated: Bool, completion: (() -> Void)?) {
         // Scrolling to an index only means setting the contentOffset of the scrollView,
         // because doing so invokes scrollViewDidScroll, which already offsets the collection view correctly.
         

@@ -64,7 +64,7 @@ open class MDAspectFitLabel: UILabel {
     func sizeOfText(_ text: String, atFontSize fontSize: CGFloat) -> CGSize {
         let size = text.boundingRect(with: .max,
                                      options: [.usesLineFragmentOrigin, .usesFontLeading],
-                                     attributes: [NSFontAttributeName : UIFont(name: self.font.fontName, size: fontSize)!],
+                                     attributes: [NSAttributedStringKey.font : UIFont(name: self.font.fontName, size: fontSize)!],
                                      context: nil).size
         return size
     }
