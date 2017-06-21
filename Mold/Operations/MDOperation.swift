@@ -21,9 +21,6 @@ open class MDOperation<ResultType>: Operation {
     public var runStartBlockInMainThread = true
     public var startBlock: (() -> ())?
     
-    public var runReturnBlockInMainThread = true
-    public var returnBlock: (() -> ())?
-    
     public var runSuccessBlockInMainThread = true
     
     /**
@@ -51,6 +48,11 @@ open class MDOperation<ResultType>: Operation {
     var hasFailedDependencies: Bool {
         return self.dependencies.contains(where: { $0 is MDOperation &&
             ($0 as! MDOperation).finishedSuccessfully == false })
+    }
+    
+    public override init() {
+        super.init()
+        print("Initialized \(self)")
     }
     
     /**
@@ -122,27 +124,7 @@ open class MDOperation<ResultType>: Operation {
         }
     }
     
-    public func runReturnBlock() {
-        guard let returnBlock = self.returnBlock,
-            
-            // To run the return block, all of its dependencies must have finished already.
-            self.dependencies.filter({ $0.isFinished }).count == self.dependencies.count
-            else {
-                return
-        }
-        
-        if self.runReturnBlockInMainThread == true {
-            MDDispatcher.asyncRunInMainThread {
-                returnBlock()
-            }
-        } else {
-            returnBlock()
-        }
-    }
-    
     public func runSuccessBlock(result: ResultType) {
-        self.runReturnBlock()
-        
         guard let successBlock = self.successBlock
             else {
                 return
@@ -159,7 +141,6 @@ open class MDOperation<ResultType>: Operation {
     
     public func runFailureBlock(error: Error) {
         self.finishedSuccessfully = false
-        self.runReturnBlock()
         
         guard let failureBlock = self.failureBlock
             else {
@@ -173,6 +154,10 @@ open class MDOperation<ResultType>: Operation {
         } else {
             failureBlock(error)
         }
+    }
+    
+    deinit {
+        print("Deinit \(self)")
     }
     
 }
