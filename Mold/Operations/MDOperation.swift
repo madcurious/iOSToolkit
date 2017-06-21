@@ -23,15 +23,8 @@ open class MDOperation<ResultType>: Operation {
     
     public var runSuccessBlockInMainThread = true
     
-    /**
-     Contains the tasks that must be executed when this operation succeeds.
-     
-     If you want to start another operation when this operation succeeds, **DO NOT** create and start
-     the next operation from within this operation's `successBlock`. Instead, instantiate the next operation
-     externally and make it dependent on this operation. If the next operation is an `MDOperation`, then
-     it will check for any dependencies where `finishedSuccessfully` is `false` and it will
-     automatically not proceed with execution.
-     */
+    
+    /// Contains the tasks that must be executed when this operation succeeds.
     public var successBlock: ((ResultType) -> ())?
     
     public var runFailureBlockInMainThread = true
