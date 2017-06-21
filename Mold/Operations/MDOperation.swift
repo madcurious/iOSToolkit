@@ -50,11 +50,6 @@ open class MDOperation<ResultType>: Operation {
             ($0 as! MDOperation).finishedSuccessfully == false })
     }
     
-    public override init() {
-        super.init()
-        print("Initialized \(self)")
-    }
-    
     /**
      Determines whether the operation should execute once it enters `main()`. This function is meant
      to be overridden so that you may decide whether to proceed with the operation based on a condition.
@@ -154,10 +149,6 @@ open class MDOperation<ResultType>: Operation {
         } else {
             failureBlock(error)
         }
-    }
-    
-    deinit {
-        print("Deinit \(self)")
     }
     
 }
