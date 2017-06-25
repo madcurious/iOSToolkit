@@ -40,6 +40,10 @@ public class MDImageButton: MDButton {
         self.addSubviewsAndFill(self.imageView)
     }
     
+    public convenience init() {
+        self.init(frame: .zero)
+    }
+    
     public convenience init(frame: CGRect, image: UIImage) {
         self.init(frame: frame)
         self.imageView.image = image
