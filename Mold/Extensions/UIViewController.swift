@@ -11,8 +11,12 @@ import UIKit
 public extension UIViewController {
     
     public func embedChildViewController(_ childViewController: UIViewController, toView superview: UIView, fillSuperview: Bool) {
-        self.embedChildViewController(childViewController, toView: superview) {
-            childViewController.view.fillSuperview()
+        if fillSuperview {
+            self.embedChildViewController(childViewController, toView: superview) {
+                childViewController.view.fillSuperview()
+            }
+        } else {
+            self.embedChildViewController(childViewController, toView: superview, completionBlock: nil)
         }
     }
     
