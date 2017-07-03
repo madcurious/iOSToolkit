@@ -10,34 +10,27 @@ import UIKit
 
 public extension UIViewController {
     
-    public func embedChildViewController(_ childViewController: UIViewController) {
-        self.embedChildViewController(childViewController, fillSuperview: true)
-    }
-    
-    public func embedChildViewController(_ childViewController: UIViewController, fillSuperview: Bool) {
-        self.embedChildViewController(childViewController, toView: self.view, fillSuperview: fillSuperview)
-    }
-    
-    public func embedChildViewController(_ childViewController: UIViewController, toView superview: UIView, fillSuperview: Bool = true) {
-        self.addChildViewController(childViewController)
-        
-        if fillSuperview {
-            superview.addSubviewsAndFill(childViewController.view)
-        } else {
-            superview.addSubview(childViewController.view)
+    public func embedChildViewController(_ childViewController: UIViewController, toView superview: UIView, fillSuperview: Bool) {
+        self.embedChildViewController(childViewController, toView: superview) {
+            childViewController.view.fillSuperview()
         }
-        
-        childViewController.didMove(toParentViewController: self)
     }
     
-    public func embedChildViewController(_ childViewController: UIViewController, toView superview: UIView, withFormatStrings formatStrings: [String], metrics: [String : AnyObject]?, views: [String : UIView]) {
+    public func embedChildViewController(_ childViewController: UIViewController, toView superview: UIView, completionBlock: (() -> ())?) {
         self.addChildViewController(childViewController)
-        
         superview.addSubview(childViewController.view)
-        let constraints = NSLayoutConstraint.constraintsWithVisualFormatArray(formatStrings, metrics: metrics, views: views)
-        childViewController.view.addConstraints(constraints)
-        
         childViewController.didMove(toParentViewController: self)
+        completionBlock?()
+    }
+    
+    public func unembedChildViewController(_ childViewController: UIViewController) {
+        childViewController.unembedFromParentViewController()
+    }
+    
+    public func unembedFromParentViewController() {
+        self.willMove(toParentViewController: nil)
+        self.view.removeFromSuperview()
+        self.removeFromParentViewController()
     }
     
     public func setCustomTransitioningDelegate(_ transitioningDelegate: UIViewControllerTransitioningDelegate) {
