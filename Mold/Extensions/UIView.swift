@@ -74,20 +74,20 @@ public extension UIView {
         }
     }
     
-    public func recursivelyClearBackgroundColors() {
-        UIView.recursivelyClearBackgroundColors(from: self)
+    public func clearAllBackgroundColors() {
+        UIView.clearAllBackgroundColors(from: self)
     }
     
-    public class func recursivelyClearBackgroundColors(from view: UIView) {
+    public class func clearAllBackgroundColors(from view: UIView) {
         if #available(iOS 9.0, *),
             let stackView = view as? UIStackView {
             for arrangedSubview in stackView.arrangedSubviews {
-                self.recursivelyClearBackgroundColors(from: arrangedSubview)
+                self.clearAllBackgroundColors(from: arrangedSubview)
             }
         } else {
             view.backgroundColor = .clear
             for subview in view.subviews {
-                self.recursivelyClearBackgroundColors(from: subview)
+                self.clearAllBackgroundColors(from: subview)
             }
         }
     }
