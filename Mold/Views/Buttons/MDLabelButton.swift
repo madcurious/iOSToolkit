@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MDLabelButton: MDButton {
+open class MDLabelButton: MDButton {
     
     public let titleLabel = UILabel(frame: CGRect.zero)
     
