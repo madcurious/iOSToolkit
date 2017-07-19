@@ -11,9 +11,9 @@ import Foundation
 open class MDAlertDialog {
     
     open class func showInPresenter(_ presenter: UIViewController,
-        title: String? = nil,
-        message: String = "Message",
-        cancelButtonTitle: String = "OK") {
+        title: String?,
+        message: String?,
+        cancelButtonTitle: String) {
             let alertController = UIAlertController(title: title,
                 message: message,
                 preferredStyle: .alert)
@@ -24,7 +24,7 @@ open class MDAlertDialog {
                     alertController.dismiss(animated: true, completion: nil)
             }
             alertController.addAction(cancelAction)
-            
+        
             presenter.present(alertController, animated: true, completion: nil)
     }
     
