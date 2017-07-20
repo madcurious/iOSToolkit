@@ -10,43 +10,47 @@ import Foundation
 
 open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation {
     
-    public typealias TBOperationCompletionBlock = ((ResultType?, ErrorType?) -> Void)
+    public typealias TBOperationCompletionBlock = (TBOperation.Result) -> Void
     
-    open var result: ResultType?
-    open var error: ErrorType?
+    public enum Result {
+        case none
+        case success(ResultType)
+        case error(ErrorType)
+    }
     
+    open var result = TBOperation.Result.none
+    
+    /// Checks whether the operation has any dependencies that are both of type `TBOperation`
+    /// and whose `result` is `.error`. Returns `true` if a dependency has `.error` for a
+    /// result, or if none of the dependencies are `TBOperation`s.
     public var hasFailedDependencies: Bool {
         return self.dependencies.contains(where: {
-            if let operation = $0 as? TBOperation,
-                operation.error != nil {
-                return true
+            if let operation = $0 as? TBOperation {
+                switch operation.result {
+                case .error(_):
+                    return true
+                default:
+                    return false
+                }
             }
             return false
         })
     }
     
-//    var __completionBlock: TBOperationCompletionBlock?
-    
     public init(completionBlock: TBOperationCompletionBlock?) {
-//        __completionBlock = completionBlock
         super.init()
-        if let completionBlock = completionBlock {
-            self.completionBlock = {[weak self] in
-                guard let weakSelf = self
-                    else {
-                        return
-                }
-                completionBlock(weakSelf.result, weakSelf.error)
-            }
+        
+        guard let completionBlock = completionBlock
+            else {
+                return
         }
-//        self.completionBlock = {[weak self] in
-//            guard let weakSelf = self,
-//                let completionBlock = self?.__completionBlock
-//                else {
-//                    return
-//            }
-//            completionBlock(weakSelf.result, weakSelf.error)
-//        }
+        self.completionBlock = {[weak self] in
+            guard let weakSelf = self
+                else {
+                    return
+            }
+            completionBlock(weakSelf.result)
+        }
     }
     
     open func shouldExecute() -> Bool {
@@ -58,6 +62,10 @@ open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation {
             self.cancel()
             return
         }
+    }
+    
+    deinit {
+        print("Deallocating \(self)")
     }
     
 }
