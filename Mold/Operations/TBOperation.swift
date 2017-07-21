@@ -29,6 +29,17 @@ open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBO
     
     var failed = false
     
+    var _executing = false
+    var _finished = false
+    
+    open override var isExecuting: Bool {
+        return self._executing
+    }
+    
+    open override var isFinished: Bool {
+        return self._finished
+    }
+    
     open var result = TBOperation.Result.none {
         didSet {
             switch result {
@@ -60,6 +71,7 @@ open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBO
     
     public init(completionBlock: TBOperationCompletionBlock?) {
         super.init()
+        print("\(#function) \(md_getClassName(self))")
         
         guard let completionBlock = completionBlock
             else {
@@ -70,6 +82,7 @@ open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBO
                 else {
                     return
             }
+            print("completionBlock: \(md_getClassName(weakSelf))")
             completionBlock(weakSelf.result)
         }
     }
@@ -79,14 +92,41 @@ open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBO
     }
     
     open override func start() {
+        print("\(#function) \(md_getClassName(self))")
         if self.hasFailedDependencies || self.shouldExecute() == false {
+            print("pre-cancel isReady: \(self.isReady)")
+            print("pre-cancel isExecuting: \(self.isExecuting)")
+            print("pre-cancel isFinished: \(self.isFinished)")
             self.cancel()
+            self.finish()
+            print("post-cancel isReady: \(self.isReady)")
+            print("post-cancel isExecuting: \(self.isExecuting)")
+            print("post-cancel isFinished: \(self.isFinished)")
             return
         }
+        
+        self.willChangeValue(forKey: "isExecuting")
+        self._executing = true
+        self.didChangeValue(forKey: "isExecuting")
+        
+        self.main()
+        
+        self.finish()
+    }
+    
+    public func finish() {
+        print("\(#function) \(md_getClassName(self))")
+        self.willChangeValue(forKey: "isExecuting")
+        self._executing = false
+        self.didChangeValue(forKey: "isExecuting")
+        
+        self.willChangeValue(forKey: "isFinished")
+        self._finished = true
+        self.didChangeValue(forKey: "isFinished")
     }
     
     deinit {
-        print("Deallocating \(self)")
+        print("\(#function) \(md_getClassName(self))")
     }
     
 }
