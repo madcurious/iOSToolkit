@@ -8,33 +8,54 @@
 
 import Foundation
 
-open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation {
+/// A necessary protocol to which all `TBOperation`s must internally conform so that
+/// the `hasFailedDependencies` computed property can be implemented.
+protocol TBOperationProtocol {
+    
+    /// Must be set to true if the operation's `result` property is set to `.error`.
+    var failed: Bool { get set }
+    
+}
+
+open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBOperationProtocol {
     
     public typealias TBOperationCompletionBlock = (TBOperation.Result) -> Void
     
-    public enum Result {
+    public indirect enum Result {
         case none
         case success(ResultType)
         case error(ErrorType)
     }
     
-    open var result = TBOperation.Result.none
+    var failed = false
     
-    /// Checks whether the operation has any dependencies that are both of type `TBOperation`
-    /// and whose `result` is `.error`. Returns `true` if a dependency has `.error` for a
-    /// result, or if none of the dependencies are `TBOperation`s.
+    open var result = TBOperation.Result.none {
+        didSet {
+            switch result {
+            case .error(_):
+                self.failed = true
+            default:
+                self.failed = false
+            }
+        }
+    }
+    
+    /**
+     Checks whether the operation has any dependencies that inherit from `TBOperation` and whose `result` is `.error`.
+     
+     Returns `true` if at least one of the dependencies is a `TBOperation` and the `result` is `.error`.
+     Returns `false` if none of the dependencies is a `TBOperation`, or none of the `TBOperation` dependencies
+     have `.error` for a result.
+     */
     public var hasFailedDependencies: Bool {
-        return self.dependencies.contains(where: {
-            if let operation = $0 as? TBOperation {
-                switch operation.result {
-                case .error(_):
-                    return true
-                default:
-                    return false
-                }
+        let hasFailedDependencies = self.dependencies.contains(where: {
+            if let operation = $0 as? TBOperationProtocol,
+                operation.failed == true {
+                return true
             }
             return false
         })
+        return hasFailedDependencies
     }
     
     public init(completionBlock: TBOperationCompletionBlock?) {

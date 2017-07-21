@@ -14,18 +14,19 @@ open class MDAlertDialog {
         title: String?,
         message: String?,
         cancelButtonTitle: String) {
+        MDDispatcher.asyncRunInMainThread {
             let alertController = UIAlertController(title: title,
-                message: message,
-                preferredStyle: .alert)
+                                                    message: message,
+                                                    preferredStyle: .alert)
             
             let cancelAction = UIAlertAction(title: cancelButtonTitle,
-                style: .cancel) { _ in
-//                    presenter.dismiss(animated: true, completion: nil)
-                    alertController.dismiss(animated: true, completion: nil)
+                                             style: .cancel) { _ in
+                                                alertController.dismiss(animated: true, completion: nil)
             }
             alertController.addAction(cancelAction)
-        
+            
             presenter.present(alertController, animated: true, completion: nil)
+        }
     }
     
 }

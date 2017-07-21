@@ -54,6 +54,8 @@ open class TBAsynchronousOperation<SourceType, ResultType, ErrorType: Error>: TB
         self.willChangeValue(forKey: "isFinished")
         self._finished = true
         self.didChangeValue(forKey: "isFinished")
+        
+        print("Finished: \(self)")
     }
     
 }
