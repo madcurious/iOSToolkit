@@ -90,30 +90,43 @@ open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBO
     }
     
     open override func start() {
-        print("\(#function) \(md_getClassName(self))")
+        defer {
+            self.setFinished(true)
+        }
+        
         if self.hasFailedDependencies || self.shouldExecute() == false {
-            self.cancel()
-            self.finish()
             return
         }
         
-        self.willChangeValue(forKey: "isExecuting")
-        self.internalExecuting = true
-        self.didChangeValue(forKey: "isExecuting")
-        
+        self.setExecuting(true)
         self.main()
-        
-        self.finish()
+        self.setExecuting(false)
     }
     
-    public func finish() {
+    /**
+     Sets the internal executing flag and makes the proper KVO calls.
+     */
+    public func setExecuting(_ executing: Bool) {
         self.willChangeValue(forKey: "isExecuting")
-        self.internalExecuting = false
+        self.internalExecuting = executing
         self.didChangeValue(forKey: "isExecuting")
-        
+    }
+    
+    /**
+     Sets the internal finished flag and makes the proper KVO calls.
+     */
+    public func setFinished(_ finished: Bool) {
         self.willChangeValue(forKey: "isFinished")
-        self.internalFinished = true
+        self.internalFinished = finished
         self.didChangeValue(forKey: "isFinished")
+    }
+    
+    /**
+     Sets `isExecuting` to `false` and `isFinished` to `true`.
+     */
+    public func complete() {
+        self.setExecuting(false)
+        self.setFinished(true)
     }
     
 }
