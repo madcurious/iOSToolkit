@@ -90,17 +90,15 @@ open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBO
     }
     
     open override func start() {
-        defer {
-            self.setFinished(true)
-        }
-        
         if self.hasFailedDependencies || self.shouldExecute() == false {
+            self.setFinished(true)
             return
         }
         
         self.setExecuting(true)
         self.main()
-        self.setExecuting(false)
+        
+        self.finish()
     }
     
     /**
@@ -124,7 +122,7 @@ open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBO
     /**
      Sets `isExecuting` to `false` and `isFinished` to `true`.
      */
-    public func complete() {
+    public func finish() {
         self.setExecuting(false)
         self.setFinished(true)
     }

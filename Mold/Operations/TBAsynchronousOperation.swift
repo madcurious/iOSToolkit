@@ -23,16 +23,12 @@ open class TBAsynchronousOperation<SourceType, ResultType, ErrorType: Error>: TB
             self.hasFailedDependencies == false &&
             self.shouldExecute()
             else {
-                self.willChangeValue(forKey: "isFinished")
-                self.internalFinished = true
-                self.didChangeValue(forKey: "isFinished")
+                self.setFinished(true)
                 return
         }
         
-        self.willChangeValue(forKey: "isExecuting")
+        self.setExecuting(true)
         Thread.detachNewThreadSelector(#selector(main), toTarget: self, with: nil)
-        self.internalExecuting = true
-        self.didChangeValue(forKey: "isExecuting")
     }
     
 }
