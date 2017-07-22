@@ -19,25 +19,24 @@ protocol TBOperationProtocol {
 
 open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBOperationProtocol {
     
-    public typealias TBOperationCompletionBlock = (TBOperation.Result) -> Void
-    
     public indirect enum Result {
         case none
         case success(ResultType)
         case error(ErrorType)
     }
     
-    var failed = false
+    public typealias TBOperationCompletionBlock = (TBOperation.Result) -> Void
     
-    var _executing = false
-    var _finished = false
+    var failed = false
+    var internalExecuting = false
+    var internalFinished = false
     
     open override var isExecuting: Bool {
-        return self._executing
+        return self.internalExecuting
     }
     
     open override var isFinished: Bool {
-        return self._finished
+        return self.internalFinished
     }
     
     open var result = TBOperation.Result.none {
@@ -71,18 +70,17 @@ open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBO
     
     public init(completionBlock: TBOperationCompletionBlock?) {
         super.init()
-        print("\(#function) \(md_getClassName(self))")
         
         guard let completionBlock = completionBlock
             else {
                 return
         }
+        
         self.completionBlock = {[weak self] in
             guard let weakSelf = self
                 else {
                     return
             }
-            print("completionBlock: \(md_getClassName(weakSelf))")
             completionBlock(weakSelf.result)
         }
     }
@@ -94,19 +92,13 @@ open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBO
     open override func start() {
         print("\(#function) \(md_getClassName(self))")
         if self.hasFailedDependencies || self.shouldExecute() == false {
-            print("pre-cancel isReady: \(self.isReady)")
-            print("pre-cancel isExecuting: \(self.isExecuting)")
-            print("pre-cancel isFinished: \(self.isFinished)")
             self.cancel()
             self.finish()
-            print("post-cancel isReady: \(self.isReady)")
-            print("post-cancel isExecuting: \(self.isExecuting)")
-            print("post-cancel isFinished: \(self.isFinished)")
             return
         }
         
         self.willChangeValue(forKey: "isExecuting")
-        self._executing = true
+        self.internalExecuting = true
         self.didChangeValue(forKey: "isExecuting")
         
         self.main()
@@ -115,18 +107,13 @@ open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBO
     }
     
     public func finish() {
-        print("\(#function) \(md_getClassName(self))")
         self.willChangeValue(forKey: "isExecuting")
-        self._executing = false
+        self.internalExecuting = false
         self.didChangeValue(forKey: "isExecuting")
         
         self.willChangeValue(forKey: "isFinished")
-        self._finished = true
+        self.internalFinished = true
         self.didChangeValue(forKey: "isFinished")
-    }
-    
-    deinit {
-        print("\(#function) \(md_getClassName(self))")
     }
     
 }
