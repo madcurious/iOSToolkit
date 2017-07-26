@@ -18,4 +18,20 @@ open class MDButton: UIControl {
         }
     }
     
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    func setup() {
+        subviews.forEach {
+            $0.isUserInteractionEnabled = false
+        }
+    }
+    
 }
