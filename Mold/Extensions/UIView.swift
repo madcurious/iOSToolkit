@@ -82,18 +82,24 @@ public extension UIView {
         if #available(iOS 9.0, *),
             let stackView = view as? UIStackView {
             for arrangedSubview in stackView.arrangedSubviews {
-                self.clearAllBackgroundColors(from: arrangedSubview)
+                clearAllBackgroundColors(from: arrangedSubview)
             }
         } else {
             view.backgroundColor = .clear
             for subview in view.subviews {
-                self.clearAllBackgroundColors(from: subview)
+                clearAllBackgroundColors(from: subview)
             }
         }
     }
     
     public class func nib() -> UINib {
         return UINib(nibName: md_getClassName(self), bundle: Bundle.main)
+    }
+    
+    public func viewFromNib() -> UIView {
+        let bundle = Bundle(for: self.classForCoder)
+        let view = bundle.loadNibNamed(md_getClassName(self), owner: self, options: nil)!.last as! UIView
+        return view
     }
     
 }

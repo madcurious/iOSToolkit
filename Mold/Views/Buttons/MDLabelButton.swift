@@ -8,74 +8,48 @@
 
 import UIKit
 
+@IBDesignable
 open class MDLabelButton: MDButton {
     
-    public let titleLabel = UILabel(frame: CGRect.zero)
-    
-    public var edgeInsets: UIEdgeInsets {
-        get {
-            return UIEdgeInsetsMake(self.top.constant, self.leading.constant, self.bottom.constant, self.trailing.constant)
-        }
-        set {
-            self.top.constant = newValue.top
-            self.trailing.constant = newValue.right
-            self.bottom.constant = newValue.bottom
-            self.leading.constant = newValue.left
-            self.setNeedsLayout()
-        }
-    }
-    
-    var top: NSLayoutConstraint!
-    var trailing: NSLayoutConstraint!
-    var bottom: NSLayoutConstraint!
-    var leading: NSLayoutConstraint!
+    @IBOutlet public weak var titleLabel: UILabel!
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setup()
+        setup()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.setup()
+        setup()
     }
     
     func setup() {
-        self.addSubview(self.titleLabel)
+        let internalView = self.viewFromNib()
+        internalView.isUserInteractionEnabled = false
+        internalView.clearAllBackgroundColors()
+        addSubviewsAndFill(internalView)
         
-        self.top = NSLayoutConstraint(item: self.titleLabel,
-                                      attribute: .top,
-                                      relatedBy: .equal,
-                                      toItem: self,
-                                      attribute: .top,
-                                      multiplier: 1,
-                                      constant: 0)
+        titleLabel.addObserver(self, forKeyPath: #keyPath(UILabel.text), options: .new, context: nil)
+    }
+    
+    open override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setup()
+    }
+    
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return titleLabel.sizeThatFits(size)
+    }
+    
+    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        guard keyPath == #keyPath(UILabel.text),
+            (object as? UILabel) == titleLabel
+            else {
+                return
+        }
         
-        self.trailing = NSLayoutConstraint(item: self.titleLabel,
-                                           attribute: .trailing,
-                                           relatedBy: .equal,
-                                           toItem: self,
-                                           attribute: .trailing,
-                                           multiplier: 1,
-                                           constant: 0)
-        
-        self.bottom = NSLayoutConstraint(item: self.titleLabel,
-                                           attribute: .bottom,
-                                           relatedBy: .equal,
-                                           toItem: self,
-                                           attribute: .bottom,
-                                           multiplier: 1,
-                                           constant: 0)
-        
-        self.leading = NSLayoutConstraint(item: self.titleLabel,
-                                           attribute: .leading,
-                                           relatedBy: .equal,
-                                           toItem: self,
-                                           attribute: .leading,
-                                           multiplier: 1,
-                                           constant: 0)
-        
-        self.addConstraints([self.top, self.trailing, self.bottom, self.leading])
+        titleLabel.sizeToFit()
+        sizeToFit()
     }
     
 }
