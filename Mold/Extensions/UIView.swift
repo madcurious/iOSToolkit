@@ -97,8 +97,12 @@ public extension UIView {
     }
     
     public func viewFromNib() -> UIView {
+        return self.viewFromNib(named: md_getClassName(self))
+    }
+    
+    public func viewFromNib(named: String) -> UIView {
         let bundle = Bundle(for: self.classForCoder)
-        let view = bundle.loadNibNamed(md_getClassName(self), owner: self, options: nil)!.last as! UIView
+        let view = bundle.loadNibNamed(named, owner: self, options: nil)!.last as! UIView
         return view
     }
     
