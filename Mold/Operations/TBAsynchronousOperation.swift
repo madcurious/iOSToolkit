@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class TBAsynchronousOperation<SourceType, ResultType, ErrorType: Error>: TBOperation<SourceType, ResultType, ErrorType> {
+open class TBAsynchronousOperation<ResultType, ErrorType>: TBOperation<ResultType, ErrorType> {
     
     open override var isConcurrent: Bool {
         return true

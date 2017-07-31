@@ -17,7 +17,7 @@ protocol TBOperationProtocol {
     
 }
 
-open class TBOperation<SourceType, ResultType, ErrorType: Error>: Operation, TBOperationProtocol {
+open class TBOperation<ResultType, ErrorType>: Operation, TBOperationProtocol {
     
     public indirect enum Result {
         case none
