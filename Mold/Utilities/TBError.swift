@@ -1,5 +1,5 @@
 //
-//  MDError.swift
+//  TBError.swift
 //  Mold
 //
 //  Created by Matt Quiros on 21/06/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct MDError: LocalizedError {
+public struct TBError: LocalizedError {
     
     let message: String
     

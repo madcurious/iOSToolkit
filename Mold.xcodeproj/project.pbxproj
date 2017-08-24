@@ -34,14 +34,14 @@
 		26020E8A1DA4BC0200C45902 /* MDDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E5E1DA4BC0200C45902 /* MDDispatcher.swift */; };
 		26020E8B1DA4BC0200C45902 /* MDScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E5F1DA4BC0200C45902 /* MDScreen.swift */; };
 		260DFDC91E55996100E3B92E /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260DFDC81E55996100E3B92E /* NSString.swift */; };
-		261462711EFA5F2F00321DFC /* MDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261462701EFA5F2F00321DFC /* MDError.swift */; };
+		261462711EFA5F2F00321DFC /* TBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261462701EFA5F2F00321DFC /* TBError.swift */; };
 		262731851DB2447800119F76 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262731841DB2447800119F76 /* NSManagedObjectContext.swift */; };
+		262B073D1F4ADB6200B7C45F /* TBLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B073C1F4ADB6200B7C45F /* TBLoadableView.swift */; };
 		262B47631F288D9500AC9E80 /* MDLabelButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 262B47621F288D9500AC9E80 /* MDLabelButton.xib */; };
 		262F31A41E0777D900D6E4CF /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262F31A31E0777D900D6E4CF /* Calendar.swift */; };
 		264EE4981EF8F652004011FE /* MDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DDE1EF8F32A002B9F33 /* MDButton.swift */; };
 		264EE4991EF8F655004011FE /* MDImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DDF1EF8F32A002B9F33 /* MDImageButton.swift */; };
 		264EE49A1EF8F655004011FE /* MDLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DE01EF8F32A002B9F33 /* MDLabelButton.swift */; };
-		264EE49B1EF8F659004011FE /* MDLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DE81EF8F32A002B9F33 /* MDLoadableView.swift */; };
 		264EE49C1EF8F659004011FE /* MDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DE91EF8F32A002B9F33 /* MDTableViewCell.swift */; };
 		2657331B1EDC7A7700AD1AB9 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2657331A1EDC7A7700AD1AB9 /* CGSize.swift */; };
 		2672FBF51DD3310000C8D34C /* NSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */; };
@@ -82,8 +82,9 @@
 		26020E5E1DA4BC0200C45902 /* MDDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDDispatcher.swift; sourceTree = "<group>"; };
 		26020E5F1DA4BC0200C45902 /* MDScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDScreen.swift; sourceTree = "<group>"; };
 		260DFDC81E55996100E3B92E /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
-		261462701EFA5F2F00321DFC /* MDError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDError.swift; sourceTree = "<group>"; };
+		261462701EFA5F2F00321DFC /* TBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBError.swift; sourceTree = "<group>"; };
 		262731841DB2447800119F76 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
+		262B073C1F4ADB6200B7C45F /* TBLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBLoadableView.swift; sourceTree = "<group>"; };
 		262B47621F288D9500AC9E80 /* MDLabelButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MDLabelButton.xib; sourceTree = "<group>"; };
 		262F31A31E0777D900D6E4CF /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		2657331A1EDC7A7700AD1AB9 /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		26609DE51EF8F32A002B9F33 /* MDResponsiveTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDResponsiveTextField.swift; sourceTree = "<group>"; };
 		26609DE61EF8F32A002B9F33 /* MDTextFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTextFieldButton.swift; sourceTree = "<group>"; };
 		26609DE71EF8F32A002B9F33 /* MDViewportBasedFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDViewportBasedFontSize.swift; sourceTree = "<group>"; };
-		26609DE81EF8F32A002B9F33 /* MDLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDLoadableView.swift; sourceTree = "<group>"; };
 		26609DE91EF8F32A002B9F33 /* MDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTableViewCell.swift; sourceTree = "<group>"; };
 		2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPersistentContainer.swift; sourceTree = "<group>"; };
 		26904D301C7757540094DA08 /* Mold.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mold.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,7 +200,7 @@
 				26020E5D1DA4BC0200C45902 /* Functions.swift */,
 				26020E5E1DA4BC0200C45902 /* MDDispatcher.swift */,
 				26020E5F1DA4BC0200C45902 /* MDScreen.swift */,
-				261462701EFA5F2F00321DFC /* MDError.swift */,
+				261462701EFA5F2F00321DFC /* TBError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -210,8 +210,8 @@
 			children = (
 				26609DDD1EF8F32A002B9F33 /* Buttons */,
 				26609DE11EF8F32A002B9F33 /* Experimental */,
-				26609DE81EF8F32A002B9F33 /* MDLoadableView.swift */,
 				26609DE91EF8F32A002B9F33 /* MDTableViewCell.swift */,
+				262B073C1F4ADB6200B7C45F /* TBLoadableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,6 +352,7 @@
 				262F31A41E0777D900D6E4CF /* Calendar.swift in Sources */,
 				262731851DB2447800119F76 /* NSManagedObjectContext.swift in Sources */,
 				264EE4981EF8F652004011FE /* MDButton.swift in Sources */,
+				262B073D1F4ADB6200B7C45F /* TBLoadableView.swift in Sources */,
 				26020E781DA4BC0200C45902 /* UIButton.swift in Sources */,
 				26020E7E1DA4BC0200C45902 /* MDFileManager.swift in Sources */,
 				26020E731DA4BC0200C45902 /* NSAttributedString.swift in Sources */,
@@ -359,7 +360,7 @@
 				26020E791DA4BC0200C45902 /* UIColor.swift in Sources */,
 				26F57AE91E66679A0034FF4B /* MDAsynchronousOperation.swift in Sources */,
 				26020E761DA4BC0200C45902 /* String.swift in Sources */,
-				261462711EFA5F2F00321DFC /* MDError.swift in Sources */,
+				261462711EFA5F2F00321DFC /* TBError.swift in Sources */,
 				26020E701DA4BC0200C45902 /* Date.swift in Sources */,
 				26020E841DA4BC0200C45902 /* MDURLOperation.swift in Sources */,
 				26020E6E1DA4BC0200C45902 /* NSDecimalNumber.swift in Sources */,
@@ -380,7 +381,6 @@
 				26020E721DA4BC0200C45902 /* MKMapView.swift in Sources */,
 				26B38A721F1F5FFB00592ABB /* TBOperation.swift in Sources */,
 				264EE49C1EF8F659004011FE /* MDTableViewCell.swift in Sources */,
-				264EE49B1EF8F659004011FE /* MDLoadableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +508,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattquiros.Mold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -528,7 +528,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattquiros.Mold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
