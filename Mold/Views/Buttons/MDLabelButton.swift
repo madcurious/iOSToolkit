@@ -23,8 +23,8 @@ open class MDLabelButton: MDButton {
         setup()
     }
     
-    override func setup() {
-        let internalView = self.viewFromNib()
+    func setup() {
+        let internalView = self.ownedViewFromNib()
         internalView.isUserInteractionEnabled = false
         internalView.clearAllBackgroundColors()
         addSubviewsAndFill(internalView)

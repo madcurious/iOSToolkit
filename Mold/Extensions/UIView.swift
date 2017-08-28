@@ -96,14 +96,14 @@ public extension UIView {
         return UINib(nibName: md_getClassName(self), bundle: Bundle.main)
     }
     
-    public func viewFromNib() -> UIView {
-        return self.viewFromNib(named: md_getClassName(self))
-    }
-    
-    public func viewFromNib(named: String) -> UIView {
+    public func ownedViewFromNib(nibName: String? = nil) -> UIView {
         let bundle = Bundle(for: self.classForCoder)
-        let view = bundle.loadNibNamed(named, owner: self, options: nil)!.last as! UIView
-        return view
+        return {
+            if let nibName = nibName {
+                return bundle.loadNibNamed(nibName, owner: self, options: nil)!.last as! UIView
+            }
+            return bundle.loadNibNamed(md_getClassName(self), owner: self, options: nil)!.last as! UIView
+        }()
     }
     
 }

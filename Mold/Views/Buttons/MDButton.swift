@@ -20,18 +20,23 @@ open class MDButton: UIControl {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        disableUserInteractionInSubviews()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+        disableUserInteractionInSubviews()
     }
     
-    func setup() {
+    internal func disableUserInteractionInSubviews() {
         subviews.forEach {
             $0.isUserInteractionEnabled = false
         }
+    }
+    
+    open override func didAddSubview(_ subview: UIView) {
+        super.didAddSubview(subview)
+        subview.isUserInteractionEnabled = false
     }
     
 }
