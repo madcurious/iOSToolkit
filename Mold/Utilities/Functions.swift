@@ -74,3 +74,20 @@ public func md_getClassName(_ object: AnyObject) -> String {
     let className = description.components(separatedBy: ".").last!
     return className
 }
+
+public func tb_errorMessage(from error: Error) -> String? {
+    if let tbError = error as? TBError {
+        return tbError.message
+    }
+    
+    if let localizedError = error as? LocalizedError {
+        if let errorDescription = localizedError.errorDescription {
+            return errorDescription
+        }
+        if let failureReason = localizedError.failureReason {
+            return failureReason
+        }
+    }
+    
+    return (error as NSError).localizedDescription
+}
