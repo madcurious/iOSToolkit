@@ -53,6 +53,7 @@
 		26A1907B1F83756F00A9BBF6 /* TBDateUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1907A1F83756F00A9BBF6 /* TBDateUtilsTest.swift */; };
 		26A1907D1F8375C300A9BBF6 /* TBDateUtilsTest_EndOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1907C1F8375C300A9BBF6 /* TBDateUtilsTest_EndOfDay.swift */; };
 		26A1907F1F8375EE00A9BBF6 /* TBDateUtilsTest_StartOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1907E1F8375EE00A9BBF6 /* TBDateUtilsTest_StartOfWeek.swift */; };
+		26A190841F83898000A9BBF6 /* TBDateUtilsTest_EndOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A190831F83898000A9BBF6 /* TBDateUtilsTest_EndOfWeek.swift */; };
 		26B38A721F1F5FFB00592ABB /* TBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B38A711F1F5FFB00592ABB /* TBOperation.swift */; };
 		26B38A741F1F635C00592ABB /* TBAsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B38A731F1F635C00592ABB /* TBAsynchronousOperation.swift */; };
 		26CC3DF31EE678930095374A /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC3DF21EE678930095374A /* UIScreen.swift */; };
@@ -126,6 +127,7 @@
 		26A1907A1F83756F00A9BBF6 /* TBDateUtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBDateUtilsTest.swift; sourceTree = "<group>"; };
 		26A1907C1F8375C300A9BBF6 /* TBDateUtilsTest_EndOfDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBDateUtilsTest_EndOfDay.swift; sourceTree = "<group>"; };
 		26A1907E1F8375EE00A9BBF6 /* TBDateUtilsTest_StartOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBDateUtilsTest_StartOfWeek.swift; sourceTree = "<group>"; };
+		26A190831F83898000A9BBF6 /* TBDateUtilsTest_EndOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBDateUtilsTest_EndOfWeek.swift; sourceTree = "<group>"; };
 		26B38A711F1F5FFB00592ABB /* TBOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBOperation.swift; sourceTree = "<group>"; };
 		26B38A731F1F635C00592ABB /* TBAsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBAsynchronousOperation.swift; sourceTree = "<group>"; };
 		26CC3DF21EE678930095374A /* UIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				26A1906F1F83739400A9BBF6 /* Info.plist */,
 				26A1907A1F83756F00A9BBF6 /* TBDateUtilsTest.swift */,
 				26A1907E1F8375EE00A9BBF6 /* TBDateUtilsTest_StartOfWeek.swift */,
+				26A190831F83898000A9BBF6 /* TBDateUtilsTest_EndOfWeek.swift */,
 			);
 			path = MoldTests;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 			files = (
 				26A1907B1F83756F00A9BBF6 /* TBDateUtilsTest.swift in Sources */,
 				26A1907F1F8375EE00A9BBF6 /* TBDateUtilsTest_StartOfWeek.swift in Sources */,
+				26A190841F83898000A9BBF6 /* TBDateUtilsTest_EndOfWeek.swift in Sources */,
 				26A1907D1F8375C300A9BBF6 /* TBDateUtilsTest_EndOfDay.swift in Sources */,
 				26A1906E1F83739400A9BBF6 /* MoldTests.swift in Sources */,
 			);
