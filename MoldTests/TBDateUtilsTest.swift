@@ -22,4 +22,13 @@ class TBDateUtilsTest: XCTestCase {
         return Calendar.current.dateComponents([.day, .month, .year, .hour, .minute, .second], from: date)
     }
     
+    func assertEqual(components: DateComponents, day: Int, month: Int, year: Int, hour: Int, minute: Int, second: Int) {
+        XCTAssertEqual(components.day, day)
+        XCTAssertEqual(components.month, month)
+        XCTAssertEqual(components.year, year)
+        XCTAssertEqual(components.hour, hour)
+        XCTAssertEqual(components.minute, minute)
+        XCTAssertEqual(components.second, second)
+    }
+    
 }
