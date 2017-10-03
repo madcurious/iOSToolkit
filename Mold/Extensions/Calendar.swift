@@ -10,7 +10,7 @@ import Foundation
 
 public extension Calendar {
     
-    func numberOfDaysInMonth(of date: Date) -> Int {
+    public func numberOfDaysInMonth(of date: Date) -> Int {
         return self.range(of: .day, in: .month, for: date)!.upperBound - 1
     }
     
