@@ -11,113 +11,77 @@ import Mold
 
 class TBDateUtilsTest_StartOfWeek: TBDateUtilsTest {
     
+    fileprivate func doTest(dateArgs: (day: Int, month: Int, year: Int),
+                            firstWeekday: Int,
+                            expected: (day: Int, month: Int, year: Int, hour: Int, minute: Int, second: Int)) {
+        let testDate = makeDate(day: dateArgs.day, month: dateArgs.month, year: dateArgs.year)
+        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: firstWeekday)
+        let components = significantComponents(from: resultDate)
+        assertEqual(components: components, day: expected.day, month: expected.month, year: expected.year, hour: expected.hour, minute: expected.minute, second: expected.second)
+    }
+    
     // MARK: - Dates within the month
     
     func test_dateIsSaturday_firstWeekdayIsSunday_shouldSucceed() {
-        let testDate = makeDate(day: 23, month: 9, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 1)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 17, month: 9, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (23, 9, 2017), firstWeekday: 1, expected: (17, 9, 2017, 0, 0, 0))
     }
     
     func test_dateIsSaturday_firstWeekdayIsMonday_shouldSucceed() {
-        let testDate = makeDate(day: 23, month: 9, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 2)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 18, month: 9, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (23, 9, 2017), firstWeekday: 2, expected: (18, 9, 2017, 0, 0, 0))
     }
     
     func test_dateIsSaturday_firstWeekdayIsSaturday_shouldSucceed() {
-        let testDate = makeDate(day: 23, month: 9, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 7)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 23, month: 9, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (23, 9, 2017), firstWeekday: 7, expected: (23, 9, 2017, 0, 0, 0))
     }
     
     // MARK: - Dates that cross the month
     
     func test_dateIsSunday_firstWeekdayIsSunday_isCrossingMonth_shouldSucceed() {
-        let testDate = makeDate(day: 1, month: 10, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 1)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 1, month: 10, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (1, 10, 2017), firstWeekday: 1, expected: (1, 10, 2017, 0, 0, 0))
     }
     
     func test_dateIsSunday_firstWeekdayIsMonday_isCrossingMonth_shouldSucceed() {
-        let testDate = makeDate(day: 1, month: 10, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 2)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 25, month: 9, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (1, 10, 2017), firstWeekday: 2, expected: (25, 9, 2017, 0, 0, 0))
     }
     
     func test_dateIsSunday_firstWeekdayIsSaturday_isCrossingMonth_shouldSucceed() {
-        let testDate = makeDate(day: 1, month: 10, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 7)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 30, month: 9, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (1, 10, 2017), firstWeekday: 7, expected: (30, 9, 2017, 0, 0, 0))
     }
     
     func test_dateIsMonday_firstWeekdayIsSunday_isCrossingMonth_shouldSucceed() {
-        let testDate = makeDate(day: 2, month: 10, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 1)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 1, month: 10, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (2, 10, 2017), firstWeekday: 1, expected: (1, 10, 2017, 0, 0, 0))
     }
     
     func test_dateIsMonday_firstWeekdayIsMonday_isCrossingMonth_shouldSucceed() {
-        let testDate = makeDate(day: 2, month: 10, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 2)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 2, month: 10, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (2, 10, 2017), firstWeekday: 2, expected: (2, 10, 2017, 0, 0, 0))
     }
     
     func test_dateIsMonday_firstWeekdayIsSaturday_isCrossingMonth_shouldSucceed() {
-        let testDate = makeDate(day: 2, month: 10, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 7)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 30, month: 9, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (2, 10, 2017), firstWeekday: 7, expected: (30, 9, 2017, 0, 0, 0))
     }
     
     func test_dateIsSaturday_firstWeekdayIsSunday_isCrossingMonth_shouldSucceed() {
-        let testDate = makeDate(day: 3, month: 6, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 1)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 28, month: 5, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (3, 6, 2017), firstWeekday: 1, expected: (28, 5, 2017, 0, 0, 0))
     }
     
     func test_dateIsSaturday_firstWeekdayIsMonday_isCrossingMonth_shouldSucceed() {
-        let testDate = makeDate(day: 3, month: 6, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 2)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 29, month: 5, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (3, 6, 2017), firstWeekday: 2, expected: (29, 5, 2017, 0, 0, 0))
     }
     
     func test_dateIsSaturday_firstWeekdayIsSaturday_isCrossingmonth_shouldSucceed() {
-        let testDate = makeDate(day: 3, month: 6, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 7)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 3, month: 6, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (3, 6, 2017), firstWeekday: 7, expected: (3, 6, 2017, 0, 0, 0))
     }
     
     func test_dateIsThursday_firstWeekdayIsSunday_isCrossingMonth_shouldSucceed() {
-        let testDate = makeDate(day: 1, month: 6, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 1)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 28, month: 5, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (1, 6, 2017), firstWeekday: 1, expected: (28, 5, 2017, 0, 0, 0))
     }
     
     func test_dateIsThursday_firstWeekdayIsMonday_isCrossingMonth_shouldSucceed() {
-        let testDate = makeDate(day: 1, month: 6, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 2)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 29, month: 5, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (1, 6, 2017), firstWeekday: 2, expected: (29, 5, 2017, 0, 0, 0))
     }
     
     func test_dateIsThursday_firstWeekdayIsSaturday_isCrossingMonth_shouldSucceed() {
-        let testDate = makeDate(day: 1, month: 6, year: 2017)
-        let resultDate = TBDateUtils.startOfWeek(for: testDate, firstWeekday: 7)
-        let comps = significantComponents(from: resultDate)
-        assertEqual(components: comps, day: 27, month: 5, year: 2017, hour: 0, minute: 0, second: 0)
+        doTest(dateArgs: (1, 6, 2017), firstWeekday: 7, expected: (27, 5, 2017, 0, 0, 0))
     }
     
 }
