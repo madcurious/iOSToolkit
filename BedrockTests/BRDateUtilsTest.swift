@@ -1,6 +1,6 @@
 //
-//  TBDateUtilsTest.swift
-//  MoldTests
+//  BRDateUtilsTest.swift
+//  BedrockTests
 //
 //  Created by Matt Quiros on 03/10/2017.
 //  Copyright © 2017 Matt Quiros. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class TBDateUtilsTest: XCTestCase {
+class BRDateUtilsTest: XCTestCase {
     
     func makeDate(day: Int, month: Int, year: Int) -> Date {
         var components = DateComponents()

@@ -1,19 +1,19 @@
 //
-//  TBDateUtilsTest_StartOfMonth.swift
-//  MoldTests
+//  BRDateUtilsTest_StartOfMonth.swift
+//  BedrockTests
 //
 //  Created by Matt Quiros on 03/10/2017.
 //  Copyright © 2017 Matt Quiros. All rights reserved.
 //
 
 import XCTest
-import Mold
+import Bedrock
 
-class TBDateUtilsTest_StartOfMonth: TBDateUtilsTest {
+class BRDateUtilsTest_StartOfMonth: BRDateUtilsTest {
     
     fileprivate func doTest(date: (day: Int, month: Int, year: Int), expected: (day: Int, month: Int, year: Int)) {
         let testDate = makeDate(day: date.day, month: date.month, year: date.year)
-        let resultDate = TBDateUtils.startOfMonth(for: testDate)
+        let resultDate = BRDateUtils.startOfMonth(for: testDate)
         let components = significantComponents(from: resultDate)
         assertEqual(components: components, day: expected.day, month: expected.month, year: expected.year, hour: 0, minute: 0, second: 0)
     }

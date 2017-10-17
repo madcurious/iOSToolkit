@@ -1,6 +1,6 @@
 //
 //  BRAlertDialog.swift
-//  Mold
+//  Bedrock
 //
 //  Created by Matt Quiros on 8/3/15.
 //  Copyright © 2015 Matt Quiros. All rights reserved.
@@ -14,7 +14,7 @@ open class BRAlertDialog {
         title: String?,
         message: String?,
         cancelButtonTitle: String) {
-        MDDispatcher.asyncRunInMainThread {
+        BRDispatch.asyncRunInMain {
             let alertController = UIAlertController(title: title,
                                                     message: message,
                                                     preferredStyle: .alert)

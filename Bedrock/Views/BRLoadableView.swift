@@ -1,6 +1,6 @@
 //
 //  BRLoadableView.swift
-//  Mold
+//  Bedrock
 //
 //  Created by Matt Quiros on 21/08/2017.
 //  Copyright © 2017 Matt Quiros. All rights reserved.

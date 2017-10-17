@@ -1,6 +1,6 @@
 //
-//  MDDispatcher.swift
-//  Mold
+//  BRDispatch.swift
+//  Bedrock
 //
 //  Created by Matt Quiros on 4/23/15.
 //  Copyright (c) 2015 Matt Quiros. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class MDDispatcher {
+open class BRDispatch {
     
     /**
     Executes the specified block in the main thread and waits until it returns.
@@ -25,7 +25,7 @@ open class MDDispatcher {
         }
     }
     
-    open class func asyncRunInMainThread(_ block: @escaping () -> Void) {
+    open class func asyncRunInMain(_ block: @escaping () -> Void) {
         if Thread.isMainThread {
             block()
         } else {
@@ -35,7 +35,7 @@ open class MDDispatcher {
         }
     }
     
-    open class func asyncRunInBackgroundThread(_ block: @escaping () -> Void) {
+    open class func asyncRunInBackground(_ block: @escaping () -> Void) {
         DispatchQueue.global().async {
             block()
         }

@@ -1,6 +1,6 @@
 //
 //  MDOperation.swift
-//  Mold
+//  Bedrock
 //
 //  Created by Matt Quiros on 01/02/2016.
 //  Copyright © 2016 Matt Quiros. All rights reserved.
@@ -104,7 +104,7 @@ open class MDOperation<ResultType>: Operation {
         }
         
         if self.runStartBlockInMainThread == true {
-            MDDispatcher.asyncRunInMainThread {
+            BRDispatch.asyncRunInMain {
                 startBlock()
             }
         } else {
@@ -119,7 +119,7 @@ open class MDOperation<ResultType>: Operation {
         }
         
         if self.runSuccessBlockInMainThread == true {
-            MDDispatcher.syncRunInMainThread {
+            BRDispatch.syncRunInMainThread {
                 successBlock(result)
             }
         } else {
@@ -136,7 +136,7 @@ open class MDOperation<ResultType>: Operation {
         }
         
         if self.runFailureBlockInMainThread == true {
-            MDDispatcher.asyncRunInMainThread {
+            BRDispatch.asyncRunInMain {
                 failureBlock(error)
             }
         } else {

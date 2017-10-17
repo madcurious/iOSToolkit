@@ -1,6 +1,6 @@
 //
 //  BRErrorDialog.swift
-//  Mold
+//  Bedrock
 //
 //  Created by Matt Quiros on 4/25/15.
 //  Copyright (c) 2015 Matt Quiros. All rights reserved.
@@ -19,7 +19,7 @@ public final class BRErrorDialog {
         }
         alertController.addAction(cancelButtonAction)
         
-        MDDispatcher.asyncRunInMainThread {
+        BRDispatch.asyncRunInMain {
             presentingViewController.present(alertController, animated: true, completion: nil)
         }
     }

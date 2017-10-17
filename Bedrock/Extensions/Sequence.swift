@@ -1,6 +1,6 @@
 //
 //  Sequence.swift
-//  Mold
+//  Bedrock
 //
 //  Created by Matt Quiros on 07/06/2016.
 //  Copyright © 2016 Matt Quiros. All rights reserved.

@@ -1,6 +1,6 @@
 //
-//  TBDateUtils.swift
-//  Mold
+//  BRDateUtils.swift
+//  Bedrock
 //
 //  Created by Matt Quiros on 03/10/2017.
 //  Copyright © 2017 Matt Quiros. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class TBDateUtils {
+public final class BRDateUtils {
     
     public class func isSameDay(date1: Date, date2: Date, inCalendar calendar: Calendar) -> Bool {
         if calendar.compare(date1, to: date2, toGranularity: .day) == .orderedSame {

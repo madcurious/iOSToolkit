@@ -1,6 +1,6 @@
 //
 //  BROperation.swift
-//  Mold
+//  Bedrock
 //
 //  Created by Matt Quiros on 19/07/2017.
 //  Copyright © 2017 Matt Quiros. All rights reserved.
@@ -25,7 +25,7 @@ open class BROperation<ResultType, ErrorType>: Operation, BROperationProtocol {
         case error(ErrorType)
     }
     
-    public typealias TBOperationCompletionBlock = (BROperation.Result) -> Void
+    public typealias BROperationCompletionBlock = (BROperation.Result) -> Void
     
     var failed = false
     var internalExecuting = false
@@ -68,7 +68,7 @@ open class BROperation<ResultType, ErrorType>: Operation, BROperationProtocol {
         return hasFailedDependencies
     }
     
-    public init(completionBlock: TBOperationCompletionBlock?) {
+    public init(completionBlock: BROperationCompletionBlock?) {
         super.init()
         
         guard let completionBlock = completionBlock

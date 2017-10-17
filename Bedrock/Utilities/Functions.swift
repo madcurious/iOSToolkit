@@ -1,6 +1,6 @@
 //
 //  Functions.swift
-//  Mold
+//  Bedrock
 //
 //  Created by Matt Quiros on 5/22/15.
 //  Copyright (c) 2015 Matt Quiros. All rights reserved.
@@ -76,7 +76,7 @@ public func md_getClassName(_ object: AnyObject) -> String {
 }
 
 public func tb_errorMessage(from error: Error) -> String? {
-    if let tbError = error as? TBError {
+    if let tbError = error as? BRError {
         return tbError.message
     }
     

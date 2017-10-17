@@ -1,6 +1,6 @@
 //
 //  MDTextFieldButton.swift
-//  Mold
+//  Bedrock
 //
 //  Created by Matt Quiros on 16/02/2017.
 //  Copyright © 2017 Matt Quiros. All rights reserved.
@@ -9,9 +9,9 @@
 import UIKit
 
 /**
- An `MDButton` that handles the display of a a placeholder text and an actual value.
+ An `BRButton` that handles the display of a a placeholder text and an actual value.
  */
-public class MDTextFieldButton: MDButton {
+public class MDTextFieldButton: BRButton {
     
     public var font: UIFont {
         get {
