@@ -24,7 +24,7 @@ open class BRLabelButton: BRButton {
     }
     
     func setup() {
-        let internalView = self.ownedViewFromNib()
+        let internalView = self.viewFromOwnedNib()
         internalView.isUserInteractionEnabled = false
         internalView.clearAllBackgroundColors()
         addSubviewsAndFill(internalView)

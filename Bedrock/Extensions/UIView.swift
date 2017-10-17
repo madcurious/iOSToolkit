@@ -96,7 +96,7 @@ public extension UIView {
         return UINib(nibName: md_getClassName(self), bundle: Bundle.main)
     }
     
-    public func ownedViewFromNib(nibName: String? = nil) -> UIView {
+    public func viewFromOwnedNib(named nibName: String? = nil) -> UIView {
         let bundle = Bundle(for: self.classForCoder)
         return {
             if let nibName = nibName {
