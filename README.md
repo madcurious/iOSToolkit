@@ -16,13 +16,9 @@ $ git submodule add https://github.com/mattquiros/Bedrock.git
 Next:
 
 * Open your app's Xcode project.
-* Expand the folder where you cloned Mold.
-* In the `Bedrock` group, keep only `Bedrock.xcodeproj` and remove references to the following files, **but DO NOT move them to the Trash:**
-    * .gitignore
-    * Mold/
-    * Mold/README.md
-* In the project target's *Build Phases > Target Dependencies*, click on the plus sign and add `Bedrock.framework`.
-* In the project target's *General* tab, scroll to `Embedded Binaries`, click on the plus sign, and add `Bedrock.framework`.
+* Add `Bedrock.xcodeproj` to your app's Xcode project.
+* Go to your main target's `Build Phases`.
+* In `Link Binary With Libraries` and `Embed Frameworks`, add `Bedrock.framework`.
 
 Updating is simply a matter of going to the Bedrock folder and doing a `git pull` on the `master` branch.
 
