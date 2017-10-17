@@ -1,5 +1,5 @@
 //
-//  MDErrorDialog.swift
+//  BRErrorDialog.swift
 //  Mold
 //
 //  Created by Matt Quiros on 4/25/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class MDErrorDialog {
+public final class BRErrorDialog {
     
     public class func showError(_ error: Error, from presentingViewController: UIViewController, dialogTitle: String? = nil, cancelButtonTitle: String = "OK") {
         let message = error.localizedDescription

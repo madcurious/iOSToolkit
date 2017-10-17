@@ -1,5 +1,5 @@
 //
-//  MDImageButton.swift
+//  BRImageButton.swift
 //  Mold
 //
 //  Created by Matt Quiros on 16/02/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MDImageButton: MDButton {
+public class BRImageButton: BRButton {
     
     private let imageView = UIImageView(frame: CGRect.zero)
     

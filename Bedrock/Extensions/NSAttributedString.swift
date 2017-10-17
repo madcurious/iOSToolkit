@@ -6,7 +6,7 @@
 //  Copyright © 2016 Matt Quiros. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension NSAttributedString {
     

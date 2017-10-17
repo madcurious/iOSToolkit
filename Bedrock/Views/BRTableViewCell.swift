@@ -13,7 +13,7 @@ A subclass of `UITableViewCell` that preserves its subviews' background colors
 even when the cell is selected of highlighted. Set the background colors in
 `applyConstantColors()`, which is invoked upon cell selection or highlight.
 */
-open class MDTableViewCell: UITableViewCell {
+open class BRTableViewCell: UITableViewCell {
     
     open func applyConstantColors() {
         

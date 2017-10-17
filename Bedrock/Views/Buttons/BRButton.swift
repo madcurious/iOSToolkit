@@ -1,5 +1,5 @@
 //
-//  MDButton.swift
+//  BRButton.swift
 //  Mold
 //
 //  Created by Matt Quiros on 6/8/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class MDButton: UIControl {
+open class BRButton: UIControl {
     
     open override var isHighlighted: Bool {
         didSet {

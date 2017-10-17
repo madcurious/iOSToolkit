@@ -1,5 +1,5 @@
 //
-//  TBLoadableView.swift
+//  BRLoadableView.swift
 //  Mold
 //
 //  Created by Matt Quiros on 21/08/2017.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-public enum TBLoadableViewState: Equatable {
+public enum BRLoadableViewState: Equatable {
     
     case initial, loading, data, noData(Any?), error(Error)
     
-    public static func ==(lhs: TBLoadableViewState, rhs: TBLoadableViewState) -> Bool {
+    public static func ==(lhs: BRLoadableViewState, rhs: BRLoadableViewState) -> Bool {
         switch (lhs, rhs) {
         case (.initial, .initial),
              (.loading, .loading),
@@ -28,8 +28,8 @@ public enum TBLoadableViewState: Equatable {
     
 }
 
-public protocol TBLoadableView {
+public protocol BRLoadableView {
     
-    var state: TBLoadableViewState { get set }
+    var state: BRLoadableViewState { get set }
     
 }

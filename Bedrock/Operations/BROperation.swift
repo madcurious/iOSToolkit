@@ -1,5 +1,5 @@
 //
-//  TBOperation.swift
+//  BROperation.swift
 //  Mold
 //
 //  Created by Matt Quiros on 19/07/2017.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-/// A necessary protocol to which all `TBOperation`s must internally conform so that
+/// A necessary protocol to which all `BROperation`s must internally conform so that
 /// the `hasFailedDependencies` computed property can be implemented.
-protocol TBOperationProtocol {
+protocol BROperationProtocol {
     
     /// Must be set to true if the operation's `result` property is set to `.error`.
     var failed: Bool { get set }
     
 }
 
-open class TBOperation<ResultType, ErrorType>: Operation, TBOperationProtocol {
+open class BROperation<ResultType, ErrorType>: Operation, BROperationProtocol {
     
     public indirect enum Result {
         case none
@@ -25,7 +25,7 @@ open class TBOperation<ResultType, ErrorType>: Operation, TBOperationProtocol {
         case error(ErrorType)
     }
     
-    public typealias TBOperationCompletionBlock = (TBOperation.Result) -> Void
+    public typealias TBOperationCompletionBlock = (BROperation.Result) -> Void
     
     var failed = false
     var internalExecuting = false
@@ -39,7 +39,7 @@ open class TBOperation<ResultType, ErrorType>: Operation, TBOperationProtocol {
         return self.internalFinished
     }
     
-    open var result = TBOperation.Result.none {
+    open var result = BROperation.Result.none {
         didSet {
             switch result {
             case .error(_):
@@ -51,15 +51,15 @@ open class TBOperation<ResultType, ErrorType>: Operation, TBOperationProtocol {
     }
     
     /**
-     Checks whether the operation has any dependencies that inherit from `TBOperation` and whose `result` is `.error`.
+     Checks whether the operation has any dependencies that inherit from `BROperation` and whose `result` is `.error`.
      
-     Returns `true` if at least one of the dependencies is a `TBOperation` and the `result` is `.error`.
-     Returns `false` if none of the dependencies is a `TBOperation`, or none of the `TBOperation` dependencies
+     Returns `true` if at least one of the dependencies is a `BROperation` and the `result` is `.error`.
+     Returns `false` if none of the dependencies is a `BROperation`, or none of the `BROperation` dependencies
      have `.error` for a result.
      */
     public var hasFailedDependencies: Bool {
         let hasFailedDependencies = self.dependencies.contains(where: {
-            if let operation = $0 as? TBOperationProtocol,
+            if let operation = $0 as? BROperationProtocol,
                 operation.failed == true {
                 return true
             }

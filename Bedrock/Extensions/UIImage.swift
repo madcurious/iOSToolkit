@@ -36,7 +36,7 @@ public extension UIImage {
         return image
     }
     
-    public class func templateNamed(_ name: String) -> UIImage? {
+    public class func template(named name: String) -> UIImage? {
         return UIImage(named: name)?.withRenderingMode(.alwaysTemplate)
     }
     

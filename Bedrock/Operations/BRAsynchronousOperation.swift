@@ -1,5 +1,5 @@
 //
-//  TBAsynchronousOperation.swift
+//  BRAsynchronousOperation.swift
 //  Mold
 //
 //  Created by Matt Quiros on 19/07/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class TBAsynchronousOperation<ResultType, ErrorType>: TBOperation<ResultType, ErrorType> {
+open class BRAsynchronousOperation<ResultType, ErrorType>: BROperation<ResultType, ErrorType> {
     
     open override var isConcurrent: Bool {
         return true

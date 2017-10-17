@@ -1,14 +1,14 @@
 //
-//  MDConfirmDialog.swift
+//  BRConfirmDialog.swift
 //  Mold
 //
 //  Created by Matt Quiros on 5/8/15.
 //  Copyright (c) 2015 Matt Quiros. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-open class MDConfirmDialog {
+open class BRConfirmDialog {
     
     open class func showInPresenter(_ presenter: UIViewController,
         title: String = "Confirm",

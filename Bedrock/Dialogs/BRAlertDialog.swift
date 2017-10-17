@@ -1,14 +1,14 @@
 //
-//  MDAlertDialog.swift
+//  BRAlertDialog.swift
 //  Mold
 //
 //  Created by Matt Quiros on 8/3/15.
 //  Copyright © 2015 Matt Quiros. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-open class MDAlertDialog {
+open class BRAlertDialog {
     
     open class func showInPresenter(_ presenter: UIViewController,
         title: String?,

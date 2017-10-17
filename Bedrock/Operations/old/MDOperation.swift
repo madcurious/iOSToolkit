@@ -6,7 +6,7 @@
 //  Copyright © 2016 Matt Quiros. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /**
  An `NSOperation` subclass that has callback blocks which may be invoked at different
@@ -90,7 +90,7 @@ open class MDOperation<ResultType>: Operation {
     @discardableResult
     open func presentErrorDialogOnFailure(from presentingViewController: UIViewController) -> Self {
         self.failureBlock = {[unowned presentingViewController] (error) in
-            MDErrorDialog.showError(error, from: presentingViewController)
+            BRErrorDialog.showError(error, from: presentingViewController)
         }
         return self
     }

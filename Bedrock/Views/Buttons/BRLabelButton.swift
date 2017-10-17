@@ -1,5 +1,5 @@
 //
-//  MDLabelButton.swift
+//  BRLabelButton.swift
 //  Mold
 //
 //  Created by Matt Quiros on 16/02/2017.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-open class MDLabelButton: MDButton {
+open class BRLabelButton: BRButton {
     
     @IBOutlet public weak var titleLabel: UILabel!
     
