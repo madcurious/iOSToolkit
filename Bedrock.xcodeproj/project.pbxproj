@@ -44,8 +44,6 @@
 		264EE4991EF8F655004011FE /* BRImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DDF1EF8F32A002B9F33 /* BRImageButton.swift */; };
 		264EE49A1EF8F655004011FE /* BRLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DE01EF8F32A002B9F33 /* BRLabelButton.swift */; };
 		264EE49C1EF8F659004011FE /* BRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DE91EF8F32A002B9F33 /* BRTableViewCell.swift */; };
-		26904ED51C7785B00094DA08 /* mold-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED41C7785B00094DA08 /* mold-banner.png */; };
-		26904ED71C778A120094DA08 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26904ED61C778A120094DA08 /* LICENSE */; };
 		26A190661F836B0A00A9BBF6 /* TBDateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A190651F836B0A00A9BBF6 /* TBDateUtils.swift */; };
 		26A1906E1F83739400A9BBF6 /* MoldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1906D1F83739400A9BBF6 /* MoldTests.swift */; };
 		26A190701F83739400A9BBF6 /* Bedrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26904D301C7757540094DA08 /* Bedrock.framework */; };
@@ -116,8 +114,6 @@
 		2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPersistentContainer.swift; sourceTree = "<group>"; };
 		26904D301C7757540094DA08 /* Bedrock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bedrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26904E3F1C77747C0094DA08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		26904ED41C7785B00094DA08 /* mold-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mold-banner.png"; sourceTree = "<group>"; };
-		26904ED61C778A120094DA08 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		26A190651F836B0A00A9BBF6 /* TBDateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBDateUtils.swift; sourceTree = "<group>"; };
 		26A1906B1F83739300A9BBF6 /* BedrockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BedrockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A1906D1F83739400A9BBF6 /* MoldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoldTests.swift; sourceTree = "<group>"; };
@@ -282,8 +278,6 @@
 		26904D261C7757540094DA08 = {
 			isa = PBXGroup;
 			children = (
-				26904ED61C778A120094DA08 /* LICENSE */,
-				26904ED41C7785B00094DA08 /* mold-banner.png */,
 				26904E3F1C77747C0094DA08 /* README.md */,
 				26020E351DA4BC0200C45902 /* Bedrock */,
 				26A1906C1F83739400A9BBF6 /* BedrockTests */,
@@ -408,8 +402,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				262B47631F288D9500AC9E80 /* BRLabelButton.xib in Resources */,
-				26904ED71C778A120094DA08 /* LICENSE in Resources */,
-				26904ED51C7785B00094DA08 /* mold-banner.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
