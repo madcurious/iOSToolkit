@@ -1,46 +1,62 @@
-![Mold](mold-banner.png)
+# Bedrock
 
-Mold is a Swift 4 framework of boilerplate code for iOS apps.
+Bedrock is a Swift framework of boilerplate code for building iOS apps.
 
-## IMPORTANT
-
-Updates to Mold often break source. I refactor mercilessly. I have no plans of providing a smooth upgrade path since that takes a lot of work and I have a life to live. This project is open-source simply to serve as a starting template. You may modify it as you wish.
-
-If you don't want updates to break your code, fork Mold to your Github account and `git clone` your fork instead.
+**IMPORTANT:** As this framework is built for my personal use, updates break source and I have no plans of providing a smooth upgrade path. If you wish to use this library as a template, fork it clone your fork instead.
 
 ## Installation
 
-Currently, Mold can only be added to an Xcode project as a git submodule.
+Bedrock can be added to an Xcode project as a git submodule.
 
 ```
-$ cd MyApp
-$ git submodule add https://github.com/mattquiros/Mold.git
+$ cd YOUR_APP_FOLDER
+$ git submodule add https://github.com/mattquiros/Bedrock.git
 ```
 
 Next:
 
 * Open your app's Xcode project.
 * Expand the folder where you cloned Mold.
-* In the `Mold` group, keep only `Mold.xcodeproj` and remove references to the following files, **but DO NOT move them to the Trash:**
+* In the `Bedrock` group, keep only `Bedrock.xcodeproj` and remove references to the following files, **but DO NOT move them to the Trash:**
     * .gitignore
     * Mold/
     * Mold/README.md
-* In the project target's *Build Phases > Target Dependencies*, click on the plus sign and add `Mold.framework`.
-* In the project target's *General* tab, scroll to `Embedded Binaries`, click on the plus sign, and add `Mold.framework`.
+* In the project target's *Build Phases > Target Dependencies*, click on the plus sign and add `Bedrock.framework`.
+* In the project target's *General* tab, scroll to `Embedded Binaries`, click on the plus sign, and add `Bedrock.framework`.
 
-Updating is simply a matter of going to the Mold folder and doing a `git pull` on the `master` branch.
+Updating is simply a matter of going to the Bedrock folder and doing a `git pull` on the `master` branch.
 
 ```
-$ cd MyApp/Mold
+$ cd MyApp/Bedrock
 $ git pull
 ```
 
-To use Mold in a Swift file, just import.
+To use Bedrock in a Swift file, just import.
 
 ```
-import Mold
+import Bedrock
 ```
 
 ## License
 
-Mold is released under the MIT License. See LICENSE for details.
+The MIT License (MIT)
+
+Copyright (c) [2016] [Matt Quiros]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
