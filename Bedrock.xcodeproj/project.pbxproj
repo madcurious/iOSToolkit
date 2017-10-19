@@ -44,7 +44,7 @@
 		264C48241F98993400188D49 /* BRListItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264C48211F98993400188D49 /* BRListItemView.xib */; };
 		264C48251F98993400188D49 /* BRListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C48221F98993400188D49 /* BRListItemTableViewCell.swift */; };
 		264C48261F98993400188D49 /* BRListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C48231F98993400188D49 /* BRListItemView.swift */; };
-		264C48281F989A3B00188D49 /* BRHttpImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C48271F989A3B00188D49 /* BRHttpImageRequest.swift */; };
+		264C48291F989C7700188D49 /* BRHttpImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C48271F989A3B00188D49 /* BRHttpImageRequest.swift */; };
 		264EE4981EF8F652004011FE /* BRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DDE1EF8F32A002B9F33 /* BRButton.swift */; };
 		264EE4991EF8F655004011FE /* BRImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DDF1EF8F32A002B9F33 /* BRImageButton.swift */; };
 		264EE49A1EF8F655004011FE /* BRLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DE01EF8F32A002B9F33 /* BRLabelButton.swift */; };
@@ -466,6 +466,7 @@
 				264AE1521F95ED8300F87C55 /* CharacterSet.swift in Sources */,
 				26A190661F836B0A00A9BBF6 /* BRDateUtils.swift in Sources */,
 				264AE1561F95ED8300F87C55 /* NSLayoutConstraint.swift in Sources */,
+				264C48291F989C7700188D49 /* BRHttpImageRequest.swift in Sources */,
 				26B38A721F1F5FFB00592ABB /* BROperation.swift in Sources */,
 				264AE16D1F95F28500F87C55 /* MDOperation.swift in Sources */,
 				264AE15D1F95ED8300F87C55 /* UIView.swift in Sources */,

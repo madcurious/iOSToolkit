@@ -106,16 +106,6 @@ public extension UIView {
         }()
     }
     
-    public func viewFromOwnedNib(named nibName: String? = nil) -> UIView {
-        let bundle = Bundle(for: self.classForCoder)
-        return {
-            if let nibName = nibName {
-                return bundle.loadNibNamed(nibName, owner: self, options: nil)!.last as! UIView
-            }
-            return bundle.loadNibNamed(md_getClassName(self), owner: self, options: nil)!.last as! UIView
-            }()
-    }
-    
 }
 
 // MARK: - Private functions
