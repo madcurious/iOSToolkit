@@ -52,7 +52,7 @@ class BRListItemView: UIView {
         queue.cancelAllOperations()
         currentUrlString = urlString
         
-        let fetchOperation = BRHttpImageRequest(urlString: urlString) { [weak self] (result) in
+        let imageRequest = BRHttpImageRequest(urlString: urlString) { [weak self] (result) in
             guard let weakSelf = self
                 else {
                     return
@@ -65,7 +65,7 @@ class BRListItemView: UIView {
             }
         }
         
-        queue.addOperation(fetchOperation)
+        queue.addOperation(imageRequest)
     }
     
 }
