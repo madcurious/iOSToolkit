@@ -39,6 +39,12 @@
 		264AE16C1F95F28500F87C55 /* MDAsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AE1691F95F28500F87C55 /* MDAsynchronousOperation.swift */; };
 		264AE16D1F95F28500F87C55 /* MDOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AE16A1F95F28500F87C55 /* MDOperation.swift */; };
 		264AE16E1F95F28500F87C55 /* MDURLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AE16B1F95F28500F87C55 /* MDURLOperation.swift */; };
+		264C48181F98961700188D49 /* BRDefaultLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C48171F98961700188D49 /* BRDefaultLoadableView.swift */; };
+		264C481A1F98963200188D49 /* BRDefaultLoadableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264C48191F98963200188D49 /* BRDefaultLoadableView.xib */; };
+		264C48241F98993400188D49 /* BRListItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264C48211F98993400188D49 /* BRListItemView.xib */; };
+		264C48251F98993400188D49 /* BRListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C48221F98993400188D49 /* BRListItemTableViewCell.swift */; };
+		264C48261F98993400188D49 /* BRListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C48231F98993400188D49 /* BRListItemView.swift */; };
+		264C48281F989A3B00188D49 /* BRHttpImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C48271F989A3B00188D49 /* BRHttpImageRequest.swift */; };
 		264EE4981EF8F652004011FE /* BRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DDE1EF8F32A002B9F33 /* BRButton.swift */; };
 		264EE4991EF8F655004011FE /* BRImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DDF1EF8F32A002B9F33 /* BRImageButton.swift */; };
 		264EE49A1EF8F655004011FE /* BRLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DE01EF8F32A002B9F33 /* BRLabelButton.swift */; };
@@ -97,6 +103,12 @@
 		264AE1691F95F28500F87C55 /* MDAsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAsynchronousOperation.swift; sourceTree = "<group>"; };
 		264AE16A1F95F28500F87C55 /* MDOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDOperation.swift; sourceTree = "<group>"; };
 		264AE16B1F95F28500F87C55 /* MDURLOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDURLOperation.swift; sourceTree = "<group>"; };
+		264C48171F98961700188D49 /* BRDefaultLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRDefaultLoadableView.swift; sourceTree = "<group>"; };
+		264C48191F98963200188D49 /* BRDefaultLoadableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BRDefaultLoadableView.xib; sourceTree = "<group>"; };
+		264C48211F98993400188D49 /* BRListItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BRListItemView.xib; sourceTree = "<group>"; };
+		264C48221F98993400188D49 /* BRListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRListItemTableViewCell.swift; sourceTree = "<group>"; };
+		264C48231F98993400188D49 /* BRListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRListItemView.swift; sourceTree = "<group>"; };
+		264C48271F989A3B00188D49 /* BRHttpImageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRHttpImageRequest.swift; sourceTree = "<group>"; };
 		2657331A1EDC7A7700AD1AB9 /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
 		26609DDE1EF8F32A002B9F33 /* BRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRButton.swift; sourceTree = "<group>"; };
 		26609DDF1EF8F32A002B9F33 /* BRImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRImageButton.swift; sourceTree = "<group>"; };
@@ -207,6 +219,7 @@
 		26020E521DA4BC0200C45902 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				264C48271F989A3B00188D49 /* BRHttpImageRequest.swift */,
 				264AE1681F95F28500F87C55 /* old */,
 				26B38A711F1F5FFB00592ABB /* BROperation.swift */,
 				26B38A731F1F635C00592ABB /* BRAsynchronousOperation.swift */,
@@ -238,10 +251,15 @@
 		26609DDC1EF8F32A002B9F33 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				264C48221F98993400188D49 /* BRListItemTableViewCell.swift */,
+				264C48231F98993400188D49 /* BRListItemView.swift */,
+				264C48211F98993400188D49 /* BRListItemView.xib */,
 				26609DDD1EF8F32A002B9F33 /* Buttons */,
 				26609DE11EF8F32A002B9F33 /* Experimental */,
 				26609DE91EF8F32A002B9F33 /* BRTableViewCell.swift */,
 				262B073C1F4ADB6200B7C45F /* BRLoadableView.swift */,
+				264C48171F98961700188D49 /* BRDefaultLoadableView.swift */,
+				264C48191F98963200188D49 /* BRDefaultLoadableView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -395,6 +413,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264C48241F98993400188D49 /* BRListItemView.xib in Resources */,
+				264C481A1F98963200188D49 /* BRDefaultLoadableView.xib in Resources */,
 				262B47631F288D9500AC9E80 /* BRLabelButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +439,7 @@
 				264AE1571F95ED8300F87C55 /* Sequence.swift in Sources */,
 				264AE1591F95ED8300F87C55 /* UIAlertController.swift in Sources */,
 				264AE15B1F95ED8300F87C55 /* UIColor.swift in Sources */,
+				264C48181F98961700188D49 /* BRDefaultLoadableView.swift in Sources */,
 				264AE1601F95ED8300F87C55 /* NSPersistentContainer.swift in Sources */,
 				26020E6A1DA4BC0200C45902 /* BRConfirmDialog.swift in Sources */,
 				264AE16C1F95F28500F87C55 /* MDAsynchronousOperation.swift in Sources */,
@@ -427,11 +448,13 @@
 				26020E8A1DA4BC0200C45902 /* BRDispatch.swift in Sources */,
 				264EE4991EF8F655004011FE /* BRImageButton.swift in Sources */,
 				264AE1631F95ED8300F87C55 /* CGSize.swift in Sources */,
+				264C48261F98993400188D49 /* BRListItemView.swift in Sources */,
 				264AE15C1F95ED8300F87C55 /* UIImage.swift in Sources */,
 				264EE4981EF8F652004011FE /* BRButton.swift in Sources */,
 				264AE15E1F95ED8300F87C55 /* UIViewController.swift in Sources */,
 				262B073D1F4ADB6200B7C45F /* BRLoadableView.swift in Sources */,
 				26020E7E1DA4BC0200C45902 /* MDFileManager.swift in Sources */,
+				264C48251F98993400188D49 /* BRListItemTableViewCell.swift in Sources */,
 				264AE1531F95ED8300F87C55 /* Double.swift in Sources */,
 				264AE1621F95ED8300F87C55 /* NSString.swift in Sources */,
 				264AE1551F95ED8300F87C55 /* NSAttributedString.swift in Sources */,
@@ -523,7 +546,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -573,7 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -594,7 +617,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Bedrock/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattquiros.Hammer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -614,7 +637,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Bedrock/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattquiros.Hammer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
