@@ -9,26 +9,26 @@
 import UIKit
 
 @IBDesignable
-class BRListItemView: UIView {
+public class BRListItemView: UIView {
     
-    @IBOutlet weak var contentStackView: UIStackView!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet public weak var contentStackView: UIStackView!
+    @IBOutlet public weak var imageView: UIImageView!
+    @IBOutlet public weak var textLabel: UILabel!
     
     fileprivate let queue = OperationQueue()
     fileprivate var currentUrlString: String?
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
     
-    override func prepareForInterfaceBuilder() {
+    public override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setup()
     }
@@ -43,7 +43,7 @@ class BRListItemView: UIView {
         textLabel.lineBreakMode = .byWordWrapping
     }
     
-    func fetchImage(from urlString: String) {
+    public func loadImage(from urlString: String) {
         guard currentUrlString != urlString
             else {
                 return
@@ -52,8 +52,9 @@ class BRListItemView: UIView {
         queue.cancelAllOperations()
         currentUrlString = urlString
         
-        let imageRequest = BRHttpImageRequest(urlString: urlString) { [weak self] (result) in
-            guard let weakSelf = self
+        let imageRequest = BRHttpImageRequest(urlString: urlString) { [weak self] (someResult) in
+            guard let weakSelf = self,
+                let result = someResult
                 else {
                     return
             }

@@ -20,12 +20,11 @@ protocol BROperationProtocol {
 open class BROperation<ResultType, ErrorType>: Operation, BROperationProtocol {
     
     public indirect enum Result {
-        case none
         case success(ResultType)
         case error(ErrorType)
     }
     
-    public typealias BROperationCompletionBlock = (BROperation.Result) -> Void
+    public typealias BROperationCompletionBlock = (BROperation.Result?) -> Void
     
     var failed = false
     var internalExecuting = false
@@ -39,10 +38,10 @@ open class BROperation<ResultType, ErrorType>: Operation, BROperationProtocol {
         return self.internalFinished
     }
     
-    open var result = BROperation.Result.none {
+    open var result: BROperation.Result? {
         didSet {
             switch result {
-            case .error(_):
+            case .some(.error(_)):
                 self.failed = true
             default:
                 self.failed = false
@@ -68,14 +67,16 @@ open class BROperation<ResultType, ErrorType>: Operation, BROperationProtocol {
         return hasFailedDependencies
     }
     
+    public var shouldExecute = { return true }
+    
     public init(completionBlock: BROperationCompletionBlock?) {
         super.init()
-        
+
         guard let completionBlock = completionBlock
             else {
                 return
         }
-        
+
         self.completionBlock = {[weak self] in
             guard let weakSelf = self
                 else {
@@ -83,10 +84,6 @@ open class BROperation<ResultType, ErrorType>: Operation, BROperationProtocol {
             }
             completionBlock(weakSelf.result)
         }
-    }
-    
-    open func shouldExecute() -> Bool {
-        return true
     }
     
     open override func start() {

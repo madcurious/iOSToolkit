@@ -39,6 +39,10 @@ public class BRDefaultLoadableView: UIView, BRLoadableView {
         let viewFromNib = viewFromOwnedNib()
         addSubviewsAndFill(viewFromNib)
         updateView(forState: .initial)
+        
+        informationLabel.numberOfLines = 0
+        informationLabel.lineBreakMode = .byWordWrapping
+        informationLabel.textAlignment = .center
     }
     
     fileprivate func updateView(forState state: BRLoadableViewState) {
@@ -59,8 +63,8 @@ public class BRDefaultLoadableView: UIView, BRLoadableView {
             loadingView.stopAnimating()
             loadingView.isHidden = true
             dataView.isHidden = true
-            if let info = someInfo as? String {
-                informationLabel.text = info
+            if let message = someInfo?["message"] as? String {
+                informationLabel.text = message
             } else {
                 informationLabel.text = "No data found."
             }

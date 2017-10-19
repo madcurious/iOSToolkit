@@ -10,7 +10,7 @@ import Foundation
 
 public enum BRLoadableViewState: Equatable {
     
-    case initial, loading, data, noData(Any?), error(Error)
+    case initial, loading, data, noData([String : AnyHashable]?), error(Error)
     
     public static func ==(lhs: BRLoadableViewState, rhs: BRLoadableViewState) -> Bool {
         switch (lhs, rhs) {

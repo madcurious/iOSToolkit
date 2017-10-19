@@ -8,16 +8,17 @@
 
 import UIKit
 
-class BRListItemTableViewCell: UITableViewCell {
+@IBDesignable
+public class BRListItemTableViewCell: UITableViewCell {
     
-    let listItemView = BRListItemView(frame: .zero)
+    public let listItemView = BRListItemView(frame: .zero)
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
