@@ -2,7 +2,7 @@
 
 Bedrock is a Swift framework of boilerplate code for building iOS apps.
 
-**IMPORTANT:** As this framework is built for my personal use, updates break source and I have no plans of providing a smooth upgrade path. If you wish to use this library as a template, fork it clone your fork instead.
+**IMPORTANT:** As this framework is built for my personal use, updates break source and I have no plans of providing a smooth upgrade path. If you wish to use this library as a template, fork it and then clone your fork instead.
 
 ## Installation
 
