@@ -37,10 +37,19 @@ public class BRListItemView: UIView {
         let viewFromNib = viewFromOwnedNib()
         addSubviewsAndFill(viewFromNib)
         
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = .hex(0xcccccc)
         
         textLabel.numberOfLines = 0
         textLabel.lineBreakMode = .byWordWrapping
+    }
+    
+    public func prepareForReuse() {
+        queue.cancelAllOperations()
+        currentUrlString = nil
+        imageView.image = nil
+        textLabel.text = nil
     }
     
     public func loadImage(from urlString: String) {

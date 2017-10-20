@@ -28,4 +28,9 @@ public class BRListItemTableViewCell: UITableViewCell {
         contentView.addSubviewsAndFill(listItemView)
     }
     
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        listItemView.prepareForReuse()
+    }
+    
 }
