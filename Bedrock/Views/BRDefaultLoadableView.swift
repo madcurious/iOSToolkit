@@ -82,7 +82,7 @@ public class BRDefaultLoadableView: UIView, BRLoadableView {
             loadingView.isHidden = true
             dataView.isHidden = true
             if let localizedError = error as? LocalizedError {
-                informationLabel.text = localizedError.errorDescription
+                informationLabel.text = localizedError.localizedDescription
             } else {
                 informationLabel.text = error.localizedDescription
             }
