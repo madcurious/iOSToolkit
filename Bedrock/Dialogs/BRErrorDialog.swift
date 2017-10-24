@@ -18,10 +18,7 @@ public final class BRErrorDialog {
             alertController.dismiss(animated: true, completion: nil)
         }
         alertController.addAction(cancelButtonAction)
-        
-        BRDispatch.asyncRunInMain {
-            presentingViewController.present(alertController, animated: true, completion: nil)
-        }
+        presentingViewController.present(alertController, animated: true, completion: nil)
     }
     
 }

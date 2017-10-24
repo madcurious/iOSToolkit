@@ -11,7 +11,9 @@ import UIKit
 public class BRDefaultLoadableView: UIView, BRLoadableView {
     
     @IBOutlet public weak var loadingView: UIActivityIndicatorView!
+    @IBOutlet weak var informationView: UIStackView!
     @IBOutlet public weak var informationLabel: UILabel!
+    @IBOutlet public weak var retryButton: UIButton!
     @IBOutlet public weak var dataView: UIView!
     
     public var state = BRLoadableViewState.initial {
@@ -43,6 +45,8 @@ public class BRDefaultLoadableView: UIView, BRLoadableView {
         informationLabel.numberOfLines = 0
         informationLabel.lineBreakMode = .byWordWrapping
         informationLabel.textAlignment = .center
+        
+        retryButton.setTitle("Retry", for: .normal)
     }
     
     fileprivate func updateView(forState state: BRLoadableViewState) {
@@ -51,15 +55,15 @@ public class BRDefaultLoadableView: UIView, BRLoadableView {
             loadingView.stopAnimating()
             loadingView.isHidden = true
             dataView.isHidden = true
-            informationLabel.isHidden = true
+            informationView.isHidden = true
             
         case .loading:
             loadingView.startAnimating()
             loadingView.isHidden = false
             dataView.isHidden = true
-            informationLabel.isHidden = true
+            informationView.isHidden = true
             
-        case .noData(let someInfo):
+        case .empty(let someInfo):
             loadingView.stopAnimating()
             loadingView.isHidden = true
             dataView.isHidden = true
@@ -68,14 +72,14 @@ public class BRDefaultLoadableView: UIView, BRLoadableView {
             } else {
                 informationLabel.text = "No data found."
             }
-            informationLabel.isHidden = false
+            informationView.isHidden = false
             
-        case .data:
+        case .success:
             loadingView.stopAnimating()
             loadingView.isHidden = true
             dataView.isHidden = false
             informationLabel.text = nil
-            informationLabel.isHidden = true
+            informationView.isHidden = true
             
         case .error(let error):
             loadingView.stopAnimating()
@@ -86,7 +90,7 @@ public class BRDefaultLoadableView: UIView, BRLoadableView {
             } else {
                 informationLabel.text = error.localizedDescription
             }
-            informationLabel.isHidden = false
+            informationView.isHidden = false
         }
     }
     
