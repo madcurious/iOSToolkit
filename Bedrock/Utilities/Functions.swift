@@ -91,3 +91,11 @@ public func tb_errorMessage(from error: Error) -> String? {
     
     return (error as NSError).localizedDescription
 }
+
+public func BRClassName(of object: AnyObject) -> String {
+    return String(describing: type(of: object))
+}
+
+public func BRClassName(of class: AnyClass) -> String {
+    return String(describing: `class`)
+}
