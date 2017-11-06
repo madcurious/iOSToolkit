@@ -15,7 +15,7 @@ class BRDateUtilsTest_EndOfWeek: BRDateUtilsTest {
                             firstWeekday: Int,
                             expected: (day: Int, month: Int, year: Int)) {
         let testDate = makeDate(day: date.day, month: date.month, year: date.year)
-        let resultDate = BRDateUtils.endOfWeek(for: testDate, firstWeekday: firstWeekday)
+        let resultDate = BRDateUtil.endOfWeek(for: testDate, firstWeekday: firstWeekday)
         let components = significantComponents(from: resultDate)
         assertEqual(components: components, day: expected.day, month: expected.month, year: expected.year, hour: 23, minute: 59, second: 59)
     }

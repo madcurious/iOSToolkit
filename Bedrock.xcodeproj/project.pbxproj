@@ -44,7 +44,8 @@
 		264EE4991EF8F655004011FE /* BRImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DDF1EF8F32A002B9F33 /* BRImageButton.swift */; };
 		264EE49A1EF8F655004011FE /* BRLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DE01EF8F32A002B9F33 /* BRLabelButton.swift */; };
 		264EE49C1EF8F659004011FE /* BRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DE91EF8F32A002B9F33 /* BRTableViewCell.swift */; };
-		26A190661F836B0A00A9BBF6 /* BRDateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A190651F836B0A00A9BBF6 /* BRDateUtils.swift */; };
+		269D59EA1FA4AF680064C09B /* BRTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269D59E91FA4AF680064C09B /* BRTest.swift */; };
+		26A190661F836B0A00A9BBF6 /* BRDateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A190651F836B0A00A9BBF6 /* BRDateUtil.swift */; };
 		26A190701F83739400A9BBF6 /* Bedrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26904D301C7757540094DA08 /* Bedrock.framework */; };
 		26A1907B1F83756F00A9BBF6 /* BRDateUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1907A1F83756F00A9BBF6 /* BRDateUtilsTest.swift */; };
 		26A1907D1F8375C300A9BBF6 /* BRDateUtilsTest_EndOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1907C1F8375C300A9BBF6 /* BRDateUtilsTest_EndOfDay.swift */; };
@@ -113,7 +114,9 @@
 		2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPersistentContainer.swift; sourceTree = "<group>"; };
 		26904D301C7757540094DA08 /* Bedrock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bedrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26904E3F1C77747C0094DA08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		26A190651F836B0A00A9BBF6 /* BRDateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRDateUtils.swift; sourceTree = "<group>"; };
+		269D59E91FA4AF680064C09B /* BRTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRTest.swift; sourceTree = "<group>"; };
+		269D59EC1FA4B1260064C09B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		26A190651F836B0A00A9BBF6 /* BRDateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRDateUtil.swift; sourceTree = "<group>"; };
 		26A1906B1F83739300A9BBF6 /* BedrockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BedrockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A1906F1F83739400A9BBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26A1907A1F83756F00A9BBF6 /* BRDateUtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRDateUtilsTest.swift; sourceTree = "<group>"; };
@@ -212,7 +215,8 @@
 			children = (
 				26020E5D1DA4BC0200C45902 /* Functions.swift */,
 				261462701EFA5F2F00321DFC /* BRError.swift */,
-				26A190651F836B0A00A9BBF6 /* BRDateUtils.swift */,
+				26A190651F836B0A00A9BBF6 /* BRDateUtil.swift */,
+				269D59E91FA4AF680064C09B /* BRTest.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -264,6 +268,7 @@
 				26020E351DA4BC0200C45902 /* Bedrock */,
 				26A1906C1F83739400A9BBF6 /* BedrockTests */,
 				26904D311C7757540094DA08 /* Products */,
+				269D59EB1FA4B1250064C09B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -274,6 +279,14 @@
 				26A1906B1F83739300A9BBF6 /* BedrockTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		269D59EB1FA4B1250064C09B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				269D59EC1FA4B1260064C09B /* XCTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		26A1906C1F83739400A9BBF6 /* BedrockTests */ = {
@@ -407,6 +420,7 @@
 				264AE1511F95ED8300F87C55 /* NSDecimalNumber.swift in Sources */,
 				264AE1571F95ED8300F87C55 /* Sequence.swift in Sources */,
 				264AE1591F95ED8300F87C55 /* UIAlertController.swift in Sources */,
+				269D59EA1FA4AF680064C09B /* BRTest.swift in Sources */,
 				264AE15B1F95ED8300F87C55 /* UIColor.swift in Sources */,
 				264C485C1F98A21500188D49 /* BRLoadPersistentContainer.swift in Sources */,
 				264C48181F98961700188D49 /* BRDefaultLoadableView.swift in Sources */,
@@ -430,7 +444,7 @@
 				264EE49A1EF8F655004011FE /* BRLabelButton.swift in Sources */,
 				264AE15F1F95ED8300F87C55 /* NSManagedObjectContext.swift in Sources */,
 				264AE1521F95ED8300F87C55 /* CharacterSet.swift in Sources */,
-				26A190661F836B0A00A9BBF6 /* BRDateUtils.swift in Sources */,
+				26A190661F836B0A00A9BBF6 /* BRDateUtil.swift in Sources */,
 				264AE1561F95ED8300F87C55 /* NSLayoutConstraint.swift in Sources */,
 				264C48291F989C7700188D49 /* BRHttpImageRequest.swift in Sources */,
 				26B38A721F1F5FFB00592ABB /* BROperation.swift in Sources */,

@@ -13,7 +13,7 @@ class BRDateUtilsTest_StartOfMonth: BRDateUtilsTest {
     
     fileprivate func doTest(date: (day: Int, month: Int, year: Int), expected: (day: Int, month: Int, year: Int)) {
         let testDate = makeDate(day: date.day, month: date.month, year: date.year)
-        let resultDate = BRDateUtils.startOfMonth(for: testDate)
+        let resultDate = BRDateUtil.startOfMonth(for: testDate)
         let components = significantComponents(from: resultDate)
         assertEqual(components: components, day: expected.day, month: expected.month, year: expected.year, hour: 0, minute: 0, second: 0)
     }
