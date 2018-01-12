@@ -12,8 +12,7 @@ import Foundation
 /// the `hasFailedDependencies` computed property can be implemented.
 protocol BROperationProtocol {
     
-    /// Must be set to true if the operation's `result` property is set to `.error`.
-    var failed: Bool { get set }
+    var isFailed: Bool { get }
     
 }
 
@@ -26,40 +25,33 @@ open class BROperation<ResultType, ErrorType>: Operation, BROperationProtocol {
     
     public typealias BROperationCompletionBlock = (BROperation.Result?) -> Void
     
-    var failed = false
+    var isFailed: Bool {
+        if case .some(.error(_)) = result {
+            return true
+        }
+        return false
+    }
+    
     var internalExecuting = false
     var internalFinished = false
     
     open override var isExecuting: Bool {
-        return self.internalExecuting
+        return internalExecuting
     }
     
     open override var isFinished: Bool {
-        return self.internalFinished
+        return internalFinished
     }
     
-    open var result: BROperation.Result? {
-        didSet {
-            switch result {
-            case .some(.error(_)):
-                self.failed = true
-            default:
-                self.failed = false
-            }
-        }
-    }
+    open var result: BROperation.Result?
     
     /**
-     Checks whether the operation has any dependencies that inherit from `BROperation` and whose `result` is `.error`.
-     
-     Returns `true` if at least one of the dependencies is a `BROperation` and the `result` is `.error`.
-     Returns `false` if none of the dependencies is a `BROperation`, or none of the `BROperation` dependencies
-     have `.error` for a result.
+     Checks whether the operation has any dependencies that are `BROperation`s and which failed.
      */
     public var hasFailedDependencies: Bool {
-        let hasFailedDependencies = self.dependencies.contains(where: {
+        let hasFailedDependencies = dependencies.contains(where: {
             if let operation = $0 as? BROperationProtocol,
-                operation.failed == true {
+                operation.isFailed == true {
                 return true
             }
             return false
@@ -87,41 +79,41 @@ open class BROperation<ResultType, ErrorType>: Operation, BROperationProtocol {
     }
     
     open override func start() {
-        if self.hasFailedDependencies || self.shouldExecute() == false {
-            self.setFinished(true)
+        if hasFailedDependencies || shouldExecute() == false {
+            setFinished(true)
             return
         }
         
-        self.setExecuting(true)
-        self.main()
+        setExecuting(true)
+        main()
         
-        self.finish()
+        finish()
     }
     
     /**
      Sets the internal executing flag and makes the proper KVO calls.
      */
     public func setExecuting(_ executing: Bool) {
-        self.willChangeValue(forKey: "isExecuting")
-        self.internalExecuting = executing
-        self.didChangeValue(forKey: "isExecuting")
+        willChangeValue(forKey: "isExecuting")
+        internalExecuting = executing
+        didChangeValue(forKey: "isExecuting")
     }
     
     /**
      Sets the internal finished flag and makes the proper KVO calls.
      */
     public func setFinished(_ finished: Bool) {
-        self.willChangeValue(forKey: "isFinished")
-        self.internalFinished = finished
-        self.didChangeValue(forKey: "isFinished")
+        willChangeValue(forKey: "isFinished")
+        internalFinished = finished
+        didChangeValue(forKey: "isFinished")
     }
     
     /**
      Sets `isExecuting` to `false` and `isFinished` to `true`.
      */
     public func finish() {
-        self.setExecuting(false)
-        self.setFinished(true)
+        setExecuting(false)
+        setFinished(true)
     }
     
 }
