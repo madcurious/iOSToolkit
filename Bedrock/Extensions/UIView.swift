@@ -106,6 +106,26 @@ public extension UIView {
         }()
     }
     
+    public class func performRecursively(from root: UIView, block: (UIView) -> ()) {
+        if #available(iOS 9.0, *),
+            let stackView = root as? UIStackView {
+            for arrangedSubview in stackView.arrangedSubviews {
+                UIView.performRecursively(from: arrangedSubview, block: block)
+            }
+        } else {
+            block(root)
+            for subview in root.subviews {
+                UIView.performRecursively(from: subview, block: block)
+            }
+        }
+    }
+    
+    /// Performs the `block` on the entire view hierarchy, starting from the receiver
+    /// as the root of the tree.
+    public func performRecursively(_ block: (UIView) -> ()) {
+        UIView.performRecursively(from: self, block: block)
+    }
+    
 }
 
 // MARK: - Private functions
