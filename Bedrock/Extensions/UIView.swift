@@ -26,23 +26,30 @@ public extension UIView {
         }
     }
     
-    /**
-     Add subviews and fill the superview. Subviews are placed on top of the preding subviews.
-     */
     public func addSubviewsAndFill(_ views: UIView ...) {
         for view in views {
-            self.addSubview(view)
-            
-            view.translatesAutoresizingMaskIntoConstraints = false
-            
-            let views = ["view" : view]
-            let rules = ["H:|-0-[view]-0-|",
-                         "V:|-0-[view]-0-|"]
-            self.addConstraints(
-                NSLayoutConstraint.constraintsWithVisualFormatArray(rules,
-                                                                    metrics: nil,
-                                                                    views: views))
+            addSubviewAndFill(view)
         }
+    }
+    
+    @discardableResult
+    public func addSubviewAndFill(_ subview: UIView) -> [NSLayoutConstraint] {
+        addSubview(subview)
+        
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        
+        let constraints = [
+            subview.topAnchor.constraint(equalTo: topAnchor),
+            trailingAnchor.constraint(equalTo: subview.trailingAnchor),
+            bottomAnchor.constraint(equalTo: subview.bottomAnchor),
+            subview.leadingAnchor.constraint(equalTo: leadingAnchor)
+        ]
+        constraints.forEach {
+            $0.priority = UILayoutPriority(999)
+            $0.isActive = true
+        }
+        
+        return constraints
     }
     
     public func fillSuperview() {
