@@ -13,6 +13,16 @@ open class BRLabelButton: BRButton {
     
     @IBOutlet public weak var titleLabel: UILabel!
     
+    public var text: String? {
+        didSet {
+            refreshTitleLabelForTextFieldBehavior()
+        }
+    }
+    
+    var placeholderText = "Select"
+    var placeholderTextColor = UIColor.hex(0xcccccc)
+    var textColor = UIColor.black
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -28,8 +38,6 @@ open class BRLabelButton: BRButton {
         internalView.isUserInteractionEnabled = false
         internalView.clearAllBackgroundColors()
         addSubviewsAndFill(internalView)
-        
-        titleLabel.addObserver(self, forKeyPath: #keyPath(UILabel.text), options: .new, context: nil)
     }
     
     open override func prepareForInterfaceBuilder() {
@@ -41,15 +49,21 @@ open class BRLabelButton: BRButton {
         return titleLabel.sizeThatFits(size)
     }
     
-    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        guard keyPath == #keyPath(UILabel.text),
-            (object as? UILabel) == titleLabel
-            else {
-                return
+    public func enableTextFieldBehavior(placeholderText: String, placeholderTextColor: UIColor, textColor: UIColor) {
+        self.placeholderText = placeholderText
+        self.placeholderTextColor = placeholderTextColor
+        self.textColor = textColor
+        refreshTitleLabelForTextFieldBehavior()
+    }
+    
+    func refreshTitleLabelForTextFieldBehavior() {
+        if text == nil {
+            titleLabel.text = placeholderText
+            titleLabel.textColor = placeholderTextColor
+        } else {
+            titleLabel.text = text
+            titleLabel.textColor = textColor
         }
-        
-        titleLabel.sizeToFit()
-        sizeToFit()
     }
     
 }
