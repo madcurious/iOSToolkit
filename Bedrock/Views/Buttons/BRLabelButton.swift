@@ -19,9 +19,9 @@ open class BRLabelButton: BRButton {
         }
     }
     
-    var placeholderText = "Select"
-    var placeholderTextColor = UIColor.hex(0xcccccc)
-    var textColor = UIColor.black
+    var placeholderText: String?
+    var placeholderTextColor: UIColor?
+    var textColor: UIColor?
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,10 +59,10 @@ open class BRLabelButton: BRButton {
     func refreshTitleLabelForTextFieldBehavior() {
         if text == nil {
             titleLabel.text = placeholderText
-            titleLabel.textColor = placeholderTextColor
+            titleLabel.textColor = placeholderTextColor ?? tintColor
         } else {
             titleLabel.text = text
-            titleLabel.textColor = textColor
+            titleLabel.textColor = textColor ?? tintColor
         }
     }
     
