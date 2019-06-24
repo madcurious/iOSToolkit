@@ -9,10 +9,10 @@
 import UIKit
 
 public extension UIScreen {
-    
-    public var nativeSize: CGSize {
-        return CGSize(width: self.nativeBounds.size.width / self.nativeScale,
-                      height: self.nativeBounds.size.height / self.nativeScale)
-    }
-    
+  
+  var nativeSize: CGSize {
+    return CGSize(width: self.nativeBounds.size.width / self.nativeScale,
+                  height: self.nativeBounds.size.height / self.nativeScale)
+  }
+  
 }

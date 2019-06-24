@@ -9,16 +9,16 @@
 import Foundation
 
 public extension String {
-    
-    public func hasCharactersFromSet(_ characterSet: CharacterSet) -> Bool {
-        if let _ = self.rangeOfCharacter(from: characterSet) {
-            return true
-        }
-        return false
+  
+  func hasCharactersFromSet(_ characterSet: CharacterSet) -> Bool {
+    if let _ = self.rangeOfCharacter(from: characterSet) {
+      return true
     }
-    
-    public func trim() -> String  {
-        return self.trimmingCharacters(in: CharacterSet.whitespaces)
-    }
-    
+    return false
+  }
+  
+  func trim() -> String  {
+    return self.trimmingCharacters(in: CharacterSet.whitespaces)
+  }
+  
 }

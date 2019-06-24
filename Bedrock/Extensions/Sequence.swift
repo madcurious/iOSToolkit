@@ -9,29 +9,29 @@
 import Foundation
 
 public extension Sequence {
-    
-    /**
-     Returns a dictionary where the key is the group, and the value is an array of member elements.
-     */
-    public func grouped<T>(by groupProvider: (Iterator.Element) -> T?) -> [T : [Iterator.Element]] {
-        var dict: [T : [Iterator.Element]] = [:]
-        for element in self {
-            guard let key = groupProvider(element)
-                else {
-                    continue
-            }
-            
-            // If the key already exists in the dictionary, append the element to the list.
-            if let _ = dict.index(forKey: key) {
-                dict[key]?.append(element)
-            }
-            
-                // Otherwise create a new key-value pair.
-            else {
-                dict[key] = [element]
-            }
-        }
-        return dict
+  
+  /**
+   Returns a dictionary where the key is the group, and the value is an array of member elements.
+   */
+  func grouped<T>(by groupProvider: (Iterator.Element) -> T?) -> [T : [Iterator.Element]] {
+    var dict: [T : [Iterator.Element]] = [:]
+    for element in self {
+      guard let key = groupProvider(element)
+        else {
+          continue
+      }
+      
+      // If the key already exists in the dictionary, append the element to the list.
+      if let _ = dict.index(forKey: key) {
+        dict[key]?.append(element)
+      }
+        
+        // Otherwise create a new key-value pair.
+      else {
+        dict[key] = [element]
+      }
     }
-    
+    return dict
+  }
+  
 }

@@ -39,7 +39,7 @@
 		264C48251F98993400188D49 /* BRListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C48221F98993400188D49 /* BRListItemTableViewCell.swift */; };
 		264C48261F98993400188D49 /* BRListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C48231F98993400188D49 /* BRListItemView.swift */; };
 		264C48291F989C7700188D49 /* BRHttpImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C48271F989A3B00188D49 /* BRHttpImageRequest.swift */; };
-		264C485C1F98A21500188D49 /* BRLoadPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C485B1F98A21500188D49 /* BRLoadPersistentContainer.swift */; };
+		264C485C1F98A21500188D49 /* LoadPersistentContainerOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C485B1F98A21500188D49 /* LoadPersistentContainerOperation.swift */; };
 		264EE4981EF8F652004011FE /* BRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DDE1EF8F32A002B9F33 /* BRButton.swift */; };
 		264EE4991EF8F655004011FE /* BRImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DDF1EF8F32A002B9F33 /* BRImageButton.swift */; };
 		264EE49A1EF8F655004011FE /* BRLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DE01EF8F32A002B9F33 /* BRLabelButton.swift */; };
@@ -99,7 +99,7 @@
 		264C48221F98993400188D49 /* BRListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRListItemTableViewCell.swift; sourceTree = "<group>"; };
 		264C48231F98993400188D49 /* BRListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRListItemView.swift; sourceTree = "<group>"; };
 		264C48271F989A3B00188D49 /* BRHttpImageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRHttpImageRequest.swift; sourceTree = "<group>"; };
-		264C485B1F98A21500188D49 /* BRLoadPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRLoadPersistentContainer.swift; sourceTree = "<group>"; };
+		264C485B1F98A21500188D49 /* LoadPersistentContainerOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPersistentContainerOperation.swift; sourceTree = "<group>"; };
 		2657331A1EDC7A7700AD1AB9 /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
 		26609DDE1EF8F32A002B9F33 /* BRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRButton.swift; sourceTree = "<group>"; };
 		26609DDF1EF8F32A002B9F33 /* BRImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRImageButton.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 				264C48271F989A3B00188D49 /* BRHttpImageRequest.swift */,
 				26B38A711F1F5FFB00592ABB /* BROperation.swift */,
 				26B38A731F1F635C00592ABB /* BRAsynchronousOperation.swift */,
-				264C485B1F98A21500188D49 /* BRLoadPersistentContainer.swift */,
+				264C485B1F98A21500188D49 /* LoadPersistentContainerOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -377,6 +377,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 26904D261C7757540094DA08;
@@ -422,7 +423,7 @@
 				264AE1591F95ED8300F87C55 /* UIAlertController.swift in Sources */,
 				269D59EA1FA4AF680064C09B /* BRTest.swift in Sources */,
 				264AE15B1F95ED8300F87C55 /* UIColor.swift in Sources */,
-				264C485C1F98A21500188D49 /* BRLoadPersistentContainer.swift in Sources */,
+				264C485C1F98A21500188D49 /* LoadPersistentContainerOperation.swift in Sources */,
 				264C48181F98961700188D49 /* BRDefaultLoadableView.swift in Sources */,
 				264AE1601F95ED8300F87C55 /* NSPersistentContainer.swift in Sources */,
 				26020E6A1DA4BC0200C45902 /* BRConfirmDialog.swift in Sources */,

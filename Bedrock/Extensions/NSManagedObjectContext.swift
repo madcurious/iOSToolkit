@@ -9,18 +9,18 @@
 import CoreData
 
 public extension NSManagedObjectContext {
-    
-    public func saveToStore() throws {
-        guard self.hasChanges
-            else {
-                return
-        }
-        
-        try self.save()
-        
-        if let parent = self.parent {
-            try parent.saveToStore()
-        }
-    }
-    
+	
+	func saveToStore() throws {
+		guard self.hasChanges
+			else {
+				return
+		}
+		
+		try self.save()
+		
+		if let parent = self.parent {
+			try parent.saveToStore()
+		}
+	}
+	
 }

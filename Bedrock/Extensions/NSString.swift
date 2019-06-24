@@ -9,9 +9,9 @@
 import Foundation
 
 public extension NSString {
-    
-    public var fullRange: NSRange {
-        return NSMakeRange(0, self.length)
-    }
-    
+  
+  var fullRange: NSRange {
+    return NSMakeRange(0, self.length)
+  }
+  
 }
