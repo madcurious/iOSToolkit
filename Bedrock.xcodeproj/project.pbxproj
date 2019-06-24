@@ -55,6 +55,9 @@
 		26A190881F83929100A9BBF6 /* BRDateUtilsTest_EndOfMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A190871F83929100A9BBF6 /* BRDateUtilsTest_EndOfMonth.swift */; };
 		26B38A721F1F5FFB00592ABB /* BROperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B38A711F1F5FFB00592ABB /* BROperation.swift */; };
 		26B38A741F1F635C00592ABB /* BRAsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B38A731F1F635C00592ABB /* BRAsynchronousOperation.swift */; };
+		2D69F70122C15B8E00FB4CA5 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D69F70022C15B8E00FB4CA5 /* Operation.swift */; };
+		2D69F70322C15BAC00FB4CA5 /* FailableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D69F70222C15BAC00FB4CA5 /* FailableOperation.swift */; };
+		2D95824E22C169B700C28403 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95824D22C169B700C28403 /* AsyncOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +131,9 @@
 		26B38A711F1F5FFB00592ABB /* BROperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BROperation.swift; sourceTree = "<group>"; };
 		26B38A731F1F635C00592ABB /* BRAsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRAsynchronousOperation.swift; sourceTree = "<group>"; };
 		26CC3DF21EE678930095374A /* UIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		2D69F70022C15B8E00FB4CA5 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		2D69F70222C15BAC00FB4CA5 /* FailableOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableOperation.swift; sourceTree = "<group>"; };
+		2D95824D22C169B700C28403 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +212,9 @@
 				26B38A711F1F5FFB00592ABB /* BROperation.swift */,
 				26B38A731F1F635C00592ABB /* BRAsynchronousOperation.swift */,
 				264C485B1F98A21500188D49 /* LoadPersistentContainerOperation.swift */,
+				2D69F70022C15B8E00FB4CA5 /* Operation.swift */,
+				2D69F70222C15BAC00FB4CA5 /* FailableOperation.swift */,
+				2D95824D22C169B700C28403 /* AsyncOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -419,6 +428,7 @@
 				264AE1581F95ED8300F87C55 /* String.swift in Sources */,
 				26020E691DA4BC0200C45902 /* BRAlertDialog.swift in Sources */,
 				264AE1511F95ED8300F87C55 /* NSDecimalNumber.swift in Sources */,
+				2D95824E22C169B700C28403 /* AsyncOperation.swift in Sources */,
 				264AE1571F95ED8300F87C55 /* Sequence.swift in Sources */,
 				264AE1591F95ED8300F87C55 /* UIAlertController.swift in Sources */,
 				269D59EA1FA4AF680064C09B /* BRTest.swift in Sources */,
@@ -427,6 +437,7 @@
 				264C48181F98961700188D49 /* BRDefaultLoadableView.swift in Sources */,
 				264AE1601F95ED8300F87C55 /* NSPersistentContainer.swift in Sources */,
 				26020E6A1DA4BC0200C45902 /* BRConfirmDialog.swift in Sources */,
+				2D69F70322C15BAC00FB4CA5 /* FailableOperation.swift in Sources */,
 				26B38A741F1F635C00592ABB /* BRAsynchronousOperation.swift in Sources */,
 				26020E6B1DA4BC0200C45902 /* BRErrorDialog.swift in Sources */,
 				264EE4991EF8F655004011FE /* BRImageButton.swift in Sources */,
@@ -439,6 +450,7 @@
 				264C48251F98993400188D49 /* BRListItemTableViewCell.swift in Sources */,
 				264AE1531F95ED8300F87C55 /* Double.swift in Sources */,
 				264AE1621F95ED8300F87C55 /* NSString.swift in Sources */,
+				2D69F70122C15B8E00FB4CA5 /* Operation.swift in Sources */,
 				264AE1551F95ED8300F87C55 /* NSAttributedString.swift in Sources */,
 				261462711EFA5F2F00321DFC /* BRError.swift in Sources */,
 				26020E891DA4BC0200C45902 /* Functions.swift in Sources */,
