@@ -10,12 +10,12 @@ import Foundation
 import CoreData
 
 @available(iOS 10.0, *)
-public class LoadPersistentContainerOperation: BRAsynchronousOperation<NSPersistentContainer, Error> {
+public class LoadPersistentContainerOperation: AsyncOperation<NSPersistentContainer, Error> {
 	
 	let documentName: String
 	let inMemory: Bool
 	
-	public init(documentName: String, inMemory: Bool, completionBlock: BROperationCompletionBlock?) {
+	public init(documentName: String, inMemory: Bool, completionBlock: OperationCompletionBlock?) {
 		self.documentName = documentName
 		self.inMemory = inMemory
 		super.init(completionBlock: completionBlock)
@@ -23,7 +23,7 @@ public class LoadPersistentContainerOperation: BRAsynchronousOperation<NSPersist
 	
 	public override func main() {
 		let persistentContainer = NSPersistentContainer(name: documentName)
-		if self.inMemory,
+		if inMemory,
 			let description = persistentContainer.persistentStoreDescriptions.first {
 			description.type = NSInMemoryStoreType
 		}
@@ -38,7 +38,7 @@ public class LoadPersistentContainerOperation: BRAsynchronousOperation<NSPersist
 			}
 			
 			if let error = error {
-				self.result = .error(error)
+				self.result = .failure(error)
 			} else {
 				self.result = .success(persistentContainer)
 			}

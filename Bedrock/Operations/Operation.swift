@@ -9,19 +9,19 @@
 import Foundation
 
 /// A synchronous operation that produces a result.
-class Operation<SuccessType, FailureType: Error>: Foundation.Operation, FailableOperation {
+public class Operation<SuccessType, FailureType: Error>: Foundation.Operation, FailableOperation {
 	
 	/// The result produced by the operation, which is modified
-	var result: Result<SuccessType, FailureType>?
+	public var result: Result<SuccessType, FailureType>?
 	
-	var isFailed: Bool {
+	public var isFailed: Bool {
 		if case .some(.failure(_)) = result {
 			return true
 		}
 		return false
 	}
 	
-	var hasFailedDependencies: Bool {
+	public var hasFailedDependencies: Bool {
 		return dependencies.contains(where: {
 			if let failableOperation = $0 as? FailableOperation,
 				failableOperation.isFailed == true {
@@ -34,11 +34,11 @@ class Operation<SuccessType, FailureType: Error>: Foundation.Operation, Failable
 	/// Determines whether the operation should execute after `start()` is called.
 	/// The default behavior returns `true` if there are no `FailableOperation`
 	/// dependencies that failed.
-	lazy var shouldExecute = { return self.hasFailedDependencies == false }
+	public lazy var shouldExecute = { return self.hasFailedDependencies == false }
 	
-	typealias CompletionBlock = (Bool, Result<SuccessType, FailureType>?) -> Void
+	public typealias OperationCompletionBlock = (Bool, Result<SuccessType, FailureType>?) -> Void
 	
-	init(completionBlock: CompletionBlock?) {
+	public init(completionBlock: OperationCompletionBlock?) {
 		super.init()
 		
 		// Gives the caller easy access to cancellation state and result.
@@ -47,7 +47,7 @@ class Operation<SuccessType, FailureType: Error>: Foundation.Operation, Failable
 		}
 	}
 	
-	override func start() {
+	open override func start() {
 		guard isCancelled == false &&
 			shouldExecute() == true
 			else {
@@ -60,14 +60,14 @@ class Operation<SuccessType, FailureType: Error>: Foundation.Operation, Failable
 	}
 	
 	/// Sets the `isExecuting` flag and makes the proper KVO calls.
-	func setExecuting(_ executing: Bool) {
+	open func setExecuting(_ executing: Bool) {
 		willChangeValue(forKey: "isExecuting")
 		internalExecuting = executing
 		didChangeValue(forKey: "isExecuting")
 	}
 	
 	/// Sets the `isFinished` flag and makes the proper KVO calls.
-	func setFinished(_ finished: Bool) {
+	open func setFinished(_ finished: Bool) {
 		willChangeValue(forKey: "isFinished")
 		internalFinished = finished
 		didChangeValue(forKey: "isFinished")
@@ -75,7 +75,7 @@ class Operation<SuccessType, FailureType: Error>: Foundation.Operation, Failable
 	
 	/// Convenience function for setting the execution state to `false`
 	/// and the finished state to `true`.
-	func finish() {
+	open func finish() {
 		setExecuting(false)
 		setFinished(true)
 	}
@@ -86,11 +86,11 @@ class Operation<SuccessType, FailureType: Error>: Foundation.Operation, Failable
 	private var internalExecuting = false
 	private var internalFinished = false
 	
-	override var isExecuting: Bool {
+	public override var isExecuting: Bool {
 		return internalExecuting
 	}
 	
-	override var isFinished: Bool {
+	public override var isFinished: Bool {
 		return internalFinished
 	}
 	
