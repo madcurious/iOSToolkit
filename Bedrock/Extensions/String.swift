@@ -8,8 +8,12 @@
 
 import Foundation
 
-public extension String {
-  
+extension String {
+	
+	init(forTypeOf object: Any) {
+		self.init(describing: type(of: object))
+	}
+	
   func hasCharactersFromSet(_ characterSet: CharacterSet) -> Bool {
     if let _ = self.rangeOfCharacter(from: characterSet) {
       return true

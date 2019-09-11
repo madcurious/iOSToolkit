@@ -9,21 +9,21 @@
 import Foundation
 
 /// A synchronous operation that produces a result.
-public class Operation<SuccessType, FailureType: Error>: Foundation.Operation, FailableOperation {
+class Operation<SuccessType, FailureType: Error>: Foundation.Operation, Failable {
 	
 	/// The result produced by the operation, which is modified
-	public var result: Result<SuccessType, FailureType>?
+	var result: Result<SuccessType, FailureType>?
 	
-	public var isFailed: Bool {
+	var isFailed: Bool {
 		if case .some(.failure(_)) = result {
 			return true
 		}
 		return false
 	}
 	
-	public var hasFailedDependencies: Bool {
+	var hasFailedDependencies: Bool {
 		return dependencies.contains(where: {
-			if let failableOperation = $0 as? FailableOperation,
+			if let failableOperation = $0 as? Failable,
 				failableOperation.isFailed == true {
 				return true
 			}
@@ -32,13 +32,12 @@ public class Operation<SuccessType, FailureType: Error>: Foundation.Operation, F
 	}
 	
 	/// Determines whether the operation should execute after `start()` is called.
-	/// The default behavior returns `true` if there are no `FailableOperation`
-	/// dependencies that failed.
-	public lazy var shouldExecute = { return self.hasFailedDependencies == false }
+	/// The default behavior returns `true` if there are no `Failable` dependencies that failed.
+	lazy var shouldExecute = { return self.hasFailedDependencies == false }
 	
-	public typealias OperationCompletionBlock = (Bool, Result<SuccessType, FailureType>?) -> Void
+	typealias OperationCompletionBlock = (Bool, Result<SuccessType, FailureType>?) -> Void
 	
-	public init(completionBlock: OperationCompletionBlock?) {
+	init(completionBlock: OperationCompletionBlock?) {
 		super.init()
 		
 		// Gives the caller easy access to cancellation state and result.
@@ -47,7 +46,7 @@ public class Operation<SuccessType, FailureType: Error>: Foundation.Operation, F
 		}
 	}
 	
-	open override func start() {
+	override func start() {
 		guard isCancelled == false &&
 			shouldExecute() == true
 			else {
@@ -60,14 +59,14 @@ public class Operation<SuccessType, FailureType: Error>: Foundation.Operation, F
 	}
 	
 	/// Sets the `isExecuting` flag and makes the proper KVO calls.
-	open func setExecuting(_ executing: Bool) {
+	func setExecuting(_ executing: Bool) {
 		willChangeValue(forKey: "isExecuting")
 		internalExecuting = executing
 		didChangeValue(forKey: "isExecuting")
 	}
 	
 	/// Sets the `isFinished` flag and makes the proper KVO calls.
-	open func setFinished(_ finished: Bool) {
+	func setFinished(_ finished: Bool) {
 		willChangeValue(forKey: "isFinished")
 		internalFinished = finished
 		didChangeValue(forKey: "isFinished")
@@ -75,7 +74,7 @@ public class Operation<SuccessType, FailureType: Error>: Foundation.Operation, F
 	
 	/// Convenience function for setting the execution state to `false`
 	/// and the finished state to `true`.
-	open func finish() {
+	func finish() {
 		setExecuting(false)
 		setFinished(true)
 	}
@@ -86,11 +85,11 @@ public class Operation<SuccessType, FailureType: Error>: Foundation.Operation, F
 	private var internalExecuting = false
 	private var internalFinished = false
 	
-	public override var isExecuting: Bool {
+	override var isExecuting: Bool {
 		return internalExecuting
 	}
 	
-	public override var isFinished: Bool {
+	override var isFinished: Bool {
 		return internalFinished
 	}
 	

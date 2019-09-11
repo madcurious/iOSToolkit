@@ -9,11 +9,11 @@
 import UIKit
 
 @IBDesignable
-open class BRLabelButton: BRButton {
+class BRLabelButton: BRButton {
     
-    @IBOutlet public weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    public var text: String? {
+    var text: String? {
         didSet {
             refreshTitleLabelForTextFieldBehavior()
         }
@@ -23,12 +23,12 @@ open class BRLabelButton: BRButton {
     var placeholderTextColor: UIColor?
     var textColor: UIColor?
     
-    public override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
     
-    public required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
@@ -40,16 +40,16 @@ open class BRLabelButton: BRButton {
         addSubviewsAndFill(internalView)
     }
     
-    open override func prepareForInterfaceBuilder() {
+    override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setup()
     }
     
-    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
         return titleLabel.sizeThatFits(size)
     }
     
-    public func enableTextFieldBehavior(placeholderText: String, placeholderTextColor: UIColor, textColor: UIColor) {
+    func enableTextFieldBehavior(placeholderText: String, placeholderTextColor: UIColor, textColor: UIColor) {
         self.placeholderText = placeholderText
         self.placeholderTextColor = placeholderTextColor
         self.textColor = textColor

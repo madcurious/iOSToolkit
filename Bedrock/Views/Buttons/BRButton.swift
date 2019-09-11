@@ -8,35 +8,35 @@
 
 import UIKit
 
-open class BRButton: UIControl {
-    
-    open override var isHighlighted: Bool {
-        didSet {
-            UIView.animate(withDuration: 0.2, animations: {[unowned self] in
-                self.alpha = self.isHighlighted ? 0.1 : 1.0
-            }) 
-        }
-    }
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        disableUserInteractionInSubviews()
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        disableUserInteractionInSubviews()
-    }
-    
-    internal func disableUserInteractionInSubviews() {
-        subviews.forEach {
-            $0.isUserInteractionEnabled = false
-        }
-    }
-    
-    open override func didAddSubview(_ subview: UIView) {
-        super.didAddSubview(subview)
-        subview.isUserInteractionEnabled = false
-    }
-    
+class BRButton: UIControl {
+	
+	override var isHighlighted: Bool {
+		didSet {
+			UIView.animate(withDuration: 0.2, animations: {[unowned self] in
+				self.alpha = self.isHighlighted ? 0.1 : 1.0
+			})
+		}
+	}
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		disableUserInteractionInSubviews()
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		disableUserInteractionInSubviews()
+	}
+	
+	fileprivate func disableUserInteractionInSubviews() {
+		subviews.forEach {
+			$0.isUserInteractionEnabled = false
+		}
+	}
+	
+	override func didAddSubview(_ subview: UIView) {
+		super.didAddSubview(subview)
+		subview.isUserInteractionEnabled = false
+	}
+	
 }
