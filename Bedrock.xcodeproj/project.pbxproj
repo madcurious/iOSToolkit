@@ -11,7 +11,7 @@
 		26020E6A1DA4BC0200C45902 /* BRConfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E381DA4BC0200C45902 /* BRConfirmDialog.swift */; };
 		26020E6B1DA4BC0200C45902 /* BRErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E391DA4BC0200C45902 /* BRErrorDialog.swift */; };
 		261462711EFA5F2F00321DFC /* BRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261462701EFA5F2F00321DFC /* BRError.swift */; };
-		262B073D1F4ADB6200B7C45F /* BRLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B073C1F4ADB6200B7C45F /* BRLoadableView.swift */; };
+		262B073D1F4ADB6200B7C45F /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B073C1F4ADB6200B7C45F /* LoadableView.swift */; };
 		264AE14F1F95ED4D00F87C55 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC3DF21EE678930095374A /* UIScreen.swift */; };
 		264AE1511F95ED8300F87C55 /* NSDecimalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E3E1DA4BC0200C45902 /* NSDecimalNumber.swift */; };
 		264AE1521F95ED8300F87C55 /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E3F1DA4BC0200C45902 /* CharacterSet.swift */; };
@@ -53,6 +53,7 @@
 		2D012BEB23292E3800095CE1 /* UIViewController+InterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D012BEA23292E3800095CE1 /* UIViewController+InterfaceBuilder.swift */; };
 		2D012BEE2329340700095CE1 /* UIView+InterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D012BED2329340700095CE1 /* UIView+InterfaceBuilder.swift */; };
 		2D012BF02329345400095CE1 /* UIView+TreeTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D012BEF2329345400095CE1 /* UIView+TreeTraversal.swift */; };
+		2D012BF32329381C00095CE1 /* LoadableViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D012BF22329381C00095CE1 /* LoadableViewState.swift */; };
 		2D69F70122C15B8E00FB4CA5 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D69F70022C15B8E00FB4CA5 /* Operation.swift */; };
 		2D69F70322C15BAC00FB4CA5 /* Failable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D69F70222C15BAC00FB4CA5 /* Failable.swift */; };
 		2D95824E22C169B700C28403 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95824D22C169B700C28403 /* AsyncOperation.swift */; };
@@ -89,7 +90,7 @@
 		260DFDC81E55996100E3B92E /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
 		261462701EFA5F2F00321DFC /* BRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRError.swift; sourceTree = "<group>"; };
 		262731841DB2447800119F76 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
-		262B073C1F4ADB6200B7C45F /* BRLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRLoadableView.swift; sourceTree = "<group>"; };
+		262B073C1F4ADB6200B7C45F /* LoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
 		262F31A31E0777D900D6E4CF /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		264AE1661F95F15100F87C55 /* Bedrock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bedrock.h; sourceTree = "<group>"; };
 		264C48171F98961700188D49 /* BRDefaultLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRDefaultLoadableView.swift; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 		2D012BEA23292E3800095CE1 /* UIViewController+InterfaceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+InterfaceBuilder.swift"; sourceTree = "<group>"; };
 		2D012BED2329340700095CE1 /* UIView+InterfaceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+InterfaceBuilder.swift"; sourceTree = "<group>"; };
 		2D012BEF2329345400095CE1 /* UIView+TreeTraversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TreeTraversal.swift"; sourceTree = "<group>"; };
+		2D012BF22329381C00095CE1 /* LoadableViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableViewState.swift; sourceTree = "<group>"; };
 		2D69F70022C15B8E00FB4CA5 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		2D69F70222C15BAC00FB4CA5 /* Failable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failable.swift; sourceTree = "<group>"; };
 		2D95824D22C169B700C28403 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
@@ -223,9 +225,7 @@
 			children = (
 				26609DDD1EF8F32A002B9F33 /* Buttons */,
 				26609DE91EF8F32A002B9F33 /* BRTableViewCell.swift */,
-				262B073C1F4ADB6200B7C45F /* BRLoadableView.swift */,
-				264C48171F98961700188D49 /* BRDefaultLoadableView.swift */,
-				264C48191F98963200188D49 /* BRDefaultLoadableView.xib */,
+				2D012BF42329386300095CE1 /* Loadable views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,6 +300,17 @@
 				2D012BEF2329345400095CE1 /* UIView+TreeTraversal.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		2D012BF42329386300095CE1 /* Loadable views */ = {
+			isa = PBXGroup;
+			children = (
+				262B073C1F4ADB6200B7C45F /* LoadableView.swift */,
+				264C48171F98961700188D49 /* BRDefaultLoadableView.swift */,
+				264C48191F98963200188D49 /* BRDefaultLoadableView.xib */,
+				2D012BF22329381C00095CE1 /* LoadableViewState.swift */,
+			);
+			path = "Loadable views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +439,7 @@
 				26020E6A1DA4BC0200C45902 /* BRConfirmDialog.swift in Sources */,
 				2D012BEE2329340700095CE1 /* UIView+InterfaceBuilder.swift in Sources */,
 				2D012BF02329345400095CE1 /* UIView+TreeTraversal.swift in Sources */,
+				2D012BF32329381C00095CE1 /* LoadableViewState.swift in Sources */,
 				2D69F70322C15BAC00FB4CA5 /* Failable.swift in Sources */,
 				26020E6B1DA4BC0200C45902 /* BRErrorDialog.swift in Sources */,
 				264EE4991EF8F655004011FE /* ImageButton.swift in Sources */,
@@ -437,7 +449,7 @@
 				264AE15C1F95ED8300F87C55 /* UIImage.swift in Sources */,
 				264EE4981EF8F652004011FE /* Button.swift in Sources */,
 				264AE15E1F95ED8300F87C55 /* UIViewController+Embedding.swift in Sources */,
-				262B073D1F4ADB6200B7C45F /* BRLoadableView.swift in Sources */,
+				262B073D1F4ADB6200B7C45F /* LoadableView.swift in Sources */,
 				264AE1531F95ED8300F87C55 /* Double.swift in Sources */,
 				264AE1621F95ED8300F87C55 /* NSString.swift in Sources */,
 				2D69F70122C15B8E00FB4CA5 /* Operation.swift in Sources */,

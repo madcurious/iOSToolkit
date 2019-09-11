@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BRDefaultLoadableView: UIView, BRLoadableView {
+class BRDefaultLoadableView: UIView, LoadableView {
     
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
     @IBOutlet weak var informationView: UIStackView!
@@ -16,7 +16,7 @@ class BRDefaultLoadableView: UIView, BRLoadableView {
     @IBOutlet weak var retryButton: UIButton!
     @IBOutlet weak var dataView: UIView!
     
-    var state = BRLoadableViewState.initial {
+    var state = LoadableViewState.initial {
         didSet {
             updateView(forState: state)
         }
@@ -49,7 +49,7 @@ class BRDefaultLoadableView: UIView, BRLoadableView {
         retryButton.setTitle("Retry", for: .normal)
     }
     
-    fileprivate func updateView(forState state: BRLoadableViewState) {
+    fileprivate func updateView(forState state: LoadableViewState) {
         switch state {
         case .initial:
             loadingView.stopAnimating()
