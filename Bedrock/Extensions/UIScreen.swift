@@ -8,8 +8,9 @@
 
 import UIKit
 
-public extension UIScreen {
-  
+extension UIScreen {
+	
+	/// Returns the size of the screen in points and in portrait-up orientation.
   var nativeSize: CGSize {
     return CGSize(width: self.nativeBounds.size.width / self.nativeScale,
                   height: self.nativeBounds.size.height / self.nativeScale)

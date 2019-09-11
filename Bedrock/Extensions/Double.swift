@@ -9,12 +9,12 @@
 import Foundation
 
 extension Double {
-    
-    func isWholeNumber() -> Bool {
-        if Double(Int(self)) == self {
-            return true
-        }
-        return false
-    }
-    
+	
+	func isWholeNumber() -> Bool {
+		if Double(Int(self)) == self {
+			return true
+		}
+		return false
+	}
+	
 }

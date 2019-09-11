@@ -9,10 +9,11 @@
 import CoreGraphics
 
 extension CGSize {
-    
-    static var max: CGSize {
-        return CGSize(width: CGFloat.greatestFiniteMagnitude,
-                      height: CGFloat.greatestFiniteMagnitude)
-    }
-    
+	
+	/// The largest possible width and height.
+	static var max: CGSize {
+		return CGSize(width: CGFloat.greatestFiniteMagnitude,
+									height: CGFloat.greatestFiniteMagnitude)
+	}
+	
 }

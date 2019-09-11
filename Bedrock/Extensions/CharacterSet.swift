@@ -8,20 +8,16 @@
 
 import Foundation
 
-public extension CharacterSet {
-  
-  /**
-   The numbers 0 to 9 and the period.
-   */
-  static func decimalNumberCharacterSet() -> CharacterSet {
-    return CharacterSet(charactersIn: "0123456789.")
-  }
-  
-  /**
-   The numbers 0 to 9.
-   */
-  static func wholeNumberCharacterSet() -> CharacterSet {
-    return CharacterSet(charactersIn: "0123456789")
-  }
-  
+extension CharacterSet {
+	
+	/// The numbers 0 to 9 and the period.
+	static func decimalNumberCharacterSet() -> CharacterSet {
+		return CharacterSet(charactersIn: "0123456789.")
+	}
+	
+	/// The numbers 0 to 9.
+	static func wholeNumberCharacterSet() -> CharacterSet {
+		return CharacterSet(charactersIn: "0123456789")
+	}
+	
 }

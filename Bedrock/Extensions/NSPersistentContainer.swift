@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 @available(iOS 10.0, *)
-public extension NSPersistentContainer {
+extension NSPersistentContainer {
     
     func newChildViewContext() -> NSManagedObjectContext {
         let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)

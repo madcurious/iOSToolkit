@@ -8,8 +8,9 @@
 
 import UIKit
 
-public extension UIImage {
-  
+extension UIImage {
+	
+	/// Creates a 1x1 image of a color, intended for tiling.
   class func imageFromColor(_ color: UIColor) -> UIImage {
     let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
     UIGraphicsBeginImageContext(rect.size)
@@ -22,7 +23,8 @@ public extension UIImage {
     UIGraphicsEndImageContext()
     return image!
   }
-  
+	
+	/// Takes a screenshot of a view.
   class func imageFromView(_ view: UIView) -> UIImage? {
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
     guard let context = UIGraphicsGetCurrentContext()
@@ -35,7 +37,8 @@ public extension UIImage {
     UIGraphicsEndImageContext()
     return image
   }
-  
+	
+	/// Creates a `UIImage` from a template asset (i.e. a PDF file).
   class func template(named name: String) -> UIImage? {
     return UIImage(named: name)?.withRenderingMode(.alwaysTemplate)
   }

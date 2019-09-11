@@ -15,7 +15,7 @@ $ git submodule add https://github.com/mattquiros/Bedrock.git
 
 Next:
 
-* Open your app's Xcode project.
+* your app's Xcode project.
 * Add `Bedrock.xcodeproj` to your app's Xcode project.
 * Go to your main target's `Build Phases`.
 * In `Link Binary With Libraries` and `Embed Frameworks`, add `Bedrock.framework`.

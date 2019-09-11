@@ -9,9 +9,10 @@
 import Foundation
 
 extension Calendar {
-    
-    func numberOfDaysInMonth(of date: Date) -> Int {
-        return self.range(of: .day, in: .month, for: date)!.upperBound - 1
-    }
-    
+	
+	/// Returns the number of days in a month as defined in this calendar.
+	func numberOfDaysInMonth(of date: Date) -> Int {
+		return range(of: .day, in: .month, for: date)!.upperBound - 1
+	}
+	
 }

@@ -8,15 +8,15 @@
 
 import Foundation
 
-public struct BRError: LocalizedError {
+struct BRError: LocalizedError {
     
     let message: String
     
-    public var errorDescription: String? {
+    var errorDescription: String? {
         return self.message
     }
     
-    public init(_ message: String) {
+    init(_ message: String) {
         self.message = message
     }
     

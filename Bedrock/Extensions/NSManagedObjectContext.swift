@@ -8,8 +8,9 @@
 
 import CoreData
 
-public extension NSManagedObjectContext {
+extension NSManagedObjectContext {
 	
+	/// Saves this context and all other contexts in its ancestry.
 	func saveToStore() throws {
 		guard self.hasChanges
 			else {

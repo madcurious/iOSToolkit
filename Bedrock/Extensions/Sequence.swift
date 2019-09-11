@@ -8,11 +8,9 @@
 
 import Foundation
 
-public extension Sequence {
+extension Sequence {
   
-  /**
-   Returns a dictionary where the key is the group, and the value is an array of member elements.
-   */
+  /// Returns a dictionary where the key is the group, and the value is an array of member elements.
   func grouped<T>(by groupProvider: (Iterator.Element) -> T?) -> [T : [Iterator.Element]] {
     var dict: [T : [Iterator.Element]] = [:]
     for element in self {

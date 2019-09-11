@@ -10,6 +10,7 @@ import UIKit
 
 extension UIApplication {
 	
+	/// Returns the root view controller in the app.
 	func rootViewController() -> UIViewController {
 		return UIApplication.shared.delegate!.window!!.rootViewController!
 	}

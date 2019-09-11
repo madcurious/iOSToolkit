@@ -10,19 +10,14 @@ import Foundation
 
 extension String {
 	
+	/// Returns a string describing the type of an object.
 	init(forTypeOf object: Any) {
 		self.init(describing: type(of: object))
 	}
 	
-  func hasCharactersFromSet(_ characterSet: CharacterSet) -> Bool {
-    if let _ = self.rangeOfCharacter(from: characterSet) {
-      return true
-    }
-    return false
-  }
-  
+	/// Returns the string without the surrounding whitespace.
   func trim() -> String  {
-    return self.trimmingCharacters(in: CharacterSet.whitespaces)
+    return trimmingCharacters(in: CharacterSet.whitespaces)
   }
   
 }

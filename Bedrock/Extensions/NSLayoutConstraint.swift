@@ -8,18 +8,17 @@
 
 import UIKit
 
-public extension NSLayoutConstraint {
-  
-  class func constraintsWithVisualFormatArray(_ array: [String], metrics: [String: AnyObject]?, views: [String: AnyObject]) -> [NSLayoutConstraint] {
-    var constraints = [NSLayoutConstraint]()
-    for rule in array {
-      constraints.append(contentsOf: self.constraints(withVisualFormat: rule,
-                                                      options: NSLayoutConstraint.FormatOptions(),
-                                                      metrics: metrics,
-                                                      views: views) )
-    }
-    
-    return constraints
-  }
-  
+extension NSLayoutConstraint {
+	
+	class func constraintsWithVisualFormatArray(_ array: [String], metrics: [String: AnyObject]?, views: [String: AnyObject]) -> [NSLayoutConstraint] {
+		var constraints = [NSLayoutConstraint]()
+		for rule in array {
+			constraints.append(contentsOf: self.constraints(withVisualFormat: rule,
+																											options: NSLayoutConstraint.FormatOptions(),
+																											metrics: metrics,
+																											views: views) )
+		}
+		return constraints
+	}
+	
 }

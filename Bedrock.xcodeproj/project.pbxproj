@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26020E691DA4BC0200C45902 /* BRAlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E371DA4BC0200C45902 /* BRAlertDialog.swift */; };
-		26020E6A1DA4BC0200C45902 /* BRConfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E381DA4BC0200C45902 /* BRConfirmDialog.swift */; };
-		26020E6B1DA4BC0200C45902 /* BRErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E391DA4BC0200C45902 /* BRErrorDialog.swift */; };
+		26020E691DA4BC0200C45902 /* AlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E371DA4BC0200C45902 /* AlertDialog.swift */; };
+		26020E6A1DA4BC0200C45902 /* ConfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E381DA4BC0200C45902 /* ConfirmDialog.swift */; };
+		26020E6B1DA4BC0200C45902 /* ErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26020E391DA4BC0200C45902 /* ErrorDialog.swift */; };
 		261462711EFA5F2F00321DFC /* BRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261462701EFA5F2F00321DFC /* BRError.swift */; };
 		262B073D1F4ADB6200B7C45F /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B073C1F4ADB6200B7C45F /* LoadableView.swift */; };
 		264AE14F1F95ED4D00F87C55 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC3DF21EE678930095374A /* UIScreen.swift */; };
@@ -29,7 +29,6 @@
 		264AE15F1F95ED8300F87C55 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262731841DB2447800119F76 /* NSManagedObjectContext.swift */; };
 		264AE1601F95ED8300F87C55 /* NSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */; };
 		264AE1611F95ED8300F87C55 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262F31A31E0777D900D6E4CF /* Calendar.swift */; };
-		264AE1621F95ED8300F87C55 /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260DFDC81E55996100E3B92E /* NSString.swift */; };
 		264AE1631F95ED8300F87C55 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2657331A1EDC7A7700AD1AB9 /* CGSize.swift */; };
 		264C48181F98961700188D49 /* DefaultLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C48171F98961700188D49 /* DefaultLoadableView.swift */; };
 		264C481A1F98963200188D49 /* DefaultLoadableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264C48191F98963200188D49 /* DefaultLoadableView.xib */; };
@@ -38,7 +37,6 @@
 		264EE4991EF8F655004011FE /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DDF1EF8F32A002B9F33 /* ImageButton.swift */; };
 		264EE49A1EF8F655004011FE /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DE01EF8F32A002B9F33 /* LabelButton.swift */; };
 		264EE49C1EF8F659004011FE /* BRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26609DE91EF8F32A002B9F33 /* BRTableViewCell.swift */; };
-		269D59EA1FA4AF680064C09B /* BRTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269D59E91FA4AF680064C09B /* BRTest.swift */; };
 		26A190661F836B0A00A9BBF6 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A190651F836B0A00A9BBF6 /* DateUtil.swift */; };
 		26A190701F83739400A9BBF6 /* Bedrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26904D301C7757540094DA08 /* Bedrock.framework */; };
 		26A1907B1F83756F00A9BBF6 /* BRDateUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1907A1F83756F00A9BBF6 /* BRDateUtilsTest.swift */; };
@@ -70,9 +68,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		26020E371DA4BC0200C45902 /* BRAlertDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRAlertDialog.swift; sourceTree = "<group>"; };
-		26020E381DA4BC0200C45902 /* BRConfirmDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRConfirmDialog.swift; sourceTree = "<group>"; };
-		26020E391DA4BC0200C45902 /* BRErrorDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRErrorDialog.swift; sourceTree = "<group>"; };
+		26020E371DA4BC0200C45902 /* AlertDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDialog.swift; sourceTree = "<group>"; };
+		26020E381DA4BC0200C45902 /* ConfirmDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDialog.swift; sourceTree = "<group>"; };
+		26020E391DA4BC0200C45902 /* ErrorDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDialog.swift; sourceTree = "<group>"; };
 		26020E3E1DA4BC0200C45902 /* NSDecimalNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDecimalNumber.swift; sourceTree = "<group>"; };
 		26020E3F1DA4BC0200C45902 /* CharacterSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
 		26020E411DA4BC0200C45902 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 		26020E4B1DA4BC0200C45902 /* UIView+Embedding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Embedding.swift"; sourceTree = "<group>"; };
 		26020E4C1DA4BC0200C45902 /* UIViewController+Embedding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Embedding.swift"; sourceTree = "<group>"; };
 		26020E501DA4BC0200C45902 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		260DFDC81E55996100E3B92E /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
 		261462701EFA5F2F00321DFC /* BRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRError.swift; sourceTree = "<group>"; };
 		262731841DB2447800119F76 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
 		262B073C1F4ADB6200B7C45F /* LoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
@@ -104,7 +101,6 @@
 		2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPersistentContainer.swift; sourceTree = "<group>"; };
 		26904D301C7757540094DA08 /* Bedrock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bedrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26904E3F1C77747C0094DA08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		269D59E91FA4AF680064C09B /* BRTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRTest.swift; sourceTree = "<group>"; };
 		269D59EC1FA4B1260064C09B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		26A190651F836B0A00A9BBF6 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		26A1906B1F83739300A9BBF6 /* BedrockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BedrockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,9 +160,9 @@
 		26020E361DA4BC0200C45902 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
-				26020E371DA4BC0200C45902 /* BRAlertDialog.swift */,
-				26020E381DA4BC0200C45902 /* BRConfirmDialog.swift */,
-				26020E391DA4BC0200C45902 /* BRErrorDialog.swift */,
+				26020E371DA4BC0200C45902 /* AlertDialog.swift */,
+				26020E381DA4BC0200C45902 /* ConfirmDialog.swift */,
+				26020E391DA4BC0200C45902 /* ErrorDialog.swift */,
 			);
 			path = Dialogs;
 			sourceTree = "<group>";
@@ -184,7 +180,6 @@
 				26020E441DA4BC0200C45902 /* NSLayoutConstraint.swift */,
 				262731841DB2447800119F76 /* NSManagedObjectContext.swift */,
 				2672FBF41DD3310000C8D34C /* NSPersistentContainer.swift */,
-				260DFDC81E55996100E3B92E /* NSString.swift */,
 				26020E451DA4BC0200C45902 /* Sequence.swift */,
 				26020E461DA4BC0200C45902 /* String.swift */,
 				26020E471DA4BC0200C45902 /* UIAlertController.swift */,
@@ -214,7 +209,6 @@
 			children = (
 				261462701EFA5F2F00321DFC /* BRError.swift */,
 				26A190651F836B0A00A9BBF6 /* DateUtil.swift */,
-				269D59E91FA4AF680064C09B /* BRTest.swift */,
 				2D012BC02328AE8D00095CE1 /* Debug.swift */,
 			);
 			path = Utilities;
@@ -426,22 +420,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				264AE1581F95ED8300F87C55 /* String.swift in Sources */,
-				26020E691DA4BC0200C45902 /* BRAlertDialog.swift in Sources */,
+				26020E691DA4BC0200C45902 /* AlertDialog.swift in Sources */,
 				264AE1511F95ED8300F87C55 /* NSDecimalNumber.swift in Sources */,
 				2D95824E22C169B700C28403 /* AsyncOperation.swift in Sources */,
 				264AE1571F95ED8300F87C55 /* Sequence.swift in Sources */,
 				264AE1591F95ED8300F87C55 /* UIAlertController.swift in Sources */,
-				269D59EA1FA4AF680064C09B /* BRTest.swift in Sources */,
 				264AE15B1F95ED8300F87C55 /* UIColor.swift in Sources */,
 				264C485C1F98A21500188D49 /* LoadPersistentContainerOperation.swift in Sources */,
 				264C48181F98961700188D49 /* DefaultLoadableView.swift in Sources */,
 				264AE1601F95ED8300F87C55 /* NSPersistentContainer.swift in Sources */,
-				26020E6A1DA4BC0200C45902 /* BRConfirmDialog.swift in Sources */,
+				26020E6A1DA4BC0200C45902 /* ConfirmDialog.swift in Sources */,
 				2D012BEE2329340700095CE1 /* UIView+InterfaceBuilder.swift in Sources */,
 				2D012BF02329345400095CE1 /* UIView+TreeTraversal.swift in Sources */,
 				2D012BF32329381C00095CE1 /* LoadableViewState.swift in Sources */,
 				2D69F70322C15BAC00FB4CA5 /* Failable.swift in Sources */,
-				26020E6B1DA4BC0200C45902 /* BRErrorDialog.swift in Sources */,
+				26020E6B1DA4BC0200C45902 /* ErrorDialog.swift in Sources */,
 				264EE4991EF8F655004011FE /* ImageButton.swift in Sources */,
 				2D012BEB23292E3800095CE1 /* UIViewController+InterfaceBuilder.swift in Sources */,
 				264AE1631F95ED8300F87C55 /* CGSize.swift in Sources */,
@@ -451,7 +444,6 @@
 				264AE15E1F95ED8300F87C55 /* UIViewController+Embedding.swift in Sources */,
 				262B073D1F4ADB6200B7C45F /* LoadableView.swift in Sources */,
 				264AE1531F95ED8300F87C55 /* Double.swift in Sources */,
-				264AE1621F95ED8300F87C55 /* NSString.swift in Sources */,
 				2D69F70122C15B8E00FB4CA5 /* Operation.swift in Sources */,
 				264AE1551F95ED8300F87C55 /* NSAttributedString.swift in Sources */,
 				261462711EFA5F2F00321DFC /* BRError.swift in Sources */,

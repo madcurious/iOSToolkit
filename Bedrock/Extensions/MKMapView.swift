@@ -9,9 +9,10 @@
 import MapKit
 
 extension MKMapView {
-    
-    func removeAllAnnotations() {
-        self.removeAnnotations(self.annotations)
-    }
-    
+	
+	/// Removes all annotations from the map.
+	func removeAllAnnotations() {
+		removeAnnotations(annotations)
+	}
+	
 }
