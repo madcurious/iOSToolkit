@@ -7,14 +7,14 @@
 //
 
 import XCTest
-import Bedrock
+@testable import Bedrock
 
 class BRDateUtilsTest_EndOfDay: BRDateUtilsTest {
     
     func testEndOfDay_leapYearDate_shouldSucceed() {
         let date = makeDate(day: 29, month: 2, year: 2016)
         
-        let endOfDay = BRDateUtil.endOfDay(for: date)
+        let endOfDay = DateUtil.endOfDay(for: date)
         let comps = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute, .second], from: endOfDay)
         XCTAssertEqual(comps.day, 29)
         XCTAssertEqual(comps.month, 2)

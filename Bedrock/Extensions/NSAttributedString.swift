@@ -12,8 +12,8 @@ extension NSAttributedString {
     
     public convenience init(string: String, font: UIFont, textColor: UIColor) {
         self.init(string: string, attributes: [
-            NSAttributedStringKey.font : font,
-            NSAttributedStringKey.foregroundColor : textColor
+            NSAttributedString.Key.font : font,
+            NSAttributedString.Key.foregroundColor : textColor
             ])
     }
     

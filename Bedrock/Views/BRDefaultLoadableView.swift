@@ -39,7 +39,7 @@ public class BRDefaultLoadableView: UIView, BRLoadableView {
     
     fileprivate func setup() {
         let viewFromNib = viewFromOwnedNib()
-        addSubviewsAndFill(viewFromNib)
+        addSubviewAndFill(viewFromNib)
         updateView(forState: .initial)
         
         informationLabel.numberOfLines = 0

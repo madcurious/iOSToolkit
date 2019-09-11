@@ -8,9 +8,9 @@
 
 import CoreGraphics
 
-public extension CGSize {
+extension CGSize {
     
-    public static var max: CGSize {
+    static var max: CGSize {
         return CGSize(width: CGFloat.greatestFiniteMagnitude,
                       height: CGFloat.greatestFiniteMagnitude)
     }

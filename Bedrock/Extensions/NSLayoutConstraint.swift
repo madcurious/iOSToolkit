@@ -14,7 +14,7 @@ public extension NSLayoutConstraint {
     var constraints = [NSLayoutConstraint]()
     for rule in array {
       constraints.append(contentsOf: self.constraints(withVisualFormat: rule,
-                                                      options: NSLayoutFormatOptions(),
+                                                      options: NSLayoutConstraint.FormatOptions(),
                                                       metrics: metrics,
                                                       views: views) )
     }

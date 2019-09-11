@@ -8,57 +8,25 @@
 
 import UIKit
 
+// MARK: - Adding subviews
 extension UIView {
 	
-	/// Adds multiple subviews from back to front.
-	func addSubviews(_ views: UIView ...) {
-		for view in views {
-			self.addSubview(view)
-		}
-	}
-	
-	func addSubviewsAndFill(_ views: UIView ...) {
-		for view in views {
-			addSubviewAndFill(view)
-		}
-	}
-	
-	@discardableResult
-	func addSubviewAndFill(_ subview: UIView) -> [NSLayoutConstraint] {
+	/// Adds a subview and binds its edges to this view's `layoutMarginsGuide`. To provide a padding
+	/// around the subview's edges, set this view's `layoutMargins` or `directionalEdgeInsets`
+	/// before calling this method. The `layoutMarginsGuide` respects the values of those properties.
+	func addSubviewAndFill(_ subview: UIView) {
 		addSubview(subview)
-		
 		subview.translatesAutoresizingMaskIntoConstraints = false
-		
-		let constraints = [
-			subview.topAnchor.constraint(equalTo: topAnchor),
-			trailingAnchor.constraint(equalTo: subview.trailingAnchor),
-			bottomAnchor.constraint(equalTo: subview.bottomAnchor),
-			subview.leadingAnchor.constraint(equalTo: leadingAnchor)
-		]
-		constraints.forEach {
-			$0.priority = UILayoutPriority(999)
-			$0.isActive = true
-		}
-		
-		return constraints
+		subview.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor).isActive = true
+		layoutMarginsGuide.trailingAnchor.constraint(equalTo: subview.trailingAnchor).isActive = true
+		layoutMarginsGuide.bottomAnchor.constraint(equalTo: subview.bottomAnchor).isActive = true
+		subview.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
 	}
 	
-	func fillSuperview() {
-		if let superview = self.superview {
-			self.translatesAutoresizingMaskIntoConstraints = false
-			let views = ["view" : self]
-			let rules = ["H:|-0-[view]-0-|",
-									 "V:|-0-[view]-0-|"]
-			superview.addConstraints(
-				NSLayoutConstraint.constraintsWithVisualFormatArray(rules,
-																														metrics: nil,
-																														views: views))
-		}
-	}
-	
-	func clearAllBackgroundColors() {
-		UIView.clearAllBackgroundColors(from: self)
-	}
+}
+
+// MARK: - Working with Interface Builder
+extension UIView {
 	
 	func viewFromOwnedNib(named nibName: String? = nil) -> UIView {
 		let bundle = Bundle(for: self.classForCoder)
@@ -70,28 +38,26 @@ extension UIView {
 			}()
 	}
 	
-	/// Performs the `block` on the entire view hierarchy, starting from the receiver
-	/// as the root of the tree.
-	func performRecursively(_ block: (UIView) -> ()) {
-		UIView.performRecursively(from: self, block: block)
-	}
-	
-}
-
-// MARK: - Class functions
-extension UIView {
-	
 	class func instantiateFromNib() -> Self {
 		return self.instantiateFromNibInBundle(Bundle.main)
 	}
 	
-	class func clearBackgroundColors(_ views: UIView...) {
-		for view in views {
-			view.backgroundColor = UIColor.clear
-		}
+	class func nib() -> UINib {
+		return UINib(nibName: String(forTypeOf: self), bundle: Bundle.main)
 	}
 	
-	class func clearBackgroundColors(_ views: [UIView]) {
+	private class func instantiateFromNibInBundle<T: UIView>(_ bundle: Bundle) -> T {
+		let objects = bundle.loadNibNamed(String(forTypeOf: self), owner: self, options: nil)!
+		let view = objects.last as! T
+		return view
+	}
+	
+}
+
+// MARK: - Other utility functions
+extension UIView {
+	
+	class func clearBackgroundColors(_ views: UIView...) {
 		for view in views {
 			view.backgroundColor = UIColor.clear
 		}
@@ -111,8 +77,8 @@ extension UIView {
 		}
 	}
 	
-	class func nib() -> UINib {
-		return UINib(nibName: String(forTypeOf: self), bundle: Bundle.main)
+	func clearAllBackgroundColors() {
+		UIView.clearAllBackgroundColors(from: self)
 	}
 	
 	class func performRecursively(from root: UIView, block: (UIView) -> ()) {
@@ -129,15 +95,10 @@ extension UIView {
 		}
 	}
 	
-}
-
-// MARK: - Private functions
-fileprivate extension UIView {
-	
-	class func instantiateFromNibInBundle<T: UIView>(_ bundle: Bundle) -> T {
-		let objects = bundle.loadNibNamed(String(forTypeOf: self), owner: self, options: nil)!
-		let view = objects.last as! T
-		return view
+	/// Performs the `block` on the entire view hierarchy, starting from the receiver
+	/// as the root of the tree.
+	func performRecursively(_ block: (UIView) -> ()) {
+		UIView.performRecursively(from: self, block: block)
 	}
 	
 }

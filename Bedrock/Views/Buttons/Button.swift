@@ -1,5 +1,5 @@
 //
-//  BRButton.swift
+//  Button.swift
 //  Bedrock
 //
 //  Created by Matt Quiros on 6/8/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BRButton: UIControl {
+class Button: UIControl {
 	
 	override var isHighlighted: Bool {
 		didSet {

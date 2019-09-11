@@ -1,5 +1,5 @@
 //
-//  BRImageButton.swift
+//  ImageButton.swift
 //  Bedrock
 //
 //  Created by Matt Quiros on 16/02/2017.
@@ -8,18 +8,9 @@
 
 import UIKit
 
-class BRImageButton: BRButton {
+class ImageButton: Button {
 	
-	private let imageView = UIImageView(frame: CGRect.zero)
-	
-	var image: UIImage? {
-		get {
-			return self.imageView.image
-		}
-		set {
-			self.imageView.image = newValue
-		}
-	}
+	fileprivate(set) lazy var imageView = UIImageView(frame: CGRect.zero)
 	
 	override var tintColor: UIColor! {
 		get {
@@ -32,21 +23,21 @@ class BRImageButton: BRButton {
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		self.addSubviewsAndFill(self.imageView)
+		setupStructure()
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
-		self.addSubviewsAndFill(self.imageView)
-	}
-	
-	convenience init() {
-		self.init(frame: .zero)
+		setupStructure()
 	}
 	
 	convenience init(frame: CGRect, image: UIImage) {
 		self.init(frame: frame)
 		self.imageView.image = image
+	}
+	
+	fileprivate func setupStructure() {
+		addSubviewAndFill(imageView)
 	}
 	
 }

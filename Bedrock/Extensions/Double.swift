@@ -8,9 +8,9 @@
 
 import Foundation
 
-public extension Double {
+extension Double {
     
-    public func isWholeNumber() -> Bool {
+    func isWholeNumber() -> Bool {
         if Double(Int(self)) == self {
             return true
         }

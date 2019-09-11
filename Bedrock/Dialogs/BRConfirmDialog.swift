@@ -28,7 +28,7 @@ open class BRConfirmDialog {
             alertController.addAction(confirmButtonAction)
             
             let cancelAction = UIAlertAction(title: cancelButtonTitle,
-                style: UIAlertActionStyle.cancel) { _ in
+                style: UIAlertAction.Style.cancel) { _ in
                     alertController.dismiss(animated: true, completion: nil)
             }
             alertController.addAction(cancelAction)
