@@ -10,6 +10,7 @@ import UIKit
 
 class ImageButton: Button {
 	
+	/// The image view within the button.
 	fileprivate(set) lazy var imageView = UIImageView(frame: CGRect.zero)
 	
 	override var tintColor: UIColor! {

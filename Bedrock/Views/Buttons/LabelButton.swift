@@ -25,21 +25,21 @@ class LabelButton: Button {
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		setup()
+		setupStructure()
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
-		setup()
+		setupStructure()
 	}
 	
-	fileprivate func setup() {
+	fileprivate func setupStructure() {
 		addSubviewAndFill(titleLabel)
 	}
 	
 	override func prepareForInterfaceBuilder() {
 		super.prepareForInterfaceBuilder()
-		setup()
+		setupStructure()
 	}
 	
 	override func sizeThatFits(_ size: CGSize) -> CGSize {

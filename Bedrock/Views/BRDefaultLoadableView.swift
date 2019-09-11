@@ -8,36 +8,36 @@
 
 import UIKit
 
-public class BRDefaultLoadableView: UIView, BRLoadableView {
+class BRDefaultLoadableView: UIView, BRLoadableView {
     
-    @IBOutlet public weak var loadingView: UIActivityIndicatorView!
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
     @IBOutlet weak var informationView: UIStackView!
-    @IBOutlet public weak var informationLabel: UILabel!
-    @IBOutlet public weak var retryButton: UIButton!
-    @IBOutlet public weak var dataView: UIView!
+    @IBOutlet weak var informationLabel: UILabel!
+    @IBOutlet weak var retryButton: UIButton!
+    @IBOutlet weak var dataView: UIView!
     
-    public var state = BRLoadableViewState.initial {
+    var state = BRLoadableViewState.initial {
         didSet {
             updateView(forState: state)
         }
     }
     
-    public override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        setupStructure()
     }
     
-    public required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+        setupStructure()
     }
     
-    public override func prepareForInterfaceBuilder() {
+    override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        setup()
+        setupStructure()
     }
     
-    fileprivate func setup() {
+    fileprivate func setupStructure() {
         let viewFromNib = viewFromOwnedNib()
         addSubviewAndFill(viewFromNib)
         updateView(forState: .initial)
