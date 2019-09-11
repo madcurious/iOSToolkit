@@ -1,5 +1,5 @@
 //
-//  BRDefaultLoadableView.swift
+//  DefaultLoadableView.swift
 //  Bedrock
 //
 //  Created by Matt Quiros on 19/10/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BRDefaultLoadableView: UIView, LoadableView {
+class DefaultLoadableView: UIView, LoadableView {
     
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
     @IBOutlet weak var informationView: UIStackView!
