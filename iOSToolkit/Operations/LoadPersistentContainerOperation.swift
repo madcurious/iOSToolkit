@@ -2,8 +2,8 @@
 //  LoadPersistentContainerOperations.swift
 //  iOSToolkit
 //
-//  Created by Matt Quiros on 19/10/2017.
-//  Copyright © 2017 Matt Quiros. All rights reserved.
+//  Created by Matthew Quiros on 19/10/2017.
+//  Copyright © 2017 Matthew Quiros. All rights reserved.
 //
 
 import Foundation
@@ -12,18 +12,23 @@ import CoreData
 @available(iOS 10.0, *)
 class LoadPersistentContainerOperation: AsyncOperation<NSPersistentContainer, Error> {
 	
-	let documentName: String
-	let inMemory: Bool
+	enum PersistenceType {
+		case inMemory
+		case onDisk
+	}
 	
-	init(documentName: String, inMemory: Bool, completionBlock: OperationCompletionBlock?) {
+	let documentName: String
+	let persistenceType: PersistenceType
+	
+	init(documentName: String, persistenceType: PersistenceType, completionBlock: OperationCompletionBlock?) {
 		self.documentName = documentName
-		self.inMemory = inMemory
+		self.persistenceType = persistenceType
 		super.init(completionBlock: completionBlock)
 	}
 	
 	override func main() {
 		let persistentContainer = NSPersistentContainer(name: documentName)
-		if inMemory,
+		if persistenceType == .inMemory,
 			let description = persistentContainer.persistentStoreDescriptions.first {
 			description.type = NSInMemoryStoreType
 		}

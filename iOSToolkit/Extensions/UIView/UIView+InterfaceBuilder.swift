@@ -3,7 +3,7 @@
 //  iOSToolkit
 //
 //  Created by Matthew Quiros on 11/09/2019.
-//  Copyright © 2019 Matt Quiros. All rights reserved.
+//  Copyright © 2019 Matthew Quiros. All rights reserved.
 //
 
 import UIKit
@@ -19,7 +19,7 @@ extension UIView {
 			if let nibName = nibName {
 				return bundle.loadNibNamed(nibName, owner: self, options: nil)!.first as! UIView
 			}
-			return bundle.loadNibNamed(String(forTypeOf: self), owner: self, options: nil)!.first as! UIView
+			return bundle.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)!.first as! UIView
 			}()
 	}
 	
@@ -37,7 +37,7 @@ extension UIView {
 	/// Private utility function internally used by `instantiateFromNib()` to get around
 	/// the limitation of Swift generics.
 	private class func instantiateFromNibInBundle<T: UIView>(_ bundle: Bundle) -> T {
-		let objects = bundle.loadNibNamed(String(forTypeOf: self), owner: self, options: nil)!
+		let objects = bundle.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)!
 		let view = objects.last as! T
 		return view
 	}

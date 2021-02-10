@@ -2,8 +2,8 @@
 //  CGSize.swift
 //  iOSToolkit
 //
-//  Created by Matt Quiros on 29/05/2017.
-//  Copyright © 2017 Matt Quiros. All rights reserved.
+//  Created by Matthew Quiros on 29/05/2017.
+//  Copyright © 2017 Matthew Quiros. All rights reserved.
 //
 
 import CoreGraphics

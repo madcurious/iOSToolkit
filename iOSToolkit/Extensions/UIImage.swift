@@ -2,8 +2,8 @@
 //  UIImage.swift
 //  iOSToolkit
 //
-//  Created by Matt Quiros on 21/06/2016.
-//  Copyright © 2016 Matt Quiros. All rights reserved.
+//  Created by Matthew Quiros on 21/06/2016.
+//  Copyright © 2016 Matthew Quiros. All rights reserved.
 //
 
 import UIKit

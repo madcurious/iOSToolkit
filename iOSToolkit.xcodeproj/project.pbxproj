@@ -49,6 +49,7 @@
 		2D012BF02329345400095CE1 /* UIView+TreeTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D012BEF2329345400095CE1 /* UIView+TreeTraversal.swift */; };
 		2D69F70122C15B8E00FB4CA5 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D69F70022C15B8E00FB4CA5 /* Operation.swift */; };
 		2D69F70322C15BAC00FB4CA5 /* Failable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D69F70222C15BAC00FB4CA5 /* Failable.swift */; };
+		2D84F5FE24CAFBD300193FF2 /* LoadableViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84F5FD24CAFBD300193FF2 /* LoadableViewState.swift */; };
 		2D95824E22C169B700C28403 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95824D22C169B700C28403 /* AsyncOperation.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		2D012BEF2329345400095CE1 /* UIView+TreeTraversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TreeTraversal.swift"; sourceTree = "<group>"; };
 		2D69F70022C15B8E00FB4CA5 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		2D69F70222C15BAC00FB4CA5 /* Failable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failable.swift; sourceTree = "<group>"; };
+		2D84F5FD24CAFBD300193FF2 /* LoadableViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableViewState.swift; sourceTree = "<group>"; };
 		2D95824D22C169B700C28403 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,6 +280,7 @@
 				264C48171F98961700188D49 /* DefaultLoadableView.swift */,
 				264C48191F98963200188D49 /* DefaultLoadableView.xib */,
 				262B073C1F4ADB6200B7C45F /* LoadableView.swift */,
+				2D84F5FD24CAFBD300193FF2 /* LoadableViewState.swift */,
 			);
 			path = "Loadable views";
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				264EE49A1EF8F655004011FE /* LabelButton.swift in Sources */,
 				264AE15F1F95ED8300F87C55 /* NSManagedObjectContext.swift in Sources */,
 				2D012BE923292E1200095CE1 /* UIViewController+ModalTransitioning.swift in Sources */,
+				2D84F5FE24CAFBD300193FF2 /* LoadableViewState.swift in Sources */,
 				264AE1521F95ED8300F87C55 /* CharacterSet.swift in Sources */,
 				26A190661F836B0A00A9BBF6 /* DateUtil.swift in Sources */,
 				264AE1561F95ED8300F87C55 /* NSLayoutConstraint.swift in Sources */,

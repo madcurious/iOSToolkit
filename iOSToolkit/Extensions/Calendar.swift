@@ -2,8 +2,8 @@
 //  Calendar.swift
 //  iOSToolkit
 //
-//  Created by Matt Quiros on 19/12/2016.
-//  Copyright © 2016 Matt Quiros. All rights reserved.
+//  Created by Matthew Quiros on 19/12/2016.
+//  Copyright © 2016 Matthew Quiros. All rights reserved.
 //
 
 import Foundation

@@ -3,7 +3,7 @@
 //  iOSToolkit
 //
 //  Created by Matthew Quiros on 11/09/2019.
-//  Copyright © 2019 Matt Quiros. All rights reserved.
+//  Copyright © 2019 Matthew Quiros. All rights reserved.
 //
 
 import UIKit
@@ -17,7 +17,7 @@ extension UIViewController {
 			if let nibName = nibName {
 				return bundle.loadNibNamed(nibName, owner: self, options: nil)!.last as! UIView
 			}
-			return bundle.loadNibNamed(String(forTypeOf: self), owner: self, options: nil)!.last as! UIView
+			return bundle.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)!.last as! UIView
 			}()
 	}
 	

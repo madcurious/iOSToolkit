@@ -2,8 +2,8 @@
 //  BRDateUtilsTest_EndOfMonth.swift
 //  iOSToolkitTests
 //
-//  Created by Matt Quiros on 03/10/2017.
-//  Copyright © 2017 Matt Quiros. All rights reserved.
+//  Created by Matthew Quiros on 03/10/2017.
+//  Copyright © 2017 Matthew Quiros. All rights reserved.
 //
 
 import XCTest
