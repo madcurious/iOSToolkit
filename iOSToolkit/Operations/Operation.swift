@@ -64,8 +64,7 @@ class Operation<SuccessType, FailureType: Error>: Foundation.Operation, Failable
 	/// execution.
 	///
 	/// The default value is `nil`. Note that both cancelled operations and ready operations (i.e. operations waiting for `start()` to be called)
-	/// will both have `nil` results, so don't jump into the conclusion that an operation was cancelled just because the result is `nil`
-	/// ---unless, of course, the operation subclass guarantees it so.
+	/// will both have `nil` results, so don't jump into the conclusion that an operation was cancelled just because the result is `nil`.
 	var result: Result<SuccessType, FailureType>?
 	
 	var isFailed: Bool {

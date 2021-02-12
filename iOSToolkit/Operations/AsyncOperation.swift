@@ -8,9 +8,34 @@
 
 import Foundation
 
-/// Asynchronous operation that produces a result. The `start()` function of this class only dispatches the execution
-/// of the `main()` function to a separate thread. As stated in the Apple docs, in asynchronous operations,
-/// it is the developer's duty to define the termination points of the operation and to update its KVC flags accordingly.
+/// Asynchronous operation that produces a result. The class is meant to be subclassed and not to be used as it is.
+///
+/// Unlike its synchronous parent class, the `start()` function of this class only dispatches the execution of the `main()`
+/// function to a separate thread. The developer must invoke `finish()` somewhere in the asynchronous task performed by
+/// the `main()` function. Failing to call `finish()` will never fire the KVO notifications that update the operation's execution state,
+/// causing the operation never to terminate and, if added to an operation queue, never to be deallocated.
+///
+///     class NetworkRequestOperation: AsyncOperation<Data, NetworkRequestError> {
+///       override func main() {
+///         let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+///           defer {
+///             self.finish() // properly updates the execution state
+///           }
+///           if let error = error {
+///             // ...
+///             return
+///           }
+///           guard let data = data
+///           else {
+///             // ...
+///             return
+///           }
+///           // process data ...
+///         }
+///         dataTask.resume()
+///       }
+///
+///     }
 class AsyncOperation<SuccessType, FailureType: Error>: Operation<SuccessType, FailureType> {
 	
 	override var isConcurrent: Bool {
