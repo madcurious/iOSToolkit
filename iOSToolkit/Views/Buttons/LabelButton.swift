@@ -34,7 +34,7 @@ class LabelButton: Button {
 	}
 	
 	fileprivate func setupStructure() {
-		addSubviewAndFill(titleLabel)
+//		addSubviewAndFill(titleLabel)
 	}
 	
 	override func prepareForInterfaceBuilder() {

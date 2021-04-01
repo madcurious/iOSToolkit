@@ -38,7 +38,7 @@ class ImageButton: Button {
 	}
 	
 	fileprivate func setupStructure() {
-		addSubviewAndFill(imageView)
+//		addSubviewAndFill(imageView)
 	}
 	
 }
